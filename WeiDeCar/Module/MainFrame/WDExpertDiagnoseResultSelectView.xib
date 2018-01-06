@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDExpertDiagnoseResultSelectView">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3m-Kd-gQi">
+                    <rect key="frame" x="285" y="0.0" width="60" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="JXe-51-137"/>
+                    </constraints>
+                    <state key="normal" image="cha"/>
+                    <connections>
+                        <action selector="onClickUnSelectButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="fxv-GD-idw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnY-pn-f8G">
+                    <rect key="frame" x="355" y="0.0" width="60" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="j2D-3j-a8t"/>
+                    </constraints>
+                    <state key="normal" image="gou"/>
+                    <connections>
+                        <action selector="onClickSelectButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="181-O5-7k8"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已选择" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV4-8E-TRV">
+                    <rect key="frame" x="209" y="0.0" width="46" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.15686274510000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zV4-8E-TRV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6Kp-lP-2yR"/>
+                <constraint firstItem="vnY-pn-f8G" firstAttribute="leading" secondItem="z3m-Kd-gQi" secondAttribute="trailing" constant="10" id="EbN-wb-5IZ"/>
+                <constraint firstItem="z3m-Kd-gQi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QBL-Re-0yw"/>
+                <constraint firstAttribute="trailing" secondItem="vnY-pn-f8G" secondAttribute="trailing" constant="20" id="VbQ-mp-0cL"/>
+                <constraint firstItem="z3m-Kd-gQi" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="c5P-wX-1zZ"/>
+                <constraint firstItem="vnY-pn-f8G" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cAG-Hm-pqo"/>
+                <constraint firstItem="vnY-pn-f8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cin-e7-LDp"/>
+                <constraint firstItem="zV4-8E-TRV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cok-xi-O2B"/>
+                <constraint firstItem="z3m-Kd-gQi" firstAttribute="leading" secondItem="zV4-8E-TRV" secondAttribute="trailing" constant="30" id="jTr-MF-gBI"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="m_Label" destination="zV4-8E-TRV" id="mok-st-7lD"/>
+                <outlet property="m_selectButton" destination="vnY-pn-f8G" id="vth-g7-TUD"/>
+                <outlet property="m_unSelectButton" destination="z3m-Kd-gQi" id="t6i-9j-bCK"/>
+            </connections>
+            <point key="canvasLocation" x="-10.5" y="388"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cha" width="30" height="30"/>
+        <image name="gou" width="31" height="31"/>
+    </resources>
+</document>

@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "aa6ed2d33b37ffaf1656d10c015c6c22e1283f9f",
+  "iOS" : [
+    {
+      "name" : "VZFlexLayout",
+      "hash" : "245688746d43e1f59e022274b55f440954ffd0917278ecee58a368bb78c8a343"
+    }
+  ]
+}

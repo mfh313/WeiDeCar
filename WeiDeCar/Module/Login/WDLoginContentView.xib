@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDLoginContentView">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="645"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fb7-sc-7Et">
+                    <rect key="frame" x="181" y="70" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="4jN-aE-VlH"/>
+                        <constraint firstAttribute="width" constant="80" id="5hX-NX-RQ7"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIl-fa-TKy" customClass="WDBorderTextField">
+                    <rect key="frame" x="81" y="180" width="280" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="TyJ-qA-v5f"/>
+                        <constraint firstAttribute="height" constant="45" id="qe1-e5-Loj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-hO-Xp8" customClass="WDBorderTextField">
+                    <rect key="frame" x="81" y="245" width="280" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="aMt-qa-G7k"/>
+                        <constraint firstAttribute="height" constant="45" id="xG9-eg-Gum"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-JR-pP5">
+                    <rect key="frame" x="113.5" y="340" width="215" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="215" id="CL7-ie-vN1"/>
+                        <constraint firstAttribute="height" constant="45" id="iPK-Cp-mvw"/>
+                    </constraints>
+                    <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="onClickLoginButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="eOy-1P-dyc"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bku-ip-Rsa">
+                    <rect key="frame" x="71" y="415" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="Tp4-eH-FFM"/>
+                        <constraint firstAttribute="width" constant="300" id="xYt-Bd-kMj"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AK0-jm-mLA">
+                    <rect key="frame" x="171" y="424" width="100" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="nzM-tO-XNp"/>
+                        <constraint firstAttribute="height" constant="40" id="svG-aT-d47"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="忘记密码?">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickForgetButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="vxc-Tj-qf3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AK0-jm-mLA" firstAttribute="top" secondItem="bku-ip-Rsa" secondAttribute="bottom" constant="8" id="39D-fS-nzb"/>
+                <constraint firstItem="YgD-JR-pP5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8cT-wm-s22"/>
+                <constraint firstItem="YgD-JR-pP5" firstAttribute="top" secondItem="0eB-hO-Xp8" secondAttribute="bottom" constant="50" id="Cmk-B0-RlP"/>
+                <constraint firstItem="Fb7-sc-7Et" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="DO7-IZ-5Mk"/>
+                <constraint firstItem="AK0-jm-mLA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PKU-js-Alf"/>
+                <constraint firstItem="Fb7-sc-7Et" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tu7-sP-lIo"/>
+                <constraint firstItem="bku-ip-Rsa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UR4-c3-O1C"/>
+                <constraint firstItem="bku-ip-Rsa" firstAttribute="top" secondItem="YgD-JR-pP5" secondAttribute="bottom" constant="30" id="Uby-UA-RzE"/>
+                <constraint firstItem="rIl-fa-TKy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aOD-bO-zvi"/>
+                <constraint firstItem="0eB-hO-Xp8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jRD-Co-7mE"/>
+                <constraint firstItem="rIl-fa-TKy" firstAttribute="top" secondItem="Fb7-sc-7Et" secondAttribute="bottom" constant="30" id="skl-Tv-lPR"/>
+                <constraint firstItem="0eB-hO-Xp8" firstAttribute="top" secondItem="rIl-fa-TKy" secondAttribute="bottom" constant="20" id="vF7-L3-mI7"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="m_acountTextField" destination="rIl-fa-TKy" id="8OU-NR-1ts"/>
+                <outlet property="m_loginButton" destination="YgD-JR-pP5" id="bQn-Db-6BT"/>
+                <outlet property="m_passwordTextField" destination="0eB-hO-Xp8" id="IwO-cS-kzo"/>
+            </connections>
+            <point key="canvasLocation" x="58" y="222.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_logo" width="112" height="112"/>
+    </resources>
+</document>

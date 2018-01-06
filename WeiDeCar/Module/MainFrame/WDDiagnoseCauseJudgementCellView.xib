@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDDiagnoseCauseJudgementCellView">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原因" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwW-2p-9bb">
+                    <rect key="frame" x="25" y="0.0" width="149" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原因类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guU-s9-Cdt">
+                    <rect key="frame" x="194" y="0.0" width="149" height="51"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="guU-s9-Cdt" firstAttribute="leading" secondItem="dwW-2p-9bb" secondAttribute="trailing" constant="20" id="0Xj-HH-x9g"/>
+                <constraint firstItem="dwW-2p-9bb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6xa-tZ-uUX"/>
+                <constraint firstAttribute="trailing" secondItem="guU-s9-Cdt" secondAttribute="trailing" constant="20" id="HAR-b1-3NS"/>
+                <constraint firstItem="dwW-2p-9bb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JPy-4J-muH"/>
+                <constraint firstItem="dwW-2p-9bb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="Vgi-0V-TdN"/>
+                <constraint firstItem="dwW-2p-9bb" firstAttribute="width" secondItem="guU-s9-Cdt" secondAttribute="width" id="bgR-rL-Mhc"/>
+                <constraint firstItem="guU-s9-Cdt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nyJ-3V-DZt"/>
+                <constraint firstItem="guU-s9-Cdt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wvy-71-pFN"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="m_nameLabel" destination="dwW-2p-9bb" id="IkT-ON-aLd"/>
+                <outlet property="m_typeLabel" destination="guU-s9-Cdt" id="gXZ-9S-Zyu"/>
+            </connections>
+            <point key="canvasLocation" x="19.5" y="360.5"/>
+        </view>
+    </objects>
+</document>
