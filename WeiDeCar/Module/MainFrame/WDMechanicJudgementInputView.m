@@ -79,7 +79,25 @@
 
 -(void)borderTextFiledEditChanged:(WDBorderTextField *)textField
 {
+    if (textField == m_repairPlanTextField)
+    {
+        UITextField *planTextField = [m_repairPlanTextField contentTextField];
+        NSString *repairPlan = planTextField.text;
+        
+        if ([self.m_delegate respondsToSelector:@selector(onInputRepairPlan:inputView:)]) {
+            [self.m_delegate onInputRepairPlan:repairPlan inputView:self];
+        }
+    }
     
+    if (textField == m_memoTextField)
+    {
+        UITextField *memoTextField = [m_memoTextField contentTextField];
+        NSString *memo = memoTextField.text;
+        
+        if ([self.m_delegate respondsToSelector:@selector(onInputMemo:inputView:)]) {
+            [self.m_delegate onInputMemo:memo inputView:self];
+        }
+    }
 }
 
 @end
