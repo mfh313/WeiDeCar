@@ -13,6 +13,8 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
+extern NSString *const WDJPUSHService_Notification;
+
 @interface WDJPUSHService : MMService
 
 - (void)setPUSHAlias:(NSString *)alias;

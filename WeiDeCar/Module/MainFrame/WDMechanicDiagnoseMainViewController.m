@@ -54,6 +54,12 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf getListDiagnoseByMechanic];
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:WDJPUSHService_Notification object:nil];
+}
+
+- (void)handleNotification:(NSNotification *)notification {
+    [self getListDiagnoseByMechanic];
 }
 
 -(void)viewWillAppear:(BOOL)animated

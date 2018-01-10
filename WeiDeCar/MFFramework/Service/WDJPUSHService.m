@@ -11,6 +11,8 @@
 
 static NSInteger seq = 0;
 
+NSString *const WDJPUSHService_Notification = @"WDJPUSHService_Notification";
+
 @implementation WDJPUSHService
 
 -(instancetype)init
@@ -167,7 +169,7 @@ static NSInteger seq = 0;
 {
     LGAlertView *alertView = [LGAlertView alertViewWithTitle:title message:content style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:nil destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title)
                               {
-                                  
+                                  [[NSNotificationCenter defaultCenter] postNotificationName:WDJPUSHService_Notification object:nil];
                               }
                                                cancelHandler:nil destructiveHandler:nil];
     

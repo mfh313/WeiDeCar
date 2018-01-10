@@ -17,6 +17,8 @@
 
 #import "WDLoginService.h"
 
+#import "WDJPUSHService.h"
+
 #import "NSObject+YYModel.h"
 
 #import <AMapFoundationKit/AMapFoundationKit.h>

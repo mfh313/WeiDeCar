@@ -15,6 +15,7 @@
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
 
+
 @interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnosisMainAddViewDelegate>
 {
     MFUITableView *m_tableView;
@@ -73,6 +74,12 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf getListDiagnoseByCarOwner];
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:WDJPUSHService_Notification object:nil];
+}
+
+- (void)handleNotification:(NSNotification *)notification {
+    [self getListDiagnoseByCarOwner];
 }
 
 -(void)viewWillAppear:(BOOL)animated
