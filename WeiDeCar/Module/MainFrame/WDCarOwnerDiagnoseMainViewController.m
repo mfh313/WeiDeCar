@@ -217,8 +217,7 @@
     __weak typeof(self) weakSelf = self;
     WDListDiagnoseByCarOwnerApi *mfApi = [WDListDiagnoseByCarOwnerApi new];
     mfApi.carOwnerId = m_currentUserInfo.userId;
-//    mfApi.animatingText = @"正在获取维修任务列表...";
-//    mfApi.animatingView = MFAppWindow;
+
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         [m_tableView.pullToRefreshView stopAnimating];
