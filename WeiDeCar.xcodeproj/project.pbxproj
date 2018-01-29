@@ -1741,15 +1741,15 @@
 		A5B91F121FB9D384009B443D /* WeiDeCar */ = {
 			isa = PBXGroup;
 			children = (
-				A5B91F131FB9D384009B443D /* WeiDeAppDelegate.h */,
-				A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */,
-				A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */,
-				A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */,
 				A5241C721FBF094200B6B844 /* Module */,
 				A51A6BA81FD974120017A98A /* MFFramework */,
 				A52D914C1FDC2E63009DD077 /* WDComponent */,
 				A5241C0D1FBF094200B6B844 /* MFComponent */,
 				A5241CC11FBF0C5100B6B844 /* Vendors */,
+				A5B91F131FB9D384009B443D /* WeiDeAppDelegate.h */,
+				A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */,
+				A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */,
+				A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */,
 				A5B91F221FB9D384009B443D /* main.m */,
 				A5A3914B1FCC4BB400ED0D4F /* WD_header.h */,
 				A5B91F191FB9D384009B443D /* Main.storyboard */,
