@@ -14,6 +14,7 @@
 #import "WDDiagnoseItemCellView.h"
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
+#import "WDDiagnoseDetailViewController.h"
 
 
 @interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnosisMainAddViewDelegate>
@@ -216,8 +217,8 @@
     __weak typeof(self) weakSelf = self;
     WDListDiagnoseByCarOwnerApi *mfApi = [WDListDiagnoseByCarOwnerApi new];
     mfApi.carOwnerId = m_currentUserInfo.userId;
-    mfApi.animatingText = @"正在获取维修任务列表...";
-    mfApi.animatingView = MFAppWindow;
+//    mfApi.animatingText = @"正在获取维修任务列表...";
+//    mfApi.animatingView = MFAppWindow;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         [m_tableView.pullToRefreshView stopAnimating];
@@ -275,30 +276,39 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-    if (itemModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
-    {
-        __weak typeof(self) weakSelf = self;
-        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认技师诊断结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
-            
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf confirmDiagnoseByCarOwner:itemModel];
-            
-        } cancelHandler:nil destructiveHandler:nil];
-        
-        [alertView showAnimated:YES completionHandler:nil];
-    }
-    else if (itemModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
-    {
-        __weak typeof(self) weakSelf = self;
-        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认专家复诊结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
-            
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf reconfirmAfterExpertDiagnosed:itemModel];
-            
-        } cancelHandler:nil destructiveHandler:nil];
-        
-        [alertView showAnimated:YES completionHandler:nil];
-    }
+    [self showDiagnoseDetail:itemModel];
+    
+//    if (itemModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
+//    {
+//        __weak typeof(self) weakSelf = self;
+//        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认技师诊断结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+//
+//            __strong typeof(weakSelf) strongSelf = weakSelf;
+//            [strongSelf confirmDiagnoseByCarOwner:itemModel];
+//
+//        } cancelHandler:nil destructiveHandler:nil];
+//
+//        [alertView showAnimated:YES completionHandler:nil];
+//    }
+//    else if (itemModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
+//    {
+//        __weak typeof(self) weakSelf = self;
+//        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认专家复诊结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+//
+//            __strong typeof(weakSelf) strongSelf = weakSelf;
+//            [strongSelf reconfirmAfterExpertDiagnosed:itemModel];
+//
+//        } cancelHandler:nil destructiveHandler:nil];
+//
+//        [alertView showAnimated:YES completionHandler:nil];
+//    }
+}
+
+-(void)showDiagnoseDetail:(WDDiagnoseModel *)itemModel
+{
+    WDDiagnoseDetailViewController *detailVC = [[WDDiagnoseDetailViewController alloc] init];
+    detailVC.detailModel = itemModel;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 -(void)confirmDiagnoseByCarOwner:(WDDiagnoseModel *)itemModel

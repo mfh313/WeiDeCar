@@ -214,6 +214,7 @@
 		A57530711FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530701FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m */; };
 		A57530741FDD7996004A2A9D /* WDExpertDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */; };
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
+		A5892249201F68320063D3B9 /* WDDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
 		A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */; };
 		A5B91F151FB9D384009B443D /* WeiDeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */; };
@@ -730,6 +731,8 @@
 		A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseApi.m; sourceTree = "<group>"; };
 		A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
 		A57B46DC1FCEF84C0004C397 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
+		A5892247201F68320063D3B9 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
+		A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailViewController.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
 		A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppViewControllerManager.m; sourceTree = "<group>"; };
 		A5A3914B1FCC4BB400ED0D4F /* WD_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WD_header.h; sourceTree = "<group>"; };
@@ -1675,6 +1678,8 @@
 			children = (
 				A5631C4B1FF5131500DBA959 /* WDCarOwnerDiagnoseMainViewController.h */,
 				A5631C4C1FF5131500DBA959 /* WDCarOwnerDiagnoseMainViewController.m */,
+				A5892247201F68320063D3B9 /* WDDiagnoseDetailViewController.h */,
+				A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */,
 				A5631C4D1FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.h */,
 				A5631C4E1FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.m */,
 				A5631C4F1FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.xib */,
@@ -1966,6 +1971,7 @@
 				A5241DFA1FBF0C5200B6B844 /* Utilities.m in Sources */,
 				A5631C761FF5131500DBA959 /* WDCarOwnerDiagnoseMainViewController.m in Sources */,
 				A50FF14A1FDECEEA00FD6FD1 /* WDReconfirmAfterExpertDiagnosedApi.m in Sources */,
+				A5892249201F68320063D3B9 /* WDDiagnoseDetailViewController.m in Sources */,
 				A5241DE01FBF0C5200B6B844 /* Chat.pb.m in Sources */,
 				A5241C7A1FBF094200B6B844 /* NSMutableString+SafeInsert.m in Sources */,
 				A5631CAA1FF53EFA00DBA959 /* WDIPCameraPlayViewController.m in Sources */,
