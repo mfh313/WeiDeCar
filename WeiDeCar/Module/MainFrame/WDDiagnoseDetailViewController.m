@@ -22,6 +22,8 @@
     
     self.title = @"诊断详情";
     [self setBackBarButton];
+    
+    NSLog(@"self.detailModel=%@",self.detailModel);
 }
 
 -(void)onClickBottomButton
