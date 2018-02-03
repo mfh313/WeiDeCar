@@ -111,8 +111,8 @@
         [strongSelf onLoginSuccess:userInfo];
         
     } failure:^(YTKBaseRequest * request) {
-        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.requestOperationError.code),[request.requestOperationError localizedDescription]];
-        [self showTips:errorDesc];
+//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.requestOperationError.code),[request.requestOperationError localizedDescription]];
+//        [self showTips:errorDesc];
     }];
 }
 

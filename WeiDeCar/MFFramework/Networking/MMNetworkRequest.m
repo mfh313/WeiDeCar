@@ -32,7 +32,7 @@
 }
 
 - (YTKRequestMethod)requestMethod {
-    return YTKRequestMethodPost;
+    return YTKRequestMethodPOST;
 }
 
 -(id)requestArgument
@@ -159,7 +159,7 @@
 -(void)requestFailedFilter
 {
 #ifdef DEBUG
-    [[self class] logWithFailError:self.requestOperationError url:self.baseUrl params:self.requestArgument];
+    [[self class] logWithFailError:self.error url:self.baseUrl params:self.requestArgument];
 #else
     
 #endif

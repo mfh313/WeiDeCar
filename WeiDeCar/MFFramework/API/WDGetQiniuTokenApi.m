@@ -17,7 +17,7 @@
 
 -(YTKRequestMethod)requestMethod
 {
-    return YTKRequestMethodGet;
+    return YTKRequestMethodGET;
 }
 
 @end
