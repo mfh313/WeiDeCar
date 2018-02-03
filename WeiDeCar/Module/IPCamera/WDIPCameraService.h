@@ -8,6 +8,9 @@
 
 #import "MMService.h"
 
+//https://open.ys7.com/
+//https://open.ys7.com/mobile/download.html?type=app
+
 #define EZUIKitAppKey           @"00ae86f197f9402d9ae57a63fcdca117"
 #define EZUIKitAccessToken      @"at.5ahkpp1d09gi1lz54d3z773ldejctmz6-60ri5aj24n-0pi1lnx-npbtaopqo"
 #define EZUIKitUrlStr           @"ezopen://AES:m8h-CfFe5Y55g7UUsRZrhA@open.ys7.com/805298341/1.hd.live"
