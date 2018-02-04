@@ -17,8 +17,8 @@
 }
 
 - (void)becomeFirstResponder;
-- (id)getTextField;
-- (id)getValue;
+- (MMUITextField *)getTextField;
+- (NSString *)getValue;
 - (void)initView:(CGRect)frame;
 - (id)initWithTitle:(NSString *)title tip:(NSString *)tip key:(NSString *)key;
 - (void)resignFirstResponder;

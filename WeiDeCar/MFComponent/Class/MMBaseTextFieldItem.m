@@ -16,12 +16,12 @@
     [m_textField becomeFirstResponder];
 }
 
-- (id)getTextField
+- (MMUITextField *)getTextField
 {
     return m_textField;
 }
 
-- (id)getValue
+- (NSString *)getValue
 {
     return m_textField.text;
 }
