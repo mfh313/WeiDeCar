@@ -41,7 +41,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFiledEditChanged:)
                                                      name:UITextFieldTextDidChangeNotification
                                                    object:m_textField];
-        [m_textField addTarget:self action:@selector(textFieldDidEndOnExit:) forControlEvents:UIControlEventEditingDidEndOnExit];
     }
     
     return self;
@@ -161,11 +160,13 @@
     return YES;
 }
 
-- (void)textFieldDidEndOnExit:(id)arg1
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
 {
-    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemEndEdit:)]) {
-        [m_delegate MMBaseInfoItemEndEdit:self];
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemCancelEdit:)]) {
+        [m_delegate MMBaseInfoItemCancelEdit:self];
     }
+    
+    return YES;
 }
 
 @end

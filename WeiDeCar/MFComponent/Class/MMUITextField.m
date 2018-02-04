@@ -42,19 +42,6 @@
     hdif = MAX(0, hdif);
     rect.origin.y += ceil(hdif/2.0);
     [[self placeholder] drawInRect:rect withAttributes:attributes];
-    
-//    UIColor *placeholderColor = [UIColor redColor];//设置颜色
-//    [placeholderColor setFill];
-//    
-//    
-//    CGRect placeholderRect = CGRectMake(rect.origin.x+10, (rect.size.height- self.font.pointSize)/2, rect.size.width, self.font.pointSize);//设置距离
-//    
-//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-//    style.lineBreakMode = NSLineBreakByTruncatingTail;
-//    style.alignment = self.textAlignment;
-//    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:style,NSParagraphStyleAttributeName, self.font, NSFontAttributeName, placeholderColor, NSForegroundColorAttributeName, nil];
-//    
-//    [self.placeholder drawInRect:placeholderRect withAttributes:attr];
 }
 
 @end
