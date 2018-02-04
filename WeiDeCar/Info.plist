@@ -42,11 +42,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>使用应用期间允许维德专修访问位置信息</string>
+	<string>允许定位，有助于获取准确的导航地址</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>使用应用期间允许维德专修访问位置信息</string>
+	<string>允许定位，有助于一直获取准确的导航地址</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>使用应用期间允许维德专修访问位置信息</string>
+	<string>允许定位，有助于您使用APP过程中获取准确的导航地址</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
