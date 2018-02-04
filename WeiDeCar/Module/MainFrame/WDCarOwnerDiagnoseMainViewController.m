@@ -228,7 +228,7 @@
             return;
         }
         
-        NSArray *diagnoses = request.responseJSONObject[@"data"];
+        NSArray *diagnoses = mfApi.responseNetworkData;
         NSMutableArray *diagnoseArray = [NSMutableArray array];
         for (int i = 0; i < diagnoses.count; i++) {
             WDDiagnoseModel *itemModel = [WDDiagnoseModel yy_modelWithDictionary:diagnoses[i]];

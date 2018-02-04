@@ -13,8 +13,9 @@
 @interface MMNetworkRequest : YTKRequest
 
 -(BOOL)useGlobalAppToken;
--(id)requestArgumentWithToken;
+-(id _Nullable)requestArgumentWithToken;
 -(BOOL)messageSuccess;
 -(NSString*)errorMessage;
+-(id _Nullable)responseNetworkData;
 
 @end

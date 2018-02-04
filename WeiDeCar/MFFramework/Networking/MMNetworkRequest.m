@@ -220,4 +220,14 @@
     return string;
 }
 
+-(id)responseNetworkData
+{
+    if (![self.responseJSONObject isKindOfClass:[NSDictionary class]])
+    {
+        return nil;
+    }
+    
+    return self.responseJSONObject[@"data"];
+}
+
 @end
