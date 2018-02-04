@@ -28,14 +28,20 @@
 
 - (void)initView:(CGRect)frame
 {
-    m_textField = [[MMUITextField alloc] initWithFrame:frame];
+    m_view.frame = frame;
 }
 
 -(id)initWithTitle:(NSString *)title tip:(NSString *)tip key:(NSString *)key
 {
     self = [super initWithTitle:title tip:tip key:key];
     if (self) {
+        m_textField = [[MMUITextField alloc] initWithFrame:CGRectZero];
+        m_textField.delegate = self;
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFiledEditChanged:)
+                                                     name:UITextFieldTextDidChangeNotification
+                                                   object:m_textField];
+        [m_textField addTarget:self action:@selector(textFieldDidEndOnExit:) forControlEvents:UIControlEventEditingDidEndOnExit];
     }
     
     return self;
@@ -85,7 +91,7 @@
 
 - (void)setRestrictShareMenu:(BOOL)shareMenu
 {
-    
+    m_textField.m_bRestrictShareMenu = shareMenu;
 }
 
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType
@@ -101,6 +107,65 @@
 - (void)setText:(NSString *)text
 {
     m_textField.text = text;
+}
+
+#pragma mark - UITextFieldDelegate
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([string isEqualToString:@"\n"])
+    {
+        [m_textField resignFirstResponder];
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemBeginEdit:)]) {
+        [m_delegate MMBaseInfoItemBeginEdit:self];
+    }
+}
+
+- (void)textFiledEditChanged:(NSNotification *)notifi
+{
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemEditChanged:)]) {
+        [m_delegate MMBaseInfoItemEditChanged:self];
+    }
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemEndEdit:)]) {
+        [m_delegate MMBaseInfoItemEndEdit:self];
+    }
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ([m_delegate respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
+        return [m_delegate MMBaseInfoItemShouldBeginEditing:self];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemPressReturnKey:)]) {
+        [m_delegate MMBaseInfoItemPressReturnKey:self];
+    }
+    
+    return YES;
+}
+
+- (void)textFieldDidEndOnExit:(id)arg1
+{
+    if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemEndEdit:)]) {
+        [m_delegate MMBaseInfoItemEndEdit:self];
+    }
 }
 
 @end

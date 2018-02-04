@@ -10,10 +10,15 @@
 
 @implementation MMBaseInfoItem
 @synthesize m_key,m_tip,m_title,m_view,m_bActive,m_bEnable;
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
     
 - (void)becomeFirstResponder
 {
-    
+    [m_view becomeFirstResponder];
 }
     
 - (id)getValue
@@ -23,7 +28,7 @@
     
 - (void)initView:(CGRect)frame
 {
-    
+    m_view.frame = frame;
 }
     
 - (id)initWithTitle:(NSString *)title tip:(NSString *)tip key:(NSString *)key
@@ -33,6 +38,8 @@
         m_title = title;
         m_tip = tip;
         m_key = key;
+        
+        m_view = [[UIView alloc] init];
     }
     
     return self;
@@ -40,7 +47,7 @@
     
 - (void)resignFirstResponder
 {
-    
+    [m_view resignFirstResponder];
 }
 
 - (void)setDelegate:(id)delegate
@@ -57,6 +64,6 @@
 {
     m_superView = view;
 }
-    
+
 
 @end
