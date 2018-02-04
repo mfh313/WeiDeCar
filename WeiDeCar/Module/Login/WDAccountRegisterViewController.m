@@ -7,8 +7,19 @@
 //
 
 #import "WDAccountRegisterViewController.h"
+#import "MMBaseTextFieldItem.h"
 
-@interface WDAccountRegisterViewController ()
+@interface WDAccountRegisterViewController () <MMTableViewInfoDelegate, MMBaseInfoItemDelegate>
+{
+    MMTableViewInfo *m_tableViewInfo;
+    
+    MMBaseTextFieldItem *m_textFieldCarModelItem;
+    MMBaseTextFieldItem *m_textFieldVinNoItem;
+    MMBaseTextFieldItem *m_textFieldTelephoneItem;
+    MMBaseTextFieldItem *m_textFieldPasswdItem;
+    
+    NSMutableArray *m_arrayInfo;
+}
 
 @end
 
