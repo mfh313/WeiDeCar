@@ -27,12 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"会员注册";
+    self.title = @"维德会员注册";
     [self setBackBarButton];
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    m_tableView.backgroundColor = [UIColor whiteColor];
+    m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"F4F4F4"];
     m_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     m_tableView.dataSource = self;
     m_tableView.delegate = self;
