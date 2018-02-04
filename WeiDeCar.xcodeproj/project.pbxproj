@@ -221,6 +221,7 @@
 		A5B91F1B1FB9D384009B443D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F191FB9D384009B443D /* Main.storyboard */; };
 		A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F1C1FB9D384009B443D /* Assets.xcassets */; };
 		A5B91F231FB9D384009B443D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F221FB9D384009B443D /* main.m */; };
+		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
 		C761B046AABEEFA431BDDFCC /* libPods-WeiDeCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */; };
 /* End PBXBuildFile section */
 
@@ -745,6 +746,7 @@
 		A5B91F1C1FB9D384009B443D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B91F211FB9D384009B443D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B91F221FB9D384009B443D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		FB6739B099309AF3263BBFAE /* Pods-WeiDeCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1760,6 +1762,7 @@
 				A5B91F191FB9D384009B443D /* Main.storyboard */,
 				A5B91F211FB9D384009B443D /* Info.plist */,
 				A5107E3C1FFBEF640008755A /* WeiDeCar.entitlements */,
+				ACA46DF82026A42E0021B3B8 /* readme.txt */,
 				A566B4CC1FD24434004F6843 /* MainAssets.xcassets */,
 				A5132B691FD6D26400E2DCEE /* commonAssets.xcassets */,
 				A5B91F1C1FB9D384009B443D /* Assets.xcassets */,
@@ -1837,6 +1840,7 @@
 				A5631C781FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.xib in Resources */,
 				A566B4CD1FD24434004F6843 /* MainAssets.xcassets in Resources */,
 				A5631C821FF5131500DBA959 /* WDExpertDiagnoseAdviceCellView.xib in Resources */,
+				ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */,
 				A5631C7B1FF5131500DBA959 /* WDDiagnoseItemCellView.xib in Resources */,
 				A5631C861FF5131500DBA959 /* WDExpertDiagnoseResultSelectView.xib in Resources */,
 				A5241DE31FBF0C5200B6B844 /* main.proto in Resources */,

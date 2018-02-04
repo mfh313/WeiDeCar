@@ -13,7 +13,6 @@
 #import "IQKeyboardManager.h"
 #import "WDJPUSHService.h"
 
-static NSString *AMapKey = @"d06957de9c049c5da29c437837874158";
 static NSString *appKey = @"8b52945c5716a0fe9c5a2439";
 static NSString *channel = @"Publish channel";
 static BOOL isProduction = TRUE;
@@ -108,7 +107,29 @@ static BOOL isProduction = TRUE;
 
 -(void)registerAMapKit
 {
-    [AMapServices sharedServices].apiKey = AMapKey;
+    [AMapServices sharedServices].apiKey = [self AMapKey];
+}
+
+-(NSString *)AMapKey
+{
+    //默认Koradior证书
+    NSString *AMapKey = @"d06957de9c049c5da29c437837874158";
+    if ([self packageIsAppStoreChannel]) {
+        AMapKey = @"e064cd098ecd7aa63a4ec9b31610e220";
+    }
+    
+    return AMapKey;
+}
+
+-(BOOL)packageIsAppStoreChannel
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSNumber *value = infoDictionary[@"AppStoreChannel"];
+    if (value.boolValue) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
