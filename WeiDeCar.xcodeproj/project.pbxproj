@@ -30,6 +30,7 @@
 		A51DBC2D2000F91500A870FD /* WDRepairFactoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */; };
 		A51DBC302000FAD200A870FD /* WDRepairFactoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2F2000FAD200A870FD /* WDRepairFactoryModel.m */; };
 		A51DBC332000FE2800A870FD /* WDListRepairFactoriesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */; };
+		A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */; };
 		A5241C741FBF094200B6B844 /* NSArray+SafeInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C111FBF094200B6B844 /* NSArray+SafeInsert.m */; };
 		A5241C751FBF094200B6B844 /* NSCache+SafeInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C131FBF094200B6B844 /* NSCache+SafeInsert.m */; };
 		A5241C761FBF094200B6B844 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C151FBF094200B6B844 /* NSDictionary+Unicode.m */; };
@@ -277,6 +278,8 @@
 		A51DBC2F2000FAD200A870FD /* WDRepairFactoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairFactoryModel.m; sourceTree = "<group>"; };
 		A51DBC312000FE2800A870FD /* WDListRepairFactoriesApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairFactoriesApi.h; sourceTree = "<group>"; };
 		A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairFactoriesApi.m; sourceTree = "<group>"; };
+		A51EC97F20272859008F4CFA /* WDAccountRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAccountRegisterViewController.h; sourceTree = "<group>"; };
+		A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAccountRegisterViewController.m; sourceTree = "<group>"; };
 		A5241C0F1FBF094200B6B844 /* MFCategorys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategorys.h; sourceTree = "<group>"; };
 		A5241C101FBF094200B6B844 /* NSArray+SafeInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SafeInsert.h"; sourceTree = "<group>"; };
 		A5241C111FBF094200B6B844 /* NSArray+SafeInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SafeInsert.m"; sourceTree = "<group>"; };
@@ -1473,6 +1476,8 @@
 				A52D91A31FDC30FB009DD077 /* WDLoginViewController.m */,
 				A52D91A41FDC30FB009DD077 /* WDUserRegisterViewController.h */,
 				A52D91A51FDC30FB009DD077 /* WDUserRegisterViewController.m */,
+				A51EC97F20272859008F4CFA /* WDAccountRegisterViewController.h */,
+				A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1935,6 +1940,7 @@
 				A5241C751FBF094200B6B844 /* NSCache+SafeInsert.m in Sources */,
 				A5241C9D1FBF094200B6B844 /* MFAppMacroUtil.m in Sources */,
 				A52EAF0A1FFBAF8600262796 /* WDGetQiniuTokenApi.m in Sources */,
+				A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */,
 				A5631C871FF5131500DBA959 /* WDFaultAppearanceHeaderView.m in Sources */,
 				A5241C941FBF094200B6B844 /* MFModelHelper.m in Sources */,
 				A5631C831FF5131500DBA959 /* WDExpertDiagnoseMainCreateViewController.m in Sources */,
