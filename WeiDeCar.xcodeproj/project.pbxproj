@@ -31,6 +31,10 @@
 		A51DBC302000FAD200A870FD /* WDRepairFactoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2F2000FAD200A870FD /* WDRepairFactoryModel.m */; };
 		A51DBC332000FE2800A870FD /* WDListRepairFactoriesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */; };
 		A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */; };
+		A51EC98B20272B33008F4CFA /* MMTableViewCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98420272B33008F4CFA /* MMTableViewCellInfo.m */; };
+		A51EC98C20272B33008F4CFA /* MMTableViewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98620272B33008F4CFA /* MMTableViewInfo.m */; };
+		A51EC98D20272B33008F4CFA /* MMTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98820272B33008F4CFA /* MMTableViewSectionInfo.m */; };
+		A51EC98E20272B33008F4CFA /* MMTableViewUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98A20272B33008F4CFA /* MMTableViewUserInfo.m */; };
 		A5241C741FBF094200B6B844 /* NSArray+SafeInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C111FBF094200B6B844 /* NSArray+SafeInsert.m */; };
 		A5241C751FBF094200B6B844 /* NSCache+SafeInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C131FBF094200B6B844 /* NSCache+SafeInsert.m */; };
 		A5241C761FBF094200B6B844 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C151FBF094200B6B844 /* NSDictionary+Unicode.m */; };
@@ -64,10 +68,6 @@
 		A5241C931FBF094200B6B844 /* UINavigationBar+MMUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C511FBF094200B6B844 /* UINavigationBar+MMUINavigationBar.m */; };
 		A5241C941FBF094200B6B844 /* MFModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C541FBF094200B6B844 /* MFModelHelper.m */; };
 		A5241C951FBF094200B6B844 /* MFThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C561FBF094200B6B844 /* MFThemeHelper.m */; };
-		A5241C961FBF094200B6B844 /* MFTableViewCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C591FBF094200B6B844 /* MFTableViewCellInfo.m */; };
-		A5241C971FBF094200B6B844 /* MFTableViewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C5B1FBF094200B6B844 /* MFTableViewInfo.m */; };
-		A5241C981FBF094200B6B844 /* MFTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C5D1FBF094200B6B844 /* MFTableViewSectionInfo.m */; };
-		A5241C991FBF094200B6B844 /* MFTableViewUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C5F1FBF094200B6B844 /* MFTableViewUserInfo.m */; };
 		A5241C9A1FBF094200B6B844 /* MMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C621FBF094200B6B844 /* MMTabBarController.m */; };
 		A5241C9B1FBF094200B6B844 /* MMService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C651FBF094200B6B844 /* MMService.m */; };
 		A5241C9C1FBF094200B6B844 /* MMServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5241C671FBF094200B6B844 /* MMServiceCenter.m */; };
@@ -280,6 +280,14 @@
 		A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairFactoriesApi.m; sourceTree = "<group>"; };
 		A51EC97F20272859008F4CFA /* WDAccountRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAccountRegisterViewController.h; sourceTree = "<group>"; };
 		A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAccountRegisterViewController.m; sourceTree = "<group>"; };
+		A51EC98320272B33008F4CFA /* MMTableViewCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCellInfo.h; sourceTree = "<group>"; };
+		A51EC98420272B33008F4CFA /* MMTableViewCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCellInfo.m; sourceTree = "<group>"; };
+		A51EC98520272B33008F4CFA /* MMTableViewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewInfo.h; sourceTree = "<group>"; };
+		A51EC98620272B33008F4CFA /* MMTableViewInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewInfo.m; sourceTree = "<group>"; };
+		A51EC98720272B33008F4CFA /* MMTableViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewSectionInfo.h; sourceTree = "<group>"; };
+		A51EC98820272B33008F4CFA /* MMTableViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewSectionInfo.m; sourceTree = "<group>"; };
+		A51EC98920272B33008F4CFA /* MMTableViewUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewUserInfo.h; sourceTree = "<group>"; };
+		A51EC98A20272B33008F4CFA /* MMTableViewUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewUserInfo.m; sourceTree = "<group>"; };
 		A5241C0F1FBF094200B6B844 /* MFCategorys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategorys.h; sourceTree = "<group>"; };
 		A5241C101FBF094200B6B844 /* NSArray+SafeInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SafeInsert.h"; sourceTree = "<group>"; };
 		A5241C111FBF094200B6B844 /* NSArray+SafeInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SafeInsert.m"; sourceTree = "<group>"; };
@@ -348,14 +356,6 @@
 		A5241C541FBF094200B6B844 /* MFModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFModelHelper.m; sourceTree = "<group>"; };
 		A5241C551FBF094200B6B844 /* MFThemeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFThemeHelper.h; sourceTree = "<group>"; };
 		A5241C561FBF094200B6B844 /* MFThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFThemeHelper.m; sourceTree = "<group>"; };
-		A5241C581FBF094200B6B844 /* MFTableViewCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewCellInfo.h; sourceTree = "<group>"; };
-		A5241C591FBF094200B6B844 /* MFTableViewCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewCellInfo.m; sourceTree = "<group>"; };
-		A5241C5A1FBF094200B6B844 /* MFTableViewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewInfo.h; sourceTree = "<group>"; };
-		A5241C5B1FBF094200B6B844 /* MFTableViewInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewInfo.m; sourceTree = "<group>"; };
-		A5241C5C1FBF094200B6B844 /* MFTableViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionInfo.h; sourceTree = "<group>"; };
-		A5241C5D1FBF094200B6B844 /* MFTableViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionInfo.m; sourceTree = "<group>"; };
-		A5241C5E1FBF094200B6B844 /* MFTableViewUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewUserInfo.h; sourceTree = "<group>"; };
-		A5241C5F1FBF094200B6B844 /* MFTableViewUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewUserInfo.m; sourceTree = "<group>"; };
 		A5241C611FBF094200B6B844 /* MMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarController.h; sourceTree = "<group>"; };
 		A5241C621FBF094200B6B844 /* MMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarController.m; sourceTree = "<group>"; };
 		A5241C641FBF094200B6B844 /* MMService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMService.h; sourceTree = "<group>"; };
@@ -958,15 +958,30 @@
 			path = RepairFactories;
 			sourceTree = "<group>";
 		};
+		A51EC98220272B33008F4CFA /* MMTableViewInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A51EC98320272B33008F4CFA /* MMTableViewCellInfo.h */,
+				A51EC98420272B33008F4CFA /* MMTableViewCellInfo.m */,
+				A51EC98520272B33008F4CFA /* MMTableViewInfo.h */,
+				A51EC98620272B33008F4CFA /* MMTableViewInfo.m */,
+				A51EC98720272B33008F4CFA /* MMTableViewSectionInfo.h */,
+				A51EC98820272B33008F4CFA /* MMTableViewSectionInfo.m */,
+				A51EC98920272B33008F4CFA /* MMTableViewUserInfo.h */,
+				A51EC98A20272B33008F4CFA /* MMTableViewUserInfo.m */,
+			);
+			path = MMTableViewInfo;
+			sourceTree = "<group>";
+		};
 		A5241C0D1FBF094200B6B844 /* MFComponent */ = {
 			isa = PBXGroup;
 			children = (
+				A51EC98220272B33008F4CFA /* MMTableViewInfo */,
 				A5241E171FBF0D7500B6B844 /* Macro */,
 				A5241CA11FBF097300B6B844 /* YYModel */,
 				A5241C0E1FBF094200B6B844 /* Category */,
 				A5241C2E1FBF094200B6B844 /* Class */,
 				A5241C521FBF094200B6B844 /* Helper */,
-				A5241C571FBF094200B6B844 /* MFTableView */,
 				A5241C601FBF094200B6B844 /* MMTabBarController */,
 				A5241C631FBF094200B6B844 /* Service */,
 				A5241C681FBF094200B6B844 /* Util */,
@@ -1071,21 +1086,6 @@
 				A5241C561FBF094200B6B844 /* MFThemeHelper.m */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		A5241C571FBF094200B6B844 /* MFTableView */ = {
-			isa = PBXGroup;
-			children = (
-				A5241C581FBF094200B6B844 /* MFTableViewCellInfo.h */,
-				A5241C591FBF094200B6B844 /* MFTableViewCellInfo.m */,
-				A5241C5A1FBF094200B6B844 /* MFTableViewInfo.h */,
-				A5241C5B1FBF094200B6B844 /* MFTableViewInfo.m */,
-				A5241C5C1FBF094200B6B844 /* MFTableViewSectionInfo.h */,
-				A5241C5D1FBF094200B6B844 /* MFTableViewSectionInfo.m */,
-				A5241C5E1FBF094200B6B844 /* MFTableViewUserInfo.h */,
-				A5241C5F1FBF094200B6B844 /* MFTableViewUserInfo.m */,
-			);
-			path = MFTableView;
 			sourceTree = "<group>";
 		};
 		A5241C601FBF094200B6B844 /* MMTabBarController */ = {
@@ -1933,6 +1933,7 @@
 				A5631C7A1FF5131500DBA959 /* WDDiagnoseItemCellView.m in Sources */,
 				A5241DEE1FBF0C5200B6B844 /* ExtensionRegistry.m in Sources */,
 				A5241C7E1FBF094200B6B844 /* UIView+viewController.m in Sources */,
+				A51EC98C20272B33008F4CFA /* MMTableViewInfo.m in Sources */,
 				A5241DE41FBF0C5200B6B844 /* Messagepush.pb.m in Sources */,
 				A5631C811FF5131500DBA959 /* WDExpertDiagnoseAdviceCellView.m in Sources */,
 				A5241C8F1FBF094200B6B844 /* MMUINavigationBar.m in Sources */,
@@ -1952,7 +1953,6 @@
 				A52D914B1FDC2E1C009DD077 /* WDGuideSourceModel.m in Sources */,
 				A5241C871FBF094200B6B844 /* MFUITableView.m in Sources */,
 				A5241C801FBF094200B6B844 /* UIViewController+FullScreen.m in Sources */,
-				A5241C961FBF094200B6B844 /* MFTableViewCellInfo.m in Sources */,
 				A50C372E1FD8362200809CA7 /* SPTabController.m in Sources */,
 				A5241E051FBF0C5200B6B844 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A5241DEA1FBF0C5200B6B844 /* ConcreteExtensionField.m in Sources */,
@@ -1985,7 +1985,6 @@
 				A5241C7A1FBF094200B6B844 /* NSMutableString+SafeInsert.m in Sources */,
 				A5631CAA1FF53EFA00DBA959 /* WDIPCameraPlayViewController.m in Sources */,
 				A5241C831FBF094200B6B844 /* MFMultiMenuTableViewCell.m in Sources */,
-				A5241C981FBF094200B6B844 /* MFTableViewSectionInfo.m in Sources */,
 				A5241DB71FBF0C5200B6B844 /* IQNSArray+Sort.m in Sources */,
 				A535ACE11FDCD20E001CF470 /* WDGuideBottomView.m in Sources */,
 				A5241E021FBF0C5200B6B844 /* SCLTimerDisplay.m in Sources */,
@@ -1993,11 +1992,11 @@
 				A5241DE81FBF0C5200B6B844 /* CodedInputStream.m in Sources */,
 				A5241C9A1FBF094200B6B844 /* MMTabBarController.m in Sources */,
 				A5631C8E1FF5131500DBA959 /* WDMechanicJudgementInputView.m in Sources */,
-				A5241C971FBF094200B6B844 /* MFTableViewInfo.m in Sources */,
 				A52648802001317F00DC11BA /* WDStoreAnnotationView.m in Sources */,
 				A535AD041FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m in Sources */,
 				A5241C791FBF094200B6B844 /* NSMutableSet+SafeInsert.m in Sources */,
 				A5631C801FF5131500DBA959 /* WDDiagnosisTypeSelectView.m in Sources */,
+				A51EC98B20272B33008F4CFA /* MMTableViewCellInfo.m in Sources */,
 				A535ACE41FDCD20E001CF470 /* WDGuideViewController.m in Sources */,
 				A5241DB81FBF0C5200B6B844 /* IQUIScrollView+Additions.m in Sources */,
 				A535AD0D1FDD5387001CF470 /* WDMechanicDiagnoseApi.m in Sources */,
@@ -2008,12 +2007,12 @@
 				A572403A1FFCF758004EC27E /* WDJPUSHService.m in Sources */,
 				A5241DB91FBF0C5200B6B844 /* IQUITextFieldView+Additions.m in Sources */,
 				A5631C851FF5131500DBA959 /* WDExpertDiagnoseResultSelectView.m in Sources */,
-				A5241C991FBF094200B6B844 /* MFTableViewUserInfo.m in Sources */,
 				A5241C741FBF094200B6B844 /* NSArray+SafeInsert.m in Sources */,
 				A5241DF11FBF0C5200B6B844 /* GeneratedMessageBuilder.m in Sources */,
 				A5241DFE1FBF0C5200B6B844 /* SCLAlertViewStyleKit.m in Sources */,
 				A5241C8D1FBF094200B6B844 /* MMSelectButton.m in Sources */,
 				A5241DEB1FBF0C5200B6B844 /* Descriptor.pb.m in Sources */,
+				A51EC98E20272B33008F4CFA /* MMTableViewUserInfo.m in Sources */,
 				A5241E041FBF0C5200B6B844 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				A5241C911FBF094200B6B844 /* MMUIView.m in Sources */,
 				A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */,
@@ -2041,6 +2040,7 @@
 				A5631C7E1FF5131500DBA959 /* WDDiagnosisMainAddView.m in Sources */,
 				A5241DFB1FBF0C5200B6B844 /* WireFormat.m in Sources */,
 				A52D91481FDC2A05009DD077 /* WDLoginService.m in Sources */,
+				A51EC98D20272B33008F4CFA /* MMTableViewSectionInfo.m in Sources */,
 				A5241DF81FBF0C5200B6B844 /* UnknownFieldSet.m in Sources */,
 				A535ACD51FDCCEF2001CF470 /* WDCreateDiagnoseByCarOwnerApi.m in Sources */,
 				A5241DE21FBF0C5200B6B844 /* Main.pb.m in Sources */,

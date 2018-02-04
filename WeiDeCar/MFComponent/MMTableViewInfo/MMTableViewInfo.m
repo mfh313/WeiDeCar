@@ -1,12 +1,12 @@
 //
-//  MFTableViewInfo.m
-//  EekaPOS
+//  MMTableViewInfo.m
+//  IHealthCare
 //
-//  Created by EEKA on 2017/7/3.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "MFTableViewInfo.h"
+#import "MMTableViewInfo.h"
 
 #define NoWarningPerformSelector(target, action, object, object1) \
 _Pragma("clang diagnostic push") \
@@ -14,7 +14,7 @@ _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
 [target performSelector:action withObject:object withObject:object1] \
 _Pragma("clang diagnostic pop") \
 
-@implementation MFTableViewInfo
+@implementation MMTableViewInfo
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
@@ -27,8 +27,8 @@ _Pragma("clang diagnostic pop") \
         _arrSections = @[].mutableCopy;
         
         if (style == UITableViewStyleGrouped) {
-            _tableView.sectionHeaderHeight = 10.0f;
-            _tableView.sectionFooterHeight = 10.0f;
+            _tableView.sectionHeaderHeight = 5.0f;
+            _tableView.sectionFooterHeight = 5.0f;
         }
     }
     return self;
@@ -47,8 +47,12 @@ _Pragma("clang diagnostic pop") \
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCellInfo *cellInfo = [self getCellAtSection:indexPath.section row:indexPath.row];
-    NSString *identifier = [NSString stringWithFormat:@"MFTableViewInfo_%zd_%f", cellInfo.cellStyle, cellInfo.fCellHeight];
+    MMTableViewCellInfo *cellInfo = [self getCellAtSection:indexPath.section row:indexPath.row];
+    NSString *identifier = [cellInfo getUserInfoValueForKey:@"identifier"];
+    if (!identifier) {
+        identifier = [NSString stringWithFormat:@"MFTableViewInfo_%zd_%f", cellInfo.cellStyle, cellInfo.fCellHeight];
+    }
+    
     MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[MFTableViewCell alloc] initWithStyle:cellInfo.cellStyle reuseIdentifier:identifier];
@@ -80,7 +84,7 @@ _Pragma("clang diagnostic pop") \
 {
     if (indexPath.section < _arrSections.count) {
         if (indexPath.row < [_arrSections[indexPath.section] getCellCount]) {
-            MFTableViewCellInfo *cellInfo = [_arrSections[indexPath.section] getCellAt:indexPath.row];
+            MMTableViewCellInfo *cellInfo = [_arrSections[indexPath.section] getCellAt:indexPath.row];
             id target = cellInfo.calHeightTarget;
             if (target && [target respondsToSelector:cellInfo.calHeightSel]) {
                 NoWarningPerformSelector(target, cellInfo.calHeightSel, cellInfo, nil);
@@ -106,7 +110,7 @@ _Pragma("clang diagnostic pop") \
         if (headerTitle) {
             return CGFLOAT_MIN;
         } else {
-            MFTableViewSectionInfo *sectionInfo = _arrSections[section];
+            MMTableViewSectionInfo *sectionInfo = _arrSections[section];
             if (!sectionInfo.makeHeaderTarget) {
                 return sectionInfo.fHeaderHeight;
             } else {
@@ -125,7 +129,7 @@ _Pragma("clang diagnostic pop") \
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section < _arrSections.count) {
-        MFTableViewSectionInfo *sectionInfo = _arrSections[section];
+        MMTableViewSectionInfo *sectionInfo = _arrSections[section];
         id target = sectionInfo.makeHeaderTarget;
         if (target) {
             if ([target respondsToSelector:sectionInfo.makeHeaderSel]) {
@@ -133,10 +137,10 @@ _Pragma("clang diagnostic pop") \
             }
             else
             {
-//                NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:section];
-//                if (headerTitle) {
-//                    return [PPTableViewInfo genHeaderView:headerTitle andIsUseDynamic:sectionInfo.bUseDynamicSize];
-//                }
+                //                NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:section];
+                //                if (headerTitle) {
+                //                    return [PPTableViewInfo genHeaderView:headerTitle andIsUseDynamic:sectionInfo.bUseDynamicSize];
+                //                }
             }
         }
         else
@@ -147,10 +151,10 @@ _Pragma("clang diagnostic pop") \
             } else if ([_delegate respondsToSelector:sectionInfo.makeHeaderSel]) {
                 return NoWarningPerformSelector(_delegate, sectionInfo.makeHeaderSel, sectionInfo, nil);
             } else {
-//                NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:section];
-//                if (headerTitle) {
-//                    return [PPTableViewInfo genHeaderView:headerTitle andIsUseDynamic:sectionInfo.bUseDynamicSize];
-//                }
+                //                NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:section];
+                //                if (headerTitle) {
+                //                    return [PPTableViewInfo genHeaderView:headerTitle andIsUseDynamic:sectionInfo.bUseDynamicSize];
+                //                }
             }
         }
     }
@@ -160,7 +164,7 @@ _Pragma("clang diagnostic pop") \
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section < _arrSections.count) {
-        MFTableViewCellInfo *cellInfo = [self getCellAtSection:indexPath.section row:indexPath.row];
+        MMTableViewCellInfo *cellInfo = [self getCellAtSection:indexPath.section row:indexPath.row];
         if (cellInfo) {
             id target = cellInfo.actionTarget;
             if (target) {
@@ -195,7 +199,7 @@ _Pragma("clang diagnostic pop") \
     }
 }
 
-- (MFTableViewCellInfo *)getCellAtSection:(NSUInteger)section row:(NSUInteger)row
+- (MMTableViewCellInfo *)getCellAtSection:(NSUInteger)section row:(NSUInteger)row
 {
     if (_arrSections.count >= section && [_arrSections[section] getCellCount] >= row) {
         return [_arrSections[section] getCellAt:row];
@@ -210,7 +214,7 @@ _Pragma("clang diagnostic pop") \
 }
 
 #pragma mark - Section
-- (void)addSection:(MFTableViewSectionInfo *)section
+- (void)addSection:(MMTableViewSectionInfo *)section
 {
     [_arrSections safeAddObject:section];
     [_tableView reloadData];
@@ -235,7 +239,7 @@ _Pragma("clang diagnostic pop") \
     return _arrSections.count;
 }
 
-- (MFTableViewSectionInfo *)getSectionAt:(NSUInteger)section
+- (MMTableViewSectionInfo *)getSectionAt:(NSUInteger)section
 {
     if (section < _arrSections.count) {
         return _arrSections[section];

@@ -22,7 +22,7 @@
 #import "MFUIButton.h"
 #import "MFTableViewCell.h"
 
-#import "MFTableViewInfo.h"
+#import "MMTableViewInfo.h"
 
 #import "MFTableViewCellObject.h"
 

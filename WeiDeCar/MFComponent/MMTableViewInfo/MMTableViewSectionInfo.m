@@ -1,24 +1,24 @@
 //
-//  MFTableViewSectionInfo.m
-//  EekaPOS
+//  MMTableViewSectionInfo.m
+//  IHealthCare
 //
-//  Created by EEKA on 2017/6/27.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "MFTableViewSectionInfo.h"
-#import "MFTableViewCellInfo.h"
+#import "MMTableViewSectionInfo.h"
+#import "MMTableViewCellInfo.h"
 
-@implementation MFTableViewSectionInfo
+@implementation MMTableViewSectionInfo
 
 + (instancetype)sectionInfoDefault
 {
-    return [[MFTableViewSectionInfo alloc] init];
+    return [[MMTableViewSectionInfo alloc] init];
 }
 
 + (instancetype)sectionInfoHeader:(NSString *)headerTitle
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo addUserInfoValue:headerTitle forKey:@"headerTitle"];
     if (headerTitle.length) {
         [sectionInfo setFHeaderHeight:-1.0f];
@@ -28,7 +28,7 @@
 
 + (instancetype)sectionInfoFooter:(NSString *)footerTitle
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo addUserInfoValue:footerTitle forKey:@"footerTitle"];
     if (footerTitle.length) {
         [sectionInfo setFFooterHeight:-1.0f];
@@ -38,7 +38,7 @@
 
 + (instancetype)sectionInfoHeader:(NSString *)headerTitle footer:(NSString *)footerTitle
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo addUserInfoValue:headerTitle forKey:@"headerTitle"];
     if (headerTitle.length) {
         [sectionInfo setFHeaderHeight:-1.0f];
@@ -52,7 +52,7 @@
 
 + (instancetype)sectionInfoHeaderWithView:(UIView *)headerView
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo addUserInfoValue:headerView forKey:@"header"];
     [sectionInfo setFHeaderHeight:headerView.frame.size.height];
     return sectionInfo;
@@ -60,7 +60,7 @@
 
 + (instancetype)sectionInfoFooterWithView:(UIView *)footerView
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo addUserInfoValue:footerView forKey:@"footer"];
     [sectionInfo setFFooterHeight:footerView.frame.size.height];
     return sectionInfo;
@@ -68,7 +68,7 @@
 
 + (instancetype)sectionInfoHeaderMakeSel:(SEL)sel makeTarget:(id)target
 {
-    MFTableViewSectionInfo *sectionInfo = [MFTableViewSectionInfo sectionInfoDefault];
+    MMTableViewSectionInfo *sectionInfo = [MMTableViewSectionInfo sectionInfoDefault];
     [sectionInfo setMakeHeaderSel:sel];
     [sectionInfo setMakeHeaderTarget:target];
     return sectionInfo;
@@ -129,7 +129,7 @@
     return _arrCells.count;
 }
 
-- (MFTableViewCellInfo *)getCellAt:(NSUInteger)row
+- (MMTableViewCellInfo *)getCellAt:(NSUInteger)row
 {
     if (_arrCells.count >= row) {
         return _arrCells[row];
@@ -138,7 +138,7 @@
     }
 }
 
-- (void)addCell:(MFTableViewCellInfo *)cell
+- (void)addCell:(MMTableViewCellInfo *)cell
 {
     [_arrCells addObject:cell];
 }

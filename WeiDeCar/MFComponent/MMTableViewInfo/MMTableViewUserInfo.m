@@ -1,14 +1,14 @@
 //
-//  MFTableViewUserInfo.m
-//  EekaPOS
+//  MMTableViewUserInfo.m
+//  IHealthCare
 //
-//  Created by EEKA on 2017/6/27.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "MFTableViewUserInfo.h"
+#import "MMTableViewUserInfo.h"
 
-@implementation MFTableViewUserInfo
+@implementation MMTableViewUserInfo
 
 -(void)addUserInfoValue:(id)value forKey:(NSString *)key
 {

@@ -1,16 +1,14 @@
 //
-//  MFTableViewCellInfo.h
-//  EekaPOS
+//  MMTableViewCellInfo.h
+//  IHealthCare
 //
-//  Created by EEKA on 2017/6/27.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "MFTableViewUserInfo.h"
+#import "MMTableViewUserInfo.h"
 
-@class MFTableViewCell;
-
-@interface MFTableViewCellInfo : MFTableViewUserInfo
+@interface MMTableViewCellInfo : MMTableViewUserInfo
 {
     SEL _makeSel;
     __weak id _makeTarget;
@@ -58,9 +56,9 @@
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName;
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName isFitIpadClassic:(BOOL)isFitIpadClassic;
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue isFitIpadClassic:(BOOL)isFitIpadClassic;
-+ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget calHeightSel:(SEL)calHeightSel calHeightTarget:(id)calHeightTarget userInfo:(MFTableViewUserInfo *)userInfo;
-+ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget height:(CGFloat)height userInfo:(MFTableViewUserInfo *)userInfo;
-+ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget height:(CGFloat)height userInfo:(MFTableViewUserInfo *)userInfo isFitIpadClassic:(BOOL)isFitIpadClassic;
-+ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget height:(CGFloat)height userInfo:(MFTableViewUserInfo *)userInfo;
++ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget calHeightSel:(SEL)calHeightSel calHeightTarget:(id)calHeightTarget userInfo:(MMTableViewUserInfo *)userInfo;
++ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget height:(CGFloat)height userInfo:(MMTableViewUserInfo *)userInfo;
++ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget actionSel:(SEL)actionSel actionTarget:(id)actionTarget height:(CGFloat)height userInfo:(MMTableViewUserInfo *)userInfo isFitIpadClassic:(BOOL)isFitIpadClassic;
++ (instancetype)cellForMakeSel:(SEL)makeSel makeTarget:(id)makeTarget height:(CGFloat)height userInfo:(MMTableViewUserInfo *)userInfo;
 
 @end

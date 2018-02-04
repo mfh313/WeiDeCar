@@ -1,14 +1,14 @@
 //
-//  MFTableViewUserInfo.h
-//  EekaPOS
+//  MMTableViewUserInfo.h
+//  IHealthCare
 //
-//  Created by EEKA on 2017/6/27.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MFTableViewUserInfo : NSObject
+@interface MMTableViewUserInfo : NSObject
 {
     NSMutableDictionary *_dicInfo;
     id _userInfo;

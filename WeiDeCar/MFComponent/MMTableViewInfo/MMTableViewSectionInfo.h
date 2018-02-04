@@ -1,15 +1,15 @@
 //
-//  MFTableViewSectionInfo.h
-//  EekaPOS
+//  MMTableViewSectionInfo.h
+//  IHealthCare
 //
-//  Created by EEKA on 2017/6/27.
-//  Copyright © 2017年 eeka. All rights reserved.
+//  Created by mafanghua on 2017/12/23.
+//  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "MFTableViewUserInfo.h"
+#import "MMTableViewUserInfo.h"
 
-@class MFTableViewCellInfo;
-@interface MFTableViewSectionInfo : MFTableViewUserInfo
+@class MMTableViewCellInfo;
+@interface MMTableViewSectionInfo : MMTableViewUserInfo
 {
     SEL _makeHeaderSel;
     __weak id _makeHeaderTarget;
@@ -45,8 +45,8 @@
 - (__kindof UIView *)getFooterView;
 
 - (NSUInteger)getCellCount;
-- (MFTableViewCellInfo *)getCellAt:(NSUInteger)row;
+- (MMTableViewCellInfo *)getCellAt:(NSUInteger)row;
 - (void)removeCellAt:(NSUInteger)row;
-- (void)addCell:(MFTableViewCellInfo *)cell;
+- (void)addCell:(MMTableViewCellInfo *)cell;
 
 @end
