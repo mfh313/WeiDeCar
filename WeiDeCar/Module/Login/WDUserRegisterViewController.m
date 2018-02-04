@@ -32,7 +32,7 @@
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"F4F4F4"];
+    m_tableView.backgroundColor = [UIColor whiteColor];
     m_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     m_tableView.dataSource = self;
     m_tableView.delegate = self;
@@ -132,7 +132,7 @@
         registerButton.frame = CGRectMake((CGRectGetWidth(cell.contentView.frame) - 120) /2 , 0, 120, CGRectGetHeight(cell.contentView.frame));
         registerButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [registerButton setTitle:@"注册" forState:UIControlStateNormal];
-        [registerButton setBackgroundImage:MFImageStretchCenter(@"registerButton") forState:UIControlStateNormal];
+        [registerButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
         [registerButton addTarget:self action:@selector(onClickRegisterUser) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:registerButton];
     }

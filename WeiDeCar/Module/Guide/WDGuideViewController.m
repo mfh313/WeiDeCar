@@ -77,10 +77,15 @@
     }];
     
     m_bottomView = [WDGuideBottomView nibView];
-    m_bottomView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 120, CGRectGetWidth(self.view.frame), 45);
     m_bottomView.m_delegate = self;
-    m_bottomView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    m_bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:m_bottomView];
+    
+    [m_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(m_pageControl.mas_top).offset(-15);
+        make.width.equalTo(self.view.mas_width);
+        make.height.mas_equalTo(45);
+    }];
     
     [m_bottomView setHidden:YES];
 }
