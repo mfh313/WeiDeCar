@@ -160,7 +160,7 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     if ([m_delegate respondsToSelector:@selector(MMBaseInfoItemCancelEdit:)]) {
         [m_delegate MMBaseInfoItemCancelEdit:self];

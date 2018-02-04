@@ -33,5 +33,6 @@
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType;
 - (void)setSecureTextEntry:(BOOL)secureTextEntry;
 - (void)setText:(NSString *)text;
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 
 @end
