@@ -39,7 +39,7 @@
     m_carOwnerIdLabel.text = [NSString stringWithFormat:@"车主ID：%@",itemModel.carOwnerId];
     m_mechanicIdLabel.text = [NSString stringWithFormat:@"技师ID：%@",itemModel.mechanicId];
     m_expertIdLabel.text = [NSString stringWithFormat:@"专家ID：%@",itemModel.diagnoseId];
-    m_statusNameLabel.text = itemModel.statusName;
+    m_statusNameLabel.text = [NSString stringWithFormat:@"状态：%@",itemModel.statusName];
 }
 
 -(void)setTipsHidden:(BOOL)hidden
