@@ -7,8 +7,8 @@
 //
 
 #import "MMUIViewController.h"
-#import "WDDiagnoseModel.h"
 
+@class WDDiagnoseModel;
 @interface WDDiagnoseDetailViewController : MMUIViewController
 
 @property (nonatomic,strong) WDDiagnoseModel *detailModel;

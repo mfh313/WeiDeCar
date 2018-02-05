@@ -7,15 +7,18 @@
 //
 
 #import "WDDiagnoseDetailViewController.h"
+#import "WDDiagnoseModel.h"
+#import "MFTableViewSectionObject.h"
 
 @interface WDDiagnoseDetailViewController ()
 {
+    MFUITableView *m_tableView;
+    
+    NSMutableArray<MFTableViewSectionObject *> *m_sectionInfos;
+    
+    WDDiagnoseItemModel *m_diagnoseItems;
     NSMutableArray<WDDiagnoseItemFaultAppearanceModel *> *m_faultAppearances;
 }
-
-@property (nonatomic, strong) NSMutableArray *sectionsArray;
-
-@property (nonatomic, strong) NSMutableIndexSet *expandableSections;
 
 @end
 
@@ -27,13 +30,47 @@
     self.title = @"诊断详情";
     [self setBackBarButton];
     
-    _sectionsArray = [NSMutableArray array];
-    _expandableSections = [NSMutableIndexSet indexSet];
+    m_diagnoseItems = self.detailModel.diagnoseItems;
+    m_faultAppearances = m_diagnoseItems.faultAppearances;
     
-    WDDiagnoseItemModel *diagnoseItems = self.detailModel.diagnoseItems;
-    m_faultAppearances = diagnoseItems.faultAppearances;
-    
+    [self makeSectionObjects];
 }
+
+-(void)makeSectionObjects
+{
+    for (int i = 0; i < m_faultAppearances.count; i++) {
+        WDDiagnoseItemFaultAppearanceModel *appearanceModel = m_faultAppearances[i];
+        
+        MFTableViewSectionObject *sectionObject = [MFTableViewSectionObject new];
+        sectionObject.sectionIndex = i;
+        sectionObject.sectionHeaderHeight = 50;
+        sectionObject.isExpand = NO;
+        
+        NSMutableArray<MFTableViewCellObject *> *cellObjects = [NSMutableArray array];
+        [self makeCellObjects:appearanceModel cellObjects:cellObjects];
+        
+        sectionObject.cellObjects = cellObjects;
+    }
+}
+
+-(void)makeCellObjects:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel cellObjects:(NSMutableArray *)cellObjects
+{
+    NSMutableArray<WDDiagnoseCauseJudgementModel *> *causeJudgements = appearanceModel.causeJudgements;
+    for (int i = 0; i < causeJudgements.count; i++)
+    {
+        <#statements#>
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 -(void)onClickBottomButton
 {

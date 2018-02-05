@@ -216,6 +216,7 @@
 		A57530741FDD7996004A2A9D /* WDExpertDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */; };
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
 		A5892249201F68320063D3B9 /* WDDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */; };
+		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
 		A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */; };
 		A5B91F151FB9D384009B443D /* WeiDeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */; };
@@ -737,6 +738,8 @@
 		A57B46DC1FCEF84C0004C397 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
 		A5892247201F68320063D3B9 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
 		A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailViewController.m; sourceTree = "<group>"; };
+		A59FEDB32028871D007378F0 /* MFTableViewSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionObject.h; sourceTree = "<group>"; };
+		A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionObject.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
 		A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppViewControllerManager.m; sourceTree = "<group>"; };
 		A5A3914B1FCC4BB400ED0D4F /* WD_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WD_header.h; sourceTree = "<group>"; };
@@ -1073,6 +1076,8 @@
 				A5241C511FBF094200B6B844 /* UINavigationBar+MMUINavigationBar.m */,
 				A5A3914C1FCC57A000ED0D4F /* MFTableViewCellObject.h */,
 				A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */,
+				A59FEDB32028871D007378F0 /* MFTableViewSectionObject.h */,
+				A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1940,6 +1945,7 @@
 				A5241C881FBF094200B6B844 /* MMBaseInfoItem.m in Sources */,
 				A5241C751FBF094200B6B844 /* NSCache+SafeInsert.m in Sources */,
 				A5241C9D1FBF094200B6B844 /* MFAppMacroUtil.m in Sources */,
+				A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */,
 				A52EAF0A1FFBAF8600262796 /* WDGetQiniuTokenApi.m in Sources */,
 				A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */,
 				A5631C871FF5131500DBA959 /* WDFaultAppearanceHeaderView.m in Sources */,
