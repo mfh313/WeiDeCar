@@ -10,8 +10,12 @@
 
 @interface WDDiagnoseDetailViewController ()
 {
-    
+    NSMutableArray<WDDiagnoseItemFaultAppearanceModel *> *m_faultAppearances;
 }
+
+@property (nonatomic, strong) NSMutableArray *sectionsArray;
+
+@property (nonatomic, strong) NSMutableIndexSet *expandableSections;
 
 @end
 
@@ -23,8 +27,15 @@
     self.title = @"诊断详情";
     [self setBackBarButton];
     
-    NSLog(@"self.detailModel=%@",self.detailModel);
+    _sectionsArray = [NSMutableArray array];
+    _expandableSections = [NSMutableIndexSet indexSet];
+    
+    WDDiagnoseItemModel *diagnoseItems = self.detailModel.diagnoseItems;
+    m_faultAppearances = diagnoseItems.faultAppearances;
+    
 }
+
+
 
 -(void)onClickBottomButton
 {
@@ -52,7 +63,6 @@
 //
 //        [alertView showAnimated:YES completionHandler:nil];
 //    }
-
 }
 
 - (void)didReceiveMemoryWarning {

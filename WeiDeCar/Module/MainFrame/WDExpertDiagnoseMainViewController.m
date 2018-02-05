@@ -158,8 +158,7 @@
     __weak typeof(self) weakSelf = self;
     WDListDiagnoseByExpertApi *mfApi = [WDListDiagnoseByExpertApi new];
     mfApi.expertId = m_currentUserInfo.userId;
-    mfApi.animatingText = @"正在获取任务列表...";
-    mfApi.animatingView = MFAppWindow;
+
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         [m_tableView.pullToRefreshView stopAnimating];
