@@ -33,7 +33,15 @@
     m_diagnoseItems = self.detailModel.diagnoseItems;
     m_faultAppearances = m_diagnoseItems.faultAppearances;
     
+    m_sectionInfos = [NSMutableArray array];
+    
+    [self reloadTableView];
+}
+
+-(void)reloadTableView
+{
     [self makeSectionObjects];
+    [m_tableView reloadData];
 }
 
 -(void)makeSectionObjects
@@ -50,15 +58,24 @@
         [self makeCellObjects:appearanceModel cellObjects:cellObjects];
         
         sectionObject.cellObjects = cellObjects;
+        
+        [m_sectionInfos addObject:sectionObject];
     }
+    
+    NSLog(@"111111");
 }
 
 -(void)makeCellObjects:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel cellObjects:(NSMutableArray *)cellObjects
 {
     NSMutableArray<WDDiagnoseCauseJudgementModel *> *causeJudgements = appearanceModel.causeJudgements;
+    
     for (int i = 0; i < causeJudgements.count; i++)
     {
-        <#statements#>
+        MFTableViewCellObject *diagnoseModel = [MFTableViewCellObject new];
+        diagnoseModel.cellHeight = 150.0f;
+        diagnoseModel.cellReuseIdentifier = @"diagnoseItem";
+        diagnoseModel.attachIndex = i;
+        [cellObjects addObject:diagnoseModel];
     }
 }
 
