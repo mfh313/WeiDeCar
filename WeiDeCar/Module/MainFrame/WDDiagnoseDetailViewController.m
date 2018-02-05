@@ -35,8 +35,6 @@
     
 }
 
-
-
 -(void)onClickBottomButton
 {
 //    if (self.detailModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
