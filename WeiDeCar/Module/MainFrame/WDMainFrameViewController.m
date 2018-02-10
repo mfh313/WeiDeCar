@@ -34,6 +34,8 @@
     
     self.title = @"维德专修";
     
+    [self setRightBarButtonTitle:@"退出"];
+    
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     m_tableView.backgroundColor = [UIColor whiteColor];
@@ -50,6 +52,11 @@
     
     WDIPCameraService *cameraService = [[MMServiceCenter defaultCenter] getService:[WDIPCameraService class]];
     [cameraService getYs7AccessToken];
+}
+
+-(void)onClickRightButton:(id)sender
+{
+    [self onClickMainGo];
 }
 
 -(void)initActionMenus
@@ -196,10 +203,15 @@
 
 -(void)makeCellObjects
 {
-    MFTableViewCellObject *go = [MFTableViewCellObject new];
-    go.cellHeight = 92.0f;
-    go.cellReuseIdentifier = @"go";
-    [m_cellInfos addObject:go];
+//    MFTableViewCellObject *go = [MFTableViewCellObject new];
+//    go.cellHeight = 92.0f;
+//    go.cellReuseIdentifier = @"go";
+//    [m_cellInfos addObject:go];
+    
+    MFTableViewCellObject *blank = [MFTableViewCellObject new];
+    blank.cellHeight = 30.0f;
+    blank.cellReuseIdentifier = @"blankCell";
+    [m_cellInfos addObject:blank];
     
     for (int i = 0; i < m_actionMenus.count; i++)
     {

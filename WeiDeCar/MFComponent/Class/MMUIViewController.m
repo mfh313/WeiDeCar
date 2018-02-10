@@ -54,6 +54,26 @@
     [self.navigationItem setLeftBarButtonItem:m_leftBarBtnItem];
 }
 
+-(void)setRightBarButtonTitle:(NSString *)title
+{
+    UIView *navigationView = [UIView new];
+    navigationView.frame = CGRectMake(0, 0, 62, 44);
+    MMBarButton *m_btn = [MMBarButton buttonWithType:UIButtonTypeCustom];
+    [m_btn addTarget:self action:@selector(onClickRightButton:) forControlEvents:UIControlEventTouchUpInside];
+    m_btn.frame = CGRectMake(5, 0, 57, 44);
+    m_btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [m_btn setTitle:title forState:UIControlStateNormal];
+    [m_btn setTitleColor:[UIColor hx_colorWithHexString:@"0080C0"] forState:UIControlStateNormal];
+    [navigationView addSubview:m_btn];
+    m_rightBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:navigationView];
+    [self.navigationItem setRightBarButtonItem:m_rightBarBtnItem];
+}
+
+-(void)onClickRightButton:(id)sender
+{
+    
+}
+
 -(void)onClickBackBtn:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

@@ -19,11 +19,13 @@
 }
 
 -(void)onClickBackBtn:(id)sender;
+-(void)onClickRightButton:(id)sender;
 -(CGFloat)getLeftBarButtonWidth;
 -(CGFloat)getRightBarButtonWidth;
 -(UIButton *)getNavigationLeftButton:(id)arg1;
 -(id)getNavigationRightButton:(id)arg1;
 -(void)setBackBarButton;
+-(void)setRightBarButtonTitle:(NSString *)title;
 -(void)setWantsFullScreen:(BOOL)wantsFullScreenLayout;
 
 @end
