@@ -10,6 +10,6 @@
 
 @interface WDChooseRepairItemViewController : MMUIViewController
 
-
+@property (nonatomic,strong) NSString *diagnoseId;
 
 @end
