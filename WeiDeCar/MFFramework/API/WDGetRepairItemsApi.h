@@ -11,6 +11,6 @@
 
 @interface WDGetRepairItemsApi : MMNetworkRequest
 
-@property (nonatomic,strong) WDUserInfoModel *userInfo;
+@property (nonatomic,strong) WDUserInfoModel *currentUser;
 
 @end

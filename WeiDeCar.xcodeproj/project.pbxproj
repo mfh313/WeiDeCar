@@ -226,6 +226,7 @@
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
 		ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
+		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
 		C761B046AABEEFA431BDDFCC /* libPods-WeiDeCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */; };
 /* End PBXBuildFile section */
 
@@ -759,6 +760,8 @@
 		ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGetRepairItemsApi.m; sourceTree = "<group>"; };
 		ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemListViewController.h; sourceTree = "<group>"; };
 		ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemListViewController.m; sourceTree = "<group>"; };
+		ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDChooseRepairItemViewController.h; sourceTree = "<group>"; };
+		ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDChooseRepairItemViewController.m; sourceTree = "<group>"; };
 		FB6739B099309AF3263BBFAE /* Pods-WeiDeCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1794,6 +1797,8 @@
 			children = (
 				ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */,
 				ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */,
+				ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */,
+				ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */,
 			);
 			path = Repair;
 			sourceTree = "<group>";
@@ -2063,6 +2068,7 @@
 				A5631C8B1FF5131500DBA959 /* WDMainFrameViewController.m in Sources */,
 				A5631C7E1FF5131500DBA959 /* WDDiagnosisMainAddView.m in Sources */,
 				A5241DFB1FBF0C5200B6B844 /* WireFormat.m in Sources */,
+				ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */,
 				A52D91481FDC2A05009DD077 /* WDLoginService.m in Sources */,
 				A51EC98D20272B33008F4CFA /* MMTableViewSectionInfo.m in Sources */,
 				A5241DF81FBF0C5200B6B844 /* UnknownFieldSet.m in Sources */,

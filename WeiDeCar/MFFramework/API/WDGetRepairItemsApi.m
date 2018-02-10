@@ -12,15 +12,16 @@
 
 -(NSString *)requestUrl
 {
-    if (self.userInfo.userType == WDUserInfoType_CarOwner)
+    NSInteger userType = self.currentUser.userType;
+    if (self.currentUser.userType == WDUserInfoType_CarOwner)
     {
         return [WeiDeApiManger listDiagnoseByCarOwner];
     }
-    else if (self.userInfo.userType == WDUserInfoType_Mechanic)
+    else if (self.currentUser.userType == WDUserInfoType_Mechanic)
     {
         return [WeiDeApiManger listDiagnoseByMechanic];
     }
-    else if (self.userInfo.userType == WDUserInfoType_Expert)
+    else if (self.currentUser.userType == WDUserInfoType_Expert)
     {
         return [WeiDeApiManger listDiagnoseByExpert];
     }
