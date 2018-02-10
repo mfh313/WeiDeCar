@@ -227,6 +227,10 @@
 		ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
 		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
+		ACB8C33D202EE3AE00BEB48E /* WDRepairItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C33C202EE3AE00BEB48E /* WDRepairItemModel.m */; };
+		ACB8C340202EE50D00BEB48E /* WDRepairItemOfferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C33F202EE50D00BEB48E /* WDRepairItemOfferModel.m */; };
+		ACB8C343202EE72700BEB48E /* WDRepairItemAssignmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C342202EE72700BEB48E /* WDRepairItemAssignmentModel.m */; };
+		ACB8C346202EE90900BEB48E /* WDRepairStepModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C345202EE90900BEB48E /* WDRepairStepModel.m */; };
 		C761B046AABEEFA431BDDFCC /* libPods-WeiDeCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */; };
 /* End PBXBuildFile section */
 
@@ -762,6 +766,14 @@
 		ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemListViewController.m; sourceTree = "<group>"; };
 		ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDChooseRepairItemViewController.h; sourceTree = "<group>"; };
 		ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDChooseRepairItemViewController.m; sourceTree = "<group>"; };
+		ACB8C33B202EE3AE00BEB48E /* WDRepairItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemModel.h; sourceTree = "<group>"; };
+		ACB8C33C202EE3AE00BEB48E /* WDRepairItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemModel.m; sourceTree = "<group>"; };
+		ACB8C33E202EE50D00BEB48E /* WDRepairItemOfferModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemOfferModel.h; sourceTree = "<group>"; };
+		ACB8C33F202EE50D00BEB48E /* WDRepairItemOfferModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemOfferModel.m; sourceTree = "<group>"; };
+		ACB8C341202EE72700BEB48E /* WDRepairItemAssignmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemAssignmentModel.h; sourceTree = "<group>"; };
+		ACB8C342202EE72700BEB48E /* WDRepairItemAssignmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemAssignmentModel.m; sourceTree = "<group>"; };
+		ACB8C344202EE90900BEB48E /* WDRepairStepModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepModel.h; sourceTree = "<group>"; };
+		ACB8C345202EE90900BEB48E /* WDRepairStepModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepModel.m; sourceTree = "<group>"; };
 		FB6739B099309AF3263BBFAE /* Pods-WeiDeCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1450,6 +1462,14 @@
 		A52D91411FDC2309009DD077 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ACB8C33E202EE50D00BEB48E /* WDRepairItemOfferModel.h */,
+				ACB8C33F202EE50D00BEB48E /* WDRepairItemOfferModel.m */,
+				ACB8C341202EE72700BEB48E /* WDRepairItemAssignmentModel.h */,
+				ACB8C342202EE72700BEB48E /* WDRepairItemAssignmentModel.m */,
+				ACB8C344202EE90900BEB48E /* WDRepairStepModel.h */,
+				ACB8C345202EE90900BEB48E /* WDRepairStepModel.m */,
+				ACB8C33B202EE3AE00BEB48E /* WDRepairItemModel.h */,
+				ACB8C33C202EE3AE00BEB48E /* WDRepairItemModel.m */,
 				A51DBC2E2000FAD100A870FD /* WDRepairFactoryModel.h */,
 				A51DBC2F2000FAD200A870FD /* WDRepairFactoryModel.m */,
 				A535ACF11FDCFDC9001CF470 /* WDDiagnoseModel.h */,
@@ -1975,6 +1995,7 @@
 				A5241C941FBF094200B6B844 /* MFModelHelper.m in Sources */,
 				A5631C831FF5131500DBA959 /* WDExpertDiagnoseMainCreateViewController.m in Sources */,
 				A50C372D1FD8362200809CA7 /* SPPageController.m in Sources */,
+				ACB8C340202EE50D00BEB48E /* WDRepairItemOfferModel.m in Sources */,
 				A5241DBD1FBF0C5200B6B844 /* IQKeyboardManager.m in Sources */,
 				A5241DFD1FBF0C5200B6B844 /* SCLAlertViewResponder.m in Sources */,
 				A5241C931FBF094200B6B844 /* UINavigationBar+MMUINavigationBar.m in Sources */,
@@ -2098,6 +2119,7 @@
 				ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */,
 				ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */,
 				A5241DC11FBF0C5200B6B844 /* IQPreviousNextView.m in Sources */,
+				ACB8C346202EE90900BEB48E /* WDRepairStepModel.m in Sources */,
 				A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */,
 				A5241C851FBF094200B6B844 /* MFUIButton.m in Sources */,
 				A5241DBC1FBF0C5200B6B844 /* IQUIWindow+Hierarchy.m in Sources */,
@@ -2126,6 +2148,8 @@
 				A5241C9F1FBF094200B6B844 /* XXNibBridge.m in Sources */,
 				A5241DFC1FBF0C5200B6B844 /* SCLAlertView.m in Sources */,
 				A5241C8B1FBF094200B6B844 /* MMObject.m in Sources */,
+				ACB8C33D202EE3AE00BEB48E /* WDRepairItemModel.m in Sources */,
+				ACB8C343202EE72700BEB48E /* WDRepairItemAssignmentModel.m in Sources */,
 				A51A6BFF1FD976B60017A98A /* YTKBaseRequest+AnimatingAccessory.m in Sources */,
 				A52EAF071FFBADCD00262796 /* WDGetYs7AccessTokenApi.m in Sources */,
 				A52D91C41FDC30FB009DD077 /* WDLoginContentView.m in Sources */,
