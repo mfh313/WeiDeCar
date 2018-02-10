@@ -10,7 +10,7 @@
 
 @interface WDRepairOfferHeaderTitleView ()
 {
-    
+    NSMutableArray *m_titleLabelArray;
 }
 
 @end
