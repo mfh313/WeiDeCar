@@ -9,8 +9,9 @@
 #import "WDChooseRepairItemViewController.h"
 #import "WDListRepairItemOffersApi.h"
 #import "WDRepairItemOfferModel.h"
+#import "WDRepairItemOfferHeaderView.h"
 
-@interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -63,7 +64,7 @@
     }
     else if ([identifier isEqualToString:@"repairItemHeader"])
     {
-        
+        return [self tableView:tableView repairItemHeaderCellForIndexPath:indexPath];
     }
     else if ([identifier isEqualToString:@"division"])
     {
@@ -85,6 +86,28 @@
 {
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
     return cellInfo.cellHeight;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemHeaderCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairItemOfferHeaderView *cellView = [WDRepairItemOfferHeaderView nibView];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    NSInteger attachIndex = cellInfo.attachIndex;
+//    WDDiagnoseModel *diagnosisModel = m_repairItems[attachIndex];
+    
+    WDRepairItemOfferHeaderView *cellView = (WDRepairItemOfferHeaderView *)cell.m_subContentView;
+    
+    return cell;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView repairManInfoCellForIndexPath:(NSIndexPath *)indexPath
@@ -184,7 +207,7 @@
     for (int i = 0; i < m_repairItemOffers.count; i++) {
         
         MFTableViewCellObject *repairItemHeader = [MFTableViewCellObject new];
-        repairItemHeader.cellHeight = 60.0f;
+        repairItemHeader.cellHeight = 70.0f;
         repairItemHeader.cellReuseIdentifier = @"repairItemHeader";
         repairItemHeader.attachIndex = i;
         [m_cellInfos addObject:repairItemHeader];

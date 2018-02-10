@@ -8,6 +8,14 @@
 
 #import "MMUIBridgeView.h"
 
+@protocol WDRepairItemOfferHeaderViewDelegate <NSObject>
+@optional
+
+
+@end
+
 @interface WDRepairItemOfferHeaderView : MMUIBridgeView
+
+@property (nonatomic,weak) id<WDRepairItemOfferHeaderViewDelegate> m_delegate;
 
 @end

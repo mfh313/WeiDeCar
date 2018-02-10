@@ -10,16 +10,26 @@
 
 @interface WDRepairItemOfferHeaderView ()
 {
-    __weak IBOutlet UILabel *m_createLabel;
-    __weak IBOutlet UILabel *m_carOwnerIdLabel;
-    __weak IBOutlet UILabel *m_mechanicIdLabel;
-    __weak IBOutlet UILabel *m_expertIdLabel;
-    __weak IBOutlet UILabel *m_statusNameLabel;
+    __weak IBOutlet UILabel *m_nameLabel;
+    __weak IBOutlet UILabel *m_allLabel;
+    __weak IBOutlet UILabel *m_subTitleLabel;
+    __weak IBOutlet UIButton *m_selectButton;
 }
 
 @end
 
 @implementation WDRepairItemOfferHeaderView
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [m_selectButton setImage:MFImage(@"select") forState:UIControlStateNormal];
+    
+    [m_selectButton setImage:MFImage(@"select_fill") forState:UIControlStateSelected];
+    
+    [m_selectButton setImage:MFImage(@"select_fill") forState:UIControlStateHighlighted];
+}
 
 
 @end
