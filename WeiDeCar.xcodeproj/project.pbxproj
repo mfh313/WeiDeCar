@@ -224,7 +224,7 @@
 		A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F1C1FB9D384009B443D /* Assets.xcassets */; };
 		A5B91F231FB9D384009B443D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F221FB9D384009B443D /* main.m */; };
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
-		ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */; };
+		ACB8C333202E859900BEB48E /* WDListRepairTaskByUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDListRepairTaskByUserApi.m */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
 		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
 		ACB8C33D202EE3AE00BEB48E /* WDRepairItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C33C202EE3AE00BEB48E /* WDRepairItemModel.m */; };
@@ -760,8 +760,8 @@
 		A5B91F221FB9D384009B443D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		ACB8C331202E859900BEB48E /* WDGetRepairItemsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGetRepairItemsApi.h; sourceTree = "<group>"; };
-		ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGetRepairItemsApi.m; sourceTree = "<group>"; };
+		ACB8C331202E859900BEB48E /* WDListRepairTaskByUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairTaskByUserApi.h; sourceTree = "<group>"; };
+		ACB8C332202E859900BEB48E /* WDListRepairTaskByUserApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairTaskByUserApi.m; sourceTree = "<group>"; };
 		ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemListViewController.h; sourceTree = "<group>"; };
 		ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemListViewController.m; sourceTree = "<group>"; };
 		ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDChooseRepairItemViewController.h; sourceTree = "<group>"; };
@@ -916,8 +916,8 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				ACB8C331202E859900BEB48E /* WDGetRepairItemsApi.h */,
-				ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */,
+				ACB8C331202E859900BEB48E /* WDListRepairTaskByUserApi.h */,
+				ACB8C332202E859900BEB48E /* WDListRepairTaskByUserApi.m */,
 				A51DBC312000FE2800A870FD /* WDListRepairFactoriesApi.h */,
 				A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */,
 				A52EAF051FFBADCD00262796 /* WDGetYs7AccessTokenApi.h */,
@@ -2116,7 +2116,7 @@
 				A5241CA01FBF094200B6B844 /* XXNibConvention.m in Sources */,
 				A5631C771FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
 				A5241C841FBF094200B6B844 /* MFTableViewCell.m in Sources */,
-				ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */,
+				ACB8C333202E859900BEB48E /* WDListRepairTaskByUserApi.m in Sources */,
 				ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */,
 				A5241DC11FBF0C5200B6B844 /* IQPreviousNextView.m in Sources */,
 				ACB8C346202EE90900BEB48E /* WDRepairStepModel.m in Sources */,

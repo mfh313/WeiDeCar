@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//根据用户ID查询维修任务列表
++(NSString *)listRepairTaskByUser;
+
 //车主选择维修项目报价接口
 +(NSString *)chooseRepairItemOffers;
 

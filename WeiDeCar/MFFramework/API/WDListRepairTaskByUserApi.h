@@ -1,5 +1,5 @@
 //
-//  WDGetRepairItemsApi.h
+//  WDListRepairTaskByUserApi.h
 //  WeiDeCar
 //
 //  Created by EEKA on 2018/2/10.
@@ -9,7 +9,7 @@
 #import "MMNetworkRequest.h"
 #import "WDUserInfoModel.h"
 
-@interface WDGetRepairItemsApi : MMNetworkRequest
+@interface WDListRepairTaskByUserApi : MMNetworkRequest
 
 @property (nonatomic,strong) WDUserInfoModel *currentUser;
 
