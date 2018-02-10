@@ -214,6 +214,7 @@
 		A572403A1FFCF758004EC27E /* WDJPUSHService.m in Sources */ = {isa = PBXBuildFile; fileRef = A57240391FFCF758004EC27E /* WDJPUSHService.m */; };
 		A57530711FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530701FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m */; };
 		A57530741FDD7996004A2A9D /* WDExpertDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */; };
+		A577014E202F0E1A0037D5DB /* WDMechanicStartRepairApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */; };
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
 		A5892249201F68320063D3B9 /* WDDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */; };
 		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
@@ -743,6 +744,8 @@
 		A57530701FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDConfirmDiagnoseByCarOwnerApi.m; sourceTree = "<group>"; };
 		A57530721FDD7996004A2A9D /* WDExpertDiagnoseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDExpertDiagnoseApi.h; sourceTree = "<group>"; };
 		A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseApi.m; sourceTree = "<group>"; };
+		A577014C202F0E1A0037D5DB /* WDMechanicStartRepairApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMechanicStartRepairApi.h; sourceTree = "<group>"; };
+		A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMechanicStartRepairApi.m; sourceTree = "<group>"; };
 		A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
 		A57B46DC1FCEF84C0004C397 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
 		A5892247201F68320063D3B9 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
@@ -922,6 +925,8 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A577014C202F0E1A0037D5DB /* WDMechanicStartRepairApi.h */,
+				A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */,
 				ACB8C34A202EF35200BEB48E /* WDChooseRepairItemOffersApi.h */,
 				ACB8C34B202EF35200BEB48E /* WDChooseRepairItemOffersApi.m */,
 				ACB8C347202EF2B500BEB48E /* WDListRepairItemOffersApi.h */,
@@ -2149,6 +2154,7 @@
 				A50C372F1FD8362200809CA7 /* SPPageContentView.m in Sources */,
 				A5241C921FBF094200B6B844 /* MMUIViewController.m in Sources */,
 				A51B23A11FDAC338004532C9 /* WDCarOwnerRegisterApi.m in Sources */,
+				A577014E202F0E1A0037D5DB /* WDMechanicStartRepairApi.m in Sources */,
 				A5241DB31FBF0C5200B6B844 /* HexColors.m in Sources */,
 				A5631C8C1FF5131500DBA959 /* WDMechanicDiagnoseMainCreateViewController.m in Sources */,
 				A5631C7C1FF5131500DBA959 /* WDDiagnosisAddHeaderView.m in Sources */,

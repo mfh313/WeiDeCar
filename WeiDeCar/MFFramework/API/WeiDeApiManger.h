@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//技师开始维修项目
++(NSString *)mechanicStartRepairItem;
+
 //根据用户ID查询维修任务列表
 +(NSString *)listRepairTaskByUser;
 

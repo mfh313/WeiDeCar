@@ -18,7 +18,6 @@
 -(id)requestArgumentWithToken
 {
     NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
-    
     requestArgument[@"diagnoseId"] = self.diagnoseId;
     return requestArgument;
 }
