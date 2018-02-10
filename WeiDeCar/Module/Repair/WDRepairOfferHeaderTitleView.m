@@ -63,7 +63,6 @@
     return self;
 }
 
-
 -(void)setTitleArray:(NSArray<NSString *> *)titles
 {
     for (int i = 0; i < titles.count; i++) {
