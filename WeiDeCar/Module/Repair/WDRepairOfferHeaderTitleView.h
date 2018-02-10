@@ -10,4 +10,6 @@
 
 @interface WDRepairOfferHeaderTitleView : MMUIBridgeView
 
+-(instancetype)initWithFrame:(CGRect)frame columnCount:(NSInteger)columnCount;
+
 @end

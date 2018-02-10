@@ -17,5 +17,19 @@
 
 @implementation WDRepairOfferHeaderTitleView
 
+-(instancetype)initWithFrame:(CGRect)frame columnCount:(NSInteger)columnCount
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        m_titleLabelArray = [NSMutableArray array];
+        
+        for (int i = 0; i < columnCount; i++) {
+            
+        }
+    }
+    
+    return self;
+}
+
 
 @end
