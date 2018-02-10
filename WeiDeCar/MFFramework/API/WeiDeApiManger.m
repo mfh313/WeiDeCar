@@ -18,9 +18,16 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 
 @implementation WeiDeApiManger
 
-+ (NSString *)hostUrl
+//车主选择维修项目报价接口
++(NSString *)chooseRepairItemOffers
 {
-    return WeiDeUrl;
+    return MFURLWithPara(@"api/diagnose/chooseRepairItemOffers");
+}
+
+//获取维修项目报价
++(NSString *)listRepairItemOffers
+{
+    return MFURLWithPara(@"api/diagnose/listRepairItemOffers");
 }
 
 //获取修理厂列表
@@ -99,6 +106,11 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 +(NSString *)reconfirmAfterExpertDiagnosed
 {
     return MFURLWithPara(@"api/diagnose/reconfirmAfterExpertDiagnosed");
+}
+
++ (NSString *)hostUrl
+{
+    return WeiDeUrl;
 }
 
 @end

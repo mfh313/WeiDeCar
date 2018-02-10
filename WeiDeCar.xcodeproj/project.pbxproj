@@ -224,6 +224,7 @@
 		A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F1C1FB9D384009B443D /* Assets.xcassets */; };
 		A5B91F231FB9D384009B443D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F221FB9D384009B443D /* main.m */; };
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
+		ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */; };
 		C761B046AABEEFA431BDDFCC /* libPods-WeiDeCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */; };
 /* End PBXBuildFile section */
 
@@ -753,6 +754,8 @@
 		A5B91F221FB9D384009B443D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		ACB8C331202E859900BEB48E /* WDGetRepairItemsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGetRepairItemsApi.h; sourceTree = "<group>"; };
+		ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGetRepairItemsApi.m; sourceTree = "<group>"; };
 		FB6739B099309AF3263BBFAE /* Pods-WeiDeCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -883,9 +886,9 @@
 		A51A6BA81FD974120017A98A /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
-				A52D91451FDC2871009DD077 /* Service */,
 				A51A6BA91FD974120017A98A /* API */,
 				A52D91411FDC2309009DD077 /* Model */,
+				A52D91451FDC2871009DD077 /* Service */,
 				A51A6BAD1FD974120017A98A /* Networking */,
 				A51A6BAC1FD974120017A98A /* MFFramework.h */,
 			);
@@ -895,6 +898,8 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ACB8C331202E859900BEB48E /* WDGetRepairItemsApi.h */,
+				ACB8C332202E859900BEB48E /* WDGetRepairItemsApi.m */,
 				A51DBC312000FE2800A870FD /* WDListRepairFactoriesApi.h */,
 				A51DBC322000FE2800A870FD /* WDListRepairFactoriesApi.m */,
 				A52EAF051FFBADCD00262796 /* WDGetYs7AccessTokenApi.h */,
@@ -2071,6 +2076,7 @@
 				A5241CA01FBF094200B6B844 /* XXNibConvention.m in Sources */,
 				A5631C771FF5131500DBA959 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
 				A5241C841FBF094200B6B844 /* MFTableViewCell.m in Sources */,
+				ACB8C333202E859900BEB48E /* WDGetRepairItemsApi.m in Sources */,
 				A5241DC11FBF0C5200B6B844 /* IQPreviousNextView.m in Sources */,
 				A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */,
 				A5241C851FBF094200B6B844 /* MFUIButton.m in Sources */,

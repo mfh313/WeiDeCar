@@ -10,6 +10,12 @@
 
 @interface WeiDeApiManger : MMService
 
+//车主选择维修项目报价接口
++(NSString *)chooseRepairItemOffers;
+
+//获取维修项目报价
++(NSString *)listRepairItemOffers;
+
 //获取修理厂列表
 +(NSString *)listRepairFactories;
 

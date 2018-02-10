@@ -43,11 +43,11 @@
     m_tableView.tableHeaderView = m_loginContentView;
     
 #ifdef DEBUG
-//    [m_loginContentView setPhone:@"ff" password:@"123456"];
+    [m_loginContentView setPhone:@"ff" password:@"123456"];
     
 //    [m_loginContentView setPhone:@"jishi" password:@"123456"];
     
-    [m_loginContentView setPhone:@"zhuanjia" password:@"123456"];
+//    [m_loginContentView setPhone:@"zhuanjia" password:@"123456"];
 #else
     
 #endif
