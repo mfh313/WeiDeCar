@@ -13,7 +13,7 @@ pod 'LGAlertView'
 pod 'YTKNetwork', '~> 2.0'
 pod 'SMPageControl', '~> 1.2'
 pod 'iCarousel', '~> 1.8.1'
-pod 'SDWebImage', '~> 3.7.3'
+pod 'SDWebImage'
 
 end
 
