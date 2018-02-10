@@ -15,6 +15,7 @@
 #import "WDIPCameraService.h"
 #import "WDJPUSHService.h"
 #import "WDRepairFactoriesViewController.h"
+#import "WDRepairItemListViewController.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
@@ -67,6 +68,10 @@
     repairFactories[@"key"] = @"repairFactories";
     repairFactories[@"title"] = @"修理厂列表";
     
+    NSMutableDictionary *repairItems = [NSMutableDictionary dictionary];
+    repairItems[@"key"] = @"repairItems";
+    repairItems[@"title"] = @"维修任务列表";
+    
     NSMutableDictionary *troubleCar = [NSMutableDictionary dictionary];
     troubleCar[@"key"] = @"troubleCar";
     troubleCar[@"title"] = @"故障车";
@@ -78,6 +83,7 @@
     [m_actionMenus addObject:faultDiagnosis];
     [m_actionMenus addObject:regular];
     [m_actionMenus addObject:repairFactories];
+    [m_actionMenus addObject:repairItems];
     [m_actionMenus addObject:troubleCar];
     [m_actionMenus addObject:cosmetology];
 }
@@ -244,6 +250,10 @@
     {
         [self storeRepairFactoriesVC];
     }
+    else if ([actionKey isEqualToString:@"repairItems"])
+    {
+        [self repairItemListVC];
+    }
     else
     {
         NSString *title = menuInfo[@"title"];
@@ -288,6 +298,12 @@
 {
     WDRepairFactoriesViewController *factoriesVC = [WDRepairFactoriesViewController new];
     [self.navigationController pushViewController:factoriesVC animated:YES];
+}
+
+-(void)repairItemListVC
+{
+    WDRepairItemListViewController *repairItemsVC = [WDRepairItemListViewController new];
+    [self.navigationController pushViewController:repairItemsVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
