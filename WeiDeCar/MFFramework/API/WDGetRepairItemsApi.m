@@ -13,15 +13,15 @@
 -(NSString *)requestUrl
 {
     NSInteger userType = self.currentUser.userType;
-    if (self.currentUser.userType == WDUserInfoType_CarOwner)
+    if (userType == WDUserInfoType_CarOwner)
     {
         return [WeiDeApiManger listDiagnoseByCarOwner];
     }
-    else if (self.currentUser.userType == WDUserInfoType_Mechanic)
+    else if (userType == WDUserInfoType_Mechanic)
     {
         return [WeiDeApiManger listDiagnoseByMechanic];
     }
-    else if (self.currentUser.userType == WDUserInfoType_Expert)
+    else if (userType == WDUserInfoType_Expert)
     {
         return [WeiDeApiManger listDiagnoseByExpert];
     }
@@ -33,17 +33,18 @@
 {
     NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
     
-    NSString *userId = self.userInfo.userId;
+    NSString *userId = self.currentUser.userId;
+    NSInteger userType = self.currentUser.userType;
     
-    if (self.userInfo.userType == WDUserInfoType_CarOwner)
+    if (userType == WDUserInfoType_CarOwner)
     {
         requestArgument[@"carOwnerId"] = userId;
     }
-    else if (self.userInfo.userType == WDUserInfoType_Mechanic)
+    else if (userType == WDUserInfoType_Mechanic)
     {
         requestArgument[@"mechanicId"] = userId;
     }
-    else if (self.userInfo.userType == WDUserInfoType_Expert)
+    else if (userType == WDUserInfoType_Expert)
     {
         requestArgument[@"expertId"] = userId;
     }

@@ -110,7 +110,7 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 
 + (NSString *)hostUrl
 {
-    return WeiDeUrl;
+    return test_WeiDeUrl;
 }
 
 @end
