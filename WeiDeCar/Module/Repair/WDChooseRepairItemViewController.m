@@ -10,6 +10,7 @@
 #import "WDListRepairItemOffersApi.h"
 #import "WDRepairItemOfferModel.h"
 #import "WDRepairItemOfferHeaderView.h"
+#import "WDRepairOfferHeaderTitleView.h"
 
 @interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
@@ -66,9 +67,17 @@
     {
         return [self tableView:tableView repairItemHeaderCellForIndexPath:indexPath];
     }
+    else if ([identifier isEqualToString:@"repairItemHeaderTitle"])
+    {
+        return [self tableView:tableView repairItemHeaderTitleCellForIndexPath:indexPath];
+    }
     else if ([identifier isEqualToString:@"division"])
     {
         return [self tableView:tableView divisionForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"separator"])
+    {
+        return [self tableView:tableView separatorCellForIndexPath:indexPath];
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -106,6 +115,27 @@
 //    WDDiagnoseModel *diagnosisModel = m_repairItems[attachIndex];
     
     WDRepairItemOfferHeaderView *cellView = (WDRepairItemOfferHeaderView *)cell.m_subContentView;
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemHeaderTitleCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    NSArray *titleArray = @[@"配件",@"价格",@"工时",@"维修方"];
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairOfferHeaderTitleView *cellView = [[WDRepairOfferHeaderTitleView alloc] initWithFrame:cell.contentView.bounds columnCount:titleArray.count];
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairOfferHeaderTitleView *cellView = (WDRepairOfferHeaderTitleView *)cell.m_subContentView;
+    [cellView setTitleArray:titleArray];
     
     return cell;
 }
@@ -150,6 +180,24 @@
     }
     
     cell.contentView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView separatorCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        UIView *separator = [UIView new];
+        separator.frame = CGRectMake(0, 0, CGRectGetWidth(cell.contentView.frame), MFOnePixHeight);
+        separator.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        separator.backgroundColor = MFCustomLineColor;
+        [cell.contentView addSubview:separator];
+    }
     return cell;
 }
 
@@ -211,6 +259,19 @@
         repairItemHeader.cellReuseIdentifier = @"repairItemHeader";
         repairItemHeader.attachIndex = i;
         [m_cellInfos addObject:repairItemHeader];
+        
+        MFTableViewCellObject *separator = [MFTableViewCellObject new];
+        separator.cellHeight = MFOnePixHeight;
+        separator.cellReuseIdentifier = @"separator";
+        separator.attachIndex = i;
+        [m_cellInfos addObject:separator];
+        
+        MFTableViewCellObject *repairItemHeaderTitle = [MFTableViewCellObject new];
+        repairItemHeaderTitle.cellHeight = 40.0f;
+        repairItemHeaderTitle.cellReuseIdentifier = @"repairItemHeaderTitle";
+        repairItemHeaderTitle.attachIndex = i;
+        [m_cellInfos addObject:repairItemHeaderTitle];
+        
         
         MFTableViewCellObject *division = [MFTableViewCellObject new];
         division.cellHeight = 15.0f;

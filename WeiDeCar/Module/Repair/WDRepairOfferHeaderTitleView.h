@@ -11,5 +11,6 @@
 @interface WDRepairOfferHeaderTitleView : MMUIBridgeView
 
 -(instancetype)initWithFrame:(CGRect)frame columnCount:(NSInteger)columnCount;
+-(void)setTitleArray:(NSArray<NSString *> *)titles;
 
 @end
