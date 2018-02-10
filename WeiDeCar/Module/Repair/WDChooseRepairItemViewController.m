@@ -105,7 +105,13 @@
         [cell.contentView addSubview:button];
         
         UIImageView *accessoryImageView = [[UIImageView alloc] initWithImage:MFImage(@"common_btn_next_nor")];
-        cell.accessoryView = accessoryImageView;
+        [cell.contentView addSubview:accessoryImageView];
+        [accessoryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(cell.contentView.mas_right).offset(-15);
+            make.centerY.mas_equalTo(cell.contentView.mas_centerY);
+            make.width.mas_equalTo(22);
+            make.height.mas_equalTo(22);
+        }];
     }
     return cell;
 }
