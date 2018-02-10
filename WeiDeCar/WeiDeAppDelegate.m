@@ -112,22 +112,11 @@ static BOOL isProduction = TRUE;
 {
     //默认Koradior证书
     NSString *AMapKey = @"d06957de9c049c5da29c437837874158";
-    if ([self packageIsAppStoreChannel]) {
+    if ([WeiDeApiManger packageIsAppStoreChannel]) {
         AMapKey = @"e064cd098ecd7aa63a4ec9b31610e220";
     }
     
     return AMapKey;
-}
-
--(BOOL)packageIsAppStoreChannel
-{
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSNumber *value = infoDictionary[@"AppStoreChannel"];
-    if (value.boolValue) {
-        return YES;
-    }
-    
-    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

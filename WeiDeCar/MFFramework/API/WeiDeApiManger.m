@@ -110,7 +110,22 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 
 + (NSString *)hostUrl
 {
+    if ([self packageIsAppStoreChannel]) {
+        return WeiDeUrl;
+    }
+    
     return test_WeiDeUrl;
+}
+
++(BOOL)packageIsAppStoreChannel
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSNumber *value = infoDictionary[@"AppStoreChannel"];
+    if (value.boolValue) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

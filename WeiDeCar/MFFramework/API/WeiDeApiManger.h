@@ -55,6 +55,8 @@
 //专家复诊后，用户重新确认
 +(NSString *)reconfirmAfterExpertDiagnosed;
 
++(BOOL)packageIsAppStoreChannel;
+
 @end
 
 
