@@ -215,6 +215,8 @@
 		A57530711FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530701FDD75BB004A2A9D /* WDConfirmDiagnoseByCarOwnerApi.m */; };
 		A57530741FDD7996004A2A9D /* WDExpertDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */; };
 		A577014E202F0E1A0037D5DB /* WDMechanicStartRepairApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */; };
+		A5770151202F10690037D5DB /* WDRepairTaskListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5770150202F10690037D5DB /* WDRepairTaskListCellView.m */; };
+		A5770153202F10CE0037D5DB /* WDRepairTaskListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5770152202F10CE0037D5DB /* WDRepairTaskListCellView.xib */; };
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
 		A5892249201F68320063D3B9 /* WDDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5892248201F68320063D3B9 /* WDDiagnoseDetailViewController.m */; };
 		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
@@ -746,6 +748,9 @@
 		A57530731FDD7996004A2A9D /* WDExpertDiagnoseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseApi.m; sourceTree = "<group>"; };
 		A577014C202F0E1A0037D5DB /* WDMechanicStartRepairApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMechanicStartRepairApi.h; sourceTree = "<group>"; };
 		A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMechanicStartRepairApi.m; sourceTree = "<group>"; };
+		A577014F202F10690037D5DB /* WDRepairTaskListCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairTaskListCellView.h; sourceTree = "<group>"; };
+		A5770150202F10690037D5DB /* WDRepairTaskListCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairTaskListCellView.m; sourceTree = "<group>"; };
+		A5770152202F10CE0037D5DB /* WDRepairTaskListCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WDRepairTaskListCellView.xib; sourceTree = "<group>"; };
 		A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
 		A57B46DC1FCEF84C0004C397 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
 		A5892247201F68320063D3B9 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
@@ -1832,6 +1837,9 @@
 			children = (
 				ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */,
 				ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */,
+				A577014F202F10690037D5DB /* WDRepairTaskListCellView.h */,
+				A5770150202F10690037D5DB /* WDRepairTaskListCellView.m */,
+				A5770152202F10CE0037D5DB /* WDRepairTaskListCellView.xib */,
 				ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */,
 				ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */,
 			);
@@ -1915,6 +1923,7 @@
 				A5631C7D1FF5131500DBA959 /* WDDiagnosisAddHeaderView.xib in Resources */,
 				A52D91C51FDC30FB009DD077 /* WDLoginContentView.xib in Resources */,
 				A526487F2001317F00DC11BA /* WDStoreAnnotationCalloutView.xib in Resources */,
+				A5770153202F10CE0037D5DB /* WDRepairTaskListCellView.xib in Resources */,
 				A5241DE11FBF0C5200B6B844 /* chat.proto in Resources */,
 				A5631C881FF5131500DBA959 /* WDFaultAppearanceHeaderView.xib in Resources */,
 				A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */,
@@ -2062,6 +2071,7 @@
 				A535AD041FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m in Sources */,
 				A5241C791FBF094200B6B844 /* NSMutableSet+SafeInsert.m in Sources */,
 				A5631C801FF5131500DBA959 /* WDDiagnosisTypeSelectView.m in Sources */,
+				A5770151202F10690037D5DB /* WDRepairTaskListCellView.m in Sources */,
 				A51EC98B20272B33008F4CFA /* MMTableViewCellInfo.m in Sources */,
 				A535ACE41FDCD20E001CF470 /* WDGuideViewController.m in Sources */,
 				A5241DB81FBF0C5200B6B844 /* IQUIScrollView+Additions.m in Sources */,

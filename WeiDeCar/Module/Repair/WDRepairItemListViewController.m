@@ -7,10 +7,11 @@
 //
 
 #import "WDRepairItemListViewController.h"
+#import "WDRepairTaskListCellView.h"
 #import "WDListRepairTaskByUserApi.h"
 #import "WDDiagnoseModel.h"
 
-@interface WDRepairItemListViewController ()
+@interface WDRepairItemListViewController () <WDRepairTaskListCellViewDelegate>
 {
     NSMutableArray *m_repairItems;
 }
@@ -87,6 +88,12 @@
 //        separator.attachIndex = i;
 //        [m_cellInfos addObject:separator];
 //    }
+}
+
+#pragma mark - WDRepairTaskListCellViewDelegate
+-(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
