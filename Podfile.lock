@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - AMap2DMap-NO-IDFA (5.6.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
@@ -25,14 +25,14 @@ PODS:
     - JCore (~> 1.1.7)
   - LGAlertView (2.4.0)
   - Masonry (1.1.0)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
   - SMPageControl (1.2)
   - WCDB (1.0.6):
     - WCDB/sqlcipher (= 1.0.6)
   - WCDB/sqlcipher (1.0.6)
-  - WeexSDK (0.17.0)
+  - WeexSDK (0.18.0)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
 
@@ -50,7 +50,7 @@ DEPENDENCIES:
   - YTKNetwork (~> 2.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   AMap2DMap-NO-IDFA: 277965383679f1a4676df7e1a0439a1e14d0599a
   AMapFoundation-NO-IDFA: b6cbefab250ae8ab2e31aa9bb3dbbb98137cd76f
   AMapLocation-NO-IDFA: a75b762ae9a90840ce683de12504ac843a9f3b6c
@@ -59,10 +59,10 @@ SPEC CHECKSUMS:
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   LGAlertView: 2f5e83dd5cc2537de57d98727650609e86197d1a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   SMPageControl: 922892813001cfaf059e86e6801f46a967e9ee29
   WCDB: 4d2926bf695b2e00d785b50afd32c2dcc8cbbd98
-  WeexSDK: ad8443f4290ef7cb241bbd4c03b02d9dfc9fdca2
+  WeexSDK: ac56f255ce9a48e93ebc2e003956ab20da33321d
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
 PODFILE CHECKSUM: b36dec0711bc0009a07d05028b9a55163026dd90
