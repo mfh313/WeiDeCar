@@ -29,9 +29,6 @@ PODS:
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
   - SMPageControl (1.2)
-  - WCDB (1.0.6):
-    - WCDB/sqlcipher (= 1.0.6)
-  - WCDB/sqlcipher (1.0.6)
   - WeexSDK (0.18.0)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
@@ -45,7 +42,6 @@ DEPENDENCIES:
   - Masonry
   - SDWebImage
   - SMPageControl (~> 1.2)
-  - WCDB
   - WeexSDK
   - YTKNetwork (~> 2.0)
 
@@ -61,10 +57,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   SMPageControl: 922892813001cfaf059e86e6801f46a967e9ee29
-  WCDB: 4d2926bf695b2e00d785b50afd32c2dcc8cbbd98
   WeexSDK: ac56f255ce9a48e93ebc2e003956ab20da33321d
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: b36dec0711bc0009a07d05028b9a55163026dd90
+PODFILE CHECKSUM: 4900f7a6f330c247cd555e6beba29c923526cc9e
 
 COCOAPODS: 1.3.1

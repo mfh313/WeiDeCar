@@ -42,8 +42,6 @@ static BOOL isProduction = TRUE;
     
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
-    WDJPUSHService *pushService = [[MMServiceCenter defaultCenter] getService:[WDJPUSHService class]];
-    
     NSString *advertisingId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     // 3.0.0及以后版本注册可以这样写，也可以继续用旧的注册方式

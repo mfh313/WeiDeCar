@@ -6,7 +6,6 @@ target 'WeiDeCar' do
 pod 'AMapLocation-NO-IDFA'
 pod 'AMap2DMap-NO-IDFA'
 pod 'JPush'
-pod 'WCDB'
 pod 'WeexSDK'
 pod 'Masonry'
 pod 'LGAlertView'
