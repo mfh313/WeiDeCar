@@ -60,9 +60,9 @@
     faultDiagnosis[@"key"] = @"faultDiagnosis";
     faultDiagnosis[@"title"] = @"故障诊断维修";
     
-    NSMutableDictionary *regular = [NSMutableDictionary dictionary];
-    regular[@"key"] = @"regular";
-    regular[@"title"] = @"维修现场-直播";
+    NSMutableDictionary *regularVideo = [NSMutableDictionary dictionary];
+    regularVideo[@"key"] = @"regular";
+    regularVideo[@"title"] = @"维修现场-直播";
     
     NSMutableDictionary *repairFactories = [NSMutableDictionary dictionary];
     repairFactories[@"key"] = @"repairFactories";
@@ -81,9 +81,9 @@
     cosmetology[@"title"] = @"亮车美容";
     
     [m_actionMenus addObject:faultDiagnosis];
-    [m_actionMenus addObject:regular];
-    [m_actionMenus addObject:repairFactories];
     [m_actionMenus addObject:repairItems];
+    [m_actionMenus addObject:repairFactories];
+    [m_actionMenus addObject:regularVideo];
     [m_actionMenus addObject:troubleCar];
     [m_actionMenus addObject:cosmetology];
 }
