@@ -249,10 +249,7 @@
     repairManInfo.cellReuseIdentifier = @"repairManInfo";
     [m_cellInfos addObject:repairManInfo];
     
-    MFTableViewCellObject *division = [MFTableViewCellObject new];
-    division.cellHeight = 15.0f;
-    division.cellReuseIdentifier = @"division";
-    [m_cellInfos addObject:division];
+    [m_cellInfos addObject:[self divisionCellObject:15.0f]];
     
     for (int i = 0; i < m_repairItemOffers.count; i++) {
         
@@ -268,14 +265,48 @@
         repairItemHeaderTitle.cellReuseIdentifier = @"repairItemHeaderTitle";
         repairItemHeaderTitle.attachIndex = i;
         [m_cellInfos addObject:repairItemHeaderTitle];
+        
+        [self setInnerRepairItemOffer:i];
+        
+        [m_cellInfos addObject:[self divisionCellObject:15.0f]];
+    }
+}
+
+-(void)setInnerRepairItemOffer:(NSInteger)index
+{
+    WDRepairItemOfferListModel *repairItem = m_repairItemOffers[index];
+    NSMutableArray<WDRepairItemOfferModel *> *repairItemOffers = repairItem.repairItemOffers;
+    
+    for (int i = 0; i < repairItemOffers.count; i++)
+    {
         [m_cellInfos addObject:[self separatorCellObject:i]];
         
+        MFTableViewCellObject *offerOfBetter = [MFTableViewCellObject new];
+        offerOfBetter.cellHeight = 40.0f;
+        offerOfBetter.cellReuseIdentifier = @"repairItem";
+        offerOfBetter.attachKey = @"offerOfBetter";
+        offerOfBetter.attachIndex = i;
+        [m_cellInfos addObject:offerOfBetter];
         
+        [m_cellInfos addObject:[self separatorCellObject:i]];
         
-        MFTableViewCellObject *division = [MFTableViewCellObject new];
-        division.cellHeight = 15.0f;
-        division.cellReuseIdentifier = @"division";
-        [m_cellInfos addObject:division];
+        MFTableViewCellObject *offerOf4s = [MFTableViewCellObject new];
+        offerOf4s.cellHeight = 40.0f;
+        offerOf4s.cellReuseIdentifier = @"repairItem";
+        offerOf4s.attachKey = @"offerOf4s";
+        offerOf4s.attachIndex = i;
+        [m_cellInfos addObject:offerOf4s];
+        
+        [m_cellInfos addObject:[self separatorCellObject:i]];
+        
+        MFTableViewCellObject *offerOfSpecialty = [MFTableViewCellObject new];
+        offerOfSpecialty.cellHeight = 40.0f;
+        offerOfSpecialty.cellReuseIdentifier = @"repairItem";
+        offerOfSpecialty.attachKey = @"offerOfSpecialty";
+        offerOfSpecialty.attachIndex = i;
+        [m_cellInfos addObject:offerOfSpecialty];
+        
+        [m_cellInfos addObject:[self divisionCellObject:5]];
     }
 }
 
@@ -286,6 +317,14 @@
     separator.cellReuseIdentifier = @"separator";
     separator.attachIndex = index;
     return separator;
+}
+
+-(MFTableViewCellObject *)divisionCellObject:(CGFloat)cellHeight
+{
+    MFTableViewCellObject *division = [MFTableViewCellObject new];
+    division.cellHeight = cellHeight;
+    division.cellReuseIdentifier = @"division";
+    return division;
 }
 
 #pragma mark - WDRepairItemOfferHeaderViewDelegate
