@@ -7,11 +7,11 @@
 //
 
 #import "MMNetworkRequest.h"
-#import "WDRepairItemOfferModel.h"
+#import "WDRepairItemOfferListModel.h"
 
 @interface WDChooseRepairItemOffersApi : MMNetworkRequest
 
-@property (nonatomic,strong) NSMutableArray<WDRepairItemOfferModel *> *selectOfferItems;
+@property (nonatomic,strong) NSMutableArray<WDRepairItemOfferListModel *> *selectOfferItems;
 @property (nonatomic,strong) NSString *carOwnerId;
 @property (nonatomic,strong) NSString *diagnoseId;
 

@@ -25,11 +25,11 @@
     NSMutableArray *offerChooseResultArray = [NSMutableArray array];
     for (int i = 0; i < self.selectOfferItems.count; i++) {
         
-        WDRepairItemOfferModel *offerModel = self.selectOfferItems[i];
+        WDRepairItemOfferListModel *listModel = self.selectOfferItems[i];
         
         NSMutableDictionary *repairItemInfo = [NSMutableDictionary dictionary];
-        repairItemInfo[@"repairItemId"] = offerModel.repairItemId;
-        repairItemInfo[@"status"] = @(offerModel.status);
+        repairItemInfo[@"repairItemId"] = listModel.repairItemId;
+        repairItemInfo[@"status"] = @(listModel.status);
         
         [offerChooseResultArray addObject:repairItemInfo];
     }

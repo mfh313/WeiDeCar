@@ -14,5 +14,6 @@
 @property (nonatomic,strong) NSString *repairItemId;
 @property (nonatomic,strong) NSString *repairItemName;
 @property (nonatomic,strong) NSMutableArray<WDRepairItemOfferModel *> *repairItemOffers;
+@property (nonatomic,assign) NSInteger status;  //维修项目状态，10：未选择，20：已选择
 
 @end
