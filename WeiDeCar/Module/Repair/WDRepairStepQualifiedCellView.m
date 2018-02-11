@@ -41,7 +41,7 @@
         }];
         
         [separator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.mas_equalTo(m_titleLabel.mas_right).offset(-MFOnePixHeight);
+            make.leading.mas_equalTo(m_titleLabel.mas_trailing).offset(-MFOnePixHeight);
             make.width.mas_equalTo(MFOnePixHeight);
             make.top.mas_equalTo(self.mas_top);
             make.height.mas_equalTo(self.mas_height);
@@ -75,7 +75,7 @@
         m_titleLabel.text = @"现场检查";
         m_contentLabel.text = [self qualifiedString:m_repairStep.onsiteQualified];
     }
-    else if ([self.attachKey isEqualToString:@"onsiteQualified"])
+    else if ([self.attachKey isEqualToString:@"thirdPartyQualifed"])
     {
         m_titleLabel.text = @"第三方质检";
         m_contentLabel.text = [self qualifiedString:m_repairStep.thirdPartyQualifed];

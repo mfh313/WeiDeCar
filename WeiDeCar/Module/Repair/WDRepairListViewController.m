@@ -89,6 +89,12 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    return cellInfo.cellHeight;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView repairItemActionCellForIndexPath:(NSIndexPath *)indexPath
 {
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
@@ -188,12 +194,6 @@
         [cell.contentView addSubview:separator];
     }
     return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
-    return cellInfo.cellHeight;
 }
 
 -(void)getRepairItemList

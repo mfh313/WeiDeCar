@@ -1906,10 +1906,10 @@
 				A55ECE8D20307597003CE4B2 /* WDRepairStepListViewController.m */,
 				A55ECE8F20307DE7003CE4B2 /* WDRepairStepListHeaderView.h */,
 				A55ECE9020307DE7003CE4B2 /* WDRepairStepListHeaderView.m */,
-				A55ECE922030827C003CE4B2 /* WDRepairStepUploadImageCellView.h */,
-				A55ECE932030827C003CE4B2 /* WDRepairStepUploadImageCellView.m */,
 				A55ECE9520308444003CE4B2 /* WDRepairStepQualifiedCellView.h */,
 				A55ECE9620308444003CE4B2 /* WDRepairStepQualifiedCellView.m */,
+				A55ECE922030827C003CE4B2 /* WDRepairStepUploadImageCellView.h */,
+				A55ECE932030827C003CE4B2 /* WDRepairStepUploadImageCellView.m */,
 			);
 			path = Repair;
 			sourceTree = "<group>";

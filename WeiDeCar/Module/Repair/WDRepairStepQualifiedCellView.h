@@ -9,6 +9,12 @@
 #import "MMUIBridgeView.h"
 #import "WDRepairStepModel.h"
 
+@protocol WDRepairStepQualifiedCellViewDelegate <NSObject>
+@optional
+
+
+@end
+
 @interface WDRepairStepQualifiedCellView : MMUIBridgeView
 {
     UILabel *m_titleLabel;
@@ -17,6 +23,7 @@
     WDRepairStepModel *m_repairStep;
 }
 
+@property (nonatomic,weak) id<WDRepairStepQualifiedCellViewDelegate> m_delegate;
 @property (nonatomic,strong) NSString *attachKey;
 
 -(void)setRepairStepModel:(WDRepairStepModel *)repairStep;

@@ -41,7 +41,6 @@
             make.right.equalTo(self.mas_right).offset(-20);
             make.height.mas_equalTo(40);
             make.centerY.equalTo(self.mas_centerY);
-            
         }];
         
     }
