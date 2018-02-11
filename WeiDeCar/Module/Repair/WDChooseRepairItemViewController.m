@@ -476,17 +476,7 @@
             return;
         }
         
-        NSArray *responseNetworkData = mfApi.responseNetworkData;
-        NSMutableArray *tempArray = [NSMutableArray array];
-        for (int i = 0; i < responseNetworkData.count; i++) {
-            WDRepairItemOfferListModel *itemModel = [WDRepairItemOfferListModel yy_modelWithDictionary:responseNetworkData[i]];
-            itemModel.status = WDRepairItemOfferStatus_20;
-            [tempArray addObject:itemModel];
-        }
-        
-        m_repairItemOffers = tempArray;
-        
-        [strongSelf reloadTableView];
+        [strongSelf showTips:mfApi.errorMessage];
         
     } failure:^(YTKBaseRequest * request) {
         
