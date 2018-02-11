@@ -36,6 +36,10 @@
             
             [m_titleLabelArray addObject:contentLabel];
             
+            UIView *separator = [UIView new];
+            separator.backgroundColor = [UIColor hx_colorWithHexString:@"242834"];
+            [self addSubview:separator];
+            
             if (i == 0)
             {
                 [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,6 +56,13 @@
                     make.width.mas_equalTo(self.mas_width).multipliedBy(1.0/columnCount);
                     make.top.mas_equalTo(self.mas_top);
                     make.height.mas_equalTo(self.mas_height);
+                }];
+                
+                [separator mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.leading.mas_equalTo(contentLabel.mas_leading).offset(MFOnePixHeight);
+                    make.width.mas_equalTo(MFOnePixHeight);
+                    make.top.mas_equalTo(contentLabel.mas_top);
+                    make.height.mas_equalTo(contentLabel.mas_height);
                 }];
             }
             

@@ -274,7 +274,6 @@
         repairItemHeaderTitle.attachIndex = i;
         [m_cellInfos addObject:repairItemHeaderTitle];
         
-        
         MFTableViewCellObject *division = [MFTableViewCellObject new];
         division.cellHeight = 15.0f;
         division.cellReuseIdentifier = @"division";
