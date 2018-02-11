@@ -207,8 +207,7 @@
         [strongSelf getListDiagnoseByCarOwner];
         
     } failure:^(YTKBaseRequest * request) {
-//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.requestOperationError.code),[request.requestOperationError localizedDescription]];
-//        [self showTips:errorDesc];
+
     }];
 }
 
@@ -240,8 +239,7 @@
         [strongSelf reloadTableView];
         
     } failure:^(YTKBaseRequest * request) {
-//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.requestOperationError.code),[request.requestOperationError localizedDescription]];
-//        [self showTips:errorDesc];
+
     }];
 }
 
@@ -256,8 +254,6 @@
     [m_cellInfos removeAllObjects];
     
     for (int i = 0; i < m_diagnoseArray.count; i++) {
-        WDDiagnoseModel *itemModel  = m_diagnoseArray[i];
-        
         MFTableViewCellObject *diagnoseModel = [MFTableViewCellObject new];
         diagnoseModel.cellHeight = 150.0f;
         diagnoseModel.cellReuseIdentifier = @"diagnoseItem";
@@ -275,32 +271,32 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-    [self showDiagnoseDetail:itemModel];
+//    [self showDiagnoseDetail:itemModel];
     
-//    if (itemModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
-//    {
-//        __weak typeof(self) weakSelf = self;
-//        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认技师诊断结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
-//
-//            __strong typeof(weakSelf) strongSelf = weakSelf;
-//            [strongSelf confirmDiagnoseByCarOwner:itemModel];
-//
-//        } cancelHandler:nil destructiveHandler:nil];
-//
-//        [alertView showAnimated:YES completionHandler:nil];
-//    }
-//    else if (itemModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
-//    {
-//        __weak typeof(self) weakSelf = self;
-//        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认专家复诊结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
-//
-//            __strong typeof(weakSelf) strongSelf = weakSelf;
-//            [strongSelf reconfirmAfterExpertDiagnosed:itemModel];
-//
-//        } cancelHandler:nil destructiveHandler:nil];
-//
-//        [alertView showAnimated:YES completionHandler:nil];
-//    }
+    if (itemModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
+    {
+        __weak typeof(self) weakSelf = self;
+        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认技师诊断结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf confirmDiagnoseByCarOwner:itemModel];
+
+        } cancelHandler:nil destructiveHandler:nil];
+
+        [alertView showAnimated:YES completionHandler:nil];
+    }
+    else if (itemModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
+    {
+        __weak typeof(self) weakSelf = self;
+        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"是否确认专家复诊结果?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf reconfirmAfterExpertDiagnosed:itemModel];
+
+        } cancelHandler:nil destructiveHandler:nil];
+
+        [alertView showAnimated:YES completionHandler:nil];
+    }
 }
 
 -(void)showDiagnoseDetail:(WDDiagnoseModel *)itemModel
