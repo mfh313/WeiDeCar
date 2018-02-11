@@ -477,10 +477,16 @@
         }
         
         [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf onClickChooseRepairItemOffers];
         
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(void)onChooseRepairItemOffersSuccess
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
