@@ -7,8 +7,15 @@
 //
 
 #import "WDRepairStepListViewController.h"
+#import "WDRepairStepModel.h"
+#import "WDRepairStepListHeaderView.h"
+#import "WDRepairStepUploadImageCellView.h"
+#import "WDRepairStepQualifiedCellView.h"
 
-@interface WDRepairStepListViewController ()
+@interface WDRepairStepListViewController () <WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate>
+{
+    
+}
 
 @end
 
@@ -19,6 +26,18 @@
     
     self.title = @"维修任务详情";
     [self setBackBarButton];
+}
+
+#pragma mark - WDRepairStepListHeaderViewDelegate
+-(void)onClickFinishRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepListHeaderView *)cellView
+{
+    
+}
+
+#pragma mark - WDRepairStepUploadImageCellViewDelegate
+-(void)onClickUploadImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
