@@ -37,7 +37,7 @@
             [m_titleLabelArray addObject:contentLabel];
             
             UIView *separator = [UIView new];
-            separator.backgroundColor = [UIColor hx_colorWithHexString:@"242834"];
+            separator.backgroundColor = MFCustomLineColor;
             [self addSubview:separator];
             
             if (i == 0)
