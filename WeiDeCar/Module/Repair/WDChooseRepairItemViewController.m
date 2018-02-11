@@ -125,7 +125,7 @@
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
     NSString *identifier = cellInfo.cellReuseIdentifier;
     
-    NSArray *titleArray = @[@"配件",@"价格",@"工时",@"维修方"];
+    NSArray *titleArray = @[@"配件/工时",@"价格",@"维修方"];
     
     MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
