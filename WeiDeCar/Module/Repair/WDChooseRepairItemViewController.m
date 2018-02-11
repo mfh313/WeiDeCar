@@ -11,6 +11,7 @@
 #import "WDRepairItemOfferListModel.h"
 #import "WDRepairItemOfferHeaderView.h"
 #import "WDRepairOfferHeaderTitleView.h"
+#import "WDChooseRepairItemOffersApi.h"
 
 @interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
@@ -29,6 +30,8 @@
     self.title = @"维修报价表";
     [self setBackBarButton];
     
+    self.view.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
+    
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
     m_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -38,9 +41,22 @@
     [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top);
         make.width.equalTo(self.view.mas_width);
-        make.bottom.equalTo(self.view.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-60);;
     }];
     
+    UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [submitButton setTitle:@"确认并结算" forState:UIControlStateNormal];
+    [submitButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
+    [submitButton addTarget:self action:@selector(onClickChooseRepairItemOffers) forControlEvents:UIControlEventTouchUpInside];
+    submitButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.view addSubview:submitButton];
+    [submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.height.mas_equalTo(40);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-10);
+    }];
+
     [self getListRepairItemOffers];
 }
 
@@ -345,6 +361,59 @@
 -(void)onClickShowRepairManInfo
 {
     [self showTips:@"查看维修人员详情"];
+}
+
+-(void)onClickChooseRepairItemOffers
+{
+    NSMutableArray<WDRepairItemOfferListModel *> *selectRepairItemOffers = [NSMutableArray array];
+    
+    for (int i = 0; i < m_repairItemOffers.count; i++) {
+        
+        WDRepairItemOfferListModel *itemModel = m_repairItemOffers[i];
+        
+        if (itemModel.status == WDRepairItemOfferStatus_20)
+        {
+            [selectRepairItemOffers addObject:itemModel];
+        }
+    }
+    
+    if (selectRepairItemOffers.count == 0) {
+        [self showTips:@"请选择维修项目"];
+        return;
+    }
+    
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDChooseRepairItemOffersApi *mfApi = [WDChooseRepairItemOffersApi new];
+    mfApi.carOwnerId = loginService.currentUserInfo.userId;
+    mfApi.diagnoseId = self.diagnoseId;
+    mfApi.selectOfferItems = selectRepairItemOffers;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        NSArray *responseNetworkData = mfApi.responseNetworkData;
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (int i = 0; i < responseNetworkData.count; i++) {
+            WDRepairItemOfferListModel *itemModel = [WDRepairItemOfferListModel yy_modelWithDictionary:responseNetworkData[i]];
+            itemModel.status = WDRepairItemOfferStatus_20;
+            [tempArray addObject:itemModel];
+        }
+        
+        m_repairItemOffers = tempArray;
+        
+        [strongSelf reloadTableView];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
