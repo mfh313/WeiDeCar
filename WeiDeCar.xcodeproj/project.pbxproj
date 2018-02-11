@@ -167,6 +167,9 @@
 		A535ACFC1FDD28B2001CF470 /* WDListDiagnoseByMechanicApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACFB1FDD28B2001CF470 /* WDListDiagnoseByMechanicApi.m */; };
 		A535AD041FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535AD031FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m */; };
 		A535AD0D1FDD5387001CF470 /* WDMechanicDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535AD0C1FDD5387001CF470 /* WDMechanicDiagnoseApi.m */; };
+		A55ECE7C20305D70003CE4B2 /* WDRepairTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */; };
+		A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */; };
+		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
 		A5631BF11FF512CE00DBA959 /* libEZOpenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BEA1FF512CE00DBA959 /* libEZOpenSDK.a */; };
 		A5631BF21FF512CE00DBA959 /* libEZUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BF01FF512CE00DBA959 /* libEZUIKit.a */; };
 		A5631C481FF5130200DBA959 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631C461FF5130200DBA959 /* libcrypto.a */; };
@@ -577,6 +580,12 @@
 		A535AD031FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListDiagnoseByExpertApi.m; sourceTree = "<group>"; };
 		A535AD0B1FDD5387001CF470 /* WDMechanicDiagnoseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMechanicDiagnoseApi.h; sourceTree = "<group>"; };
 		A535AD0C1FDD5387001CF470 /* WDMechanicDiagnoseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMechanicDiagnoseApi.m; sourceTree = "<group>"; };
+		A55ECE7A20305D70003CE4B2 /* WDRepairTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairTaskModel.h; sourceTree = "<group>"; };
+		A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairTaskModel.m; sourceTree = "<group>"; };
+		A55ECE7D20305F9C003CE4B2 /* WDListRepairItemApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairItemApi.h; sourceTree = "<group>"; };
+		A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairItemApi.m; sourceTree = "<group>"; };
+		A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairListViewController.h; sourceTree = "<group>"; };
+		A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairListViewController.m; sourceTree = "<group>"; };
 		A5631BD31FF512CE00DBA959 /* EZAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAccessToken.h; sourceTree = "<group>"; };
 		A5631BD41FF512CE00DBA959 /* EZAlarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAlarmInfo.h; sourceTree = "<group>"; };
 		A5631BD51FF512CE00DBA959 /* EZAreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAreaInfo.h; sourceTree = "<group>"; };
@@ -941,6 +950,8 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A55ECE7D20305F9C003CE4B2 /* WDListRepairItemApi.h */,
+				A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */,
 				A577014C202F0E1A0037D5DB /* WDMechanicStartRepairApi.h */,
 				A577014D202F0E1A0037D5DB /* WDMechanicStartRepairApi.m */,
 				ACB8C34A202EF35200BEB48E /* WDChooseRepairItemOffersApi.h */,
@@ -1503,6 +1514,8 @@
 				ACB8C345202EE90900BEB48E /* WDRepairStepModel.m */,
 				ACB8C33B202EE3AE00BEB48E /* WDRepairItemModel.h */,
 				ACB8C33C202EE3AE00BEB48E /* WDRepairItemModel.m */,
+				A55ECE7A20305D70003CE4B2 /* WDRepairTaskModel.h */,
+				A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */,
 				A51DBC2E2000FAD100A870FD /* WDRepairFactoryModel.h */,
 				A51DBC2F2000FAD200A870FD /* WDRepairFactoryModel.m */,
 				A535ACF11FDCFDC9001CF470 /* WDDiagnoseModel.h */,
@@ -1855,6 +1868,8 @@
 				A5770152202F10CE0037D5DB /* WDRepairTaskListCellView.xib */,
 				ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */,
 				ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */,
+				A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */,
+				A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */,
 				A5770154202F31DB0037D5DB /* WDRepairItemOfferHeaderView.h */,
 				A5770155202F31DB0037D5DB /* WDRepairItemOfferHeaderView.m */,
 				A5770157202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib */,
@@ -2111,6 +2126,7 @@
 				A5241DFE1FBF0C5200B6B844 /* SCLAlertViewStyleKit.m in Sources */,
 				A5241C8D1FBF094200B6B844 /* MMSelectButton.m in Sources */,
 				A5241DEB1FBF0C5200B6B844 /* Descriptor.pb.m in Sources */,
+				A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */,
 				A51EC98E20272B33008F4CFA /* MMTableViewUserInfo.m in Sources */,
 				A5241E041FBF0C5200B6B844 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				A5241C911FBF094200B6B844 /* MMUIView.m in Sources */,
@@ -2134,6 +2150,7 @@
 				A5241DF61FBF0C5200B6B844 /* RingBuffer.m in Sources */,
 				A5631C791FF5131500DBA959 /* WDDiagnoseInfoCreateViewController.m in Sources */,
 				A5241C8E1FBF094200B6B844 /* MMUIBridgeView.m in Sources */,
+				A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */,
 				A51A6BFE1FD976B60017A98A /* YTKAnimatingRequestAccessory.m in Sources */,
 				A5631C8B1FF5131500DBA959 /* WDMainFrameViewController.m in Sources */,
 				A5631C7E1FF5131500DBA959 /* WDDiagnosisMainAddView.m in Sources */,
@@ -2187,6 +2204,7 @@
 				A5241C921FBF094200B6B844 /* MMUIViewController.m in Sources */,
 				A51B23A11FDAC338004532C9 /* WDCarOwnerRegisterApi.m in Sources */,
 				A577014E202F0E1A0037D5DB /* WDMechanicStartRepairApi.m in Sources */,
+				A55ECE7C20305D70003CE4B2 /* WDRepairTaskModel.m in Sources */,
 				A5241DB31FBF0C5200B6B844 /* HexColors.m in Sources */,
 				A5631C8C1FF5131500DBA959 /* WDMechanicDiagnoseMainCreateViewController.m in Sources */,
 				A5631C7C1FF5131500DBA959 /* WDDiagnosisAddHeaderView.m in Sources */,

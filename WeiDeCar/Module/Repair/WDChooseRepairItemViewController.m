@@ -41,7 +41,7 @@
     [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top);
         make.width.equalTo(self.view.mas_width);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-60);;
+        make.bottom.equalTo(self.view.mas_bottom).offset(-60);
     }];
     
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];

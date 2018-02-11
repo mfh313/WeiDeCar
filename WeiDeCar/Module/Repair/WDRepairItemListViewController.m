@@ -11,6 +11,7 @@
 #import "WDListRepairTaskByUserApi.h"
 #import "WDDiagnoseModel.h"
 #import "WDChooseRepairItemViewController.h"
+#import "WDRepairListViewController.h"
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -205,9 +206,22 @@
 #pragma mark - WDRepairTaskListCellViewDelegate
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
+    [self showRepairListVC:itemModel];
+//    [self showChooseRepairItemVC:itemModel];
+}
+
+-(void)showChooseRepairItemVC:(WDDiagnoseModel *)itemModel
+{
     WDChooseRepairItemViewController *chooseRepairVC = [WDChooseRepairItemViewController new];
     chooseRepairVC.diagnoseId = itemModel.diagnoseId;
     [self.navigationController pushViewController:chooseRepairVC animated:YES];
+}
+
+-(void)showRepairListVC:(WDDiagnoseModel *)itemModel
+{
+    WDRepairListViewController *repairVC = [WDRepairListViewController new];
+    repairVC.diagnoseId = itemModel.diagnoseId;
+    [self.navigationController pushViewController:repairVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,4 +19,8 @@ NSInteger const WDRepairItemStatus_20 = 20;  //已选择
              };
 }
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"repairTask" : [WDRepairTaskModel class]};
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WDRepairTaskModel.h"
 
 extern NSInteger const WDRepairItemStatus_10;   //未选择
 extern NSInteger const WDRepairItemStatus_20;  //已选择
@@ -18,8 +19,11 @@ extern NSInteger const WDRepairItemStatus_20;  //已选择
 @property (nonatomic,strong) NSString *diagnoseId; //诊断任务ID
 @property (nonatomic,strong) NSString *repairItemId; //维修项目ID
 @property (nonatomic,strong) NSString *repairItemName; //维修项目名称
+@property (nonatomic,strong) WDRepairTaskModel *repairTask;
 @property (nonatomic,assign) NSInteger status;  //维修项目状态，10：未选择，20：已选择
 @property (nonatomic,strong) NSString *updateDate;
 @property (nonatomic,strong) NSString *updateUserId;
 
 @end
+
+
