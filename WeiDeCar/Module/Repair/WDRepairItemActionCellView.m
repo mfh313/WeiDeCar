@@ -25,7 +25,7 @@
         
         [m_contentButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.mas_centerX);
-            make.width.mas_equalTo(100);
+            make.width.mas_equalTo(150);
             make.top.equalTo(self.mas_top).offset(10);
             make.bottom.equalTo(self.mas_bottom).offset(-10);
         }];
