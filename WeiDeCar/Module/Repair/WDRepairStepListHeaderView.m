@@ -52,7 +52,7 @@
 {
     m_repairStep = repairStep;
     
-    m_titleLabel.text = repairStep.repairStepDesc;
+    m_titleLabel.text = [NSString stringWithFormat:@"步骤%@",@(m_repairStep.repairOrder)];
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
