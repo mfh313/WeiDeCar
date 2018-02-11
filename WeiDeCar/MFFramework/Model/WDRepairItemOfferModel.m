@@ -8,6 +8,9 @@
 
 #import "WDRepairItemOfferModel.h"
 
+NSInteger const WDRepairItemOfferStatus_10 = 10;   //未选择
+NSInteger const WDRepairItemOfferStatus_20 = 20;  //已选择
+
 @implementation WDRepairItemOfferModel
 
 + (NSDictionary *)modelCustomPropertyMapper {

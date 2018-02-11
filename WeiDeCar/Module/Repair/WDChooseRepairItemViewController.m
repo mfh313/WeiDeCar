@@ -111,10 +111,11 @@
         cell.m_subContentView = cellView;
     }
     
-//    NSInteger attachIndex = cellInfo.attachIndex;
-//    WDDiagnoseModel *diagnosisModel = m_repairItems[attachIndex];
+    NSInteger attachIndex = cellInfo.attachIndex;
+    WDRepairItemOfferListModel *repairItemOffer = m_repairItemOffers[attachIndex];
     
-//    WDRepairItemOfferHeaderView *cellView = (WDRepairItemOfferHeaderView *)cell.m_subContentView;
+    WDRepairItemOfferHeaderView *cellView = (WDRepairItemOfferHeaderView *)cell.m_subContentView;
+    [cellView setRepairItemOfferListModel:repairItemOffer];
     
     return cell;
 }

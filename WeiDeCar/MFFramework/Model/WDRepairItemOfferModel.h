@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "WDRepairItemModel.h"
 
+extern NSInteger const WDRepairItemOfferStatus_10;   //未选择
+extern NSInteger const WDRepairItemOfferStatus_20;  //已选择
+
 @interface WDRepairItemOfferModel : NSObject
 
 @property (nonatomic,strong) NSString *createDate;
