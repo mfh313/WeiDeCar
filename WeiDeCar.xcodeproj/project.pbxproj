@@ -172,6 +172,8 @@
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
 		A55ECE8520306730003CE4B2 /* WDRepairItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */; };
 		A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */; };
+		A55ECE8B20307522003CE4B2 /* WDListRepairStepApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8A20307522003CE4B2 /* WDListRepairStepApi.m */; };
+		A55ECE8E20307597003CE4B2 /* WDRepairStepListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8D20307597003CE4B2 /* WDRepairStepListViewController.m */; };
 		A5631BF11FF512CE00DBA959 /* libEZOpenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BEA1FF512CE00DBA959 /* libEZOpenSDK.a */; };
 		A5631BF21FF512CE00DBA959 /* libEZUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BF01FF512CE00DBA959 /* libEZUIKit.a */; };
 		A5631C481FF5130200DBA959 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631C461FF5130200DBA959 /* libcrypto.a */; };
@@ -592,6 +594,10 @@
 		A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemCellView.m; sourceTree = "<group>"; };
 		A55ECE8620306E66003CE4B2 /* WDRepairItemActionCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemActionCellView.h; sourceTree = "<group>"; };
 		A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemActionCellView.m; sourceTree = "<group>"; };
+		A55ECE8920307522003CE4B2 /* WDListRepairStepApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairStepApi.h; sourceTree = "<group>"; };
+		A55ECE8A20307522003CE4B2 /* WDListRepairStepApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairStepApi.m; sourceTree = "<group>"; };
+		A55ECE8C20307597003CE4B2 /* WDRepairStepListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepListViewController.h; sourceTree = "<group>"; };
+		A55ECE8D20307597003CE4B2 /* WDRepairStepListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepListViewController.m; sourceTree = "<group>"; };
 		A5631BD31FF512CE00DBA959 /* EZAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAccessToken.h; sourceTree = "<group>"; };
 		A5631BD41FF512CE00DBA959 /* EZAlarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAlarmInfo.h; sourceTree = "<group>"; };
 		A5631BD51FF512CE00DBA959 /* EZAreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAreaInfo.h; sourceTree = "<group>"; };
@@ -956,6 +962,8 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A55ECE8920307522003CE4B2 /* WDListRepairStepApi.h */,
+				A55ECE8A20307522003CE4B2 /* WDListRepairStepApi.m */,
 				A55ECE7D20305F9C003CE4B2 /* WDListRepairItemApi.h */,
 				A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */,
 				A577014C202F0E1A0037D5DB /* WDMechanicStartRepairApi.h */,
@@ -1885,6 +1893,8 @@
 				A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */,
 				A55ECE8620306E66003CE4B2 /* WDRepairItemActionCellView.h */,
 				A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */,
+				A55ECE8C20307597003CE4B2 /* WDRepairStepListViewController.h */,
+				A55ECE8D20307597003CE4B2 /* WDRepairStepListViewController.m */,
 			);
 			path = Repair;
 			sourceTree = "<group>";
@@ -2076,6 +2086,7 @@
 				A5241E051FBF0C5200B6B844 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A5241DEA1FBF0C5200B6B844 /* ConcreteExtensionField.m in Sources */,
 				A5241DF31FBF0C5200B6B844 /* MutableField.m in Sources */,
+				A55ECE8E20307597003CE4B2 /* WDRepairStepListViewController.m in Sources */,
 				A5241C761FBF094200B6B844 /* NSDictionary+Unicode.m in Sources */,
 				A5241C9C1FBF094200B6B844 /* MMServiceCenter.m in Sources */,
 				A52D91C71FDC30FB009DD077 /* WDUserRegisterViewController.m in Sources */,
@@ -2132,6 +2143,7 @@
 				A5241DB91FBF0C5200B6B844 /* IQUITextFieldView+Additions.m in Sources */,
 				A5631C851FF5131500DBA959 /* WDExpertDiagnoseResultSelectView.m in Sources */,
 				ACB8C349202EF2B500BEB48E /* WDListRepairItemOffersApi.m in Sources */,
+				A55ECE8B20307522003CE4B2 /* WDListRepairStepApi.m in Sources */,
 				A5241C741FBF094200B6B844 /* NSArray+SafeInsert.m in Sources */,
 				A5241DF11FBF0C5200B6B844 /* GeneratedMessageBuilder.m in Sources */,
 				A5241DFE1FBF0C5200B6B844 /* SCLAlertViewStyleKit.m in Sources */,

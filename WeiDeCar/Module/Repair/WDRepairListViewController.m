@@ -12,6 +12,7 @@
 #import "WDMechanicStartRepairApi.h"
 #import "WDRepairItemCellView.h"
 #import "WDRepairItemActionCellView.h"
+#import "WDRepairStepListViewController.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
 {
@@ -307,8 +308,15 @@
     }
     else
     {
-        [self showTips:@"查看维修详情"];
+        [self showRepairItemStep:repairItem];
     }
+}
+
+-(void)showRepairItemStep:(WDRepairItemModel *)repairItem
+{
+    WDRepairStepListViewController *repairStepVC = [WDRepairStepListViewController new];
+    repairStepVC.repairItemId = repairItem.repairItemId;
+    [self.navigationController pushViewController:repairStepVC animated:YES];
 }
 
 -(void)startRepairItem:(WDRepairItemModel *)repairItem

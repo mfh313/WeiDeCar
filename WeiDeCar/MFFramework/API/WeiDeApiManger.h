@@ -8,7 +8,11 @@
 
 #import "MMService.h"
 
+
 @interface WeiDeApiManger : MMService
+
+//获取维修项目步骤
++(NSString *)listRepairStep;
 
 //获取维修项目列表
 +(NSString *)listRepairItem;
