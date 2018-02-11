@@ -51,5 +51,22 @@
     }
 }
 
+- (IBAction)onClickSelectButton:(id)sender {
+    if ([self.m_delegate respondsToSelector:@selector(onClickSelectRepairItemOffer:headerView:)]) {
+        [self.m_delegate onClickSelectRepairItemOffer:m_itemModel headerView:self];
+    }
+}
+
+-(void)setRepairItemOfferStatus:(WDRepairItemOfferListModel *)itemModel
+{
+    if (itemModel.status == WDRepairItemOfferStatus_10)
+    {
+        [m_selectButton setSelected:NO];
+    }
+    else
+    {
+        [m_selectButton setSelected:YES];
+    }
+}
 
 @end

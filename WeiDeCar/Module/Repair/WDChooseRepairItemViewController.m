@@ -286,6 +286,21 @@
     [self showTips:@"查看维修人员详情"];
 }
 
+#pragma mark - WDRepairItemOfferHeaderViewDelegate
+-(void)onClickSelectRepairItemOffer:(WDRepairItemOfferListModel *)itemModel headerView:(WDRepairItemOfferHeaderView *)headerView
+{
+    if (itemModel.status == WDRepairItemOfferStatus_10)
+    {
+        itemModel.status = WDRepairItemOfferStatus_20;
+    }
+    else
+    {
+        itemModel.status = WDRepairItemOfferStatus_10;
+    }
+    
+    [headerView setRepairItemOfferStatus:itemModel];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
