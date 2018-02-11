@@ -206,8 +206,17 @@
 #pragma mark - WDRepairTaskListCellViewDelegate
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
-    [self showRepairListVC:itemModel];
-//    [self showChooseRepairItemVC:itemModel];
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_CarOwner
+        && itemModel.status == WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED)
+    {
+        [self showChooseRepairItemVC:itemModel];
+    }
+    else
+    {
+        [self showRepairListVC:itemModel];
+    }
 }
 
 -(void)showChooseRepairItemVC:(WDDiagnoseModel *)itemModel
