@@ -11,8 +11,9 @@
 #import "WDListRepairItemApi.h"
 #import "WDMechanicStartRepairApi.h"
 #import "WDRepairItemCellView.h"
+#import "WDRepairItemActionCellView.h"
 
-@interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -63,6 +64,10 @@
     {
         return [self tableView:tableView repairItemCellForIndexPath:indexPath];
     }
+    else if ([identifier isEqualToString:@"repairItemAction"])
+    {
+        return [self tableView:tableView repairItemActionCellForIndexPath:indexPath];
+    }
     else if ([identifier isEqualToString:@"division"])
     {
         return [self tableView:tableView divisionForIndexPath:indexPath];
@@ -80,6 +85,29 @@
     }
     
     cell.textLabel.text = identifier;
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemActionCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairItemActionCellView *cellView = [[WDRepairItemActionCellView alloc] initWithFrame:cell.contentView.bounds];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairItemModel *repairItem = m_repairItems[attachIndex];
+    
+    WDRepairItemActionCellView *cellView = (WDRepairItemActionCellView *)cell.m_subContentView;
+    [cellView setRepairItemModel:repairItem];
+    
     return cell;
 }
 
@@ -243,7 +271,11 @@
         
         [m_cellInfos addObject:[self separatorCellObject:i]];
         
-        ///
+        MFTableViewCellObject *repairItemAction = [MFTableViewCellObject new];
+        repairItemAction.cellHeight = 60.0f;
+        repairItemAction.cellReuseIdentifier = @"repairItemAction";
+        repairItemAction.attachIndex = i;
+        [m_cellInfos addObject:repairItemAction];
     }
 }
 
@@ -264,6 +296,21 @@
     return division;
 }
 
+#pragma mark - WDRepairItemActionCellViewDelegate
+-(void)onClickSelectRepairItem:(WDRepairItemModel *)repairItem cellView:(WDRepairItemActionCellView *)cellView
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_Mechanic)
+    {
+        [self startRepairItem:repairItem];
+    }
+    else
+    {
+        [self showTips:@"查看维修详情"];
+    }
+}
+
 -(void)startRepairItem:(WDRepairItemModel *)repairItem
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
@@ -281,7 +328,7 @@
             [strongSelf showTips:mfApi.errorMessage];
             return;
         }
-    
+        
         [strongSelf showTips:mfApi.errorMessage];
         
         [strongSelf getRepairItemList];

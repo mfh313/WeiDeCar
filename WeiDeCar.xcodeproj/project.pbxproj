@@ -171,6 +171,7 @@
 		A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */; };
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
 		A55ECE8520306730003CE4B2 /* WDRepairItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */; };
+		A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */; };
 		A5631BF11FF512CE00DBA959 /* libEZOpenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BEA1FF512CE00DBA959 /* libEZOpenSDK.a */; };
 		A5631BF21FF512CE00DBA959 /* libEZUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BF01FF512CE00DBA959 /* libEZUIKit.a */; };
 		A5631C481FF5130200DBA959 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631C461FF5130200DBA959 /* libcrypto.a */; };
@@ -589,6 +590,8 @@
 		A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairListViewController.m; sourceTree = "<group>"; };
 		A55ECE8320306730003CE4B2 /* WDRepairItemCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemCellView.h; sourceTree = "<group>"; };
 		A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemCellView.m; sourceTree = "<group>"; };
+		A55ECE8620306E66003CE4B2 /* WDRepairItemActionCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemActionCellView.h; sourceTree = "<group>"; };
+		A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemActionCellView.m; sourceTree = "<group>"; };
 		A5631BD31FF512CE00DBA959 /* EZAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAccessToken.h; sourceTree = "<group>"; };
 		A5631BD41FF512CE00DBA959 /* EZAlarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAlarmInfo.h; sourceTree = "<group>"; };
 		A5631BD51FF512CE00DBA959 /* EZAreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAreaInfo.h; sourceTree = "<group>"; };
@@ -1880,6 +1883,8 @@
 				A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */,
 				A55ECE8320306730003CE4B2 /* WDRepairItemCellView.h */,
 				A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */,
+				A55ECE8620306E66003CE4B2 /* WDRepairItemActionCellView.h */,
+				A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */,
 			);
 			path = Repair;
 			sourceTree = "<group>";
@@ -2082,6 +2087,7 @@
 				A526487D2001317F00DC11BA /* WDRepairFactoryMapViewController.m in Sources */,
 				A5241C8A1FBF094200B6B844 /* MMNavigationController.m in Sources */,
 				A5241DE91FBF0C5200B6B844 /* CodedOutputStream.m in Sources */,
+				A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */,
 				A5241C901FBF094200B6B844 /* MMUITextField.m in Sources */,
 				A5241CA81FBF097300B6B844 /* YYClassInfo.m in Sources */,
 				A5241DED1FBF0C5200B6B844 /* ExtendableMessageBuilder.m in Sources */,
