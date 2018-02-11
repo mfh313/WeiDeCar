@@ -170,6 +170,7 @@
 		A55ECE7C20305D70003CE4B2 /* WDRepairTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */; };
 		A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */; };
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
+		A55ECE8520306730003CE4B2 /* WDRepairItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */; };
 		A5631BF11FF512CE00DBA959 /* libEZOpenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BEA1FF512CE00DBA959 /* libEZOpenSDK.a */; };
 		A5631BF21FF512CE00DBA959 /* libEZUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631BF01FF512CE00DBA959 /* libEZUIKit.a */; };
 		A5631C481FF5130200DBA959 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5631C461FF5130200DBA959 /* libcrypto.a */; };
@@ -586,6 +587,8 @@
 		A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListRepairItemApi.m; sourceTree = "<group>"; };
 		A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairListViewController.h; sourceTree = "<group>"; };
 		A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairListViewController.m; sourceTree = "<group>"; };
+		A55ECE8320306730003CE4B2 /* WDRepairItemCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemCellView.h; sourceTree = "<group>"; };
+		A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemCellView.m; sourceTree = "<group>"; };
 		A5631BD31FF512CE00DBA959 /* EZAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAccessToken.h; sourceTree = "<group>"; };
 		A5631BD41FF512CE00DBA959 /* EZAlarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAlarmInfo.h; sourceTree = "<group>"; };
 		A5631BD51FF512CE00DBA959 /* EZAreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAreaInfo.h; sourceTree = "<group>"; };
@@ -1868,13 +1871,15 @@
 				A5770152202F10CE0037D5DB /* WDRepairTaskListCellView.xib */,
 				ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */,
 				ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */,
-				A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */,
-				A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */,
 				A5770154202F31DB0037D5DB /* WDRepairItemOfferHeaderView.h */,
 				A5770155202F31DB0037D5DB /* WDRepairItemOfferHeaderView.m */,
 				A5770157202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib */,
 				A5770159202F464E0037D5DB /* WDRepairOfferHeaderTitleView.h */,
 				A577015A202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m */,
+				A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */,
+				A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */,
+				A55ECE8320306730003CE4B2 /* WDRepairItemCellView.h */,
+				A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */,
 			);
 			path = Repair;
 			sourceTree = "<group>";
@@ -2213,6 +2218,7 @@
 				A51A6C001FD976B60017A98A /* YTKBatchRequest+AnimatingAccessory.m in Sources */,
 				A51B239E1FDAAD48004532C9 /* WDUserLoginApi.m in Sources */,
 				A50C37311FD8362200809CA7 /* SPTagBarScrollView.m in Sources */,
+				A55ECE8520306730003CE4B2 /* WDRepairItemCellView.m in Sources */,
 				A5241C9F1FBF094200B6B844 /* XXNibBridge.m in Sources */,
 				A5241DFC1FBF0C5200B6B844 /* SCLAlertView.m in Sources */,
 				A5241C8B1FBF094200B6B844 /* MMObject.m in Sources */,

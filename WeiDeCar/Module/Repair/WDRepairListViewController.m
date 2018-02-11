@@ -10,6 +10,7 @@
 #import "WDRepairItemModel.h"
 #import "WDListRepairItemApi.h"
 #import "WDMechanicStartRepairApi.h"
+#import "WDRepairItemCellView.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -60,7 +61,7 @@
     
     if ([identifier isEqualToString:@"repairItem"])
     {
-//        return [self tableView:tableView repairItemCellForIndexPath:indexPath];
+        return [self tableView:tableView repairItemCellForIndexPath:indexPath];
     }
     else if ([identifier isEqualToString:@"division"])
     {
@@ -79,6 +80,52 @@
     }
     
     cell.textLabel.text = identifier;
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    NSString *attachKey = cellInfo.attachKey;
+    
+    WDRepairItemModel *repairItem = m_repairItems[attachIndex];
+
+    NSMutableArray *titleArray = [NSMutableArray array];
+    
+    NSString *title = @"";
+    NSString *subTitle = @"";
+    
+    if ([attachKey isEqualToString:@"repairItemName"]) {
+        title = @"维修项目";
+        subTitle = repairItem.repairItemName;
+    }
+    else if ([attachKey isEqualToString:@"carOwnerName"])
+    {
+        title = @"车主";
+        subTitle = repairItem.repairTask.carOwnerName;
+    }
+    else if ([attachKey isEqualToString:@"expertName"])
+    {
+        title = @"指导专家";
+        subTitle = repairItem.repairTask.expertName;
+    }
+    
+    [titleArray addObject:title];
+    [titleArray addObject:subTitle];
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairItemCellView *cellView = [[WDRepairItemCellView alloc] initWithFrame:cell.contentView.bounds];
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairItemCellView *cellView = (WDRepairItemCellView *)cell.m_subContentView;
+    [cellView setTitleArray:titleArray];
+    
     return cell;
 }
 
