@@ -13,10 +13,15 @@ extern NSInteger const WDDiagnoseStatus_INIT;  //初始状态
 extern NSInteger const WDDiagnoseStatus_MECHANIC_DIAGNOSED;  //技师诊断完成，返回给车主查看
 extern NSInteger const WDDiagnoseStatus_CAR_OWNER_CONFIRMED;  //技师诊断完成后，车主确认诊断结果
 extern NSInteger const WDDiagnoseStatus_EXPERT_DIAGNOSED;  //专家复诊完成
-extern NSInteger const WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED;  //专家复诊后，车主再次确认
-extern NSInteger const WDDiagnoseStatus_PAYMENT_SUCCESS;  //支付成功
-extern NSInteger const WDDiagnoseStatus_PAYMENT_FAILURE;  //支付失败
+extern NSInteger const WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED;  //诊断完成
+extern NSInteger const WDDiagnoseStatus_REPAIR_TASK_CREATED;  //维修任务已创建
+extern NSInteger const WDDiagnoseStatus_MECHANIC_ASSIGNED;  //维修任务已分配技师
+extern NSInteger const WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED;  //维修任务已报价，等待车主接受
+extern NSInteger const WDDiagnoseStatus_OFFER_ACCEPTED;  //车主接受报价，待支付
+extern NSInteger const WDDiagnoseStatus_PAYMENT_SUCCESS;  //支付成功，等待维修
+extern NSInteger const WDDiagnoseStatus_PAYMENT_FAILURE;  //支付失败，等待重新支付
 extern NSInteger const WDDiagnoseStatus_QA_SUCCESS;  //质检合格，待评价
+extern NSInteger const WDDiagnoseStatus_QA_FAILURE;  //质检不合格
 extern NSInteger const WDDiagnoseStatus_FINISHED;  //完成
 
 #pragma mark - WDDiagnoseCauseJudgementModel
