@@ -39,8 +39,8 @@
     m_itemModel = itemModel;
     
     m_nameLabel.text = itemModel.repairItemName;
-    m_allLabel.text = [NSString stringWithFormat:@"合计 %f",itemModel.totalCost];
-    m_subTitleLabel.text = [NSString stringWithFormat:@"预计节省 %f",itemModel.saveCost];
+    m_allLabel.text = [NSString stringWithFormat:@"合计 %.0f",itemModel.totalCost];
+    m_subTitleLabel.text = [NSString stringWithFormat:@"预计节省 %.0f",itemModel.saveCost];
     if (itemModel.status == WDRepairItemOfferStatus_10)
     {
         [m_selectButton setSelected:NO];

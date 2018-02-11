@@ -221,6 +221,7 @@
         NSMutableArray *tempArray = [NSMutableArray array];
         for (int i = 0; i < responseNetworkData.count; i++) {
             WDRepairItemOfferListModel *itemModel = [WDRepairItemOfferListModel yy_modelWithDictionary:responseNetworkData[i]];
+            itemModel.status = WDRepairItemOfferStatus_20;
             [tempArray addObject:itemModel];
         }
 
@@ -281,11 +282,6 @@
     }
 }
 
--(void)onClickShowRepairManInfo
-{
-    [self showTips:@"查看维修人员详情"];
-}
-
 #pragma mark - WDRepairItemOfferHeaderViewDelegate
 -(void)onClickSelectRepairItemOffer:(WDRepairItemOfferListModel *)itemModel headerView:(WDRepairItemOfferHeaderView *)headerView
 {
@@ -299,6 +295,11 @@
     }
     
     [headerView setRepairItemOfferStatus:itemModel];
+}
+
+-(void)onClickShowRepairManInfo
+{
+    [self showTips:@"查看维修人员详情"];
 }
 
 - (void)didReceiveMemoryWarning {
