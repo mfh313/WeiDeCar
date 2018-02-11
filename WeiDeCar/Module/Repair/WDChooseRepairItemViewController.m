@@ -8,7 +8,7 @@
 
 #import "WDChooseRepairItemViewController.h"
 #import "WDListRepairItemOffersApi.h"
-#import "WDRepairItemOfferModel.h"
+#import "WDRepairItemOfferListModel.h"
 #import "WDRepairItemOfferHeaderView.h"
 #import "WDRepairOfferHeaderTitleView.h"
 
@@ -16,7 +16,7 @@
 {
     MFUITableView *m_tableView;
     
-    NSMutableArray<WDRepairItemOfferModel *> *m_repairItemOffers;
+    NSMutableArray<WDRepairItemOfferListModel *> *m_repairItemOffers;
 }
 
 @end
@@ -219,7 +219,7 @@
         NSArray *responseNetworkData = mfApi.responseNetworkData;
         NSMutableArray *tempArray = [NSMutableArray array];
         for (int i = 0; i < responseNetworkData.count; i++) {
-            WDRepairItemOfferModel *itemModel = [WDRepairItemOfferModel yy_modelWithDictionary:responseNetworkData[i]];
+            WDRepairItemOfferListModel *itemModel = [WDRepairItemOfferListModel yy_modelWithDictionary:responseNetworkData[i]];
             [tempArray addObject:itemModel];
         }
 

@@ -229,6 +229,7 @@
 		A5B91F1B1FB9D384009B443D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F191FB9D384009B443D /* Main.storyboard */; };
 		A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B91F1C1FB9D384009B443D /* Assets.xcassets */; };
 		A5B91F231FB9D384009B443D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B91F221FB9D384009B443D /* main.m */; };
+		AC25174D20301FDB00D8C5DF /* WDRepairItemOfferListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC25174C20301FDB00D8C5DF /* WDRepairItemOfferListModel.m */; };
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
 		ACB8C333202E859900BEB48E /* WDListRepairTaskByUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C332202E859900BEB48E /* WDListRepairTaskByUserApi.m */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
@@ -776,6 +777,8 @@
 		A5B91F1C1FB9D384009B443D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B91F211FB9D384009B443D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B91F221FB9D384009B443D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC25174B20301FDB00D8C5DF /* WDRepairItemOfferListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemOfferListModel.h; sourceTree = "<group>"; };
+		AC25174C20301FDB00D8C5DF /* WDRepairItemOfferListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemOfferListModel.m; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		ACB8C331202E859900BEB48E /* WDListRepairTaskByUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairTaskByUserApi.h; sourceTree = "<group>"; };
@@ -1490,6 +1493,8 @@
 		A52D91411FDC2309009DD077 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC25174B20301FDB00D8C5DF /* WDRepairItemOfferListModel.h */,
+				AC25174C20301FDB00D8C5DF /* WDRepairItemOfferListModel.m */,
 				ACB8C33E202EE50D00BEB48E /* WDRepairItemOfferModel.h */,
 				ACB8C33F202EE50D00BEB48E /* WDRepairItemOfferModel.m */,
 				ACB8C341202EE72700BEB48E /* WDRepairItemAssignmentModel.h */,
@@ -2075,6 +2080,7 @@
 				A5241C7A1FBF094200B6B844 /* NSMutableString+SafeInsert.m in Sources */,
 				A5631CAA1FF53EFA00DBA959 /* WDIPCameraPlayViewController.m in Sources */,
 				A5241C831FBF094200B6B844 /* MFMultiMenuTableViewCell.m in Sources */,
+				AC25174D20301FDB00D8C5DF /* WDRepairItemOfferListModel.m in Sources */,
 				A5241DB71FBF0C5200B6B844 /* IQNSArray+Sort.m in Sources */,
 				A535ACE11FDCD20E001CF470 /* WDGuideBottomView.m in Sources */,
 				A5241E021FBF0C5200B6B844 /* SCLTimerDisplay.m in Sources */,

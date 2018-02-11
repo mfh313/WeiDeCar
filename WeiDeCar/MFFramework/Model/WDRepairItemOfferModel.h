@@ -23,6 +23,5 @@
 @property (nonatomic,strong) NSString *repairItemOfferName; //报价项目名称（配件/工时）
 @property (nonatomic,strong) NSString *updateDate;
 @property (nonatomic,strong) NSString *updateUserId;
-@property (nonatomic,assign) NSInteger status;  //维修项目状态，10：未选择，20：已选择
 
 @end
