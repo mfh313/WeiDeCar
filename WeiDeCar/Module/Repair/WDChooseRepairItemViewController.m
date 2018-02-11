@@ -87,6 +87,10 @@
     {
         return [self tableView:tableView repairItemHeaderTitleCellForIndexPath:indexPath];
     }
+    else if ([identifier isEqualToString:@"repairItem"])
+    {
+        return [self tableView:tableView repairItemCellForIndexPath:indexPath];
+    }
     else if ([identifier isEqualToString:@"division"])
     {
         return [self tableView:tableView divisionForIndexPath:indexPath];
@@ -136,12 +140,81 @@
     return cell;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    NSInteger subAttachIndex = cellInfo.subAttachIndex;
+    
+    WDRepairItemOfferListModel *repairItemOffer = m_repairItemOffers[attachIndex];
+    NSMutableArray<WDRepairItemOfferModel *> *repairItems = repairItemOffer.repairItemOffers;
+    WDRepairItemOfferModel *offModel = repairItems[subAttachIndex];
+    
+    NSMutableArray *titleArray = [NSMutableArray array];
+    
+    NSString *repairItemOfferName = offModel.repairItemOfferName;
+    NSString *offerOf4s = [NSString stringWithFormat:@"%.0f",offModel.offerOf4s];
+    NSString *offerOfSpecialty = [NSString stringWithFormat:@"%.0f",offModel.offerOfSpecialty];
+    NSString *offerOfBetter = [NSString stringWithFormat:@"%.0f",offModel.offerOfBetter];
+    
+    if (![MFStringUtil isBlankString:repairItemOfferName])
+    {
+        [titleArray addObject:repairItemOfferName];
+    }
+    else
+    {
+        [titleArray addObject:@""];
+    }
+    
+    if (![MFStringUtil isBlankString:offerOf4s])
+    {
+        [titleArray addObject:offerOf4s];
+    }
+    else
+    {
+        [titleArray addObject:@""];
+    }
+    
+    if (![MFStringUtil isBlankString:offerOfSpecialty])
+    {
+        [titleArray addObject:offerOfSpecialty];
+    }
+    else
+    {
+        [titleArray addObject:@""];
+    }
+    
+    if (![MFStringUtil isBlankString:offerOfBetter])
+    {
+        [titleArray addObject:offerOfBetter];
+    }
+    else
+    {
+        [titleArray addObject:@""];
+    }
+
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairOfferHeaderTitleView *cellView = [[WDRepairOfferHeaderTitleView alloc] initWithFrame:cell.contentView.bounds columnCount:titleArray.count];
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairOfferHeaderTitleView *cellView = (WDRepairOfferHeaderTitleView *)cell.m_subContentView;
+    [cellView setTitleArray:titleArray];
+    
+    return cell;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView repairItemHeaderTitleCellForIndexPath:(NSIndexPath *)indexPath
 {
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
     NSString *identifier = cellInfo.cellReuseIdentifier;
     
-    NSArray *titleArray = @[@"配件/工时",@"价格",@"维修方"];
+    NSArray *titleArray = @[@"配件/工时",@"4S价格",@"豪车价格",@"维德价格"];
     
     MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
@@ -237,17 +310,36 @@
         NSMutableArray *tempArray = [NSMutableArray array];
         for (int i = 0; i < responseNetworkData.count; i++) {
             WDRepairItemOfferListModel *itemModel = [WDRepairItemOfferListModel yy_modelWithDictionary:responseNetworkData[i]];
-            itemModel.status = WDRepairItemOfferStatus_20;
+
             [tempArray addObject:itemModel];
         }
-
+        
         m_repairItemOffers = tempArray;
+        
+        [self fixRepairItemOffers];
 
         [strongSelf reloadTableView];
         
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(void)fixRepairItemOffers
+{
+    for (int i = 0; i < m_repairItemOffers.count; i++) {
+        WDRepairItemOfferListModel *itemModel = m_repairItemOffers[i];
+        itemModel.status = WDRepairItemOfferStatus_20;
+        
+        CGFloat totalCost = 0;
+        NSMutableArray<WDRepairItemOfferModel *> *repairItems = itemModel.repairItemOffers;
+        for (int j = 0; j < repairItems.count; j++) {
+            WDRepairItemOfferModel *itemOfferModel = repairItems[j];
+            totalCost += itemOfferModel.offerOfBetter;
+        }
+        
+        itemModel.totalCost = totalCost;
+    }
 }
 
 -(void)reloadTableView
@@ -269,11 +361,14 @@
     
     for (int i = 0; i < m_repairItemOffers.count; i++) {
         
+        [m_cellInfos addObject:[self separatorCellObject:i]];
+        
         MFTableViewCellObject *repairItemHeader = [MFTableViewCellObject new];
         repairItemHeader.cellHeight = 70.0f;
         repairItemHeader.cellReuseIdentifier = @"repairItemHeader";
         repairItemHeader.attachIndex = i;
         [m_cellInfos addObject:repairItemHeader];
+        
         [m_cellInfos addObject:[self separatorCellObject:i]];
         
         MFTableViewCellObject *repairItemHeaderTitle = [MFTableViewCellObject new];
@@ -281,6 +376,8 @@
         repairItemHeaderTitle.cellReuseIdentifier = @"repairItemHeaderTitle";
         repairItemHeaderTitle.attachIndex = i;
         [m_cellInfos addObject:repairItemHeaderTitle];
+        
+        [m_cellInfos addObject:[self separatorCellObject:i]];
         
         [self setInnerRepairItemOffer:i];
         
@@ -295,34 +392,14 @@
     
     for (int i = 0; i < repairItemOffers.count; i++)
     {
-        [m_cellInfos addObject:[self separatorCellObject:i]];
-        
-        MFTableViewCellObject *offerOfBetter = [MFTableViewCellObject new];
-        offerOfBetter.cellHeight = 40.0f;
-        offerOfBetter.cellReuseIdentifier = @"repairItem";
-        offerOfBetter.attachKey = @"offerOfBetter";
-        offerOfBetter.attachIndex = i;
-        [m_cellInfos addObject:offerOfBetter];
+        MFTableViewCellObject *repairItem = [MFTableViewCellObject new];
+        repairItem.cellHeight = 40.0f;
+        repairItem.cellReuseIdentifier = @"repairItem";
+        repairItem.attachIndex = index;
+        repairItem.subAttachIndex = i;
+        [m_cellInfos addObject:repairItem];
         
         [m_cellInfos addObject:[self separatorCellObject:i]];
-        
-        MFTableViewCellObject *offerOf4s = [MFTableViewCellObject new];
-        offerOf4s.cellHeight = 40.0f;
-        offerOf4s.cellReuseIdentifier = @"repairItem";
-        offerOf4s.attachKey = @"offerOf4s";
-        offerOf4s.attachIndex = i;
-        [m_cellInfos addObject:offerOf4s];
-        
-        [m_cellInfos addObject:[self separatorCellObject:i]];
-        
-        MFTableViewCellObject *offerOfSpecialty = [MFTableViewCellObject new];
-        offerOfSpecialty.cellHeight = 40.0f;
-        offerOfSpecialty.cellReuseIdentifier = @"repairItem";
-        offerOfSpecialty.attachKey = @"offerOfSpecialty";
-        offerOfSpecialty.attachIndex = i;
-        [m_cellInfos addObject:offerOfSpecialty];
-        
-        [m_cellInfos addObject:[self divisionCellObject:5]];
     }
 }
 
