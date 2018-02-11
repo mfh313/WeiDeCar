@@ -261,24 +261,31 @@
         repairItemHeader.cellReuseIdentifier = @"repairItemHeader";
         repairItemHeader.attachIndex = i;
         [m_cellInfos addObject:repairItemHeader];
-        
-        MFTableViewCellObject *separator = [MFTableViewCellObject new];
-        separator.cellHeight = MFOnePixHeight;
-        separator.cellReuseIdentifier = @"separator";
-        separator.attachIndex = i;
-        [m_cellInfos addObject:separator];
+        [m_cellInfos addObject:[self separatorCellObject:i]];
         
         MFTableViewCellObject *repairItemHeaderTitle = [MFTableViewCellObject new];
         repairItemHeaderTitle.cellHeight = 40.0f;
         repairItemHeaderTitle.cellReuseIdentifier = @"repairItemHeaderTitle";
         repairItemHeaderTitle.attachIndex = i;
         [m_cellInfos addObject:repairItemHeaderTitle];
+        [m_cellInfos addObject:[self separatorCellObject:i]];
+        
+        
         
         MFTableViewCellObject *division = [MFTableViewCellObject new];
         division.cellHeight = 15.0f;
         division.cellReuseIdentifier = @"division";
         [m_cellInfos addObject:division];
     }
+}
+
+-(MFTableViewCellObject *)separatorCellObject:(NSInteger)index
+{
+    MFTableViewCellObject *separator = [MFTableViewCellObject new];
+    separator.cellHeight = MFOnePixHeight;
+    separator.cellReuseIdentifier = @"separator";
+    separator.attachIndex = index;
+    return separator;
 }
 
 #pragma mark - WDRepairItemOfferHeaderViewDelegate
