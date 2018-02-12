@@ -12,6 +12,7 @@
 #import "WDRepairItemOfferHeaderView.h"
 #import "WDRepairOfferHeaderTitleView.h"
 #import "WDChooseRepairItemOffersApi.h"
+#import "WDRepairPayTestApi.h"
 
 @interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
@@ -477,7 +478,7 @@
         }
         
         [strongSelf showTips:mfApi.errorMessage];
-        [strongSelf onClickChooseRepairItemOffers];
+        [strongSelf onChooseRepairItemOffersSuccess];
         
     } failure:^(YTKBaseRequest * request) {
         
@@ -486,7 +487,33 @@
 
 -(void)onChooseRepairItemOffersSuccess
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self continueRepairPay];
+}
+
+-(void)continueRepairPay
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDRepairPayTestApi *mfApi = [WDRepairPayTestApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.diagnoseId = self.diagnoseId;
+    
+    mfApi.animatingText = @"正在支付";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf.navigationController popViewControllerAnimated:YES];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
