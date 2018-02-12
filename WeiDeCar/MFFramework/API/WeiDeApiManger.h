@@ -8,8 +8,13 @@
 
 #import "MMService.h"
 
-
 @interface WeiDeApiManger : MMService
+
+//模拟支付成功接口
++(NSString *)repairPayTest;
+
+//更新维修步骤状态，技师/专家可用
++(NSString *)updateRepairStep;
 
 //获取维修项目步骤
 +(NSString *)listRepairStep;
