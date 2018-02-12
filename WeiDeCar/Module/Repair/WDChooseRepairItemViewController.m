@@ -477,7 +477,6 @@
             return;
         }
         
-        [strongSelf showTips:mfApi.errorMessage];
         [strongSelf onChooseRepairItemOffersSuccess];
         
     } failure:^(YTKBaseRequest * request) {
@@ -509,6 +508,7 @@
             return;
         }
         
+        [strongSelf showTips:mfApi.errorMessage];
         [strongSelf.navigationController popViewControllerAnimated:YES];
         
     } failure:^(YTKBaseRequest * request) {
