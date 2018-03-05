@@ -20,6 +20,7 @@ extern NSInteger const WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED;  //维修任务已
 extern NSInteger const WDDiagnoseStatus_OFFER_ACCEPTED;  //车主接受报价，待支付
 extern NSInteger const WDDiagnoseStatus_PAYMENT_SUCCESS;  //支付成功，等待维修
 extern NSInteger const WDDiagnoseStatus_PAYMENT_FAILURE;  //支付失败，等待重新支付
+extern NSInteger const WDDiagnoseStatus_REPAIR_PROCESSING;  //正在维修
 extern NSInteger const WDDiagnoseStatus_QA_SUCCESS;  //质检合格，待评价
 extern NSInteger const WDDiagnoseStatus_QA_FAILURE;  //质检不合格
 extern NSInteger const WDDiagnoseStatus_FINISHED;  //完成
