@@ -18,6 +18,12 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 
 @implementation WeiDeApiManger
 
+//维修项目整体完成
++(NSString *)finishRepairItem
+{
+    return MFURLWithPara(@"api/diagnose/finishRepairItem");
+}
+
 //模拟支付成功接口
 +(NSString *)repairPayTest
 {

@@ -12,6 +12,7 @@
 #import "WDRepairStepUploadImageCellView.h"
 #import "WDRepairStepQualifiedCellView.h"
 #import "WDListRepairStepApi.h"
+#import "WDFinishRepairItemApi.h"
 
 @interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate>
 {
@@ -36,11 +37,38 @@
     m_tableView.dataSource = self;
     m_tableView.delegate = self;
     [self.view addSubview:m_tableView];
-    [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top);
-        make.width.equalTo(self.view.mas_width);
-        make.bottom.equalTo(self.view.mas_bottom);
-    }];
+    
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_Expert)
+    {
+        [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top);
+            make.width.equalTo(self.view.mas_width);
+            make.bottom.equalTo(self.view.mas_bottom).offset(-60);
+        }];
+        
+        UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [submitButton setTitle:@"维修完成" forState:UIControlStateNormal];
+        [submitButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
+        [submitButton addTarget:self action:@selector(onClickFinishRepairItem) forControlEvents:UIControlEventTouchUpInside];
+        submitButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        [self.view addSubview:submitButton];
+        [submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left).offset(20);
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(self.view.mas_bottom).offset(-10);
+        }];
+    }
+    else
+    {
+        [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top);
+            make.width.equalTo(self.view.mas_width);
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+    }
     
     [self getRepairStepList];
 }
@@ -312,6 +340,32 @@
 -(void)onClickUploadImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView
 {
     [self showTips:@"您点击了上传图片"];
+}
+
+-(void)onClickFinishRepairItem
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDFinishRepairItemApi *mfApi = [WDFinishRepairItemApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.repairItemId = self.repairItemId;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf.navigationController popViewControllerAnimated:YES];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

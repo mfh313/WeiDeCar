@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//维修项目整体完成
++(NSString *)finishRepairItem;
+
 //模拟支付成功接口
 +(NSString *)repairPayTest;
 
