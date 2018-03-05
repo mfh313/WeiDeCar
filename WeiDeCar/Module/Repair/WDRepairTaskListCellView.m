@@ -28,7 +28,7 @@
 {
     m_itemModel = itemModel;
     
-    m_createLabel.text = [NSString stringWithFormat:@"创建时间：%@",itemModel.createDate];
+    m_createLabel.text = [NSString stringWithFormat:@"诊断任务ID：%@",itemModel.diagnoseId];
     m_carOwnerIdLabel.text = [NSString stringWithFormat:@"车主ID：%@",itemModel.carOwnerId];
     m_mechanicIdLabel.text = [NSString stringWithFormat:@"技师ID：%@",itemModel.mechanicId];
     m_expertIdLabel.text = [NSString stringWithFormat:@"专家ID：%@",itemModel.diagnoseId];
