@@ -72,13 +72,35 @@
     
     if ([self.attachKey isEqualToString:@"onsiteQualified"])
     {
-        m_titleLabel.text = @"现场检查";
-        m_contentLabel.text = [self qualifiedString:m_repairStep.onsiteQualified];
+        [self setOnsiteQualifiedRepairStepModel:repairStep];
     }
     else if ([self.attachKey isEqualToString:@"thirdPartyQualifed"])
     {
-        m_titleLabel.text = @"第三方质检";
-        m_contentLabel.text = [self qualifiedString:m_repairStep.thirdPartyQualifed];
+        [self setThirdPartyQualifedRepairStepModel:repairStep];
+    }
+}
+
+-(void)setOnsiteQualifiedRepairStepModel:(WDRepairStepModel *)repairStep
+{
+    m_titleLabel.text = @"现场检查";
+    if (repairStep.status == WDRepairStepStatus_START_REPAIR) {
+        m_contentLabel.text = @"正在维修";
+    }
+    else
+    {
+        m_contentLabel.text = [self qualifiedString:m_repairStep.onsiteQualified];
+    }
+}
+
+-(void)setThirdPartyQualifedRepairStepModel:(WDRepairStepModel *)repairStep
+{
+    m_titleLabel.text = @"第三方质检";
+    if (repairStep.status == WDRepairStepStatus_START_REPAIR) {
+        m_contentLabel.text = @"正在维修";
+    }
+    else
+    {
+        m_contentLabel.text = [self qualifiedString:m_repairStep.thirdPartyQualified];
     }
 }
 
@@ -86,17 +108,11 @@
 {
     NSString *statusString = nil;
     
-    if (status == WDRepairStepQualifiedStatus_10) {
-        statusString = @"初始状态";
+    if (status == WDRepairStepQualifiedStatus_UNQUALIFIED) {
+        statusString = @"检验不合格";
     }
-    else if (status == WDRepairStepQualifiedStatus_20){
-        statusString = @"开始维修";
-    }
-    else if (status == WDRepairStepQualifiedStatus_30){
-        statusString = @"不合格";
-    }
-    else if (status == WDRepairStepQualifiedStatus_40){
-        statusString = @"合格";
+    else if (status == WDRepairStepQualifiedStatus_QUALIFIED){
+        statusString = @"检验合格";
     }
     
     return statusString;

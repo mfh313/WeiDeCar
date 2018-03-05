@@ -13,6 +13,7 @@
 #import "WDRepairStepQualifiedCellView.h"
 #import "WDListRepairStepApi.h"
 #import "WDFinishRepairItemApi.h"
+#import "WDUpdateRepairStepApi.h"
 
 @interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate>
 {
@@ -333,7 +334,36 @@
 #pragma mark - WDRepairStepListHeaderViewDelegate
 -(void)onClickFinishRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepListHeaderView *)cellView
 {
-    [self showTips:@"您点击了完成"];
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDUpdateRepairStepApi *mfApi = [WDUpdateRepairStepApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.repairStepId = repairStep.repairStepId;
+    
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_Expert)
+    {
+        mfApi.isExpert = YES;
+        mfApi.onsiteQualified = @"20";
+        mfApi.thirdPartyQualifed = @"20";
+    }
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 #pragma mark - WDRepairStepUploadImageCellViewDelegate
