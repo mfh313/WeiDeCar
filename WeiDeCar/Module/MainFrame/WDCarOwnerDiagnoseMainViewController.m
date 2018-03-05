@@ -299,12 +299,12 @@
     }
 }
 
--(void)showDiagnoseDetail:(WDDiagnoseModel *)itemModel
-{
-    WDDiagnoseDetailViewController *detailVC = [[WDDiagnoseDetailViewController alloc] init];
-    detailVC.detailModel = itemModel;
-    [self.navigationController pushViewController:detailVC animated:YES];
-}
+//-(void)showDiagnoseDetail:(WDDiagnoseModel *)itemModel
+//{
+//    WDDiagnoseDetailViewController *detailVC = [[WDDiagnoseDetailViewController alloc] init];
+//    detailVC.detailModel = itemModel;
+//    [self.navigationController pushViewController:detailVC animated:YES];
+//}
 
 -(void)confirmDiagnoseByCarOwner:(WDDiagnoseModel *)itemModel
 {
