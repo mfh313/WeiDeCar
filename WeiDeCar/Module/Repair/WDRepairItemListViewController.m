@@ -12,6 +12,7 @@
 #import "WDDiagnoseModel.h"
 #import "WDChooseRepairItemViewController.h"
 #import "WDRepairListViewController.h"
+#import "WDRepairPayTestApi.h"
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -208,10 +209,28 @@
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_CarOwner
-        && itemModel.status == WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED)
+    if (currentUserInfo.userType == WDUserInfoType_CarOwner)
     {
-        [self showChooseRepairItemVC:itemModel];
+        if (itemModel.status == WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED)
+        {
+            [self showChooseRepairItemVC:itemModel];
+        }
+        else if (itemModel.status == WDDiagnoseStatus_OFFER_ACCEPTED)
+        {
+            __weak typeof(self) weakSelf = self;
+            LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"报价已接受，车主支付后才能开始维修，是否支付?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+                
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                [strongSelf continueRepairPay:itemModel.diagnoseId];
+                
+            } cancelHandler:nil destructiveHandler:nil];
+            
+            [alertView showAnimated:YES completionHandler:nil];
+        }
+        else
+        {
+            [self showRepairListVC:itemModel];
+        }
     }
     else
     {
@@ -231,6 +250,32 @@
     WDRepairListViewController *repairVC = [WDRepairListViewController new];
     repairVC.diagnoseId = itemModel.diagnoseId;
     [self.navigationController pushViewController:repairVC animated:YES];
+}
+
+-(void)continueRepairPay:(NSString *)diagnoseId
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDRepairPayTestApi *mfApi = [WDRepairPayTestApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.diagnoseId = diagnoseId;
+    
+    mfApi.animatingText = @"正在支付";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf getListRepairTaskByUser];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
