@@ -302,7 +302,8 @@
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_Mechanic)
+    if (currentUserInfo.userType == WDUserInfoType_Mechanic
+        && repairItem.status == WDRepairItemStatus_ACCEPTED)
     {
         [self startRepairItem:repairItem];
     }

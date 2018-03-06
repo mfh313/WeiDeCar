@@ -15,3 +15,6 @@ com.weidecar.push
 高德地图Key
 e064cd098ecd7aa63a4ec9b31610e220
 
+
+
+com.weidecar.wd

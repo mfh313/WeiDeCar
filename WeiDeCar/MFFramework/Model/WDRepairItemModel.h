@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "WDRepairTaskModel.h"
 
-extern NSInteger const WDRepairItemStatus_10;   //未选择
-extern NSInteger const WDRepairItemStatus_20;  //已选择
+extern NSInteger const WDRepairItemStatus_DECLINED;   //拒绝报价
+extern NSInteger const WDRepairItemStatus_ACCEPTED;  //接受报价
+extern NSInteger const WDRepairItemStatus_REPAIR_PROCESSING;  //开始维修
+extern NSInteger const WDRepairItemStatus_ALL_QUALIFIED;  //维修项目合格
 
 @interface WDRepairItemModel : NSObject
 

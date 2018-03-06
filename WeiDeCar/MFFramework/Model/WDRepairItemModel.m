@@ -8,8 +8,10 @@
 
 #import "WDRepairItemModel.h"
 
-NSInteger const WDRepairItemStatus_10 = 10;   //未选择
-NSInteger const WDRepairItemStatus_20 = 20;  //已选择
+NSInteger const WDRepairItemStatus_DECLINED = 10;   //拒绝报价
+NSInteger const WDRepairItemStatus_ACCEPTED = 20;  //接受报价
+NSInteger const WDRepairItemStatus_REPAIR_PROCESSING = 30;  //开始维修
+NSInteger const WDRepairItemStatus_ALL_QUALIFIED = 40;  //维修项目合格
 
 @implementation WDRepairItemModel
 
