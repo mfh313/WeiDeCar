@@ -305,7 +305,7 @@
         if (currentUserInfo.userType != WDUserInfoType_CarOwner)
         {
             MFTableViewCellObject *repairStepAction = [MFTableViewCellObject new];
-            repairStepAction.cellHeight = 60.0f;
+            repairStepAction.cellHeight = 80.0f;
             repairStepAction.cellReuseIdentifier = @"uploadImageCellView";
             repairStepAction.attachIndex = i;
             [m_cellInfos addObject:repairStepAction];

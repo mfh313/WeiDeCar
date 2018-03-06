@@ -38,7 +38,7 @@
         
         [m_finshButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(80);
-            make.right.equalTo(self.mas_right).offset(-20);
+            make.right.equalTo(self.mas_right).offset(-15);
             make.height.mas_equalTo(40);
             make.centerY.equalTo(self.mas_centerY);
         }];
