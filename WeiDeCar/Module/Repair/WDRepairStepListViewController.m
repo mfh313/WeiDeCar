@@ -360,6 +360,7 @@
         
         [strongSelf showTips:mfApi.errorMessage];
         
+        [strongSelf getRepairStepList];
         
     } failure:^(YTKBaseRequest * request) {
         
