@@ -24,7 +24,7 @@
     if (self.isExpert)
     {
         requestArgument[@"onsiteQualified"] = self.onsiteQualified;
-        requestArgument[@"thirdPartyQualifed"] = self.thirdPartyQualifed;
+        requestArgument[@"thirdPartyQualified"] = self.thirdPartyQualified;
     }
     
     

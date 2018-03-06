@@ -346,7 +346,7 @@
     {
         mfApi.isExpert = YES;
         mfApi.onsiteQualified = @"20";
-        mfApi.thirdPartyQualifed = @"20";
+        mfApi.thirdPartyQualified = @"20";
     }
     
     mfApi.animatingView = self.view;
