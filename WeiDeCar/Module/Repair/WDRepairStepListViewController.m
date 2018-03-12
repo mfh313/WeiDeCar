@@ -15,12 +15,16 @@
 #import "WDFinishRepairItemApi.h"
 #import "WDUpdateRepairStepApi.h"
 #import "WDQiniuFileService.h"
+#import "WDUploadRepairStepPhotoApi.h"
+#import "WDRepairStepItemImageViewController.h"
 
 @interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     MFUITableView *m_tableView;
     
     NSMutableArray<WDRepairStepModel *> *m_repairSteps;
+    
+    WDRepairStepModel *m_uploadPhotoRepairStep;
 }
 
 @property (nonatomic, strong) UIImage *pickImage;
@@ -371,8 +375,17 @@
 }
 
 #pragma mark - WDRepairStepUploadImageCellViewDelegate
+-(void)onClickSeeImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView;
+{
+    WDRepairStepItemImageViewController *imageVC = [WDRepairStepItemImageViewController new];
+    imageVC.repairStep = repairStep;
+    [self.navigationController pushViewController:imageVC animated:YES];
+}
+
 -(void)onClickUploadImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView
 {
+    m_uploadPhotoRepairStep = repairStep;
+    
     NSArray *actionArray = @[@"拍照",@"从手机相册选择"];
     
     __weak typeof(self) weakSelf = self;
@@ -465,9 +478,35 @@
          __strong typeof(weakSelf) strongSelf = weakSelf;
          [strongSelf hiddenMBStatus];
          
-         
-         [strongSelf reloadTableView];
+         [strongSelf uploadRepairStepPhoto:url];
      }];
+}
+
+-(void)uploadRepairStepPhoto:(NSString *)photoUrl
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDUploadRepairStepPhotoApi *mfApi = [WDUploadRepairStepPhotoApi new];
+    mfApi.repairStepId = m_uploadPhotoRepairStep.repairStepId;
+    mfApi.photoUrl = photoUrl;
+    mfApi.userId = loginService.currentUserInfo.userId;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf getRepairStepList];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 -(void)onClickFinishRepairItem

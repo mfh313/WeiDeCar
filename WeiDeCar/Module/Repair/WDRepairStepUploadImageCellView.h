@@ -12,13 +12,14 @@
 @class WDRepairStepModel,WDRepairStepUploadImageCellView;
 @protocol WDRepairStepUploadImageCellViewDelegate <NSObject>
 @optional
+-(void)onClickSeeImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView;
 -(void)onClickUploadImageRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepUploadImageCellView *)cellView;
 
 @end
 
 @interface WDRepairStepUploadImageCellView : MMUIBridgeView
 {
-    UIImageView *m_imageView;
+    UIButton *m_imageSeeButton;
     UIButton *m_contentButton;
     
     WDRepairStepModel *m_repairStep;

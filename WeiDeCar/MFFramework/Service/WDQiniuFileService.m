@@ -13,6 +13,11 @@
 
 @implementation WDQiniuFileService
 
+-(NSString *)bucketUrl
+{
+    return @"http://p1pt7y7fx.bkt.clouddn.com";
+}
+
 -(void)uploadImageToQNiu:(UIImage *)image complete:(WDQiniuFileServiceHandler)completion
 {
     [self uploadImageToQNFilePath:[self getImagePath:image] complete:completion];
@@ -20,8 +25,6 @@
 
 - (void)uploadImageToQNFilePath:(NSString *)filePath complete:(WDQiniuFileServiceHandler)completion
 {
-    NSString *Md5_key = [[self fileNameForKey:[self randomString]] stringByAppendingString:@".png"];
-    
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
     QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
         NSLog(@"percent == %.2f", percent);
@@ -33,14 +36,13 @@
         NSLog(@"info ===== %@", info);
         NSLog(@"resp ===== %@", resp);
         if (completion) {
-//            NSString *url = [NSString stringWithFormat:@"%@/%@",self.bucketUrl,resp[@"key"]];
-            completion(resp[@"key"],resp[@"key"]);
-//            NSString *url = [NSString stringWithFormat:@"%@/%@",self.bucketUrl,resp[@"key"]];
-//            completion(url,resp[@"key"]);
+            NSString *url = [NSString stringWithFormat:@"%@/%@",[self bucketUrl],resp[@"key"]];
+            completion(url,resp[@"key"]);
         }
     }
                 option:uploadOption];
 }
+
 
 -(void)getImageToken
 {
