@@ -14,6 +14,7 @@
 #import "WDListRepairStepApi.h"
 #import "WDFinishRepairItemApi.h"
 #import "WDUpdateRepairStepApi.h"
+#import "WDQiniuFileService.h"
 
 @interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
@@ -456,16 +457,15 @@
 -(void)uploadImageToQNiu:(UIImage *)image
 {
     __weak typeof(self) weakSelf = self;
-    [self showMBStatusInViewController:@"正在更新头像..."];
+    [self showMBStatusInViewController:@"正在上传..."];
     
-    HCQiniuFileService *qiniuService = [[MMServiceCenter defaultCenter] getService:[HCQiniuFileService class]];
+    WDQiniuFileService *qiniuService = [[MMServiceCenter defaultCenter] getService:[WDQiniuFileService class]];
     [qiniuService uploadImageToQNiu:image complete:^(NSString *url, NSString *name)
      {
          __strong typeof(weakSelf) strongSelf = weakSelf;
          [strongSelf hiddenMBStatus];
          
-         m_imageUrl = url;
-         strongSelf.userInfo.imageUrl = m_imageUrl;
+         
          [strongSelf reloadTableView];
      }];
 }

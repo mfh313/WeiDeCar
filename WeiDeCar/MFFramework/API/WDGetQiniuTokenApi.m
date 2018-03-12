@@ -17,7 +17,13 @@
 
 -(YTKRequestMethod)requestMethod
 {
-    return YTKRequestMethodGET;
+    return YTKRequestMethodPOST;
+}
+
+-(id)requestArgumentWithToken
+{
+    NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
+    return requestArgument;
 }
 
 @end

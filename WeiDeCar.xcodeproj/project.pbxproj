@@ -233,6 +233,7 @@
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
 		A57E1F2720569CF900D9559C /* WDListPhotoByRepairStepIdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2620569CF900D9559C /* WDListPhotoByRepairStepIdApi.m */; };
 		A57E1F2A20569D6F00D9559C /* WDUploadRepairStepPhotoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */; };
+		A57E1F2D2056A2E600D9559C /* WDQiniuFileService.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2C2056A2E600D9559C /* WDQiniuFileService.m */; };
 		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
 		A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */; };
@@ -802,6 +803,8 @@
 		A57E1F2620569CF900D9559C /* WDListPhotoByRepairStepIdApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListPhotoByRepairStepIdApi.m; sourceTree = "<group>"; };
 		A57E1F2820569D6F00D9559C /* WDUploadRepairStepPhotoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDUploadRepairStepPhotoApi.h; sourceTree = "<group>"; };
 		A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDUploadRepairStepPhotoApi.m; sourceTree = "<group>"; };
+		A57E1F2B2056A2E600D9559C /* WDQiniuFileService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDQiniuFileService.h; sourceTree = "<group>"; };
+		A57E1F2C2056A2E600D9559C /* WDQiniuFileService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDQiniuFileService.m; sourceTree = "<group>"; };
 		A59FEDB32028871D007378F0 /* MFTableViewSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionObject.h; sourceTree = "<group>"; };
 		A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionObject.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
@@ -1583,6 +1586,8 @@
 		A52D91451FDC2871009DD077 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A57E1F2B2056A2E600D9559C /* WDQiniuFileService.h */,
+				A57E1F2C2056A2E600D9559C /* WDQiniuFileService.m */,
 				A57240381FFCF758004EC27E /* WDJPUSHService.h */,
 				A57240391FFCF758004EC27E /* WDJPUSHService.m */,
 				A52D91461FDC2A05009DD077 /* WDLoginService.h */,
@@ -2185,6 +2190,7 @@
 				A5241C9A1FBF094200B6B844 /* MMTabBarController.m in Sources */,
 				A5631C8E1FF5131500DBA959 /* WDMechanicJudgementInputView.m in Sources */,
 				A52648802001317F00DC11BA /* WDStoreAnnotationView.m in Sources */,
+				A57E1F2D2056A2E600D9559C /* WDQiniuFileService.m in Sources */,
 				A535AD041FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m in Sources */,
 				A5241C791FBF094200B6B844 /* NSMutableSet+SafeInsert.m in Sources */,
 				A5631C801FF5131500DBA959 /* WDDiagnosisTypeSelectView.m in Sources */,

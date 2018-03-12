@@ -20,4 +20,10 @@
     return YTKRequestMethodGET;
 }
 
+-(id)requestArgumentWithToken
+{
+    NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
+    return requestArgument;
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "WDLoginContentView.h"
 #import "WDUserLoginApi.h"
 #import "WDJPUSHService.h"
+#import "WDQiniuFileService.h"
 
 @interface WDLoginViewController () <WDLoginContentViewDelegate,tableViewDelegate,UITableViewDelegate>
 {
@@ -127,6 +128,9 @@
     NSString *alias = loginService.currentUserInfo.userId;
     WDJPUSHService *pushService = [[MMServiceCenter defaultCenter] getService:[WDJPUSHService class]];
     [pushService setPUSHAlias:alias];
+    
+    WDQiniuFileService *qiniuService = [[MMServiceCenter defaultCenter] getService:[WDQiniuFileService class]];
+    [qiniuService getImageToken];
 }
 
 - (void)didReceiveMemoryWarning {
