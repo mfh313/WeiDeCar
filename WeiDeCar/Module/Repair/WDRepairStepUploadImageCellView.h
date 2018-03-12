@@ -18,6 +18,7 @@
 
 @interface WDRepairStepUploadImageCellView : MMUIBridgeView
 {
+    UIImageView *m_imageView;
     UIButton *m_contentButton;
     
     WDRepairStepModel *m_repairStep;

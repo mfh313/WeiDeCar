@@ -10,6 +10,12 @@
 
 @interface WeiDeApiManger : MMService
 
+//根据维修步骤ID查询图片接口
++(NSString *)listPhotoByRepairStepId;
+
+//维修步骤图片上传接口
++(NSString *)uploadRepairStepPhoto;
+
 //维修项目整体完成
 +(NSString *)finishRepairItem;
 

@@ -231,6 +231,8 @@
 		A5770158202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5770157202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib */; };
 		A577015B202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A577015A202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m */; };
 		A57B46DD1FCEF84C0004C397 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */; };
+		A57E1F2720569CF900D9559C /* WDListPhotoByRepairStepIdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2620569CF900D9559C /* WDListPhotoByRepairStepIdApi.m */; };
+		A57E1F2A20569D6F00D9559C /* WDUploadRepairStepPhotoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */; };
 		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
 		A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */; };
@@ -796,6 +798,10 @@
 		A577015A202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairOfferHeaderTitleView.m; sourceTree = "<group>"; };
 		A57B46DB1FCEF84C0004C397 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
 		A57B46DC1FCEF84C0004C397 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
+		A57E1F2520569CF900D9559C /* WDListPhotoByRepairStepIdApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListPhotoByRepairStepIdApi.h; sourceTree = "<group>"; };
+		A57E1F2620569CF900D9559C /* WDListPhotoByRepairStepIdApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListPhotoByRepairStepIdApi.m; sourceTree = "<group>"; };
+		A57E1F2820569D6F00D9559C /* WDUploadRepairStepPhotoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDUploadRepairStepPhotoApi.h; sourceTree = "<group>"; };
+		A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDUploadRepairStepPhotoApi.m; sourceTree = "<group>"; };
 		A59FEDB32028871D007378F0 /* MFTableViewSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionObject.h; sourceTree = "<group>"; };
 		A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionObject.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
@@ -983,6 +989,10 @@
 		A51A6BA91FD974120017A98A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A57E1F2820569D6F00D9559C /* WDUploadRepairStepPhotoApi.h */,
+				A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */,
+				A57E1F2520569CF900D9559C /* WDListPhotoByRepairStepIdApi.h */,
+				A57E1F2620569CF900D9559C /* WDListPhotoByRepairStepIdApi.m */,
 				A5EFD53F204D61D400A67298 /* WDFinishRepairItemApi.h */,
 				A5EFD540204D61D400A67298 /* WDFinishRepairItemApi.m */,
 				A5F3A2CD2031CF0C00FC76EA /* WDUpdateRepairStepApi.h */,
@@ -2109,6 +2119,7 @@
 				A5241C8F1FBF094200B6B844 /* MMUINavigationBar.m in Sources */,
 				A5241C881FBF094200B6B844 /* MMBaseInfoItem.m in Sources */,
 				A55ECE9720308444003CE4B2 /* WDRepairStepQualifiedCellView.m in Sources */,
+				A57E1F2720569CF900D9559C /* WDListPhotoByRepairStepIdApi.m in Sources */,
 				A5241C751FBF094200B6B844 /* NSCache+SafeInsert.m in Sources */,
 				A5241C9D1FBF094200B6B844 /* MFAppMacroUtil.m in Sources */,
 				A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */,
@@ -2158,6 +2169,7 @@
 				A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */,
 				A52EAF0D1FFBB10100262796 /* WDIPCameraService.m in Sources */,
 				A5241DFA1FBF0C5200B6B844 /* Utilities.m in Sources */,
+				A57E1F2A20569D6F00D9559C /* WDUploadRepairStepPhotoApi.m in Sources */,
 				A5631C761FF5131500DBA959 /* WDCarOwnerDiagnoseMainViewController.m in Sources */,
 				A50FF14A1FDECEEA00FD6FD1 /* WDReconfirmAfterExpertDiagnosedApi.m in Sources */,
 				A5241DE01FBF0C5200B6B844 /* Chat.pb.m in Sources */,

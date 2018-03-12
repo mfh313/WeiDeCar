@@ -18,6 +18,18 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 
 @implementation WeiDeApiManger
 
+//根据维修步骤ID查询图片接口
++(NSString *)listPhotoByRepairStepId
+{
+    return MFURLWithPara(@"api/diagnose/listPhotoByRepairStepId");
+}
+
+//维修步骤图片上传接口
++(NSString *)uploadRepairStepPhoto
+{
+    return MFURLWithPara(@"api/diagnose/uploadRepairStepPhoto");
+}
+
 //维修项目整体完成
 +(NSString *)finishRepairItem
 {
