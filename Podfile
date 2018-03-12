@@ -3,6 +3,7 @@
 
 target 'WeiDeCar' do
 
+pod 'Qiniu', '~> 7.2'
 pod 'AMapLocation-NO-IDFA'
 pod 'AMap2DMap-NO-IDFA'
 pod 'JPush'
