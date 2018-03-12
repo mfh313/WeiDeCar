@@ -27,7 +27,6 @@
         requestArgument[@"thirdPartyQualified"] = self.thirdPartyQualified;
     }
     
-    
     return requestArgument;
 }
 

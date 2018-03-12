@@ -17,8 +17,9 @@
 #import "WDQiniuFileService.h"
 #import "WDUploadRepairStepPhotoApi.h"
 #import "WDRepairStepItemImageViewController.h"
+#import "WDRepairStepQualifiedSelectCellView.h"
 
-@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -104,6 +105,10 @@
     {
         return [self tableView:tableView repairStepQualifiedCellForIndexPath:indexPath];
     }
+    else if ([identifier isEqualToString:@"repairStepQualifiedSelectCellView"])
+    {
+        return [self tableView:tableView repairStepQualifiedSelectCellForIndexPath:indexPath];
+    }
     else if ([identifier isEqualToString:@"uploadImageCellView"])
     {
         return [self tableView:tableView uploadImageCellForIndexPath:indexPath];
@@ -179,6 +184,45 @@
     [cellView setRepairStepModel:repairItem];
     
     return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairStepQualifiedSelectCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairStepQualifiedSelectCellView *cellView = [[WDRepairStepQualifiedSelectCellView alloc] initWithFrame:cell.contentView.bounds];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairStepQualifiedSelectCellView *cellView = (WDRepairStepQualifiedSelectCellView *)cell.m_subContentView;
+    cellView.attachKey = cellInfo.attachKey;
+    cellView.attachIndex = cellInfo.attachIndex;
+    
+    return cell;
+}
+
+#pragma mark - WDRepairStepQualifiedSelectCellViewDelegate
+-(void)onClickSelectRepairStepQualified:(NSInteger)value cellView:(WDRepairStepQualifiedSelectCellView *)cellView
+{
+    NSString *attachKey = cellView.attachKey;
+    NSInteger attachIndex = cellView.attachIndex;
+    WDRepairStepModel *repairStep = m_repairSteps[attachIndex];
+    
+    if ([attachKey isEqualToString:@"onsiteQualified"]) {
+        repairStep.onsiteQualified = value;
+    }
+    else if ([attachKey isEqualToString:@"thirdPartyQualifed"]){
+        repairStep.thirdPartyQualified = value;
+    }
+    
+    [self reloadTableView];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView uploadImageCellForIndexPath:(NSIndexPath *)indexPath
@@ -276,6 +320,9 @@
 {
     [m_cellInfos removeAllObjects];
     
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
     for (int i = 0; i < m_repairSteps.count; i++) {
         
         [m_cellInfos addObject:[self divisionCellObject:15.0f]];
@@ -298,6 +345,18 @@
         
         [m_cellInfos addObject:[self separatorCellObject]];
         
+        if (currentUserInfo.userType == WDUserInfoType_Expert)
+        {
+            MFTableViewCellObject *onsiteQualifiedSelect = [MFTableViewCellObject new];
+            onsiteQualifiedSelect.cellHeight = 50.0f;
+            onsiteQualifiedSelect.cellReuseIdentifier = @"repairStepQualifiedSelectCellView";
+            onsiteQualifiedSelect.attachKey = @"onsiteQualified";
+            onsiteQualifiedSelect.attachIndex = i;
+            [m_cellInfos addObject:onsiteQualifiedSelect];
+            
+            [m_cellInfos addObject:[self separatorCellObject]];
+        }
+        
         MFTableViewCellObject *thirdPartyQualifed = [MFTableViewCellObject new];
         thirdPartyQualifed.cellHeight = 40.0f;
         thirdPartyQualifed.cellReuseIdentifier = @"repairStepQualifiedCellView";
@@ -307,8 +366,18 @@
         
         [m_cellInfos addObject:[self separatorCellObject]];
         
-        WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-        WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+        if (currentUserInfo.userType == WDUserInfoType_Expert)
+        {
+            MFTableViewCellObject *thirdPartyQualifedSelect = [MFTableViewCellObject new];
+            thirdPartyQualifedSelect.cellHeight = 50.0f;
+            thirdPartyQualifedSelect.cellReuseIdentifier = @"repairStepQualifiedSelectCellView";
+            thirdPartyQualifedSelect.attachKey = @"thirdPartyQualifed";
+            thirdPartyQualifedSelect.attachIndex = i;
+            [m_cellInfos addObject:thirdPartyQualifedSelect];
+            
+            [m_cellInfos addObject:[self separatorCellObject]];
+        }
+        
         if (currentUserInfo.userType != WDUserInfoType_CarOwner)
         {
             MFTableViewCellObject *repairStepAction = [MFTableViewCellObject new];
@@ -352,8 +421,8 @@
     if (currentUserInfo.userType == WDUserInfoType_Expert)
     {
         mfApi.isExpert = YES;
-        mfApi.onsiteQualified = @"20";
-        mfApi.thirdPartyQualified = @"20";
+        mfApi.onsiteQualified = [NSString stringWithFormat:@"%@",@(repairStep.onsiteQualified)];
+        mfApi.thirdPartyQualified = [NSString stringWithFormat:@"%@",@(repairStep.thirdPartyQualified)];
     }
     
     mfApi.animatingView = self.view;

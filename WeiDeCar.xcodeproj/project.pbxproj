@@ -235,6 +235,7 @@
 		A57E1F2A20569D6F00D9559C /* WDUploadRepairStepPhotoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2920569D6F00D9559C /* WDUploadRepairStepPhotoApi.m */; };
 		A57E1F2D2056A2E600D9559C /* WDQiniuFileService.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2C2056A2E600D9559C /* WDQiniuFileService.m */; };
 		A57E1F302056B6BB00D9559C /* WDRepairStepItemImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2F2056B6BB00D9559C /* WDRepairStepItemImageViewController.m */; };
+		A57E1F332056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */; };
 		A59FEDB52028871D007378F0 /* MFTableViewSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
 		A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A3914D1FCC57A000ED0D4F /* MFTableViewCellObject.m */; };
@@ -808,6 +809,8 @@
 		A57E1F2C2056A2E600D9559C /* WDQiniuFileService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDQiniuFileService.m; sourceTree = "<group>"; };
 		A57E1F2E2056B6BB00D9559C /* WDRepairStepItemImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepItemImageViewController.h; sourceTree = "<group>"; };
 		A57E1F2F2056B6BB00D9559C /* WDRepairStepItemImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepItemImageViewController.m; sourceTree = "<group>"; };
+		A57E1F312056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepQualifiedSelectCellView.h; sourceTree = "<group>"; };
+		A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepQualifiedSelectCellView.m; sourceTree = "<group>"; };
 		A59FEDB32028871D007378F0 /* MFTableViewSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionObject.h; sourceTree = "<group>"; };
 		A59FEDB42028871D007378F0 /* MFTableViewSectionObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionObject.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
@@ -1957,6 +1960,8 @@
 				A55ECE9020307DE7003CE4B2 /* WDRepairStepListHeaderView.m */,
 				A55ECE9520308444003CE4B2 /* WDRepairStepQualifiedCellView.h */,
 				A55ECE9620308444003CE4B2 /* WDRepairStepQualifiedCellView.m */,
+				A57E1F312056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.h */,
+				A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */,
 				A55ECE922030827C003CE4B2 /* WDRepairStepUploadImageCellView.h */,
 				A55ECE932030827C003CE4B2 /* WDRepairStepUploadImageCellView.m */,
 			);
@@ -2295,6 +2300,7 @@
 				A5241DF21FBF0C5200B6B844 /* MutableExtensionRegistry.m in Sources */,
 				A5241DC31FBF0C5200B6B844 /* IQToolbar.m in Sources */,
 				A5241E001FBF0C5200B6B844 /* SCLSwitchView.m in Sources */,
+				A57E1F332056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m in Sources */,
 				A52D91501FDC2E63009DD077 /* WDBorderTextField.m in Sources */,
 				A50C372F1FD8362200809CA7 /* SPPageContentView.m in Sources */,
 				A5241C921FBF094200B6B844 /* MMUIViewController.m in Sources */,
