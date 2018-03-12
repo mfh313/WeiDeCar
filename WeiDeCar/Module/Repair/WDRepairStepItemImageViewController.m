@@ -24,8 +24,18 @@
     self.title = @"维修图片详情";
     [self setBackBarButton];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
     m_imageView = [[UIImageView alloc] init];
+    m_imageView.contentMode = UIViewContentModeScaleAspectFit;
+    m_imageView.image = MFImage(@"image_see");
     [self.view addSubview:m_imageView];
+    
+    [m_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.width.equalTo(self.view.mas_width);
+        make.height.equalTo(self.view.mas_height);
+    }];
     
     [self getPhotoByRepairStepId];
 }
@@ -45,7 +55,9 @@
             return;
         }
         
-        [m_imageView sd_setImageWithURL:[NSURL URLWithString:@""]];
+        NSArray *responseNetworkData = mfApi.responseNetworkData;
+        NSString *photoUrl = ((NSDictionary *)responseNetworkData.firstObject)[@"photoUrl"];
+        [m_imageView sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:MFImage(@"image_see")];
         
     } failure:^(YTKBaseRequest * request) {
         
