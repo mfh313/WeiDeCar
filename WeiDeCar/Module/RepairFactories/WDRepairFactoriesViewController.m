@@ -114,17 +114,10 @@
     if (cell == nil) {
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        
-//        WDDiagnoseItemCellView *cellView = [WDDiagnoseItemCellView nibView];
-//        cellView.m_delegate = self;
-//        cell.m_subContentView = cellView;
     }
     
     NSInteger attachIndex = cellInfo.attachIndex;
     WDRepairFactoryModel *itemModel = m_repairFactorys[attachIndex];
-    
-//    WDDiagnoseItemCellView *cellView = (WDDiagnoseItemCellView *)cell.m_subContentView;
-//    [cellView setDiagnoseModel:diagnosisModel];
     
     cell.textLabel.text = itemModel.entityName;
     
@@ -176,8 +169,6 @@
     [m_cellInfos removeAllObjects];
     
     for (int i = 0; i < m_repairFactorys.count; i++) {
-        WDRepairFactoryModel *itemModel  = m_repairFactorys[i];
-        
         MFTableViewCellObject *repairFactory = [MFTableViewCellObject new];
         repairFactory.cellHeight = 60.0f;
         repairFactory.cellReuseIdentifier = @"repairFactory";
