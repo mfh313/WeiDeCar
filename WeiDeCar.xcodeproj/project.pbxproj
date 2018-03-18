@@ -167,6 +167,12 @@
 		A535ACFC1FDD28B2001CF470 /* WDListDiagnoseByMechanicApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACFB1FDD28B2001CF470 /* WDListDiagnoseByMechanicApi.m */; };
 		A535AD041FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535AD031FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m */; };
 		A535AD0D1FDD5387001CF470 /* WDMechanicDiagnoseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A535AD0C1FDD5387001CF470 /* WDMechanicDiagnoseApi.m */; };
+		A54A615F205E0B4400CD588F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A615E205E0B4400CD588F /* libc++.tbd */; };
+		A54A6161205E0B6900CD588F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6160205E0B6900CD588F /* CoreTelephony.framework */; };
+		A54A6163205E0B7700CD588F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6162205E0B7700CD588F /* QuartzCore.framework */; };
+		A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CB51FBF0A4A00B6B844 /* CFNetwork.framework */; };
+		A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6165205E0BAA00CD588F /* CoreMotion.framework */; };
+		A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6167205E0BD500CD588F /* AlipaySDK.framework */; };
 		A55ECE7C20305D70003CE4B2 /* WDRepairTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */; };
 		A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */; };
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
@@ -596,6 +602,11 @@
 		A535AD031FDD4B88001CF470 /* WDListDiagnoseByExpertApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListDiagnoseByExpertApi.m; sourceTree = "<group>"; };
 		A535AD0B1FDD5387001CF470 /* WDMechanicDiagnoseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMechanicDiagnoseApi.h; sourceTree = "<group>"; };
 		A535AD0C1FDD5387001CF470 /* WDMechanicDiagnoseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMechanicDiagnoseApi.m; sourceTree = "<group>"; };
+		A54A615E205E0B4400CD588F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A54A6160205E0B6900CD588F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A54A6165205E0BAA00CD588F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		A54A6167205E0BD500CD588F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = WeiDeCar/MFFramework/Alipay/AlipaySDK.framework; sourceTree = "<group>"; };
 		A55ECE7A20305D70003CE4B2 /* WDRepairTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairTaskModel.h; sourceTree = "<group>"; };
 		A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairTaskModel.m; sourceTree = "<group>"; };
 		A55ECE7D20305F9C003CE4B2 /* WDListRepairItemApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairItemApi.h; sourceTree = "<group>"; };
@@ -864,6 +875,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */,
+				A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */,
+				A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */,
+				A54A6163205E0B7700CD588F /* QuartzCore.framework in Frameworks */,
+				A54A6161205E0B6900CD588F /* CoreTelephony.framework in Frameworks */,
+				A54A615F205E0B4400CD588F /* libc++.tbd in Frameworks */,
 				A51DBC212000851D00A870FD /* AMapLocationKit.framework in Frameworks */,
 				A5631CA31FF516C500DBA959 /* OpenAL.framework in Frameworks */,
 				A5631CA11FF516B400DBA959 /* CoreMedia.framework in Frameworks */,
@@ -898,6 +915,11 @@
 		0E3F3232FF9D8C629EDFDDCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A54A6167205E0BD500CD588F /* AlipaySDK.framework */,
+				A54A6165205E0BAA00CD588F /* CoreMotion.framework */,
+				A54A6162205E0B7700CD588F /* QuartzCore.framework */,
+				A54A6160205E0B6900CD588F /* CoreTelephony.framework */,
+				A54A615E205E0B4400CD588F /* libc++.tbd */,
 				A51DBC202000851D00A870FD /* AMapLocationKit.framework */,
 				A5631CA41FF516DD00DBA959 /* libstdc++.6.0.9.tbd */,
 				A5631CA51FF516DD00DBA959 /* libstdc++.tbd */,
@@ -2465,6 +2487,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Vendors/ThirdPartyPlugin",
 					"$(PROJECT_DIR)/WeiDeCar/Vendors/ThirdPartyPlugin/JSPatch",
 					"$(PROJECT_DIR)/Pods/AMapLocation-NO-IDFA",
+					"$(PROJECT_DIR)/WeiDeCar/MFFramework/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/MFComponent/MFComponent-pch.pch";
@@ -2480,6 +2503,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/EZUIKit",
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/Openssl/lib",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.mafanghua.WeiDeCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2501,6 +2525,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Vendors/ThirdPartyPlugin",
 					"$(PROJECT_DIR)/WeiDeCar/Vendors/ThirdPartyPlugin/JSPatch",
 					"$(PROJECT_DIR)/Pods/AMapLocation-NO-IDFA",
+					"$(PROJECT_DIR)/WeiDeCar/MFFramework/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/MFComponent/MFComponent-pch.pch";
@@ -2516,6 +2541,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/EZUIKit",
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/Openssl/lib",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.mafanghua.WeiDeCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
