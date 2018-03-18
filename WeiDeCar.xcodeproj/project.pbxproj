@@ -1008,6 +1008,7 @@
 		A51A6BA81FD974120017A98A /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A54A6169205E0FDD00CD588F /* Alipay */,
 				A51A6BA91FD974120017A98A /* API */,
 				A52D91411FDC2309009DD077 /* Model */,
 				A52D91451FDC2871009DD077 /* Service */,
@@ -1662,6 +1663,13 @@
 				A535ACE01FDCD20E001CF470 /* WDGuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		A54A6169205E0FDD00CD588F /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alipay;
 			sourceTree = "<group>";
 		};
 		A5631BD01FF512CE00DBA959 /* IPCamera */ = {
