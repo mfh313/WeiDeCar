@@ -13,6 +13,7 @@
 #import "IQKeyboardManager.h"
 #import "WDJPUSHService.h"
 #import "WXApiManager.h"
+#import "AlipayManager.h"
 
 static NSString *appKey = @"8b52945c5716a0fe9c5a2439";
 static NSString *channel = @"Publish channel";
@@ -115,7 +116,22 @@ static BOOL isProduction = TRUE;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    if ([url.host isEqualToString:@"safepay"]) {
+        return [[AlipayManager sharedManager] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    }
+    
     return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+}
+
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    if ([url.host isEqualToString:@"safepay"]) {
+        return [[AlipayManager sharedManager] application:app openURL:url options:options];
+    }
+    
+    return YES;
 }
 
 -(void)registerAMapKit
