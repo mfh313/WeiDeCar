@@ -18,6 +18,8 @@
 		A5132B6F1FD6D2D900E2DCEE /* MMBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5132B6B1FD6D2D900E2DCEE /* MMBarButton.m */; };
 		A5132B701FD6D2D900E2DCEE /* MMBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A5132B6C1FD6D2D900E2DCEE /* MMBarButtonItem.m */; };
 		A5132B731FD6D36700E2DCEE /* UINavigationItem+margin.m in Sources */ = {isa = PBXBuildFile; fileRef = A5132B711FD6D36700E2DCEE /* UINavigationItem+margin.m */; };
+		A51A18ED205E9D5000D81BBB /* APOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A18E9205E9D4F00D81BBB /* APOrderInfo.m */; };
+		A51A18EE205E9D5000D81BBB /* APAuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A18EB205E9D5000D81BBB /* APAuthInfo.m */; };
 		A51A6BF41FD974940017A98A /* WeiDeApiManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A6BF31FD974940017A98A /* WeiDeApiManger.m */; };
 		A51A6BFE1FD976B60017A98A /* YTKAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A6BF71FD976B60017A98A /* YTKAnimatingRequestAccessory.m */; };
 		A51A6BFF1FD976B60017A98A /* YTKBaseRequest+AnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A6BF91FD976B60017A98A /* YTKBaseRequest+AnimatingAccessory.m */; };
@@ -303,6 +305,10 @@
 		A5132B6E1FD6D2D900E2DCEE /* MMBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBarButton.h; sourceTree = "<group>"; };
 		A5132B711FD6D36700E2DCEE /* UINavigationItem+margin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+margin.m"; sourceTree = "<group>"; };
 		A5132B721FD6D36700E2DCEE /* UINavigationItem+margin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+margin.h"; sourceTree = "<group>"; };
+		A51A18E9205E9D4F00D81BBB /* APOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APOrderInfo.m; sourceTree = "<group>"; };
+		A51A18EA205E9D5000D81BBB /* APAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthInfo.h; sourceTree = "<group>"; };
+		A51A18EB205E9D5000D81BBB /* APAuthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthInfo.m; sourceTree = "<group>"; };
+		A51A18EC205E9D5000D81BBB /* APOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOrderInfo.h; sourceTree = "<group>"; };
 		A51A6BAC1FD974120017A98A /* MFFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFramework.h; sourceTree = "<group>"; };
 		A51A6BF21FD974940017A98A /* WeiDeApiManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiDeApiManger.h; sourceTree = "<group>"; };
 		A51A6BF31FD974940017A98A /* WeiDeApiManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiDeApiManger.m; sourceTree = "<group>"; };
@@ -1693,6 +1699,10 @@
 			children = (
 				A54A6184205E22E800CD588F /* AlipayManager.h */,
 				A54A6185205E22E800CD588F /* AlipayManager.m */,
+				A51A18EA205E9D5000D81BBB /* APAuthInfo.h */,
+				A51A18EB205E9D5000D81BBB /* APAuthInfo.m */,
+				A51A18EC205E9D5000D81BBB /* APOrderInfo.h */,
+				A51A18E9205E9D4F00D81BBB /* APOrderInfo.m */,
 			);
 			path = Alipay;
 			sourceTree = "<group>";
@@ -2263,6 +2273,7 @@
 				A5241DBA1FBF0C5200B6B844 /* IQUIView+Hierarchy.m in Sources */,
 				A526487D2001317F00DC11BA /* WDRepairFactoryMapViewController.m in Sources */,
 				A5241C8A1FBF094200B6B844 /* MMNavigationController.m in Sources */,
+				A51A18EE205E9D5000D81BBB /* APAuthInfo.m in Sources */,
 				A5241DE91FBF0C5200B6B844 /* CodedOutputStream.m in Sources */,
 				A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */,
 				A5241C901FBF094200B6B844 /* MMUITextField.m in Sources */,
@@ -2347,6 +2358,7 @@
 				A5631C791FF5131500DBA959 /* WDDiagnoseInfoCreateViewController.m in Sources */,
 				A5241C8E1FBF094200B6B844 /* MMUIBridgeView.m in Sources */,
 				A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */,
+				A51A18ED205E9D5000D81BBB /* APOrderInfo.m in Sources */,
 				A51A6BFE1FD976B60017A98A /* YTKAnimatingRequestAccessory.m in Sources */,
 				A5631C8B1FF5131500DBA959 /* WDMainFrameViewController.m in Sources */,
 				A5631C7E1FF5131500DBA959 /* WDDiagnosisMainAddView.m in Sources */,

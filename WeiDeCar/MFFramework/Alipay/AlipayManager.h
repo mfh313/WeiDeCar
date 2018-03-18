@@ -11,7 +11,7 @@
 
 @interface AlipayManager : NSObject
 
-+(instancetype)sharedManager;
++ (instancetype)sharedManager;
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
