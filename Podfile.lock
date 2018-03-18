@@ -32,6 +32,7 @@ PODS:
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
   - SMPageControl (1.2)
+  - WechatOpenSDK (1.8.1)
   - WeexSDK (0.17.0)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - Qiniu (~> 7.2)
   - SDWebImage
   - SMPageControl (~> 1.2)
+  - WechatOpenSDK
   - WeexSDK
   - YTKNetwork (~> 2.0)
 
@@ -63,9 +65,10 @@ SPEC CHECKSUMS:
   Qiniu: ae0fea1cc379fae1560d8748ac537e0fbeb8626e
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SMPageControl: 922892813001cfaf059e86e6801f46a967e9ee29
+  WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
   WeexSDK: ad8443f4290ef7cb241bbd4c03b02d9dfc9fdca2
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: fea3abc526d0a05c0b749775ff44ca8e6477316d
+PODFILE CHECKSUM: 894c93051491feb28ea82bab96ca2e8280e6eb27
 
 COCOAPODS: 1.3.1
