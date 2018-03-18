@@ -12,6 +12,7 @@
 #import "MFThemeHelper.h"
 #import "IQKeyboardManager.h"
 #import "WDJPUSHService.h"
+#import "WXApiManager.h"
 
 static NSString *appKey = @"8b52945c5716a0fe9c5a2439";
 static NSString *channel = @"Publish channel";
@@ -99,8 +100,22 @@ static BOOL isProduction = TRUE;
     }];
 
     [self registerAMapKit];
+    [self registerWXPay];
     
     return YES;
+}
+
+-(void)registerWXPay
+{
+    [WXApi registerApp:WXKey enableMTA:NO];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
 }
 
 -(void)registerAMapKit

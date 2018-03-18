@@ -173,6 +173,13 @@
 		A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CB51FBF0A4A00B6B844 /* CFNetwork.framework */; };
 		A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6165205E0BAA00CD588F /* CoreMotion.framework */; };
 		A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6167205E0BD500CD588F /* AlipaySDK.framework */; };
+		A54A617E205E136D00CD588F /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A6171205E136D00CD588F /* WXApiManager.m */; };
+		A54A617F205E136D00CD588F /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A6173205E136D00CD588F /* WXApiRequestHandler.m */; };
+		A54A6180205E136D00CD588F /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A6175205E136D00CD588F /* WXApiResponseHandler.m */; };
+		A54A6181205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A6179205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */; };
+		A54A6182205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A617B205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */; };
+		A54A6183205E136D00CD588F /* WXMediaMessage+messageConstruct.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A617D205E136D00CD588F /* WXMediaMessage+messageConstruct.m */; };
+		A54A6186205E22E800CD588F /* AlipayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54A6185205E22E800CD588F /* AlipayManager.m */; };
 		A55ECE7C20305D70003CE4B2 /* WDRepairTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */; };
 		A55ECE7F20305F9C003CE4B2 /* WDListRepairItemApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE7E20305F9C003CE4B2 /* WDListRepairItemApi.m */; };
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
@@ -607,6 +614,21 @@
 		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A54A6165205E0BAA00CD588F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A54A6167205E0BD500CD588F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = WeiDeCar/MFFramework/Alipay/AlipaySDK.framework; sourceTree = "<group>"; };
+		A54A6170205E136D00CD588F /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		A54A6171205E136D00CD588F /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
+		A54A6172205E136D00CD588F /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
+		A54A6173205E136D00CD588F /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
+		A54A6174205E136D00CD588F /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
+		A54A6175205E136D00CD588F /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
+		A54A6177205E136D00CD588F /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		A54A6178205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		A54A6179205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		A54A617A205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		A54A617B205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		A54A617C205E136D00CD588F /* WXMediaMessage+messageConstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+messageConstruct.h"; sourceTree = "<group>"; };
+		A54A617D205E136D00CD588F /* WXMediaMessage+messageConstruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WXMediaMessage+messageConstruct.m"; sourceTree = "<group>"; };
+		A54A6184205E22E800CD588F /* AlipayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlipayManager.h; sourceTree = "<group>"; };
+		A54A6185205E22E800CD588F /* AlipayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlipayManager.m; sourceTree = "<group>"; };
 		A55ECE7A20305D70003CE4B2 /* WDRepairTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairTaskModel.h; sourceTree = "<group>"; };
 		A55ECE7B20305D70003CE4B2 /* WDRepairTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairTaskModel.m; sourceTree = "<group>"; };
 		A55ECE7D20305F9C003CE4B2 /* WDListRepairItemApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListRepairItemApi.h; sourceTree = "<group>"; };
@@ -1008,6 +1030,7 @@
 		A51A6BA81FD974120017A98A /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A54A616E205E136D00CD588F /* WeiXin */,
 				A54A6169205E0FDD00CD588F /* Alipay */,
 				A51A6BA91FD974120017A98A /* API */,
 				A52D91411FDC2309009DD077 /* Model */,
@@ -1668,8 +1691,46 @@
 		A54A6169205E0FDD00CD588F /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
+				A54A6184205E22E800CD588F /* AlipayManager.h */,
+				A54A6185205E22E800CD588F /* AlipayManager.m */,
 			);
 			path = Alipay;
+			sourceTree = "<group>";
+		};
+		A54A616E205E136D00CD588F /* WeiXin */ = {
+			isa = PBXGroup;
+			children = (
+				A54A616F205E136D00CD588F /* Control */,
+				A54A6176205E136D00CD588F /* Helper */,
+			);
+			path = WeiXin;
+			sourceTree = "<group>";
+		};
+		A54A616F205E136D00CD588F /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				A54A6170205E136D00CD588F /* WXApiManager.h */,
+				A54A6171205E136D00CD588F /* WXApiManager.m */,
+				A54A6172205E136D00CD588F /* WXApiRequestHandler.h */,
+				A54A6173205E136D00CD588F /* WXApiRequestHandler.m */,
+				A54A6174205E136D00CD588F /* WXApiResponseHandler.h */,
+				A54A6175205E136D00CD588F /* WXApiResponseHandler.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A54A6176205E136D00CD588F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A54A6177205E136D00CD588F /* Constant.h */,
+				A54A6178205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */,
+				A54A6179205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */,
+				A54A617A205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */,
+				A54A617B205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */,
+				A54A617C205E136D00CD588F /* WXMediaMessage+messageConstruct.h */,
+				A54A617D205E136D00CD588F /* WXMediaMessage+messageConstruct.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		A5631BD01FF512CE00DBA959 /* IPCamera */ = {
@@ -2156,6 +2217,7 @@
 				A5241DF41FBF0C5200B6B844 /* ObjectivecDescriptor.pb.m in Sources */,
 				A5241DBF1FBF0C5200B6B844 /* IQTextView.m in Sources */,
 				A5631C7A1FF5131500DBA959 /* WDDiagnoseItemCellView.m in Sources */,
+				A54A6181205E136D00CD588F /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				A5241DEE1FBF0C5200B6B844 /* ExtensionRegistry.m in Sources */,
 				A5241C7E1FBF094200B6B844 /* UIView+viewController.m in Sources */,
 				A51EC98C20272B33008F4CFA /* MMTableViewInfo.m in Sources */,
@@ -2177,6 +2239,7 @@
 				ACB8C340202EE50D00BEB48E /* WDRepairItemOfferModel.m in Sources */,
 				A5241DBD1FBF0C5200B6B844 /* IQKeyboardManager.m in Sources */,
 				A5241DFD1FBF0C5200B6B844 /* SCLAlertViewResponder.m in Sources */,
+				A54A617F205E136D00CD588F /* WXApiRequestHandler.m in Sources */,
 				A5241C931FBF094200B6B844 /* UINavigationBar+MMUINavigationBar.m in Sources */,
 				A5241C9E1FBF094200B6B844 /* MFStringUtil.m in Sources */,
 				A52D914B1FDC2E1C009DD077 /* WDGuideSourceModel.m in Sources */,
@@ -2225,6 +2288,8 @@
 				AC25174D20301FDB00D8C5DF /* WDRepairItemOfferListModel.m in Sources */,
 				A5241DB71FBF0C5200B6B844 /* IQNSArray+Sort.m in Sources */,
 				A535ACE11FDCD20E001CF470 /* WDGuideBottomView.m in Sources */,
+				A54A6180205E136D00CD588F /* WXApiResponseHandler.m in Sources */,
+				A54A6183205E136D00CD588F /* WXMediaMessage+messageConstruct.m in Sources */,
 				A5241E021FBF0C5200B6B844 /* SCLTimerDisplay.m in Sources */,
 				A50C37301FD8362200809CA7 /* SPPageTagView.m in Sources */,
 				A5241DE81FBF0C5200B6B844 /* CodedInputStream.m in Sources */,
@@ -2319,13 +2384,16 @@
 				ACB8C346202EE90900BEB48E /* WDRepairStepModel.m in Sources */,
 				A5A3914E1FCC57A000ED0D4F /* MFTableViewCellObject.m in Sources */,
 				A5241C851FBF094200B6B844 /* MFUIButton.m in Sources */,
+				A54A6182205E136D00CD588F /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				A5241DBC1FBF0C5200B6B844 /* IQUIWindow+Hierarchy.m in Sources */,
 				A5241C771FBF094200B6B844 /* NSMutableArray+SafeInsert.m in Sources */,
 				A5241DE61FBF0C5200B6B844 /* AbstractMessage.m in Sources */,
 				A5132B701FD6D2D900E2DCEE /* MMBarButtonItem.m in Sources */,
 				A535ACFC1FDD28B2001CF470 /* WDListDiagnoseByMechanicApi.m in Sources */,
+				A54A6186205E22E800CD588F /* AlipayManager.m in Sources */,
 				A51A6BF41FD974940017A98A /* WeiDeApiManger.m in Sources */,
 				A5241CA71FBF097300B6B844 /* NSObject+YYModel.m in Sources */,
+				A54A617E205E136D00CD588F /* WXApiManager.m in Sources */,
 				A5241C9B1FBF094200B6B844 /* MMService.m in Sources */,
 				A5241DF21FBF0C5200B6B844 /* MutableExtensionRegistry.m in Sources */,
 				A5241DC31FBF0C5200B6B844 /* IQToolbar.m in Sources */,
