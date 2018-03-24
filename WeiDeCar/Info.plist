@@ -59,6 +59,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>允许打开相机，有助于上传图片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允许打开手机相册，有助于上传图片</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>允许打开手机相册，有助于上传图片</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
