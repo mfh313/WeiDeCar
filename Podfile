@@ -3,6 +3,8 @@
 
 target 'WeiDeCar' do
 
+pod 'EZUIKit'
+pod 'EZOpenSDK'
 pod 'WechatOpenSDK'
 pod 'Qiniu', '~> 7.2'
 pod 'AMapLocation-NO-IDFA'

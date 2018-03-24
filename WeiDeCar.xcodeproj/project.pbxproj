@@ -2170,9 +2170,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar-frameworks.sh",
+				"${PODS_ROOT}/EZOpenSDK/dist/EZOpenSDK/dynamicSDK/EZOpenSDKFramework.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZOpenSDKFramework.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
