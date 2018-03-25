@@ -79,18 +79,17 @@
 
 - (void)registerAMapKit
 {
-    [AMapServices sharedServices].apiKey = [self AMapKey];
-}
-
-- (NSString *)AMapKey
-{
-    //默认Koradior证书
-    NSString *AMapKey = @"d06957de9c049c5da29c437837874158";
-    if ([WeiDeApiManger packageIsAppStoreChannel]) {
-        AMapKey = @"e064cd098ecd7aa63a4ec9b31610e220";
+    NSString *AMapKey = nil;
+    NSString *bundleID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    if ([bundleID isEqualToString:@"com.weidecar.wd"]) {
+        AMapKey = @"fe189b4fa2736b75cae556a13911f9a2";
+    }
+    else if ([bundleID isEqualToString:@"cn.mafanghua.WeiDeCar"])
+    {
+        AMapKey = @"d06957de9c049c5da29c437837874158";
     }
     
-    return AMapKey;
+    [AMapServices sharedServices].apiKey = AMapKey;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -98,13 +97,11 @@
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -112,11 +109,9 @@
     [application cancelAllLocalNotifications];
 }
 
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
