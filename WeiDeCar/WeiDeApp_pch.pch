@@ -1,0 +1,18 @@
+//
+//  WeiDeApp_pch.pch
+//  WeiDeCar
+//
+//  Created by mafanghua on 2018/3/25.
+//  Copyright © 2018年 mafanghua. All rights reserved.
+//
+
+#ifndef WeiDeApp_pch_pch
+#define WeiDeApp_pch_pch
+
+#import "MFComponentGroup_pch.pch"
+#import "WDAppViewControllerManager.h"
+#import "WeiDeApiManger.h"
+#import "WDLoginService.h"
+#import "WDJPUSHService.h"
+
+#endif /* WeiDeApp_pch_pch */

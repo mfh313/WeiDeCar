@@ -491,7 +491,6 @@
 		A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepQualifiedSelectCellView.m; sourceTree = "<group>"; };
 		A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppViewControllerManager.h; sourceTree = "<group>"; };
 		A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppViewControllerManager.m; sourceTree = "<group>"; };
-		A5A3914B1FCC4BB400ED0D4F /* WD_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WD_header.h; sourceTree = "<group>"; };
 		A5B91F101FB9D384009B443D /* WeiDeCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiDeCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B91F131FB9D384009B443D /* WeiDeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiDeAppDelegate.h; sourceTree = "<group>"; };
 		A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiDeAppDelegate.m; sourceTree = "<group>"; };
@@ -697,7 +696,6 @@
 		A5BF23162067AFA600271397 /* MFColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFColorUtil.h; sourceTree = "<group>"; };
 		A5BF23172067AFA600271397 /* MFFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFileUtil.h; sourceTree = "<group>"; };
 		A5BF23182067AFA600271397 /* MFUICommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUICommonUtil.h; sourceTree = "<group>"; };
-		A5BF23192067AFA600271397 /* MFComponent-pch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFComponent-pch.pch"; sourceTree = "<group>"; };
 		A5BF231C2067AFA600271397 /* MMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarController.h; sourceTree = "<group>"; };
 		A5BF231D2067AFA600271397 /* MMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarController.m; sourceTree = "<group>"; };
 		A5BF231F2067AFA600271397 /* MMTableViewCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCellInfo.h; sourceTree = "<group>"; };
@@ -895,6 +893,9 @@
 		A5BF23FE2067AFA600271397 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		A5BF23FF2067AFA600271397 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		A5BF24002067AFA600271397 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		A5BF24862067B1B700271397 /* WeiDeApp_pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiDeApp_pch.pch; sourceTree = "<group>"; };
+		A5BF24872067BB0600271397 /* MFComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFComponent.h; sourceTree = "<group>"; };
+		A5BF24882067BB1200271397 /* MFComponentGroup_pch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentGroup_pch.pch; sourceTree = "<group>"; };
 		A5EFD542204D95F400A67298 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
 		A5EFD543204D95F400A67298 /* WDDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailViewController.m; sourceTree = "<group>"; };
 		A5F3A2D12031DA0100FC76EA /* WDDiagnoseListBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseListBaseViewController.h; sourceTree = "<group>"; };
@@ -1301,7 +1302,7 @@
 				A5B91F141FB9D384009B443D /* WeiDeAppDelegate.m */,
 				A5A391431FCC312000ED0D4F /* WDAppViewControllerManager.h */,
 				A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */,
-				A5A3914B1FCC4BB400ED0D4F /* WD_header.h */,
+				A5BF24862067B1B700271397 /* WeiDeApp_pch.pch */,
 				A5B91F191FB9D384009B443D /* Main.storyboard */,
 				A5B91F211FB9D384009B443D /* Info.plist */,
 				A5B91F221FB9D384009B443D /* main.m */,
@@ -1424,6 +1425,7 @@
 		A5BF22BE2067AFA600271397 /* MFComponentGroup */ = {
 			isa = PBXGroup;
 			children = (
+				A5BF24882067BB1200271397 /* MFComponentGroup_pch.pch */,
 				A5BF22BF2067AFA600271397 /* MFComponent */,
 				A5BF233C2067AFA600271397 /* MFFramework */,
 				A5BF23632067AFA600271397 /* Vendors */,
@@ -1434,7 +1436,7 @@
 		A5BF22BF2067AFA600271397 /* MFComponent */ = {
 			isa = PBXGroup;
 			children = (
-				A5BF23192067AFA600271397 /* MFComponent-pch.pch */,
+				A5BF24872067BB0600271397 /* MFComponent.h */,
 				A5BF22C02067AFA600271397 /* Category */,
 				A5BF22E22067AFA600271397 /* Class */,
 				A5BF23102067AFA600271397 /* Helper */,
@@ -1729,12 +1731,12 @@
 		A5BF23632067AFA600271397 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				A5BF23952067AFA600271397 /* MFVendors.h */,
 				A5BF23642067AFA600271397 /* FDFullscreenPopGesture */,
 				A5BF23672067AFA600271397 /* HexColors */,
 				A5BF236A2067AFA600271397 /* IQKeyboardManager */,
 				A5BF238F2067AFA600271397 /* LYSideslipCell */,
 				A5BF23922067AFA600271397 /* MBProgressHUD */,
-				A5BF23952067AFA600271397 /* MFVendors.h */,
 				A5BF23962067AFA600271397 /* MGJRouter */,
 				A5BF23992067AFA600271397 /* Proto */,
 				A5BF23D62067AFA600271397 /* SCLAlertView */,
@@ -2626,7 +2628,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/MFFramework/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/MFComponentGroup/MFComponent/MFComponent-pch.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/WeiDeApp_pch.pch";
 				INFOPLIST_FILE = WeiDeCar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2665,7 +2667,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/MFFramework/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/MFComponentGroup/MFComponent/MFComponent-pch.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/WeiDeApp_pch.pch";
 				INFOPLIST_FILE = WeiDeCar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface WeiDeAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

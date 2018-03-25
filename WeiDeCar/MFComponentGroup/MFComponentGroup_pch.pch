@@ -9,12 +9,8 @@
 #ifndef MFComponent_pch_pch
 #define MFComponent_pch_pch
 
-#import <UIKit/UIKit.h>
+#import "MFComponent.h"
+#import "MFFramework.h"
 #import "MFVendors.h"
-#import "MFUICommonUtil.h"
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import <Masonry/Masonry.h>
-#import "WD_header.h"
 
 #endif /* MFComponent_pch_pch */
