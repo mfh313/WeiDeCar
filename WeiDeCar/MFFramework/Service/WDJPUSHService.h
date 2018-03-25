@@ -15,8 +15,16 @@
 
 extern NSString *const WDJPUSHService_Notification;
 
-@interface WDJPUSHService : MMService
+static NSString *appKey = @"901fa48d7789a6c8ada7a02a";
+static NSString *channel = @"Publish channel";
+static BOOL isProduction = TRUE;
 
+@interface WDJPUSHService : MMService <JPUSHRegisterDelegate>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo;
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 - (void)setPUSHAlias:(NSString *)alias;
 - (void)deletePUSHAlias;
 
