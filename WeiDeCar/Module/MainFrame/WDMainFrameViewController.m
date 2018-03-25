@@ -114,10 +114,6 @@
     {
         return [self tableView:tableView acitonMenuCellForIndex:indexPath];
     }
-    else if ([identifier isEqualToString:@"go"])
-    {
-        return [self tableView:tableView goCellForIndex:indexPath];
-    }
     else if ([identifier isEqualToString:@"blankCell"])
     {
         return [self tableView:tableView blankCellForIndex:indexPath];
@@ -145,27 +141,6 @@
     }
     
     cell.contentView.backgroundColor = [UIColor whiteColor];
-    return cell;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView goCellForIndex:(NSIndexPath *)indexPath
-{
-    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
-    NSString *identifier = cellInfo.cellReuseIdentifier;
-    
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
-        UIButton *goButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        goButton.frame = CGRectMake(CGRectGetWidth(cell.contentView.frame) - 110, 0, 95, 92);
-        goButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-        [goButton setTitle:@"退出" forState:UIControlStateNormal];
-        [goButton setBackgroundImage:MFImage(@"main_go") forState:UIControlStateNormal];
-        [goButton addTarget:self action:@selector(onClickMainGo) forControlEvents:UIControlEventTouchUpInside];
-        goButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-        [cell.contentView addSubview:goButton];
-    }
     return cell;
 }
 
@@ -203,11 +178,6 @@
 
 -(void)makeCellObjects
 {
-//    MFTableViewCellObject *go = [MFTableViewCellObject new];
-//    go.cellHeight = 92.0f;
-//    go.cellReuseIdentifier = @"go";
-//    [m_cellInfos addObject:go];
-    
     MFTableViewCellObject *blank = [MFTableViewCellObject new];
     blank.cellHeight = 30.0f;
     blank.cellReuseIdentifier = @"blankCell";
