@@ -33,8 +33,8 @@
 
 - (void)textFiledEditChanged:(NSNotification *)notifi
 {
-    UITextField *textField = (UITextField *)notifi.object;
-    NSString *text = textField.text;
+//    UITextField *textField = (UITextField *)notifi.object;
+//    NSString *text = textField.text;
     if ([self.m_delegate respondsToSelector:@selector(borderTextFiledEditChanged:)]) {
         [self.m_delegate borderTextFiledEditChanged:self];
     }
