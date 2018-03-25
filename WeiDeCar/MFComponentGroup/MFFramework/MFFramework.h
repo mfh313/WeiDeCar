@@ -7,6 +7,6 @@
 //
 
 #import "MMServiceCenter.h"
-#import "WeiDeApiManger.h"
+
 
 

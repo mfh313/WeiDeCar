@@ -1642,8 +1642,8 @@
 		A5BF233C2067AFA600271397 /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
-				A5BF233D2067AFA600271397 /* Alipay */,
 				A5BF23462067AFA600271397 /* MFFramework.h */,
+				A5BF233D2067AFA600271397 /* Alipay */,
 				A5BF23472067AFA600271397 /* Networking */,
 				A5BF23532067AFA600271397 /* WeiXin */,
 			);

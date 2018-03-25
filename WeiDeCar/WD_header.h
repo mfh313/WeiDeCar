@@ -10,17 +10,12 @@
 #define WD_header_h
 
 #import "WDAppViewControllerManager.h"
-
+#import "WeiDeApiManger.h"
 #import "MFFramework.h"
-
 #import <LGAlertView/LGAlertView.h>
-
 #import "WDLoginService.h"
-
 #import "WDJPUSHService.h"
-
 #import "NSObject+YYModel.h"
-
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
 
