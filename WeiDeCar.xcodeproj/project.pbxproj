@@ -1999,8 +1999,8 @@
 			isa = PBXGroup;
 			children = (
 				A5241C721FBF094200B6B844 /* Module */,
-				A51A6BA81FD974120017A98A /* MFFramework */,
 				A52D914C1FDC2E63009DD077 /* WDComponent */,
+				A51A6BA81FD974120017A98A /* MFFramework */,
 				A5241C0D1FBF094200B6B844 /* MFComponent */,
 				A5241CC11FBF0C5100B6B844 /* Vendors */,
 				A5B91F131FB9D384009B443D /* WeiDeAppDelegate.h */,
