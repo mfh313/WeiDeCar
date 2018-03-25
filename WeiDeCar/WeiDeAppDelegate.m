@@ -15,7 +15,7 @@
 #import "WXApiManager.h"
 #import "AlipayManager.h"
 
-static NSString *appKey = @"8b52945c5716a0fe9c5a2439";
+static NSString *appKey = @"901fa48d7789a6c8ada7a02a";
 static NSString *channel = @"Publish channel";
 static BOOL isProduction = TRUE;
 

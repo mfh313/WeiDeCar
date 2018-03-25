@@ -25,4 +25,11 @@ com.weidecar.wd
 fe189b4fa2736b75cae556a13911f9a2
 
 
+极光推送
+https://www.jiguang.cn/
 
+AppKey  901fa48d7789a6c8ada7a02a
+Master Secret  a23cada58ce67cd8613e002f
+
+weidecar@163.com
+1qaz@WSX#EDC
