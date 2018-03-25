@@ -41,12 +41,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>允许打开相机，有助于上传图片</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>允许定位，有助于获取准确的导航地址</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>允许定位，有助于一直获取准确的导航地址</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>允许定位，有助于您使用APP过程中获取准确的导航地址</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>允许打开手机相册，有助于上传图片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允许打开手机相册，有助于上传图片</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -57,12 +63,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>允许打开相机，有助于上传图片</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>允许打开手机相册，有助于上传图片</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>允许打开手机相册，有助于上传图片</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
