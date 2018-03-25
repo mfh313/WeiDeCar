@@ -1433,7 +1433,6 @@
 				A5BF22E22067AFA600271397 /* Class */,
 				A5BF23102067AFA600271397 /* Helper */,
 				A5BF23152067AFA600271397 /* Macro */,
-				A5BF231A2067AFA600271397 /* MFTableView */,
 				A5BF231B2067AFA600271397 /* MMTabBarController */,
 				A5BF231E2067AFA600271397 /* MMTableViewInfo */,
 				A5BF23272067AFA600271397 /* Service */,
@@ -1555,13 +1554,6 @@
 				A5BF23182067AFA600271397 /* MFUICommonUtil.h */,
 			);
 			path = Macro;
-			sourceTree = "<group>";
-		};
-		A5BF231A2067AFA600271397 /* MFTableView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MFTableView;
 			sourceTree = "<group>";
 		};
 		A5BF231B2067AFA600271397 /* MMTabBarController */ = {
