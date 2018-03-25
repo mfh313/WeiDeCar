@@ -167,10 +167,8 @@ forRemoteNotification:(NSDictionary *)userInfo
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:
 (void (^)(UIBackgroundFetchResult))completionHandler {
-    
     WDJPUSHService *pushService = [[MMServiceCenter defaultCenter] getService:[WDJPUSHService class]];
     [pushService application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-    
 }
 
 @end

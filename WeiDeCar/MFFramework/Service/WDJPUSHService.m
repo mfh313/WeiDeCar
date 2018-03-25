@@ -26,7 +26,6 @@ NSString *const WDJPUSHService_Notification = @"WDJPUSHService_Notification";
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     // 3.0.0及以后版本注册可以这样写，也可以继续用旧的注册方式
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
