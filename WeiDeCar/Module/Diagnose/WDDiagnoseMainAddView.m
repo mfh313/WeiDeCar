@@ -1,21 +1,21 @@
 //
-//  WDDiagnosisMainAddView.m
+//  WDDiagnoseMainAddView.m
 //  WeiDeCar
 //
 //  Created by mafanghua on 2017/12/6.
 //  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "WDDiagnosisMainAddView.h"
+#import "WDDiagnoseMainAddView.h"
 
-@interface WDDiagnosisMainAddView ()
+@interface WDDiagnoseMainAddView ()
 {
     __weak IBOutlet UILabel *m_descLabel;
 }
 
 @end
 
-@implementation WDDiagnosisMainAddView
+@implementation WDDiagnoseMainAddView
 
 - (void)setAddDescString:(NSString *)desc
 {

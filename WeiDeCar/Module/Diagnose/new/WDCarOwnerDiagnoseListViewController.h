@@ -7,13 +7,13 @@
 //
 
 #import "WDDiagnoseListBaseViewController.h"
-#import "WDDiagnosisMainAddView.h"
+#import "WDDiagnoseMainAddView.h"
 #import "WDListDiagnoseByCarOwnerApi.h"
 #import "WDCreateDiagnoseByCarOwnerApi.h"
 
-@interface WDCarOwnerDiagnoseListViewController : WDDiagnoseListBaseViewController <WDDiagnosisMainAddViewDelegate>
+@interface WDCarOwnerDiagnoseListViewController : WDDiagnoseListBaseViewController <WDDiagnoseMainAddViewDelegate>
 {
-    WDDiagnosisMainAddView *m_createDiagnoseView;
+    WDDiagnoseMainAddView *m_createDiagnoseView;
 }
 
 @end

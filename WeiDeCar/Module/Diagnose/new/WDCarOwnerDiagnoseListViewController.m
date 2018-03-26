@@ -12,6 +12,7 @@
 
 @end
 
+
 @implementation WDCarOwnerDiagnoseListViewController
 
 - (void)viewDidLoad {
@@ -45,7 +46,7 @@
 
 -(void)initCreateHeaderView
 {
-    m_createDiagnoseView = [WDDiagnosisMainAddView nibView];
+    m_createDiagnoseView = [WDDiagnoseMainAddView nibView];
     m_createDiagnoseView.m_delegate = self;
     [self.view addSubview:m_createDiagnoseView];
     [m_createDiagnoseView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -121,8 +122,8 @@
     }
 }
 
-#pragma mark - WDDiagnosisMainAddViewDelegate
--(void)onClickAddNewRecord:(WDDiagnosisMainAddView *)view
+#pragma mark - WDDiagnoseMainAddViewDelegate
+-(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
 {
     __weak typeof(self) weakSelf = self;
     WDCreateDiagnoseByCarOwnerApi *mfApi = [WDCreateDiagnoseByCarOwnerApi new];

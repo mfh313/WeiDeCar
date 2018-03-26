@@ -9,13 +9,13 @@
 #import "WDMechanicDiagnoseViewController.h"
 #import "WDDiagnoseModel.h"
 #import "WDDiagnoseInfoCreateViewController.h"
-#import "WDDiagnosisMainAddView.h"
+#import "WDDiagnoseMainAddView.h"
 #import "WDDiagnoseCauseJudgementCellView.h"
 #import "WDMechanicJudgementInputView.h"
 #import "WDFaultAppearanceHeaderView.h"
 #import "WDMechanicDiagnoseApi.h"
 
-@interface WDMechanicDiagnoseViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnosisMainAddViewDelegate,WDDiagnoseInfoCreateViewControllerDelegate>
+@interface WDMechanicDiagnoseViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseMainAddViewDelegate,WDDiagnoseInfoCreateViewControllerDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -39,7 +39,7 @@
     
     diagnoseData.faultAppearances = m_faultAppearances;
     
-    WDDiagnosisMainAddView *addView = [WDDiagnosisMainAddView nibView];
+    WDDiagnoseMainAddView *addView = [WDDiagnoseMainAddView nibView];
     addView.m_delegate = self;
     [addView setAddDescString:@"新增诊断"];
     [self.view addSubview:addView];
@@ -251,8 +251,8 @@
     return cell;
 }
 
-#pragma mark - WDDiagnosisMainAddViewDelegate
--(void)onClickAddNewRecord:(WDDiagnosisMainAddView *)view
+#pragma mark - WDDiagnoseMainAddViewDelegate
+-(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
 {
     WDDiagnoseInfoCreateViewController *createVC = [WDDiagnoseInfoCreateViewController new];
     createVC.m_delegate = self;

@@ -88,7 +88,7 @@
 		A5BF22362067ACAA00271397 /* WDExpertDiagnoseAdviceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF22142067ACA600271397 /* WDExpertDiagnoseAdviceCellView.xib */; };
 		A5BF22372067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22152067ACA600271397 /* WDDiagnoseCauseJudgementCellView.m */; };
 		A5BF22382067ACAA00271397 /* WDExpertDiagnoseAdviceCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22162067ACA700271397 /* WDExpertDiagnoseAdviceCellView.m */; };
-		A5BF22392067ACAA00271397 /* WDDiagnosisMainAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22172067ACA700271397 /* WDDiagnosisMainAddView.m */; };
+		A5BF22392067ACAA00271397 /* WDDiagnoseMainAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22172067ACA700271397 /* WDDiagnoseMainAddView.m */; };
 		A5BF223A2067ACAA00271397 /* WDExpertDiagnoseMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22182067ACA700271397 /* WDExpertDiagnoseMainViewController.m */; };
 		A5BF223B2067ACAA00271397 /* WDDiagnosisAddHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF22192067ACA700271397 /* WDDiagnosisAddHeaderView.xib */; };
 		A5BF223C2067ACAA00271397 /* WDFaultAppearanceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF221A2067ACA700271397 /* WDFaultAppearanceHeaderView.xib */; };
@@ -100,7 +100,7 @@
 		A5BF22432067ACAA00271397 /* WDCarOwnerDiagnoseMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22252067ACA800271397 /* WDCarOwnerDiagnoseMainViewController.m */; };
 		A5BF22442067ACAA00271397 /* WDDiagnosisAddHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF22282067ACA900271397 /* WDDiagnosisAddHeaderView.m */; };
 		A5BF22452067ACAA00271397 /* WDExpertDiagnoseResultSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF222A2067ACA900271397 /* WDExpertDiagnoseResultSelectView.m */; };
-		A5BF22462067ACAA00271397 /* WDDiagnosisMainAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF222D2067ACA900271397 /* WDDiagnosisMainAddView.xib */; };
+		A5BF22462067ACAA00271397 /* WDDiagnoseMainAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF222D2067ACA900271397 /* WDDiagnoseMainAddView.xib */; };
 		A5BF22472067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BF222F2067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.xib */; };
 		A5BF22982067ADC700271397 /* WDCarOwnerRegisterApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF224B2067ADC700271397 /* WDCarOwnerRegisterApi.m */; };
 		A5BF22992067ADC700271397 /* WDChooseRepairItemOffersApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF224D2067ADC700271397 /* WDChooseRepairItemOffersApi.m */; };
@@ -514,7 +514,7 @@
 		A5BF22142067ACA600271397 /* WDExpertDiagnoseAdviceCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDExpertDiagnoseAdviceCellView.xib; sourceTree = "<group>"; };
 		A5BF22152067ACA600271397 /* WDDiagnoseCauseJudgementCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseCauseJudgementCellView.m; sourceTree = "<group>"; };
 		A5BF22162067ACA700271397 /* WDExpertDiagnoseAdviceCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseAdviceCellView.m; sourceTree = "<group>"; };
-		A5BF22172067ACA700271397 /* WDDiagnosisMainAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDiagnosisMainAddView.m; sourceTree = "<group>"; };
+		A5BF22172067ACA700271397 /* WDDiagnoseMainAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseMainAddView.m; sourceTree = "<group>"; };
 		A5BF22182067ACA700271397 /* WDExpertDiagnoseMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseMainViewController.m; sourceTree = "<group>"; };
 		A5BF22192067ACA700271397 /* WDDiagnosisAddHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDiagnosisAddHeaderView.xib; sourceTree = "<group>"; };
 		A5BF221A2067ACA700271397 /* WDFaultAppearanceHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDFaultAppearanceHeaderView.xib; sourceTree = "<group>"; };
@@ -524,7 +524,7 @@
 		A5BF221F2067ACA800271397 /* WDMechanicDiagnoseMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMechanicDiagnoseMainViewController.m; sourceTree = "<group>"; };
 		A5BF22202067ACA800271397 /* WDDiagnoseItemCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDiagnoseItemCellView.xib; sourceTree = "<group>"; };
 		A5BF22212067ACA800271397 /* WDMechanicJudgementInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMechanicJudgementInputView.m; sourceTree = "<group>"; };
-		A5BF22222067ACA800271397 /* WDDiagnosisMainAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiagnosisMainAddView.h; sourceTree = "<group>"; };
+		A5BF22222067ACA800271397 /* WDDiagnoseMainAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseMainAddView.h; sourceTree = "<group>"; };
 		A5BF22232067ACA800271397 /* WDExpertDiagnoseMainCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDExpertDiagnoseMainCreateViewController.h; sourceTree = "<group>"; };
 		A5BF22242067ACA800271397 /* WDDiagnoseItemCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseItemCellView.h; sourceTree = "<group>"; };
 		A5BF22252067ACA800271397 /* WDCarOwnerDiagnoseMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCarOwnerDiagnoseMainViewController.m; sourceTree = "<group>"; };
@@ -535,7 +535,7 @@
 		A5BF222A2067ACA900271397 /* WDExpertDiagnoseResultSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseResultSelectView.m; sourceTree = "<group>"; };
 		A5BF222B2067ACA900271397 /* WDExpertDiagnoseResultSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDExpertDiagnoseResultSelectView.h; sourceTree = "<group>"; };
 		A5BF222C2067ACA900271397 /* WDDiagnoseCauseJudgementCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseCauseJudgementCellView.h; sourceTree = "<group>"; };
-		A5BF222D2067ACA900271397 /* WDDiagnosisMainAddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDiagnosisMainAddView.xib; sourceTree = "<group>"; };
+		A5BF222D2067ACA900271397 /* WDDiagnoseMainAddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDiagnoseMainAddView.xib; sourceTree = "<group>"; };
 		A5BF222E2067ACAA00271397 /* WDDiagnoseInfoCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseInfoCreateViewController.h; sourceTree = "<group>"; };
 		A5BF222F2067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDDiagnoseCauseJudgementCellView.xib; sourceTree = "<group>"; };
 		A5BF224A2067ADC700271397 /* WDCarOwnerRegisterApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCarOwnerRegisterApi.h; sourceTree = "<group>"; };
@@ -2049,9 +2049,9 @@
 				A5BF22262067ACA800271397 /* WDDiagnosisAddHeaderView.h */,
 				A5BF22282067ACA900271397 /* WDDiagnosisAddHeaderView.m */,
 				A5BF22192067ACA700271397 /* WDDiagnosisAddHeaderView.xib */,
-				A5BF22222067ACA800271397 /* WDDiagnosisMainAddView.h */,
-				A5BF22172067ACA700271397 /* WDDiagnosisMainAddView.m */,
-				A5BF222D2067ACA900271397 /* WDDiagnosisMainAddView.xib */,
+				A5BF22222067ACA800271397 /* WDDiagnoseMainAddView.h */,
+				A5BF22172067ACA700271397 /* WDDiagnoseMainAddView.m */,
+				A5BF222D2067ACA900271397 /* WDDiagnoseMainAddView.xib */,
 				A5BF221C2067ACA700271397 /* WDDiagnosisTypeSelectView.h */,
 				A5BF220B2067ACA500271397 /* WDDiagnosisTypeSelectView.m */,
 				A5BF22132067ACA600271397 /* WDExpertDiagnoseAdviceCellView.h */,
@@ -2197,7 +2197,7 @@
 				A5BF245B2067AFA700271397 /* chat.proto in Resources */,
 				A5BF24902067BDE100271397 /* WDStoreAnnotationCalloutView.xib in Resources */,
 				A5B91F1D1FB9D384009B443D /* Assets.xcassets in Resources */,
-				A5BF22462067ACAA00271397 /* WDDiagnosisMainAddView.xib in Resources */,
+				A5BF22462067ACAA00271397 /* WDDiagnoseMainAddView.xib in Resources */,
 				A5631C8A1FF5131500DBA959 /* WDMainFrameMenuView.xib in Resources */,
 				A5132B6A1FD6D26400E2DCEE /* commonAssets.xcassets in Resources */,
 				A5770158202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib in Resources */,
@@ -2406,7 +2406,7 @@
 				A5BF24652067AFA700271397 /* Descriptor.pb.m in Sources */,
 				A5BF24302067AFA600271397 /* MFAppMacroUtil.m in Sources */,
 				A5BF24602067AFA700271397 /* AbstractMessage.m in Sources */,
-				A5BF22392067ACAA00271397 /* WDDiagnosisMainAddView.m in Sources */,
+				A5BF22392067ACAA00271397 /* WDDiagnoseMainAddView.m in Sources */,
 				A5BF242C2067AFA600271397 /* MMTableViewSectionInfo.m in Sources */,
 				A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */,
 				A5BF247E2067AFA700271397 /* SPCoverController.m in Sources */,

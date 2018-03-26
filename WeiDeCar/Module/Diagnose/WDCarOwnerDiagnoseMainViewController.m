@@ -8,7 +8,7 @@
 
 #import "WDCarOwnerDiagnoseMainViewController.h"
 #import "WDCreateDiagnoseByCarOwnerApi.h"
-#import "WDDiagnosisMainAddView.h"
+#import "WDDiagnoseMainAddView.h"
 #import "WDListDiagnoseByCarOwnerApi.h"
 #import "WDDiagnoseModel.h"
 #import "WDDiagnoseItemCellView.h"
@@ -16,7 +16,7 @@
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
 
 
-@interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnosisMainAddViewDelegate>
+@interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnoseMainAddViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -39,7 +39,7 @@
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     m_currentUserInfo = loginService.currentUserInfo;
     
-    WDDiagnosisMainAddView *addView = [WDDiagnosisMainAddView nibView];
+    WDDiagnoseMainAddView *addView = [WDDiagnoseMainAddView nibView];
     addView.m_delegate = self;
     [self.view addSubview:addView];
     [addView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -182,8 +182,8 @@
     return cell;
 }
 
-#pragma mark - WDDiagnosisMainAddViewDelegate
--(void)onClickAddNewRecord:(WDDiagnosisMainAddView *)view
+#pragma mark - WDDiagnoseMainAddViewDelegate
+-(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
 {
     [self createDiagnoseByCarOwner];
 }
