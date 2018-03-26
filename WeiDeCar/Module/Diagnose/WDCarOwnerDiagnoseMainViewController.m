@@ -14,7 +14,6 @@
 #import "WDDiagnoseItemCellView.h"
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
-#import "WDDiagnoseDetailViewController.h"
 
 
 @interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnosisMainAddViewDelegate>
@@ -271,8 +270,6 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-//    [self showDiagnoseDetail:itemModel];
-    
     if (itemModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
     {
         __weak typeof(self) weakSelf = self;
@@ -298,13 +295,6 @@
         [alertView showAnimated:YES completionHandler:nil];
     }
 }
-
-//-(void)showDiagnoseDetail:(WDDiagnoseModel *)itemModel
-//{
-//    WDDiagnoseDetailViewController *detailVC = [[WDDiagnoseDetailViewController alloc] init];
-//    detailVC.detailModel = itemModel;
-//    [self.navigationController pushViewController:detailVC animated:YES];
-//}
 
 -(void)confirmDiagnoseByCarOwner:(WDDiagnoseModel *)itemModel
 {
