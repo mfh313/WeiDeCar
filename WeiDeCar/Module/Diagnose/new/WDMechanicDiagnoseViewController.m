@@ -1,12 +1,12 @@
 //
-//  WDMechanicDiagnoseMainCreateViewController.m
+//  WDMechanicDiagnoseViewController.m
 //  WeiDeCar
 //
 //  Created by mafanghua on 2017/12/11.
 //  Copyright © 2017年 mafanghua. All rights reserved.
 //
 
-#import "WDMechanicDiagnoseMainCreateViewController.h"
+#import "WDMechanicDiagnoseViewController.h"
 #import "WDDiagnoseModel.h"
 #import "WDDiagnoseInfoCreateViewController.h"
 #import "WDDiagnosisMainAddView.h"
@@ -15,7 +15,7 @@
 #import "WDFaultAppearanceHeaderView.h"
 #import "WDMechanicDiagnoseApi.h"
 
-@interface WDMechanicDiagnoseMainCreateViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnosisMainAddViewDelegate,WDDiagnoseInfoCreateViewControllerDelegate>
+@interface WDMechanicDiagnoseViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnosisMainAddViewDelegate,WDDiagnoseInfoCreateViewControllerDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation WDMechanicDiagnoseMainCreateViewController
+@implementation WDMechanicDiagnoseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -354,8 +354,6 @@
         
         [m_tableView.pullToRefreshView stopAnimating];
         
-//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.requestOperationError.code),[request.requestOperationError localizedDescription]];
-//        [self showTips:errorDesc];
     }];
 }
 

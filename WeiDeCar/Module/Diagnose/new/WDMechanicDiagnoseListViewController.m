@@ -8,7 +8,7 @@
 
 #import "WDMechanicDiagnoseListViewController.h"
 #import "WDListDiagnoseByMechanicApi.h"
-#import "WDMechanicDiagnoseMainCreateViewController.h"
+#import "WDMechanicDiagnoseViewController.h"
 
 @interface WDMechanicDiagnoseListViewController ()
 
@@ -110,7 +110,7 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-    WDMechanicDiagnoseMainCreateViewController *diagnoseCreateVC = [WDMechanicDiagnoseMainCreateViewController new];
+    WDMechanicDiagnoseViewController *diagnoseCreateVC = [WDMechanicDiagnoseViewController new];
     diagnoseCreateVC.diagnoseModel = itemModel;
     [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
 }

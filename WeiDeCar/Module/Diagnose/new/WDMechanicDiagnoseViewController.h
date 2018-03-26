@@ -1,5 +1,5 @@
 //
-//  WDMechanicDiagnoseMainCreateViewController.h
+//  WDMechanicDiagnoseViewController.h
 //  WeiDeCar
 //
 //  Created by mafanghua on 2017/12/11.
@@ -9,8 +9,11 @@
 #import "MMUIViewController.h"
 
 @class WDDiagnoseModel;
-@interface WDMechanicDiagnoseMainCreateViewController : MMUIViewController
+@interface WDMechanicDiagnoseViewController : MMUIViewController
 
 @property (nonatomic,strong) WDDiagnoseModel *diagnoseModel;
 
 @end
+
+
+
