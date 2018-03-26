@@ -7,7 +7,14 @@
 //
 
 #import "MMUIViewController.h"
+#import "WDDiagnoseModel.h"
+#import "WDDiagnoseItemCellView.h"
 
-@interface WDDiagnoseListBaseViewController : MMUIViewController
+@interface WDDiagnoseListBaseViewController : MMUIViewController <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate>
+{
+    MFUITableView *m_tableView;
+    WDUserInfoModel *m_currentUserInfo;
+    NSMutableArray<WDDiagnoseModel *> *m_diagnoseArray;
+}
 
 @end
