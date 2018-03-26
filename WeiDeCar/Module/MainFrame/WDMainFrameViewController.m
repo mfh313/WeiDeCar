@@ -17,6 +17,7 @@
 #import "WDRepairFactoriesViewController.h"
 #import "WDRepairItemListViewController.h"
 #import "WDCarOwnerDiagnoseListViewController.h"
+#import "WDMechanicDiagnoseListViewController.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
@@ -251,17 +252,19 @@
     
     if (currentUserInfo.userType == WDUserInfoType_CarOwner)
     {
-//        WDCarOwnerDiagnoseMainViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseMainViewController new];
-//        [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
-        
         WDCarOwnerDiagnoseListViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseListViewController new];
         [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
         
+//        WDCarOwnerDiagnoseMainViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseMainViewController new];
+//        [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
     }
     else if (currentUserInfo.userType == WDUserInfoType_Mechanic)
     {
-        WDMechanicDiagnoseMainViewController *mechanicDiagnoseVC = [WDMechanicDiagnoseMainViewController new];
+        WDMechanicDiagnoseListViewController *mechanicDiagnoseVC = [WDMechanicDiagnoseListViewController new];
         [self.navigationController pushViewController:mechanicDiagnoseVC animated:YES];
+        
+//        WDMechanicDiagnoseMainViewController *mechanicDiagnoseVC = [WDMechanicDiagnoseMainViewController new];
+//        [self.navigationController pushViewController:mechanicDiagnoseVC animated:YES];
     }
     else if (currentUserInfo.userType == WDUserInfoType_Expert)
     {
