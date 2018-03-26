@@ -21,6 +21,22 @@
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     m_currentUserInfo = loginService.currentUserInfo;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleJPUSHServiceNotification:) name:WDJPUSHService_Notification object:nil];
+}
+
+- (void)handleJPUSHServiceNotification:(NSNotification *)notification {
+    
+}
+
+-(void)initTableView
+{
+    m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
+    m_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    m_tableView.dataSource = self;
+    m_tableView.delegate = self;
+    [self.view addSubview:m_tableView];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -84,17 +100,7 @@
     
     WDDiagnoseItemCellView *cellView = (WDDiagnoseItemCellView *)cell.m_subContentView;
     [cellView setDiagnoseModel:diagnosisModel];
-    
-    if (diagnosisModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED
-        || diagnosisModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
-    {
-        [cellView setTipsHidden:NO];
-    }
-    else
-    {
-        [cellView setTipsHidden:YES];
-    }
-    
+        
     return cell;
 }
 

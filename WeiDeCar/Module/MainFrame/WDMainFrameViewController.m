@@ -16,6 +16,7 @@
 #import "WDJPUSHService.h"
 #import "WDRepairFactoriesViewController.h"
 #import "WDRepairItemListViewController.h"
+#import "WDCarOwnerDiagnoseListViewController.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
@@ -250,8 +251,12 @@
     
     if (currentUserInfo.userType == WDUserInfoType_CarOwner)
     {
-        WDCarOwnerDiagnoseMainViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseMainViewController new];
+//        WDCarOwnerDiagnoseMainViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseMainViewController new];
+//        [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
+        
+        WDCarOwnerDiagnoseListViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseListViewController new];
         [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
+        
     }
     else if (currentUserInfo.userType == WDUserInfoType_Mechanic)
     {

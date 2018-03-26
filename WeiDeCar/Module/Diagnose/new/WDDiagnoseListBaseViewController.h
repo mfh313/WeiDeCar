@@ -17,4 +17,8 @@
     NSMutableArray<WDDiagnoseModel *> *m_diagnoseArray;
 }
 
+-(void)initTableView;
+- (void)handleJPUSHServiceNotification:(NSNotification *)notification;
+
 @end
+
