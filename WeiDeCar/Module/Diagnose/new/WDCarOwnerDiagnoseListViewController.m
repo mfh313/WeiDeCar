@@ -124,10 +124,6 @@
     }];
 }
 
-- (void)handleJPUSHServiceNotification:(NSNotification *)notification {
-    [self getListDiagnoseByCarOwner];
-}
-
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
