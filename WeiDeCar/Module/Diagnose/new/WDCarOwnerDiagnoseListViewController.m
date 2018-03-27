@@ -38,10 +38,13 @@
     }];
 }
 
+- (void)handleJPUSHServiceNotification:(NSNotification *)notification {
+    [self getListDiagnoseByCarOwner];
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self getListDiagnoseByCarOwner];
 }
 

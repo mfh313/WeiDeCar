@@ -358,7 +358,6 @@
         
         NSMutableArray<WDDiagnoseCauseJudgementModel *> *causeJudgements = appearanceModel.causeJudgements;
         for (int j = 0; j < causeJudgements.count; j++) {
-            WDDiagnoseCauseJudgementModel *judgementModel = causeJudgements[j];
             
             MFTableViewCellObject *causeJudgement = [MFTableViewCellObject new];
             causeJudgement.cellHeight = 50.0f;

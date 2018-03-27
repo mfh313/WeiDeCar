@@ -8,7 +8,6 @@
 
 #import "WDMainFrameViewController.h"
 #import "WDMainFrameMenuView.h"
-#import "WDCarOwnerDiagnoseMainViewController.h"
 #import "WDIPCameraPlayViewController.h"
 #import "WDIPCameraService.h"
 #import "WDJPUSHService.h"
@@ -255,9 +254,6 @@
     {
         WDCarOwnerDiagnoseListViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseListViewController new];
         [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
-        
-//        WDCarOwnerDiagnoseMainViewController *carOwnerDiagnoseVC = [WDCarOwnerDiagnoseMainViewController new];
-//        [self.navigationController pushViewController:carOwnerDiagnoseVC animated:YES];
     }
     else if (currentUserInfo.userType == WDUserInfoType_Mechanic)
     {
