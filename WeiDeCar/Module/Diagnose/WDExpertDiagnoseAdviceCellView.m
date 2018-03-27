@@ -27,7 +27,6 @@
     
     UITextField *textField = [m_adviceTextField contentTextField];
     textField.returnKeyType = UIReturnKeyDone;
-    textField.placeholder = @"请输入专家意见";
     
     m_adviceTextField.m_delegate = self;
 }

@@ -31,11 +31,10 @@
     
     UITextField *planTextField = [m_repairPlanTextField contentTextField];
     planTextField.returnKeyType = UIReturnKeyDone;
-    planTextField.placeholder = @"请输入维修方案";
     
     UITextField *memoTextField = [m_memoTextField contentTextField];
     memoTextField.returnKeyType = UIReturnKeyDone;
-    memoTextField.placeholder = @"请输入备注";
+
 }
 
 -(void)setRepairPlan:(NSString *)repairPlan memo:(NSString *)memo
