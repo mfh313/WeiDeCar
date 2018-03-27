@@ -32,6 +32,8 @@
     self.title = @"车主查看诊断详情";
     [self setBackBarButton];
     
+    self.view.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
+    
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     m_currentUserInfo = loginService.currentUserInfo;
     
