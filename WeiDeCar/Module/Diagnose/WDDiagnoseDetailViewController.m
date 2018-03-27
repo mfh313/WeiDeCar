@@ -87,6 +87,12 @@
     else
     {
         [m_submitButton setHidden:YES];
+        
+        [m_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top);
+            make.width.equalTo(self.view.mas_width);
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
     }
 }
 
