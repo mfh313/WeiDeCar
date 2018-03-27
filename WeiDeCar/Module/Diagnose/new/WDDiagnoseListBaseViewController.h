@@ -18,7 +18,8 @@
 }
 
 -(void)initTableView;
-- (void)handleJPUSHServiceNotification:(NSNotification *)notification;
+-(void)reloadTableView;
+-(void)handleJPUSHServiceNotification:(NSNotification *)notification;
 
 @end
 

@@ -97,31 +97,6 @@
     }];
 }
 
--(void)reloadTableView
-{
-    [self makeCellObjects];
-    [m_tableView reloadData];
-}
-
--(void)makeCellObjects
-{
-    [m_cellInfos removeAllObjects];
-    
-    for (int i = 0; i < m_diagnoseArray.count; i++) {
-        MFTableViewCellObject *diagnoseModel = [MFTableViewCellObject new];
-        diagnoseModel.cellHeight = 150.0f;
-        diagnoseModel.cellReuseIdentifier = @"diagnoseItem";
-        diagnoseModel.attachIndex = i;
-        [m_cellInfos addObject:diagnoseModel];
-        
-        MFTableViewCellObject *separator = [MFTableViewCellObject new];
-        separator.cellHeight = MFOnePixHeight;
-        separator.cellReuseIdentifier = @"separator";
-        separator.attachIndex = i;
-        [m_cellInfos addObject:separator];
-    }
-}
-
 #pragma mark - WDDiagnoseMainAddViewDelegate
 -(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
 {
