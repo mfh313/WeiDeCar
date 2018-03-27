@@ -12,6 +12,7 @@
 @interface WDRepairTaskListCellView ()
 {
     __weak IBOutlet UILabel *m_createLabel;
+    __weak IBOutlet UILabel *m_diagnoseIdLabel;
     __weak IBOutlet UILabel *m_carOwnerIdLabel;
     __weak IBOutlet UILabel *m_mechanicIdLabel;
     __weak IBOutlet UILabel *m_expertIdLabel;
@@ -28,7 +29,8 @@
 {
     m_itemModel = itemModel;
     
-    m_createLabel.text = [NSString stringWithFormat:@"诊断任务ID：%@",itemModel.diagnoseId];
+    m_createLabel.text = [NSString stringWithFormat:@"更新时间：%@",itemModel.updateDate];
+    m_diagnoseIdLabel.text = [NSString stringWithFormat:@"诊断任务ID：%@",itemModel.diagnoseId];
     m_carOwnerIdLabel.text = [NSString stringWithFormat:@"车主ID：%@",itemModel.carOwnerId];
     m_mechanicIdLabel.text = [NSString stringWithFormat:@"技师ID：%@",itemModel.mechanicId];
     m_expertIdLabel.text = [NSString stringWithFormat:@"专家ID：%@",itemModel.diagnoseId];

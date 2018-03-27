@@ -34,7 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"维德专修";
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    self.title = [NSString stringWithFormat:@"维德专修 (%@)",currentUserInfo.realName];
     
     [self setRightBarButtonTitle:@"退出"];
     

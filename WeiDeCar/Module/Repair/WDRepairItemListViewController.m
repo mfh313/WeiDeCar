@@ -191,7 +191,7 @@
     for (int i = 0; i < m_repairItems.count; i++) {
 
         MFTableViewCellObject *repairTask = [MFTableViewCellObject new];
-        repairTask.cellHeight = 150.0f;
+        repairTask.cellHeight = 180.0f;
         repairTask.cellReuseIdentifier = @"repairTask";
         repairTask.attachIndex = i;
         [m_cellInfos addObject:repairTask];
