@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5132B6A1FD6D26400E2DCEE /* commonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5132B691FD6D26400E2DCEE /* commonAssets.xcassets */; };
+		A51504AE206A936600CFAD14 /* WDDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51504AD206A936600CFAD14 /* WDDiagnoseDetailViewController.m */; };
 		A51DBC212000851D00A870FD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51DBC202000851D00A870FD /* AMapLocationKit.framework */; };
 		A51DBC2D2000F91500A870FD /* WDRepairFactoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */; };
 		A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */; };
@@ -174,7 +175,6 @@
 		A5BF24222067AFA600271397 /* MMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23072067AFA600271397 /* MMUITextField.m */; };
 		A5BF24232067AFA600271397 /* MMUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23092067AFA600271397 /* MMUIView.m */; };
 		A5BF24242067AFA600271397 /* MMUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF230B2067AFA600271397 /* MMUIViewController.m */; };
-		A5BF24252067AFA600271397 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF230D2067AFA600271397 /* MMViewController.m */; };
 		A5BF24262067AFA600271397 /* UINavigationBar+MMUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF230F2067AFA600271397 /* UINavigationBar+MMUINavigationBar.m */; };
 		A5BF24272067AFA600271397 /* MFModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23122067AFA600271397 /* MFModelHelper.m */; };
 		A5BF24282067AFA600271397 /* MFThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23142067AFA600271397 /* MFThemeHelper.m */; };
@@ -286,6 +286,8 @@
 		5ACCD31EFA1E8F5D35A8E0E1 /* Pods-WeiDeCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.debug.xcconfig"; sourceTree = "<group>"; };
 		A5107E3C1FFBEF640008755A /* WeiDeCar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeiDeCar.entitlements; sourceTree = "<group>"; };
 		A5132B691FD6D26400E2DCEE /* commonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = commonAssets.xcassets; sourceTree = "<group>"; };
+		A51504AC206A936600CFAD14 /* WDDiagnoseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailViewController.h; sourceTree = "<group>"; };
+		A51504AD206A936600CFAD14 /* WDDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailViewController.m; sourceTree = "<group>"; };
 		A51DBC202000851D00A870FD /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = "Pods/AMapLocation-NO-IDFA/AMapLocationKit.framework"; sourceTree = "<group>"; };
 		A51DBC2B2000F91500A870FD /* WDRepairFactoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairFactoriesViewController.h; sourceTree = "<group>"; };
 		A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairFactoriesViewController.m; sourceTree = "<group>"; };
@@ -682,8 +684,6 @@
 		A5BF23092067AFA600271397 /* MMUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIView.m; sourceTree = "<group>"; };
 		A5BF230A2067AFA600271397 /* MMUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUIViewController.h; sourceTree = "<group>"; };
 		A5BF230B2067AFA600271397 /* MMUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIViewController.m; sourceTree = "<group>"; };
-		A5BF230C2067AFA600271397 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
-		A5BF230D2067AFA600271397 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		A5BF230E2067AFA600271397 /* UINavigationBar+MMUINavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+MMUINavigationBar.h"; sourceTree = "<group>"; };
 		A5BF230F2067AFA600271397 /* UINavigationBar+MMUINavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+MMUINavigationBar.m"; sourceTree = "<group>"; };
 		A5BF23112067AFA600271397 /* MFModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFModelHelper.h; sourceTree = "<group>"; };
@@ -1270,6 +1270,8 @@
 			children = (
 				A567D12D20694578000F711F /* WDDiagnoseListBaseViewController.h */,
 				A567D12E20694578000F711F /* WDDiagnoseListBaseViewController.m */,
+				A51504AC206A936600CFAD14 /* WDDiagnoseDetailViewController.h */,
+				A51504AD206A936600CFAD14 /* WDDiagnoseDetailViewController.m */,
 				A567D130206946F5000F711F /* WDCarOwnerDiagnoseListViewController.h */,
 				A567D131206946F5000F711F /* WDCarOwnerDiagnoseListViewController.m */,
 				A567D1332069477C000F711F /* WDMechanicDiagnoseListViewController.h */,
@@ -1550,8 +1552,6 @@
 				A5BF23092067AFA600271397 /* MMUIView.m */,
 				A5BF230A2067AFA600271397 /* MMUIViewController.h */,
 				A5BF230B2067AFA600271397 /* MMUIViewController.m */,
-				A5BF230C2067AFA600271397 /* MMViewController.h */,
-				A5BF230D2067AFA600271397 /* MMViewController.m */,
 				A5BF230E2067AFA600271397 /* UINavigationBar+MMUINavigationBar.h */,
 				A5BF230F2067AFA600271397 /* UINavigationBar+MMUINavigationBar.m */,
 			);
@@ -2355,6 +2355,7 @@
 				A5BF24182067AFA600271397 /* MMBarButton.m in Sources */,
 				A5BF22BB2067ADC700271397 /* WDJPUSHService.m in Sources */,
 				A5BF241F2067AFA600271397 /* MMSelectButton.m in Sources */,
+				A51504AE206A936600CFAD14 /* WDDiagnoseDetailViewController.m in Sources */,
 				A5BF241E2067AFA600271397 /* MMOnePixLayoutConstraint.m in Sources */,
 				A577015B202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m in Sources */,
 				A5BF24912067BDE100271397 /* WDStoreAnnotationView.m in Sources */,
@@ -2452,7 +2453,6 @@
 				A5BF245C2067AFA700271397 /* Main.pb.m in Sources */,
 				A5BF24752067AFA700271397 /* WireFormat.m in Sources */,
 				A5BF24012067AFA600271397 /* NSArray+SafeInsert.m in Sources */,
-				A5BF24252067AFA600271397 /* MMViewController.m in Sources */,
 				A5BF240D2067AFA600271397 /* UIViewController+FixBackIndicatorImage.m in Sources */,
 				A5BF22B82067ADC700271397 /* WDRepairStepModel.m in Sources */,
 				A5BF24522067AFA600271397 /* IQPreviousNextView.m in Sources */,

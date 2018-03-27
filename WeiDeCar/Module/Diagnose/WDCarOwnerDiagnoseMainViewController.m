@@ -15,7 +15,6 @@
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
 
-
 @interface WDCarOwnerDiagnoseMainViewController () <UITableViewDataSource,UITableViewDelegate,WDDiagnoseItemCellViewDelegate,WDDiagnoseMainAddViewDelegate>
 {
     MFUITableView *m_tableView;
