@@ -9,8 +9,6 @@
 #import "WDMainFrameViewController.h"
 #import "WDMainFrameMenuView.h"
 #import "WDCarOwnerDiagnoseMainViewController.h"
-#import "WDMechanicDiagnoseMainViewController.h"
-#import "WDExpertDiagnoseMainViewController.h"
 #import "WDIPCameraPlayViewController.h"
 #import "WDIPCameraService.h"
 #import "WDJPUSHService.h"
@@ -18,6 +16,7 @@
 #import "WDRepairItemListViewController.h"
 #import "WDCarOwnerDiagnoseListViewController.h"
 #import "WDMechanicDiagnoseListViewController.h"
+#import "WDExpertDiagnoseListViewController.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
@@ -264,13 +263,10 @@
     {
         WDMechanicDiagnoseListViewController *mechanicDiagnoseVC = [WDMechanicDiagnoseListViewController new];
         [self.navigationController pushViewController:mechanicDiagnoseVC animated:YES];
-        
-//        WDMechanicDiagnoseMainViewController *mechanicDiagnoseVC = [WDMechanicDiagnoseMainViewController new];
-//        [self.navigationController pushViewController:mechanicDiagnoseVC animated:YES];
     }
     else if (currentUserInfo.userType == WDUserInfoType_Expert)
     {
-        WDExpertDiagnoseMainViewController *expertDiagnoseVC = [WDExpertDiagnoseMainViewController new];
+        WDExpertDiagnoseListViewController *expertDiagnoseVC = [WDExpertDiagnoseListViewController new];
         [self.navigationController pushViewController:expertDiagnoseVC animated:YES];
     }
 }
