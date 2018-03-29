@@ -43,6 +43,17 @@
     [self setFooterView];
     
     [self reloadTableView];
+    
+    if (self.diagnoseModel.status == WDDiagnoseStatus_INIT)
+    {
+        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"诊断任务当前为初始状态，请等待技师诊断" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:nil
+                                          destructiveButtonTitle:nil
+                                                   actionHandler:nil
+                                                   cancelHandler:nil
+                                              destructiveHandler:nil];
+        
+        [alertView showAnimated:YES completionHandler:nil];
+    }
 }
 
 -(void)initTableView
