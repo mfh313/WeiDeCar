@@ -1,5 +1,7 @@
 ----------Koradior证书----------
 
+维德专修-测试
+
 BundleID
 cn.mafanghua.WeiDeCar
 
@@ -8,6 +10,8 @@ d06957de9c049c5da29c437837874158
 
 
 ----------企业发布证书----------
+
+维德专修
 
 BundleID
 com.weidecar.wd
