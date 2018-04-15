@@ -20,14 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"现场诊断-助理";
-    
-    [self initCreateHeaderView];
+    self.title = @"诊断任务列表-助理";
     
     [self initTableView];
     
     [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(m_createDiagnoseView.mas_bottom);
+        make.top.equalTo(self.view.mas_top).offset(64);
         make.width.equalTo(self.view.mas_width);
         make.bottom.equalTo(self.view.mas_bottom);
     }];
@@ -47,27 +45,6 @@
 {
     [super viewWillAppear:animated];
     [self getListDiagnoseByCarOwner];
-}
-
--(void)initCreateHeaderView
-{
-    m_createDiagnoseView = [WDDiagnoseMainAddView nibView];
-    m_createDiagnoseView.m_delegate = self;
-    [self.view addSubview:m_createDiagnoseView];
-    [m_createDiagnoseView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(64);
-        make.width.equalTo(self.view.mas_width);
-        make.height.mas_equalTo(60);
-    }];
-    
-    UIView *separator = [UIView new];
-    separator.backgroundColor = MFCustomLineColor;
-    [m_createDiagnoseView addSubview:separator];
-    [separator mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(m_createDiagnoseView.mas_bottom);
-        make.width.equalTo(m_createDiagnoseView.mas_width);
-        make.height.mas_equalTo(MFOnePixHeight);
-    }];
 }
 
 -(void)getListDiagnoseByCarOwner
@@ -103,29 +80,6 @@
     }];
 }
 
-#pragma mark - WDDiagnoseMainAddViewDelegate
--(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
-{
-    __weak typeof(self) weakSelf = self;
-    WDCreateDiagnoseByCarOwnerApi *mfApi = [WDCreateDiagnoseByCarOwnerApi new];
-    mfApi.carOwnerId = m_currentUserInfo.userId;
-    mfApi.animatingText = @"正在创建维修任务...";
-    mfApi.animatingView = MFAppWindow;
-    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
-        
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (!mfApi.messageSuccess) {
-            [strongSelf showTips:mfApi.errorMessage];
-            return;
-        }
-        
-        [strongSelf getListDiagnoseByCarOwner];
-        
-    } failure:^(YTKBaseRequest * request) {
-        
-    }];
-}
-
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
@@ -150,7 +104,6 @@
     diagnoseDetailVC.diagnoseModel = itemModel;
     [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

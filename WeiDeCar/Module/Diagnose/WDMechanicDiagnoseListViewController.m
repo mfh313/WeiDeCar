@@ -20,8 +20,6 @@
     [super viewDidLoad];
     
     self.title = @"诊断任务列表-技师";
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
     [self initTableView];
     
     [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -19,6 +19,8 @@
     
     [self setBackBarButton];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     m_currentUserInfo = loginService.currentUserInfo;
     
