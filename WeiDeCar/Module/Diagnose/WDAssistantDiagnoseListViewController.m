@@ -9,6 +9,7 @@
 #import "WDAssistantDiagnoseListViewController.h"
 #import "WDDiagnoseDetailViewController.h"
 #import "WDMechanicDiagnoseViewController.h"
+#import "WDExpertDiagnoseMainCreateViewController.h"
 
 @interface WDAssistantDiagnoseListViewController ()
 
@@ -130,6 +131,14 @@
     if (itemModel.status == WDDiagnoseStatus_INIT)
     {
         WDMechanicDiagnoseViewController *diagnoseCreateVC = [WDMechanicDiagnoseViewController new];
+        diagnoseCreateVC.diagnoseModel = itemModel;
+        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
+        
+        return;
+    }
+    else if (itemModel.status == WDDiagnoseStatus_CAR_OWNER_CONFIRMED)
+    {
+        WDExpertDiagnoseMainCreateViewController *diagnoseCreateVC = [WDExpertDiagnoseMainCreateViewController new];
         diagnoseCreateVC.diagnoseModel = itemModel;
         [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
         
