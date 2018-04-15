@@ -83,25 +83,13 @@
 -(void)setOnsiteQualifiedRepairStepModel:(WDRepairStepModel *)repairStep
 {
     m_titleLabel.text = @"现场检查";
-    if (repairStep.status == WDRepairStepStatus_START_REPAIR) {
-        m_contentLabel.text = @"正在维修";
-    }
-    else
-    {
-        m_contentLabel.text = [self qualifiedString:m_repairStep.onsiteQualified];
-    }
+    m_contentLabel.text = [self qualifiedString:m_repairStep.onsiteQualified];
 }
 
 -(void)setThirdPartyQualifedRepairStepModel:(WDRepairStepModel *)repairStep
 {
     m_titleLabel.text = @"第三方质检";
-    if (repairStep.status == WDRepairStepStatus_START_REPAIR) {
-        m_contentLabel.text = @"正在维修";
-    }
-    else
-    {
-        m_contentLabel.text = [self qualifiedString:m_repairStep.thirdPartyQualified];
-    }
+    m_contentLabel.text = [self qualifiedString:m_repairStep.thirdPartyQualified];
 }
 
 -(NSString *)qualifiedString:(NSInteger)status
