@@ -8,7 +8,6 @@
 
 #import "WDDiagnoseModel.h"
 
-
 NSInteger const WDDiagnoseStatus_ABORT = 0;   //终止
 NSInteger const WDDiagnoseStatus_INIT = 10;  //初始状态
 NSInteger const WDDiagnoseStatus_MECHANIC_DIAGNOSED = 20;  //技师诊断完成，返回给车主查看
