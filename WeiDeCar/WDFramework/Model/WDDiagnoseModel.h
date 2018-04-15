@@ -16,6 +16,7 @@ extern NSInteger const WDDiagnoseStatus_EXPERT_DIAGNOSED;  //专家复诊完成
 extern NSInteger const WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED;  //诊断完成
 extern NSInteger const WDDiagnoseStatus_REPAIR_TASK_CREATED;  //维修任务已创建
 extern NSInteger const WDDiagnoseStatus_MECHANIC_ASSIGNED;  //维修任务已分配技师
+extern NSInteger const WDDiagnoseStatus_MECHANIC_CERTIFICATED;  //维修技师能力被评定
 extern NSInteger const WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED;  //维修任务已报价，等待车主接受
 extern NSInteger const WDDiagnoseStatus_OFFER_ACCEPTED;  //车主接受报价，待支付
 extern NSInteger const WDDiagnoseStatus_PAYMENT_SUCCESS;  //支付成功，等待维修

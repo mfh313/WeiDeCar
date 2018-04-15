@@ -23,6 +23,7 @@ extern NSInteger const WDRepairItemStatus_ALL_QUALIFIED;  //维修项目合格
 @property (nonatomic,strong) NSString *repairItemName; //维修项目名称
 @property (nonatomic,strong) WDRepairTaskModel *repairTask;
 @property (nonatomic,assign) NSInteger status;  //维修项目状态，10：未选择，20：已选择
+@property (nonatomic,strong) NSString *statusName;  //状态名称
 @property (nonatomic,strong) NSString *updateDate;
 @property (nonatomic,strong) NSString *updateUserId;
 

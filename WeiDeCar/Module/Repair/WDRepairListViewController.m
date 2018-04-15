@@ -300,10 +300,7 @@
 #pragma mark - WDRepairItemActionCellViewDelegate
 -(void)onClickSelectRepairItem:(WDRepairItemModel *)repairItem cellView:(WDRepairItemActionCellView *)cellView
 {
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_Mechanic
-        && repairItem.status == WDRepairItemStatus_ACCEPTED)
+    if ([self canStartRepairItem:repairItem])
     {
         [self startRepairItem:repairItem];
     }
@@ -311,6 +308,23 @@
     {
         [self showRepairItemStep:repairItem];
     }
+}
+
+-(BOOL)canStartRepairItem:(WDRepairItemModel *)repairItem
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    if (repairItem.status == WDRepairItemStatus_ACCEPTED)
+    {
+        if (currentUserInfo.userType == WDUserInfoType_Mechanic
+            || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 -(void)showRepairItemStep:(WDRepairItemModel *)repairItem

@@ -17,6 +17,7 @@ NSInteger const WDDiagnoseStatus_EXPERT_DIAGNOSED = 30;  //专家复诊完成
 NSInteger const WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED = 35;  //诊断完成
 NSInteger const WDDiagnoseStatus_REPAIR_TASK_CREATED = 40;  //维修任务已创建
 NSInteger const WDDiagnoseStatus_MECHANIC_ASSIGNED = 41;  //维修任务已分配技师
+NSInteger const WDDiagnoseStatus_MECHANIC_CERTIFICATED = 4101;  //维修技师能力被评定
 NSInteger const WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED = 42;  //维修任务已报价，等待车主接受
 NSInteger const WDDiagnoseStatus_OFFER_ACCEPTED = 45;  //车主接受报价，待支付
 NSInteger const WDDiagnoseStatus_PAYMENT_SUCCESS = 50;  //支付成功，等待维修

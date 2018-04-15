@@ -151,6 +151,7 @@
     WDListRepairTaskByUserApi *mfApi = [WDListRepairTaskByUserApi new];
     mfApi.currentUser = loginService.currentUserInfo;
     
+    mfApi.animatingView = self.view;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         [m_tableView.pullToRefreshView stopAnimating];
@@ -209,7 +210,8 @@
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_CarOwner)
+    if (currentUserInfo.userType == WDUserInfoType_CarOwner
+        || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
     {
         if (itemModel.status == WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED)
         {
