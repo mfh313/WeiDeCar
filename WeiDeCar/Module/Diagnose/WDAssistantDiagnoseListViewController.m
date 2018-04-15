@@ -76,6 +76,7 @@
     WDListDiagnoseByCarOwnerApi *mfApi = [WDListDiagnoseByCarOwnerApi new];
     mfApi.carOwnerId = m_currentUserInfo.userId;
     
+    mfApi.animatingView = self.view;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         [m_tableView.pullToRefreshView stopAnimating];
