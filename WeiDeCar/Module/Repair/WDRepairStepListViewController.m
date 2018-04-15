@@ -18,8 +18,10 @@
 #import "WDUploadRepairStepPhotoApi.h"
 #import "WDRepairStepItemImageViewController.h"
 #import "WDRepairStepQualifiedSelectCellView.h"
+#import "WDRepairStepStatusCellView.h"
+#import "WDRepairService.h"
 
-@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepListHeaderViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate>
+@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -47,9 +49,7 @@
     m_tableView.delegate = self;
     [self.view addSubview:m_tableView];
     
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_Expert)
+    if ([self canFinishRepairItem])
     {
         [m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view.mas_top);
@@ -82,6 +82,18 @@
     [self getRepairStepList];
 }
 
+-(BOOL)canFinishRepairItem
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_Expert || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -112,6 +124,10 @@
     else if ([identifier isEqualToString:@"uploadImageCellView"])
     {
         return [self tableView:tableView uploadImageCellForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"repairStepStatus"])
+    {
+        return [self tableView:tableView repairStepStatusCellForIndexPath:indexPath];
     }
     else if ([identifier isEqualToString:@"division"])
     {
@@ -150,13 +166,35 @@
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         
         WDRepairStepListHeaderView *cellView = [[WDRepairStepListHeaderView alloc] initWithFrame:cell.contentView.bounds];
-        cellView.m_delegate = self;
         cell.m_subContentView = cellView;
     }
     
     WDRepairStepModel *repairItem = m_repairSteps[attachIndex];
     
     WDRepairStepListHeaderView *cellView = (WDRepairStepListHeaderView *)cell.m_subContentView;
+    [cellView setRepairStepModel:repairItem];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairStepStatusCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairStepStatusCellView *cellView = [[WDRepairStepStatusCellView alloc] initWithFrame:cell.contentView.bounds];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairStepModel *repairItem = m_repairSteps[attachIndex];
+    
+    WDRepairStepStatusCellView *cellView = (WDRepairStepStatusCellView *)cell.m_subContentView;
     [cellView setRepairStepModel:repairItem];
     
     return cell;
@@ -190,7 +228,6 @@
 {
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
     NSString *identifier = cellInfo.cellReuseIdentifier;
-    NSInteger attachIndex = cellInfo.attachIndex;
     
     MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
@@ -322,6 +359,7 @@
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    WDRepairService *repairService = [[MMServiceCenter defaultCenter] getService:[WDRepairService class]];
     
     for (int i = 0; i < m_repairSteps.count; i++) {
         
@@ -345,7 +383,7 @@
         
         [m_cellInfos addObject:[self separatorCellObject]];
         
-        if (currentUserInfo.userType == WDUserInfoType_Expert)
+        if ([repairService canOperateQualified])
         {
             MFTableViewCellObject *onsiteQualifiedSelect = [MFTableViewCellObject new];
             onsiteQualifiedSelect.cellHeight = 50.0f;
@@ -366,7 +404,7 @@
         
         [m_cellInfos addObject:[self separatorCellObject]];
         
-        if (currentUserInfo.userType == WDUserInfoType_Expert)
+        if ([repairService canOperateQualified])
         {
             MFTableViewCellObject *thirdPartyQualifedSelect = [MFTableViewCellObject new];
             thirdPartyQualifedSelect.cellHeight = 50.0f;
@@ -388,6 +426,14 @@
             
             [m_cellInfos addObject:[self separatorCellObject]];
         }
+        
+        MFTableViewCellObject *repairStepStatus = [MFTableViewCellObject new];
+        repairStepStatus.cellHeight = 50.0f;
+        repairStepStatus.cellReuseIdentifier = @"repairStepStatus";
+        repairStepStatus.attachIndex = i;
+        [m_cellInfos addObject:repairStepStatus];
+        
+        [m_cellInfos addObject:[self separatorCellObject]];
     }
 }
 
@@ -407,23 +453,19 @@
     return division;
 }
 
-#pragma mark - WDRepairStepListHeaderViewDelegate
--(void)onClickFinishRepairStep:(WDRepairStepModel *)repairStep cellView:(WDRepairStepListHeaderView *)cellView
+#pragma mark - WDRepairStepStatusCellViewDelegate
+-(void)onClickFinishRepairStep:(WDRepairStepModel *)repairStep statusCellView:(WDRepairStepStatusCellView *)cellView
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDRepairService *repairService = [[MMServiceCenter defaultCenter] getService:[WDRepairService class]];
     
     __weak typeof(self) weakSelf = self;
     WDUpdateRepairStepApi *mfApi = [WDUpdateRepairStepApi new];
     mfApi.userId = loginService.currentUserInfo.userId;
     mfApi.repairStepId = repairStep.repairStepId;
-    
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_Expert)
-    {
-        mfApi.isExpert = YES;
-        mfApi.onsiteQualified = [NSString stringWithFormat:@"%@",@(repairStep.onsiteQualified)];
-        mfApi.thirdPartyQualified = [NSString stringWithFormat:@"%@",@(repairStep.thirdPartyQualified)];
-    }
+    mfApi.onsiteQualified = [NSString stringWithFormat:@"%@",@(repairStep.onsiteQualified)];
+    mfApi.thirdPartyQualified = [NSString stringWithFormat:@"%@",@(repairStep.thirdPartyQualified)];
+    mfApi.canOperateQualified = [repairService canOperateQualified];
     
     mfApi.animatingView = self.view;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {

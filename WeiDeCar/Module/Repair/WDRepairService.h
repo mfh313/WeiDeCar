@@ -12,5 +12,6 @@
 @interface WDRepairService : MMService
 
 -(BOOL)canStartRepairItem:(WDRepairItemModel *)repairItem;
+-(BOOL)canOperateQualified;
 
 @end

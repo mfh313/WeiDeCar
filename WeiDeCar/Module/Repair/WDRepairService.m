@@ -27,4 +27,16 @@
     return NO;
 }
 
+-(BOOL)canOperateQualified
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    if (currentUserInfo.userType == WDUserInfoType_Expert || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

@@ -21,7 +21,7 @@
     requestArgument[@"userId"] = self.userId;
     requestArgument[@"repairStepId"] = self.repairStepId;
     
-    if (self.isExpert)
+    if (self.canOperateQualified)
     {
         requestArgument[@"onsiteQualified"] = self.onsiteQualified;
         requestArgument[@"thirdPartyQualified"] = self.thirdPartyQualified;

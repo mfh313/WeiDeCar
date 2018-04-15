@@ -27,6 +27,7 @@ extern NSInteger const WDRepairStepStatus_UNQUALIFIED;  //该步骤不合格
 @property (nonatomic,assign) NSInteger repairOrder; //步骤顺序
 @property (nonatomic,strong) NSString *repairStepDesc; //步骤描述
 @property (nonatomic,assign) NSInteger status; //维修状态
+@property (nonatomic,strong) NSString *statusName; //维修状态文字
 @property (nonatomic,assign) NSInteger thirdPartyQualified; //第三方质检是否合格，字典值
 @property (nonatomic,strong) NSString *updateDate;
 @property (nonatomic,strong) NSString *updateUserId;
