@@ -1,26 +1,25 @@
 //
-//  WDCarOwnerDiagnoseListViewController.m
+//  WDAssistantDiagnoseListViewController.m
 //  WeiDeCar
 //
-//  Created by mafanghua on 2018/3/26.
+//  Created by mafanghua on 2018/4/15.
 //  Copyright © 2018年 mafanghua. All rights reserved.
 //
 
-#import "WDCarOwnerDiagnoseListViewController.h"
+#import "WDAssistantDiagnoseListViewController.h"
 #import "WDDiagnoseDetailViewController.h"
+#import "WDMechanicDiagnoseViewController.h"
 
-
-@interface WDCarOwnerDiagnoseListViewController ()
+@interface WDAssistantDiagnoseListViewController ()
 
 @end
 
-
-@implementation WDCarOwnerDiagnoseListViewController
+@implementation WDAssistantDiagnoseListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"现场诊断-车主";
+    self.title = @"现场诊断-助理";
     
     [self initCreateHeaderView];
     
@@ -128,14 +127,23 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
+    if (itemModel.status == WDDiagnoseStatus_INIT)
+    {
+        WDMechanicDiagnoseViewController *diagnoseCreateVC = [WDMechanicDiagnoseViewController new];
+        diagnoseCreateVC.diagnoseModel = itemModel;
+        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
+        
+        return;
+    }
+    
     WDDiagnoseDetailViewController *diagnoseDetailVC = [WDDiagnoseDetailViewController new];
     diagnoseDetailVC.diagnoseModel = itemModel;
     [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

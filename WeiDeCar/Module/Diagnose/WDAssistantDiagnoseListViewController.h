@@ -1,8 +1,8 @@
 //
-//  WDCarOwnerDiagnoseListViewController.h
+//  WDAssistantDiagnoseListViewController.h
 //  WeiDeCar
 //
-//  Created by mafanghua on 2018/3/26.
+//  Created by mafanghua on 2018/4/15.
 //  Copyright © 2018年 mafanghua. All rights reserved.
 //
 
@@ -11,10 +11,9 @@
 #import "WDListDiagnoseByCarOwnerApi.h"
 #import "WDCreateDiagnoseByCarOwnerApi.h"
 
-@interface WDCarOwnerDiagnoseListViewController : WDDiagnoseListBaseViewController <WDDiagnoseMainAddViewDelegate>
+@interface WDAssistantDiagnoseListViewController : WDDiagnoseListBaseViewController <WDDiagnoseMainAddViewDelegate>
 {
     WDDiagnoseMainAddView *m_createDiagnoseView;
 }
 
 @end
-

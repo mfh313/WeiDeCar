@@ -11,6 +11,7 @@
 NSInteger const WDUserInfoType_CarOwner = 10;
 NSInteger const WDUserInfoType_Mechanic = 20;
 NSInteger const WDUserInfoType_Expert = 30;
+NSInteger const WDUserInfoType_ASSISTANT = 40;
 
 @implementation WDUserInfoModel
 

@@ -11,6 +11,7 @@
 extern NSInteger const WDUserInfoType_CarOwner;
 extern NSInteger const WDUserInfoType_Mechanic;
 extern NSInteger const WDUserInfoType_Expert;
+extern NSInteger const WDUserInfoType_ASSISTANT;
 
 @interface WDUserInfoModel : NSObject
 

@@ -16,6 +16,7 @@
 #import "WDCarOwnerDiagnoseListViewController.h"
 #import "WDMechanicDiagnoseListViewController.h"
 #import "WDExpertDiagnoseListViewController.h"
+#import "WDAssistantDiagnoseListViewController.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
@@ -264,6 +265,11 @@
     {
         WDExpertDiagnoseListViewController *expertDiagnoseVC = [WDExpertDiagnoseListViewController new];
         [self.navigationController pushViewController:expertDiagnoseVC animated:YES];
+    }
+    else if (currentUserInfo.userType == WDUserInfoType_ASSISTANT)
+    {
+        WDAssistantDiagnoseListViewController *diagnoseVC = [WDAssistantDiagnoseListViewController new];
+        [self.navigationController pushViewController:diagnoseVC animated:YES];
     }
 }
 
