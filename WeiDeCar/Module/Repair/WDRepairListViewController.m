@@ -13,6 +13,7 @@
 #import "WDRepairItemCellView.h"
 #import "WDRepairItemActionCellView.h"
 #import "WDRepairStepListViewController.h"
+#import "WDRepairService.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
 {
@@ -300,7 +301,9 @@
 #pragma mark - WDRepairItemActionCellViewDelegate
 -(void)onClickSelectRepairItem:(WDRepairItemModel *)repairItem cellView:(WDRepairItemActionCellView *)cellView
 {
-    if ([self canStartRepairItem:repairItem])
+    WDRepairService *repairService = [[MMServiceCenter defaultCenter] getService:[WDRepairService class]];
+    
+    if ([repairService canStartRepairItem:repairItem])
     {
         [self startRepairItem:repairItem];
     }
@@ -308,23 +311,6 @@
     {
         [self showRepairItemStep:repairItem];
     }
-}
-
--(BOOL)canStartRepairItem:(WDRepairItemModel *)repairItem
-{
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    
-    if (repairItem.status == WDRepairItemStatus_ACCEPTED)
-    {
-        if (currentUserInfo.userType == WDUserInfoType_Mechanic
-            || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
-        {
-            return YES;
-        }
-    }
-    
-    return NO;
 }
 
 -(void)showRepairItemStep:(WDRepairItemModel *)repairItem

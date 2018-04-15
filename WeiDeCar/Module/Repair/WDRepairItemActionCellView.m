@@ -8,6 +8,7 @@
 
 #import "WDRepairItemActionCellView.h"
 #import "WDRepairItemModel.h"
+#import "WDRepairService.h"
 
 @implementation WDRepairItemActionCellView
 
@@ -39,7 +40,9 @@
 {
     m_repairItem = repairItem;
     
-    if ([self canStartRepairItem:m_repairItem])
+    WDRepairService *repairService = [[MMServiceCenter defaultCenter] getService:[WDRepairService class]];
+    
+    if ([repairService canStartRepairItem:m_repairItem])
     {
         [m_contentButton setTitle:@"开始维修" forState:UIControlStateNormal];
     }
@@ -47,23 +50,6 @@
     {
         [m_contentButton setTitle:@"查看维修详情" forState:UIControlStateNormal];
     }
-}
-
--(BOOL)canStartRepairItem:(WDRepairItemModel *)repairItem
-{
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    
-    if (repairItem.status == WDRepairItemStatus_ACCEPTED)
-    {
-        if (currentUserInfo.userType == WDUserInfoType_Mechanic
-            || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
-        {
-            return YES;
-        }
-    }
-    
-    return NO;
 }
 
 -(void)onClickContentButton:(id)sender
