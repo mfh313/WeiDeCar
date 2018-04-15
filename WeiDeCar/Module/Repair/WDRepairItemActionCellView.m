@@ -39,10 +39,7 @@
 {
     m_repairItem = repairItem;
     
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    if (currentUserInfo.userType == WDUserInfoType_Mechanic
-        && repairItem.status == WDRepairItemStatus_ACCEPTED)
+    if ([self canStartRepairItem:m_repairItem])
     {
         [m_contentButton setTitle:@"开始维修" forState:UIControlStateNormal];
     }
@@ -50,6 +47,23 @@
     {
         [m_contentButton setTitle:@"查看维修详情" forState:UIControlStateNormal];
     }
+}
+
+-(BOOL)canStartRepairItem:(WDRepairItemModel *)repairItem
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    if (repairItem.status == WDRepairItemStatus_ACCEPTED)
+    {
+        if (currentUserInfo.userType == WDUserInfoType_Mechanic
+            || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 -(void)onClickContentButton:(id)sender
