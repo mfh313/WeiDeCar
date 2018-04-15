@@ -138,6 +138,8 @@
         
         [strongSelf showTips:mfApi.errorMessage];
         
+        [self hiddenSubmitButton];
+        
     } failure:^(YTKBaseRequest * request) {
         
     }];
@@ -161,10 +163,16 @@
         }
         
         [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf hiddenSubmitButton];
         
     } failure:^(YTKBaseRequest * request) {
 
     }];
+}
+
+-(void)hiddenSubmitButton
+{
+    [m_submitButton setHidden:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
