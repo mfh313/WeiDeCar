@@ -23,7 +23,6 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-//    [m_loginButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
     [m_loginButton setBackgroundImage:MFImage(@"login_button") forState:UIControlStateNormal];
     
     UITextField *acountTextField = [m_acountTextField contentTextField];
@@ -38,8 +37,8 @@
     m_acountTextField.m_delegate = self;
     m_passwordTextField.m_delegate = self;
     
-    [self setTextFieldLeftView:MFImage(@"login_user") textField:acountTextField];
-    [self setTextFieldLeftView:MFImage(@"login_password") textField:passwordTextField];
+//    [self setTextFieldLeftView:MFImage(@"login_user") textField:acountTextField];
+//    [self setTextFieldLeftView:MFImage(@"login_password") textField:passwordTextField];
 }
 
 #pragma mark - WDBorderTextFieldDelegate

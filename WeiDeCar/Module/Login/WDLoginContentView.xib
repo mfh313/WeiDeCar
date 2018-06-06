@@ -64,7 +64,7 @@
                         <constraint firstAttribute="height" constant="40" id="svG-aT-d47"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="忘记密码?">
+                    <state key="normal" title="注册">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

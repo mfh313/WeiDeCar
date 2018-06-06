@@ -11,6 +11,7 @@
 #import "WDUserLoginApi.h"
 #import "WDJPUSHService.h"
 #import "WDQiniuFileService.h"
+#import "WDUserRegisterViewController.h"
 
 @interface WDLoginViewController () <WDLoginContentViewDelegate,tableViewDelegate,UITableViewDelegate>
 {
@@ -44,11 +45,9 @@
     m_tableView.tableHeaderView = m_loginContentView;
     
 #ifdef DEBUG
-    [m_loginContentView setPhone:@"zhuli" password:@"123456"];
+//    [m_loginContentView setPhone:@"zhuli" password:@"123456"];
 //    [m_loginContentView setPhone:@"ff" password:@"123456"];
-    
 //    [m_loginContentView setPhone:@"jishi" password:@"123456"];
-    
 //    [m_loginContentView setPhone:@"zhuanjia" password:@"123456"];
 #else
     
@@ -88,7 +87,8 @@
 
 -(void)onClickForgetPassword:(WDLoginContentView *)view
 {
-    [self showTips:@"忘记密码"];
+    WDUserRegisterViewController *registerVC = [WDUserRegisterViewController new];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 -(void)onClickLogin:(NSString *)userName password:(NSString *)password
