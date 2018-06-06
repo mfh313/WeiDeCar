@@ -49,14 +49,6 @@
                         <action selector="onClickLoginButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="eOy-1P-dyc"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bku-ip-Rsa">
-                    <rect key="frame" x="71" y="404" width="300" height="1"/>
-                    <color key="backgroundColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="Tp4-eH-FFM"/>
-                        <constraint firstAttribute="width" constant="300" id="xYt-Bd-kMj"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AK0-jm-mLA">
                     <rect key="frame" x="171" y="413" width="100" height="40"/>
                     <constraints>
@@ -74,14 +66,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="AK0-jm-mLA" firstAttribute="top" secondItem="bku-ip-Rsa" secondAttribute="bottom" constant="8" id="39D-fS-nzb"/>
                 <constraint firstItem="YgD-JR-pP5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8cT-wm-s22"/>
                 <constraint firstItem="YgD-JR-pP5" firstAttribute="top" secondItem="0eB-hO-Xp8" secondAttribute="bottom" constant="50" id="Cmk-B0-RlP"/>
                 <constraint firstItem="Fb7-sc-7Et" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="DO7-IZ-5Mk"/>
                 <constraint firstItem="AK0-jm-mLA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PKU-js-Alf"/>
                 <constraint firstItem="Fb7-sc-7Et" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tu7-sP-lIo"/>
-                <constraint firstItem="bku-ip-Rsa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UR4-c3-O1C"/>
-                <constraint firstItem="bku-ip-Rsa" firstAttribute="top" secondItem="YgD-JR-pP5" secondAttribute="bottom" constant="30" id="Uby-UA-RzE"/>
+                <constraint firstItem="AK0-jm-mLA" firstAttribute="top" secondItem="YgD-JR-pP5" secondAttribute="bottom" constant="39" id="Vd0-08-U7c"/>
                 <constraint firstItem="rIl-fa-TKy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aOD-bO-zvi"/>
                 <constraint firstItem="0eB-hO-Xp8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jRD-Co-7mE"/>
                 <constraint firstItem="rIl-fa-TKy" firstAttribute="top" secondItem="Fb7-sc-7Et" secondAttribute="bottom" constant="30" id="skl-Tv-lPR"/>
