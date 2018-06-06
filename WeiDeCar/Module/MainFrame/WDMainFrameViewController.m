@@ -37,7 +37,7 @@
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
     self.title = [NSString stringWithFormat:@"维德专修 (%@)",currentUserInfo.realName];
     
-    [self setRightBarButtonTitle:@"退出"];
+    [self setLeftBarButtonTitle:@"退出" action:@selector(onClickMainGo)];
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -55,11 +55,6 @@
     
     WDIPCameraService *cameraService = [[MMServiceCenter defaultCenter] getService:[WDIPCameraService class]];
     [cameraService getYs7AccessToken];
-}
-
--(void)onClickRightButton:(id)sender
-{
-    [self onClickMainGo];
 }
 
 -(void)initActionMenus

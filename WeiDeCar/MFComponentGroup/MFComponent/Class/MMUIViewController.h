@@ -26,6 +26,7 @@
 -(id)getNavigationRightButton:(id)arg1;
 -(void)setBackBarButton;
 -(void)setRightBarButtonTitle:(NSString *)title;
+-(void)setLeftBarButtonTitle:(NSString *)title action:(SEL)anAction;
 -(void)setWantsFullScreen:(BOOL)wantsFullScreenLayout;
 
 @end

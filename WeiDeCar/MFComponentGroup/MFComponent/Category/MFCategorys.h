@@ -12,7 +12,7 @@
 #import "UIViewController+FullScreen.h"
 #import "UIViewController+pregress.h"
 #import "UIView+viewController.h"
-
+#import "UIViewController+UINavigationItem.h"
 #import "NSMutableDictionary+SafeInsert.h"
 #import "NSArray+SafeInsert.h"
 #import "NSMutableArray+SafeInsert.h"
