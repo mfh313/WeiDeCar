@@ -11,6 +11,7 @@
 @interface WDMainFrameBubbleObject : NSObject
 
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *key;
 @property (nonatomic,assign) BOOL left;
 @property (nonatomic,assign) BOOL bigPoint;
 @property (nonatomic,assign) CGSize bubbleSize;
