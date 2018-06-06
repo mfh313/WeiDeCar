@@ -17,6 +17,7 @@
 #import "WDMechanicDiagnoseListViewController.h"
 #import "WDExpertDiagnoseListViewController.h"
 #import "WDAssistantDiagnoseListViewController.h"
+#import "WDMainFrameBubbleView.h"
 
 @interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
 {
