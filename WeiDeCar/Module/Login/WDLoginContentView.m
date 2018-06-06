@@ -23,7 +23,8 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    [m_loginButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
+//    [m_loginButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
+    [m_loginButton setBackgroundImage:MFImage(@"login_button") forState:UIControlStateNormal];
     
     UITextField *acountTextField = [m_acountTextField contentTextField];
     acountTextField.returnKeyType = UIReturnKeyDone;
