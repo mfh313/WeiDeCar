@@ -36,6 +36,7 @@
 		A52D91C71FDC30FB009DD077 /* WDUserRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52D91A51FDC30FB009DD077 /* WDUserRegisterViewController.m */; };
 		A52EAF0D1FFBB10100262796 /* WDIPCameraService.m in Sources */ = {isa = PBXBuildFile; fileRef = A52EAF0C1FFBB10100262796 /* WDIPCameraService.m */; };
 		A52F969820C83D90002BDCF6 /* WDMainFrameBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52F969720C83D90002BDCF6 /* WDMainFrameBubbleView.m */; };
+		A52F969B20C83FF2002BDCF6 /* WDMainFrameBubbleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A52F969A20C83FF2002BDCF6 /* WDMainFrameBubbleObject.m */; };
 		A535ACE11FDCD20E001CF470 /* WDGuideBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACDB1FDCD20E001CF470 /* WDGuideBottomView.m */; };
 		A535ACE21FDCD20E001CF470 /* WDGuideBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A535ACDC1FDCD20E001CF470 /* WDGuideBottomView.xib */; };
 		A535ACE31FDCD20E001CF470 /* WDGuidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACDE1FDCD20E001CF470 /* WDGuidePageView.m */; };
@@ -338,6 +339,8 @@
 		A52EAF0C1FFBB10100262796 /* WDIPCameraService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDIPCameraService.m; sourceTree = "<group>"; };
 		A52F969620C83D90002BDCF6 /* WDMainFrameBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMainFrameBubbleView.h; sourceTree = "<group>"; };
 		A52F969720C83D90002BDCF6 /* WDMainFrameBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMainFrameBubbleView.m; sourceTree = "<group>"; };
+		A52F969920C83FF2002BDCF6 /* WDMainFrameBubbleObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMainFrameBubbleObject.h; sourceTree = "<group>"; };
+		A52F969A20C83FF2002BDCF6 /* WDMainFrameBubbleObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMainFrameBubbleObject.m; sourceTree = "<group>"; };
 		A535ACDA1FDCD20E001CF470 /* WDGuideBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGuideBottomView.h; sourceTree = "<group>"; };
 		A535ACDB1FDCD20E001CF470 /* WDGuideBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGuideBottomView.m; sourceTree = "<group>"; };
 		A535ACDC1FDCD20E001CF470 /* WDGuideBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDGuideBottomView.xib; sourceTree = "<group>"; };
@@ -1272,6 +1275,8 @@
 				A5631C6E1FF5131500DBA959 /* WDMainFrameViewController.m */,
 				A52F969620C83D90002BDCF6 /* WDMainFrameBubbleView.h */,
 				A52F969720C83D90002BDCF6 /* WDMainFrameBubbleView.m */,
+				A52F969920C83FF2002BDCF6 /* WDMainFrameBubbleObject.h */,
+				A52F969A20C83FF2002BDCF6 /* WDMainFrameBubbleObject.m */,
 			);
 			path = MainFrame;
 			sourceTree = "<group>";
@@ -2350,6 +2355,7 @@
 				A5BF229D2067ADC700271397 /* WDFinishRepairItemApi.m in Sources */,
 				A5BF22452067ACAA00271397 /* WDExpertDiagnoseResultSelectView.m in Sources */,
 				A5BF22342067ACAA00271397 /* WDDiagnoseInfoCreateViewController.m in Sources */,
+				A52F969B20C83FF2002BDCF6 /* WDMainFrameBubbleObject.m in Sources */,
 				A535ACE11FDCD20E001CF470 /* WDGuideBottomView.m in Sources */,
 				A5BF22A02067ADC700271397 /* WDListDiagnoseByCarOwnerApi.m in Sources */,
 				A5BF22A62067ADC700271397 /* WDListRepairItemOffersApi.m in Sources */,
