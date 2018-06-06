@@ -35,9 +35,10 @@
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    self.title = [NSString stringWithFormat:@"维德专修 (%@)",currentUserInfo.realName];
     
+    self.title = @"维德专修";
     [self setLeftBarButtonTitle:@"退出" action:@selector(onClickMainGo)];
+    [self setRightBarButtonTitle:currentUserInfo.realName];
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

@@ -56,12 +56,16 @@
 
 -(void)setLeftBarButtonTitle:(NSString *)title action:(SEL)anAction
 {
+    UIFont *titleFont = [UIFont systemFontOfSize:16];
+    CGFloat titleWidth = [self titleWidth:title font:titleFont];
+    
     UIView *navigationView = [UIView new];
-    navigationView.frame = CGRectMake(0, 0, 62, 44);
+    navigationView.frame = CGRectMake(0, 0, 5 + titleWidth, 44);
     MMBarButton *m_btn = [MMBarButton buttonWithType:UIButtonTypeCustom];
     [m_btn addTarget:self action:anAction forControlEvents:UIControlEventTouchUpInside];
-    m_btn.frame = CGRectMake(5, 0, 57, 44);
-    m_btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    
+    m_btn.frame = CGRectMake(5, 0, titleWidth, 44);
+    m_btn.titleLabel.font = titleFont;
     [m_btn setTitle:title forState:UIControlStateNormal];
     [m_btn setTitleColor:[UIColor hx_colorWithHexString:@"0080C0"] forState:UIControlStateNormal];
     [navigationView addSubview:m_btn];
@@ -69,14 +73,23 @@
     [self.navigationItem setLeftBarButtonItem:m_leftBarBtnItem];
 }
 
+-(CGFloat)titleWidth:(NSString *)title font:(UIFont *)font
+{
+    return MAX(57, [title MMSizeWithFont:font maxSize:CGSizeZero].width);
+}
+
 -(void)setRightBarButtonTitle:(NSString *)title
 {
+    UIFont *titleFont = [UIFont systemFontOfSize:16];
+    CGFloat titleWidth = [self titleWidth:title font:titleFont];
+    
     UIView *navigationView = [UIView new];
-    navigationView.frame = CGRectMake(0, 0, 62, 44);
+    navigationView.frame = CGRectMake(0, 0, 10 + titleWidth, 44);
     MMBarButton *m_btn = [MMBarButton buttonWithType:UIButtonTypeCustom];
     [m_btn addTarget:self action:@selector(onClickRightButton:) forControlEvents:UIControlEventTouchUpInside];
-    m_btn.frame = CGRectMake(5, 0, 57, 44);
-    m_btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    
+    m_btn.frame = CGRectMake(0, 0, titleWidth, 44);
+    m_btn.titleLabel.font = titleFont;
     [m_btn setTitle:title forState:UIControlStateNormal];
     [m_btn setTitleColor:[UIColor hx_colorWithHexString:@"0080C0"] forState:UIControlStateNormal];
     [navigationView addSubview:m_btn];
@@ -107,15 +120,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-//    UIView *rightNavigationView = [UIView new];
-//    rightNavigationView.frame = CGRectMake(0, 0, 62, 44);
-//    MMBarButton *m_btn = [MMBarButton buttonWithType:UIButtonTypeCustom];
-//    [m_btn addTarget:self action:@selector(onClickRightBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    m_btn.frame = CGRectMake(5, 0, 57, 44);
-//    [m_btn setTitle:@"测试" forState:UIControlStateNormal];
-//    [rightNavigationView addSubview:m_btn];
-//    m_rightBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:rightNavigationView];
-//    [self.navigationItem setRightBarButtonItem:m_rightBarBtnItem];
 
 @end
