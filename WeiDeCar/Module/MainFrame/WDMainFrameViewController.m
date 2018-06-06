@@ -89,9 +89,9 @@
     [m_actionMenus addObject:faultDiagnosis];
     [m_actionMenus addObject:repairItems];
     [m_actionMenus addObject:repairFactories];
-    [m_actionMenus addObject:regularVideo];
     [m_actionMenus addObject:troubleCar];
     [m_actionMenus addObject:cosmetology];
+    [m_actionMenus addObject:regularVideo];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
