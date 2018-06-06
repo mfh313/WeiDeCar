@@ -129,10 +129,10 @@
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         
         UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        registerButton.frame = CGRectMake((CGRectGetWidth(cell.contentView.frame) - 120) /2 , 0, 120, CGRectGetHeight(cell.contentView.frame));
+        registerButton.frame = CGRectMake((CGRectGetWidth(cell.contentView.frame) - 93) /2 , 0, 93, CGRectGetHeight(cell.contentView.frame));
         registerButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [registerButton setTitle:@"注册" forState:UIControlStateNormal];
-        [registerButton setBackgroundImage:MFImageStretchCenter(@"btn_blue_normal") forState:UIControlStateNormal];
+        [registerButton setBackgroundImage:MFImageStretchCenter(@"login_button") forState:UIControlStateNormal];
         [registerButton addTarget:self action:@selector(onClickRegisterUser) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:registerButton];
     }
@@ -189,7 +189,7 @@
     [m_cellInfos addObject:blank];
     
     MFTableViewCellObject *registerButton = [MFTableViewCellObject new];
-    registerButton.cellHeight = 48.0f;
+    registerButton.cellHeight = 34.0f;
     registerButton.cellReuseIdentifier = @"registerButton";
     [m_cellInfos addObject:registerButton];
 }
