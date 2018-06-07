@@ -15,4 +15,6 @@
     UIView *m_centerView;
 }
 
+-(void)setMainFrameBubbleObject:(WDMainFrameBubbleObject *)bubbleObject;
+
 @end

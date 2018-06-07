@@ -47,6 +47,8 @@
 		A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CB51FBF0A4A00B6B844 /* CFNetwork.framework */; };
 		A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6165205E0BAA00CD588F /* CoreMotion.framework */; };
 		A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6167205E0BD500CD588F /* AlipaySDK.framework */; };
+		A556130420C97F070089C428 /* WDMainFrameBubbleBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */; };
+		A556130620C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A556130520C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib */; };
 		A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */; };
 		A55ECE8520306730003CE4B2 /* WDRepairItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8420306730003CE4B2 /* WDRepairItemCellView.m */; };
 		A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */; };
@@ -353,6 +355,9 @@
 		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A54A6165205E0BAA00CD588F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A54A6167205E0BD500CD588F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = WeiDeCar/MFFramework/Alipay/AlipaySDK.framework; sourceTree = "<group>"; };
+		A556130220C97F070089C428 /* WDMainFrameBubbleBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMainFrameBubbleBoardView.h; sourceTree = "<group>"; };
+		A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMainFrameBubbleBoardView.m; sourceTree = "<group>"; };
+		A556130520C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WDMainFrameBubbleBoardView.xib; sourceTree = "<group>"; };
 		A55ECE8020306054003CE4B2 /* WDRepairListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairListViewController.h; sourceTree = "<group>"; };
 		A55ECE8120306054003CE4B2 /* WDRepairListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairListViewController.m; sourceTree = "<group>"; };
 		A55ECE8320306730003CE4B2 /* WDRepairItemCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemCellView.h; sourceTree = "<group>"; };
@@ -1273,6 +1278,9 @@
 				A5631C6C1FF5131500DBA959 /* WDMainFrameMenuView.xib */,
 				A5631C6D1FF5131500DBA959 /* WDMainFrameViewController.h */,
 				A5631C6E1FF5131500DBA959 /* WDMainFrameViewController.m */,
+				A556130220C97F070089C428 /* WDMainFrameBubbleBoardView.h */,
+				A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */,
+				A556130520C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib */,
 				A52F969620C83D90002BDCF6 /* WDMainFrameBubbleView.h */,
 				A52F969720C83D90002BDCF6 /* WDMainFrameBubbleView.m */,
 				A52F969920C83FF2002BDCF6 /* WDMainFrameBubbleObject.h */,
@@ -2184,6 +2192,7 @@
 				A5BF22332067ACAA00271397 /* WDMechanicJudgementInputView.xib in Resources */,
 				A5BF245D2067AFA700271397 /* main.proto in Resources */,
 				A5BF22472067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.xib in Resources */,
+				A556130620C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib in Resources */,
 				A5BF22362067ACAA00271397 /* WDExpertDiagnoseAdviceCellView.xib in Resources */,
 				A566B4CD1FD24434004F6843 /* MainAssets.xcassets in Resources */,
 				ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */,
@@ -2360,6 +2369,7 @@
 				A5BF22A02067ADC700271397 /* WDListDiagnoseByCarOwnerApi.m in Sources */,
 				A5BF22A62067ADC700271397 /* WDListRepairItemOffersApi.m in Sources */,
 				A5BF24662067AFA700271397 /* ExtendableMessage.m in Sources */,
+				A556130420C97F070089C428 /* WDMainFrameBubbleBoardView.m in Sources */,
 				A5BF24172067AFA600271397 /* MFUITableView.m in Sources */,
 				A5770151202F10690037D5DB /* WDRepairTaskListCellView.m in Sources */,
 				A5BF24152067AFA600271397 /* MFUIButton.m in Sources */,
