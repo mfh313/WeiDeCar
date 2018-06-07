@@ -8,6 +8,21 @@
 
 #import "MMUIBridgeView.h"
 
+@class WDMainFrameBubbleBoardView;
+@protocol WDMainFrameBubbleBoardViewDelegate <NSObject>
+
+@optional
+-(void)onClickFaultDiagnosis:(WDMainFrameBubbleBoardView *)view;
+-(void)onClickRegular:(WDMainFrameBubbleBoardView *)view;
+-(void)onClickRepairFactories:(WDMainFrameBubbleBoardView *)view;
+-(void)onClickRepairItems:(WDMainFrameBubbleBoardView *)view;
+-(void)onClickTroubleCar:(WDMainFrameBubbleBoardView *)view;
+-(void)onClickCosmetology:(WDMainFrameBubbleBoardView *)view;
+
+@end
+
 @interface WDMainFrameBubbleBoardView : MMUIBridgeView
+
+@property (nonatomic,weak) id<WDMainFrameBubbleBoardViewDelegate> m_delegate;
 
 @end

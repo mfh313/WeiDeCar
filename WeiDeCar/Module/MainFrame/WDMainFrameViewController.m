@@ -18,13 +18,16 @@
 #import "WDExpertDiagnoseListViewController.h"
 #import "WDAssistantDiagnoseListViewController.h"
 #import "WDMainFrameBubbleView.h"
+#import "WDMainFrameBubbleBoardView.h"
 
-@interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate>
+@interface WDMainFrameViewController () <UITableViewDataSource,UITableViewDelegate,WDMainFrameMenuViewDelegate,WDMainFrameBubbleBoardViewDelegate>
 {
     MFUITableView *m_tableView;
     NSMutableArray<MFTableViewCellObject *> *m_cellInfos;
     
     NSMutableArray *m_actionMenus;
+    
+    WDMainFrameBubbleBoardView *m_boardView;
 }
 
 @end
@@ -49,11 +52,16 @@
     m_tableView.delegate = self;
     [self.view addSubview:m_tableView];
     
-    m_cellInfos = [NSMutableArray array];
-    [self initActionMenus];
+//    m_cellInfos = [NSMutableArray array];
+//    [self initActionMenus];
+//
+//    [self makeCellObjects];
+//    [m_tableView reloadData];
     
-    [self makeCellObjects];
-    [m_tableView reloadData];
+    m_boardView = [WDMainFrameBubbleBoardView nibView];
+    m_boardView.m_delegate = self;
+    m_boardView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 600);
+    m_tableView.tableHeaderView = m_boardView;
     
     WDIPCameraService *cameraService = [[MMServiceCenter defaultCenter] getService:[WDIPCameraService class]];
     [cameraService getYs7AccessToken];
@@ -291,6 +299,37 @@
 {
     WDRepairItemListViewController *repairItemsVC = [WDRepairItemListViewController new];
     [self.navigationController pushViewController:repairItemsVC animated:YES];
+}
+
+#pragma mark - WDMainFrameBubbleBoardViewDelegate
+-(void)onClickFaultDiagnosis:(WDMainFrameBubbleBoardView *)view
+{
+   [self showDiagnosisMainVC];
+}
+
+-(void)onClickRegular:(WDMainFrameBubbleBoardView *)view
+{
+    [self showCameraPlayVC];
+}
+
+-(void)onClickRepairFactories:(WDMainFrameBubbleBoardView *)view
+{
+    [self storeRepairFactoriesVC];
+}
+
+-(void)onClickRepairItems:(WDMainFrameBubbleBoardView *)view
+{
+    [self repairItemListVC];
+}
+
+-(void)onClickTroubleCar:(WDMainFrameBubbleBoardView *)view
+{
+    [self showTips:@"您点击了故障车维修"];
+}
+
+-(void)onClickCosmetology:(WDMainFrameBubbleBoardView *)view
+{
+    [self showTips:@"您点击了亮车美容"];
 }
 
 - (void)didReceiveMemoryWarning {
