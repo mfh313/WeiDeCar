@@ -8,7 +8,6 @@
 
 #import "WDAppViewControllerManager.h"
 #import "WDGuideViewController.h"
-#import "WDUserRegisterViewController.h"
 #import "WDLoginViewController.h"
 #import "WDMainFrameViewController.h"
 
@@ -52,13 +51,7 @@
 {
     WDLoginViewController *loginVC = [WDLoginViewController new];
     MMNavigationController *rootNav = [[MMNavigationController alloc] initWithRootViewController:loginVC];
-    [m_guideRootNav presentViewController:rootNav animated:NO completion:nil];
-}
-
--(void)launchUserRegisterViewController
-{
-    WDUserRegisterViewController *registerVC = [WDUserRegisterViewController new];
-    [m_guideRootNav pushViewController:registerVC animated:YES];
+    m_window.rootViewController = rootNav;
 }
 
 -(void)launchWDMainFrameViewController
@@ -66,6 +59,11 @@
     WDMainFrameViewController *mainFrameVC = [WDMainFrameViewController new];
     MMNavigationController *rootNav = [[MMNavigationController alloc] initWithRootViewController:mainFrameVC];
     m_window.rootViewController = rootNav;
+}
+
+-(MMNavigationController *)guideRootNav
+{
+    return m_guideRootNav;
 }
 
 @end

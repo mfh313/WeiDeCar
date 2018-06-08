@@ -16,8 +16,8 @@
 +(id)getAppViewControllerManager;
 -(void)setRootMainWindow:(UIWindow *)window;
 -(void)launchGuideViewController;
--(void)launchUserRegisterViewController;
 -(void)launchLoginViewController;
 -(void)launchWDMainFrameViewController;
+-(MMNavigationController *)guideRootNav;
 
 @end

@@ -12,6 +12,7 @@
 #import "WDGuideSourceModel.h"
 #import "WDGuidePageView.h"
 #import "WDGuideBottomView.h"
+#import "WDUserRegisterViewController.h"
 
 @interface WDGuideViewController () <iCarouselDelegate,iCarouselDataSource,WDGuideBottomViewDelegate>
 {
@@ -152,7 +153,8 @@
 #pragma mark - WDGuideBottomViewDelegate
 -(void)onClickRegister:(WDGuideBottomView *)view
 {
-    [[WDAppViewControllerManager getAppViewControllerManager] launchUserRegisterViewController];
+    WDUserRegisterViewController *registerVC = [WDUserRegisterViewController new];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 -(void)onClickLogin:(WDGuideBottomView *)view
