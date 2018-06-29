@@ -87,6 +87,11 @@
     [self stop];
     self.playBtn.selected = NO;
     
+    if ([error.errorString isEqualToString:UE_ERROR_TRANSF_DEVICE_OFFLINE])
+    {
+        [self showErrorMessage:@"设备不在线"];
+    }
+    
 //    if ([error.errorString isEqualToString:UE_ERROR_INNER_VERIFYCODE_ERROR])
 //    {
 //        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"verify_code_wrong", @"验证码错误"),error.errorString] duration:1.5 position:@"center"];
@@ -128,7 +133,13 @@
 //        [self.view makeToast:[NSString stringWithFormat:@"%@(%@)",NSLocalizedString(@"play_fail", @"播放失败"),error.errorString] duration:1.5 position:@"center"];
 //    }
     
-    NSLog(@"play error:%@(%d)",error.errorString,error.internalErrorCode);
+    NSLog(@"play error:%@(%@)",error.errorString,@(error.internalErrorCode));
+}
+
+-(void)showErrorMessage:(NSString *)message
+{
+    LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:message style:LGAlertViewStyleAlert buttonTitles:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil actionHandler:nil cancelHandler:nil destructiveHandler:nil];
+    [alertView showAnimated:YES completionHandler:nil];
 }
 
 - (void)EZUIPlayer:(EZUIPlayer *)player previewWidth:(CGFloat)pWidth previewHeight:(CGFloat)pHeight
