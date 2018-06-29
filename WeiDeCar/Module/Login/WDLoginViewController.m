@@ -12,6 +12,7 @@
 #import "WDJPUSHService.h"
 #import "WDQiniuFileService.h"
 #import "WDUserRegisterViewController.h"
+#import "WDIPCameraService.h"
 
 @interface WDLoginViewController () <WDLoginContentViewDelegate,tableViewDelegate,UITableViewDelegate>
 {
@@ -131,6 +132,9 @@
     
     WDQiniuFileService *qiniuService = [[MMServiceCenter defaultCenter] getService:[WDQiniuFileService class]];
     [qiniuService getImageToken];
+    
+    WDIPCameraService *cameraService = [[MMServiceCenter defaultCenter] getService:[WDIPCameraService class]];
+    [cameraService getYs7AccessToken];
 }
 
 - (void)didReceiveMemoryWarning {

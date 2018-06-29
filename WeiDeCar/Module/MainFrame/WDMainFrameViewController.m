@@ -62,9 +62,6 @@
     m_boardView.m_delegate = self;
     m_boardView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 600);
     m_tableView.tableHeaderView = m_boardView;
-    
-    WDIPCameraService *cameraService = [[MMServiceCenter defaultCenter] getService:[WDIPCameraService class]];
-    [cameraService getYs7AccessToken];
 }
 
 -(void)initActionMenus
