@@ -923,6 +923,7 @@
 		AC47BDA320E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCarOwnerDiagnoseDetailViewController.m; sourceTree = "<group>"; };
 		AC47BDA520E7698200096217 /* WDDiagnoseDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailHeaderView.h; sourceTree = "<group>"; };
 		AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailHeaderView.m; sourceTree = "<group>"; };
+		AC47BDA820E774E200096217 /* WDDiagnoseDetailFrameProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailFrameProtocol.h; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemListViewController.h; sourceTree = "<group>"; };
@@ -2048,6 +2049,7 @@
 				A51504B8206AA34900CFAD14 /* WDDiagnoseDetailViewController.m */,
 				AC47BDA220E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.h */,
 				AC47BDA320E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m */,
+				AC47BDA820E774E200096217 /* WDDiagnoseDetailFrameProtocol.h */,
 				AC47BDA520E7698200096217 /* WDDiagnoseDetailHeaderView.h */,
 				AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */,
 				A51504BB206AA34A00CFAD14 /* WDDiagnoseItemCellView.h */,

@@ -35,7 +35,7 @@ extern NSInteger const WDDiagnoseStatus_FINISHED;  //完成
 @property (nonatomic,strong) NSString *causeJudgementName; //原因判断名称
 @property (nonatomic,strong) NSString *expertDiagnoseResult; //专家复诊结果（Y/N）
 @property (nonatomic,strong) NSString *isCertain; //确定原因（Y/N）
-@property (nonatomic,strong) NSString *isCheapest; //确定原因（Y/N）
+@property (nonatomic,strong) NSString *isCheapest; //廉价原因（Y/N）
 @property (nonatomic,strong) NSString *isMostPossible; //最可能原因（Y/N）
 @property (nonatomic,assign) NSInteger judgementSource;  //判断来源（10：技师；20：专家）
 
