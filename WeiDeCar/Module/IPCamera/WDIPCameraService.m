@@ -17,15 +17,12 @@
         return m_accessToken;
     }
     
-    __weak typeof(self) weakSelf = self;
     WDGetYs7AccessTokenApi *mfApi = [WDGetYs7AccessTokenApi new];
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
         if (!mfApi.messageSuccess) {
             return;
         }
-        
         m_accessToken = request.responseJSONObject[@"data"];
         
     } failure:^(YTKBaseRequest * request) {
