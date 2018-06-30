@@ -10,6 +10,7 @@
 #import "WDDiagnoseDetailViewController.h"
 #import "WDMechanicDiagnoseViewController.h"
 #import "WDExpertDiagnoseMainCreateViewController.h"
+#import "WDCarOwnerDiagnoseDetailViewController.h"
 
 @interface WDAssistantDiagnoseListViewController ()
 
@@ -83,26 +84,30 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-    if (itemModel.status == WDDiagnoseStatus_INIT)
-    {
-        WDMechanicDiagnoseViewController *diagnoseCreateVC = [WDMechanicDiagnoseViewController new];
-        diagnoseCreateVC.diagnoseModel = itemModel;
-        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
-        
-        return;
-    }
-    else if (itemModel.status == WDDiagnoseStatus_CAR_OWNER_CONFIRMED)
-    {
-        WDExpertDiagnoseMainCreateViewController *diagnoseCreateVC = [WDExpertDiagnoseMainCreateViewController new];
-        diagnoseCreateVC.diagnoseModel = itemModel;
-        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
-        
-        return;
-    }
-    
-    WDDiagnoseDetailViewController *diagnoseDetailVC = [WDDiagnoseDetailViewController new];
-    diagnoseDetailVC.diagnoseModel = itemModel;
+    WDCarOwnerDiagnoseDetailViewController *diagnoseDetailVC = [WDCarOwnerDiagnoseDetailViewController new];
     [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
+    return;
+    
+//    if (itemModel.status == WDDiagnoseStatus_INIT)
+//    {
+//        WDMechanicDiagnoseViewController *diagnoseCreateVC = [WDMechanicDiagnoseViewController new];
+//        diagnoseCreateVC.diagnoseModel = itemModel;
+//        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
+//
+//        return;
+//    }
+//    else if (itemModel.status == WDDiagnoseStatus_CAR_OWNER_CONFIRMED)
+//    {
+//        WDExpertDiagnoseMainCreateViewController *diagnoseCreateVC = [WDExpertDiagnoseMainCreateViewController new];
+//        diagnoseCreateVC.diagnoseModel = itemModel;
+//        [self.navigationController pushViewController:diagnoseCreateVC animated:YES];
+//
+//        return;
+//    }
+//
+//    WDDiagnoseDetailViewController *diagnoseDetailVC = [WDDiagnoseDetailViewController new];
+//    diagnoseDetailVC.diagnoseModel = itemModel;
+//    [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

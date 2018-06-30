@@ -7,6 +7,7 @@
 //
 
 #import "WDCarOwnerDiagnoseDetailViewController.h"
+#import "WDDiagnoseDetailHeaderView.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"诊断详情";
+    [self setBackBarButton];
+    
+    self.view.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
 }
 
 - (void)didReceiveMemoryWarning {
