@@ -12,12 +12,10 @@
 
 @interface WDDiagnoseDetailResultView : UIView
 {
-    UIView *m_faultAppearanceView; //故障现象
+    UIView *m_faultAppearanceView;
     UIView *m_causeJudgementsContentView;
     
     UILabel *m_faultAppearanceLabel;
-    
-    NSMutableArray<WDDiagnoseDetailResultCauseJudgementsItemView *> *m_causeJudgementsItemViewArray;
 }
 
 -(void)setDiagnoseModel:(WDDiagnoseModel *)diagnoseModel appearanceModel:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel;

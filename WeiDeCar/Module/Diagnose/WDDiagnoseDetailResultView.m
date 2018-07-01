@@ -37,11 +37,6 @@
         
         m_faultAppearanceLabel = [self titleLabelWithContentView:m_faultAppearanceView];
         
-        m_causeJudgementsItemViewArray = [NSMutableArray array];
-        
-        
-        
-        
         [self addVerticalLine:m_faultAppearanceView];
         
         UIView *downSeparator = [UIView new];
