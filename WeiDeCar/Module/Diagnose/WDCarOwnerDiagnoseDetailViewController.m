@@ -37,7 +37,7 @@
 -(void)initTableView
 {
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    m_tableView.backgroundColor = [UIColor whiteColor];
+    m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
     m_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     m_tableView.dataSource = self;
     m_tableView.delegate = self;
