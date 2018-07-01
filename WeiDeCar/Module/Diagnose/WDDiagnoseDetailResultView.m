@@ -15,8 +15,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
-        
         m_faultAppearanceView = [UIView new];
         [self addSubview:m_faultAppearanceView];
         
@@ -39,7 +37,7 @@
         
         m_faultAppearanceLabel = [self titleLabelWithContentView:m_faultAppearanceView];
         
-        
+        m_causeJudgementsItemViewArray = [NSMutableArray array];
         
         
         
@@ -64,6 +62,22 @@
 -(void)setDiagnoseModel:(WDDiagnoseModel *)diagnoseModel appearanceModel:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel
 {
     m_faultAppearanceLabel.text = appearanceModel.faultAppearanceName;
+    
+    [m_causeJudgementsContentView layoutIfNeeded];
+    [m_causeJudgementsContentView removeAllSubViews];
+
+    WDDiagnoseDetailResultCauseJudgementsItemView *itemView = [[WDDiagnoseDetailResultCauseJudgementsItemView alloc] initWithFrame:m_causeJudgementsContentView.bounds];
+    [m_causeJudgementsContentView addSubview:itemView];
+
+    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(m_causeJudgementsContentView.mas_left);
+        make.height.mas_equalTo(@(50));
+        make.top.mas_equalTo(m_causeJudgementsContentView.mas_top);
+        make.width.mas_equalTo(m_causeJudgementsContentView.mas_width);
+    }];
+
+    WDDiagnoseCauseJudgementModel *causeJudgement = ((NSArray *)appearanceModel.causeJudgements).firstObject;
+    [itemView setAppearanceModel:appearanceModel causeJudgements:causeJudgement];
 }
 
 -(UILabel *)titleLabelWithContentView:(UIView *)itemView

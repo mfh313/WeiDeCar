@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WDDiagnoseModel.h"
+#import "WDDiagnoseDetailResultCauseJudgementsItemView.h"
 
 @interface WDDiagnoseDetailResultView : UIView
 {
@@ -15,6 +16,8 @@
     UIView *m_causeJudgementsContentView;
     
     UILabel *m_faultAppearanceLabel;
+    
+    NSMutableArray<WDDiagnoseDetailResultCauseJudgementsItemView *> *m_causeJudgementsItemViewArray;
 }
 
 -(void)setDiagnoseModel:(WDDiagnoseModel *)diagnoseModel appearanceModel:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel;
