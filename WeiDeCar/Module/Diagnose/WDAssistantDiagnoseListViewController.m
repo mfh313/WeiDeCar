@@ -85,6 +85,7 @@
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
     WDCarOwnerDiagnoseDetailViewController *diagnoseDetailVC = [WDCarOwnerDiagnoseDetailViewController new];
+    diagnoseDetailVC.diagnoseModel = itemModel;
     [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
     return;
     
