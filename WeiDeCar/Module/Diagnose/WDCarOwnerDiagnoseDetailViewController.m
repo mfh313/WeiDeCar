@@ -166,7 +166,7 @@
     [m_cellInfos removeAllObjects];
     
     MFTableViewCellObject *division = [MFTableViewCellObject new];
-    division.cellHeight = 20.0f;
+    division.cellHeight = 15.0f;
     division.cellReuseIdentifier = @"division";
     [m_cellInfos addObject:division];
     
