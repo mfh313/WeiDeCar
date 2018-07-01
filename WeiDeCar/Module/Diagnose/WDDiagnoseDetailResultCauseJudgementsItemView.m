@@ -69,6 +69,11 @@
         
         m_causeJudgementLabel = [self titleLabelWithContentView:m_causeJudgementView];
         
+        m_isCertainImageView = [self resultImageViewWithContentView:m_isCertainView];
+        m_isCheapestImageView = [self resultImageViewWithContentView:m_isCheapestView];
+        m_isMostPossibleImageView = [self resultImageViewWithContentView:m_isMostPossibleView];
+        m_expertDiagnoseImageView = [self resultImageViewWithContentView:m_expertDiagnoseResultView];
+
         [self addVerticalLine:m_causeJudgementView];
         [self addVerticalLine:m_isCertainView];
         [self addVerticalLine:m_isCheapestView];
@@ -90,6 +95,22 @@
         make.top.mas_equalTo(itemView.mas_top);
         make.height.mas_equalTo(itemView.mas_height);
     }];
+}
+
+-(UIImageView *)resultImageViewWithContentView:(UIView *)itemView
+{
+    UIImageView *resultImageView = [UIImageView new];
+    resultImageView.image = MFImage(@"result_yes");
+    [itemView addSubview:resultImageView];
+    
+    [resultImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+        make.centerX.mas_equalTo(itemView.mas_centerX);
+        make.centerY.mas_equalTo(itemView.mas_centerY);
+    }];
+    
+    return resultImageView;
 }
 
 -(UILabel *)titleLabelWithContentView:(UIView *)itemView
@@ -115,6 +136,30 @@
 -(void)setAppearanceModel:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel causeJudgements:(WDDiagnoseCauseJudgementModel *)causeJudgements
 {
     m_causeJudgementLabel.text = causeJudgements.causeJudgementName;
+    
+    NSString *isCertain = causeJudgements.isCertain;
+    NSString *isCheapest = causeJudgements.isCheapest;
+    NSString *isMostPossible = causeJudgements.isMostPossible;
+    NSString *expertDiagnoseResult = causeJudgements.expertDiagnoseResult;
+    
+    [self setResultYes:isCertain imageView:m_isCertainImageView];
+    [self setResultYes:isCheapest imageView:m_isCheapestImageView];
+    [self setResultYes:isMostPossible imageView:m_isMostPossibleImageView];
+    
+    if ([expertDiagnoseResult isEqualToString:@"Y"]) {
+        m_expertDiagnoseImageView.image = MFImage(@"result_yes");
+    }
+    else if ([expertDiagnoseResult isEqualToString:@"N"]){
+        m_expertDiagnoseImageView.image = MFImage(@"result_no");
+    }
+}
+
+-(void)setResultYes:(NSString *)resultString imageView:(UIImageView *)imageView
+{
+    [imageView setHidden:YES];
+    if ([resultString isEqualToString:@"Y"]) {
+        [imageView setHidden:NO];
+    }
 }
 
 @end

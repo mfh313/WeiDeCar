@@ -18,6 +18,10 @@
     UIView *m_expertDiagnoseResultView;  //第三方专家复诊
     
     UILabel *m_causeJudgementLabel;
+    UIImageView *m_isCertainImageView;
+    UIImageView *m_isCheapestImageView;
+    UIImageView *m_isMostPossibleImageView;
+    UIImageView *m_expertDiagnoseImageView;
 }
 
 -(void)setAppearanceModel:(WDDiagnoseItemFaultAppearanceModel *)appearanceModel causeJudgements:(WDDiagnoseCauseJudgementModel *)causeJudgements;
