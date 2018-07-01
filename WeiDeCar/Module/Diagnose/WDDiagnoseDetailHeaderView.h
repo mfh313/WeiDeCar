@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol WDDiagnoseDetailHeaderViewDataSource <NSObject>
-@optional
-
-@end
-
-
 @interface WDDiagnoseDetailHeaderView : UIView
 {
     UIView *m_faultAppearanceView; //故障现象
@@ -23,8 +17,6 @@
     UIView *m_isMostPossibleView;  //最可能原因
     UIView *m_expertDiagnoseResultView;  //第三方专家复诊
 }
-
-@property (nonatomic,weak) id<WDDiagnoseDetailHeaderViewDataSource> m_dataSource;
 
 @end
 

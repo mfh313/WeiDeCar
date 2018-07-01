@@ -8,10 +8,13 @@
 
 #import "WDCarOwnerDiagnoseDetailViewController.h"
 #import "WDDiagnoseDetailHeaderView.h"
+#import "WDDiagnoseDetailResultView.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     MFUITableView *m_tableView;
+    
+    NSMutableArray<WDDiagnoseItemFaultAppearanceModel *> *m_faultAppearances;
 }
 
 @end
@@ -28,6 +31,8 @@
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     m_currentUserInfo = loginService.currentUserInfo;
+    
+    m_faultAppearances = self.diagnoseModel.diagnoseItems.faultAppearances;
     
     [self initTableView];
     
@@ -165,15 +170,31 @@
 {
     [m_cellInfos removeAllObjects];
     
-    MFTableViewCellObject *division = [MFTableViewCellObject new];
-    division.cellHeight = 15.0f;
-    division.cellReuseIdentifier = @"division";
-    [m_cellInfos addObject:division];
-    
-    MFTableViewCellObject *detailHeader = [MFTableViewCellObject new];
-    detailHeader.cellHeight = 70.0f;
-    detailHeader.cellReuseIdentifier = @"detailHeader";
-    [m_cellInfos addObject:detailHeader];
+    for (int i = 0; i < m_faultAppearances.count; i++) {
+        
+        WDDiagnoseItemFaultAppearanceModel *appearanceModel  = m_faultAppearances[i];
+        
+        MFTableViewCellObject *division = [MFTableViewCellObject new];
+        division.cellHeight = 15.0f;
+        division.cellReuseIdentifier = @"division";
+        [m_cellInfos addObject:division];
+        
+        MFTableViewCellObject *detailHeader = [MFTableViewCellObject new];
+        detailHeader.cellHeight = 70.0f;
+        detailHeader.cellReuseIdentifier = @"detailHeader";
+        [m_cellInfos addObject:detailHeader];
+        
+        CGFloat detailResultCellHeight = appearanceModel.causeJudgements.count * 50.0f;
+        
+        MFTableViewCellObject *detailResult = [MFTableViewCellObject new];
+        detailResult.cellHeight = detailResultCellHeight;
+        detailResult.cellReuseIdentifier = @"detailResult";
+        detailResult.attachIndex = i;
+        [m_cellInfos addObject:detailResult];
+        
+        
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
