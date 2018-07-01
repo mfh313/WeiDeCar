@@ -13,6 +13,7 @@
 @interface WDExpertDiagnoseAdviceCellView () <WDBorderTextFieldDelegate>
 {
     __weak IBOutlet WDBorderTextField *m_adviceTextField;
+    __weak IBOutlet UILabel *m_titleLabel;
     
     WDDiagnoseItemFaultAppearanceModel *m_faultAppearanceModel;
 }
@@ -29,6 +30,11 @@
     textField.returnKeyType = UIReturnKeyDone;
     
     m_adviceTextField.m_delegate = self;
+}
+
+-(void)setAdviceTitle:(NSString *)title
+{
+    m_titleLabel.text = title;
 }
 
 #pragma mark - WDBorderTextFieldDelegate

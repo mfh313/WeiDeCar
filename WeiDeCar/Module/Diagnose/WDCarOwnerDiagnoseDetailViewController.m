@@ -9,6 +9,8 @@
 #import "WDCarOwnerDiagnoseDetailViewController.h"
 #import "WDDiagnoseDetailHeaderView.h"
 #import "WDDiagnoseDetailResultView.h"
+#import "WDExpertDiagnoseAdviceCellView.h"
+#import "WDMechanicJudgementInputView.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -78,14 +80,14 @@
     {
         return [self tableView:tableView diagnoseDetailResultViewCellForIndexPath:indexPath];
     }
-//    else if ([identifier isEqualToString:@"faultAppearance"])
-//    {
-//        return [self tableView:tableView faultAppearanceCellForIndexPath:indexPath];
-//    }
-//    else if ([identifier isEqualToString:@"expertAdvices"])
-//    {
-//        return [self tableView:tableView expertDiagnoseAdviceCellForIndexPath:indexPath];
-//    }
+    else if ([identifier isEqualToString:@"faultAppearance"])
+    {
+        return [self tableView:tableView faultAppearanceCellForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"expertAdvices"])
+    {
+        return [self tableView:tableView expertDiagnoseAdviceCellForIndexPath:indexPath];
+    }
     else if ([identifier isEqualToString:@"division"])
     {
         return [self tableView:tableView divisionForIndexPath:indexPath];
@@ -146,6 +148,54 @@
     
     WDDiagnoseDetailResultView *cellView = (WDDiagnoseDetailResultView *)cell.m_subContentView;
     [cellView setDiagnoseModel:self.diagnoseModel appearanceModel:appearanceModel];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView faultAppearanceCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDMechanicJudgementInputView *cellView = [WDMechanicJudgementInputView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    NSInteger attachIndex = cellInfo.attachIndex;
+    WDDiagnoseItemFaultAppearanceModel *appearanceModel  = m_faultAppearances[attachIndex];
+    
+    WDMechanicJudgementInputView *cellView = (WDMechanicJudgementInputView *)cell.m_subContentView;
+    cellView.userInteractionEnabled = NO;
+    [cellView setRepairPlan:appearanceModel.repairPlanName memo:appearanceModel.memo];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView expertDiagnoseAdviceCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDExpertDiagnoseAdviceCellView *cellView = [WDExpertDiagnoseAdviceCellView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    NSInteger attachIndex = cellInfo.attachIndex;
+    WDDiagnoseItemFaultAppearanceModel *appearanceModel  = m_faultAppearances[attachIndex];
+    
+    WDExpertDiagnoseAdviceCellView *cellView = (WDExpertDiagnoseAdviceCellView *)cell.m_subContentView;
+    [cellView setFaultAppearanceModel:appearanceModel];
+    
+    [cellView setAdviceTitle:@"第三方专家低成本维修方案："];
+    [cellView setUserInteractionEnabled:NO];
     
     return cell;
 }
@@ -214,11 +264,17 @@
         detailResult.attachIndex = i;
         [m_cellInfos addObject:detailResult];
         
-        MFTableViewCellObject *detailResultFooter = [MFTableViewCellObject new];
-        detailResultFooter.cellHeight = 70.0f;
-        detailResultFooter.cellReuseIdentifier = @"detailResultFooter";
-        detailResultFooter.attachIndex = i;
-        [m_cellInfos addObject:detailResultFooter];
+        MFTableViewCellObject *faultAppearance = [MFTableViewCellObject new];
+        faultAppearance.cellHeight = 180.0f;
+        faultAppearance.cellReuseIdentifier = @"faultAppearance";
+        faultAppearance.attachIndex = i;
+        [m_cellInfos addObject:faultAppearance];
+        
+        MFTableViewCellObject *expertAdvices = [MFTableViewCellObject new];
+        expertAdvices.cellHeight = 90.0f;
+        expertAdvices.cellReuseIdentifier = @"expertAdvices";
+        expertAdvices.attachIndex = i;
+        [m_cellInfos addObject:expertAdvices];
         
     }
 }

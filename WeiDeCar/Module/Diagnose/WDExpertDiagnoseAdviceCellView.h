@@ -12,5 +12,6 @@
 @interface WDExpertDiagnoseAdviceCellView : MMUIBridgeView
 
 -(void)setFaultAppearanceModel:(WDDiagnoseItemFaultAppearanceModel *)faultAppearanceModel;
+-(void)setAdviceTitle:(NSString *)title;
 
 @end
