@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A50BC84720E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50BC84620E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.m */; };
 		A5132B6A1FD6D26400E2DCEE /* commonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5132B691FD6D26400E2DCEE /* commonAssets.xcassets */; };
 		A51504C1206AA34B00CFAD14 /* WDMechanicDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51504AF206AA34700CFAD14 /* WDMechanicDiagnoseListViewController.m */; };
 		A51504C2206AA34B00CFAD14 /* WDDiagnoseItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51504B0206AA34800CFAD14 /* WDDiagnoseItemCellView.m */; };
@@ -293,8 +292,6 @@
 /* Begin PBXFileReference section */
 		3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeiDeCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACCD31EFA1E8F5D35A8E0E1 /* Pods-WeiDeCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.debug.xcconfig"; sourceTree = "<group>"; };
-		A50BC84520E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailItemRichTextView.h; sourceTree = "<group>"; };
-		A50BC84620E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailItemRichTextView.m; sourceTree = "<group>"; };
 		A5107E3C1FFBEF640008755A /* WeiDeCar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeiDeCar.entitlements; sourceTree = "<group>"; };
 		A5132B691FD6D26400E2DCEE /* commonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = commonAssets.xcassets; sourceTree = "<group>"; };
 		A51504AF206AA34700CFAD14 /* WDMechanicDiagnoseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMechanicDiagnoseListViewController.m; sourceTree = "<group>"; };
@@ -2053,8 +2050,6 @@
 				AC47BDA320E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m */,
 				AC47BDA520E7698200096217 /* WDDiagnoseDetailHeaderView.h */,
 				AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */,
-				A50BC84520E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.h */,
-				A50BC84620E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.m */,
 				A51504BB206AA34A00CFAD14 /* WDDiagnoseItemCellView.h */,
 				A51504B0206AA34800CFAD14 /* WDDiagnoseItemCellView.m */,
 				A51504B7206AA34900CFAD14 /* WDDiagnoseItemCellView.xib */,
@@ -2476,7 +2471,6 @@
 				A5BF24922067BDE100271397 /* WDStoreAnnotationCalloutView.m in Sources */,
 				ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */,
 				A5BF24102067AFA600271397 /* UIViewController+UINavigationItem.m in Sources */,
-				A50BC84720E87264000ADC56 /* WDDiagnoseDetailItemRichTextView.m in Sources */,
 				A5BF24132067AFA600271397 /* MFTableViewCellObject.m in Sources */,
 				A5BF240A2067AFA600271397 /* UIView+Extend.m in Sources */,
 				A5BF24362067AFA600271397 /* AlipayManager.m in Sources */,
