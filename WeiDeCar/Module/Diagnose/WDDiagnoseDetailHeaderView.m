@@ -14,6 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        self.backgroundColor = [UIColor hx_colorWithHexString:@"f8f6f9"];
+        
         m_faultAppearanceView = [UIView new];
         [self addSubview:m_faultAppearanceView];
         
@@ -30,6 +33,7 @@
         [self addSubview:m_isMostPossibleView];
         
         m_expertDiagnoseResultView = [UIView new];
+        m_expertDiagnoseResultView.backgroundColor = [UIColor redColor];
         [self addSubview:m_expertDiagnoseResultView];
         
         [m_expertDiagnoseResultView mas_makeConstraints:^(MASConstraintMaker *make) {

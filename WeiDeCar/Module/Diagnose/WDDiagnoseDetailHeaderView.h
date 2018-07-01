@@ -27,3 +27,4 @@
 @property (nonatomic,weak) id<WDDiagnoseDetailHeaderViewDataSource> m_dataSource;
 
 @end
+
