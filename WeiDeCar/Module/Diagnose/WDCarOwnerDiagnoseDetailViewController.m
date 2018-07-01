@@ -11,10 +11,13 @@
 #import "WDDiagnoseDetailResultView.h"
 #import "WDExpertDiagnoseAdviceCellView.h"
 #import "WDMechanicJudgementInputView.h"
+#import "WDConfirmDiagnoseByCarOwnerApi.h"
+#import "WDReconfirmAfterExpertDiagnosedApi.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     MFUITableView *m_tableView;
+    UIButton *m_submitButton;
     
     NSMutableArray<WDDiagnoseItemFaultAppearanceModel *> *m_faultAppearances;
 }
@@ -37,8 +40,20 @@
     m_faultAppearances = self.diagnoseModel.diagnoseItems.faultAppearances;
     
     [self initTableView];
+    [self setFooterView];
     
     [self reloadTableView];
+    
+    if (self.diagnoseModel.status == WDDiagnoseStatus_INIT)
+    {
+        LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"诊断任务当前为初始状态，请等待技师诊断" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:nil
+                                          destructiveButtonTitle:nil
+                                                   actionHandler:nil
+                                                   cancelHandler:nil
+                                              destructiveHandler:nil];
+        
+        [alertView showAnimated:YES completionHandler:nil];
+    }
 }
 
 -(void)initTableView
@@ -277,6 +292,109 @@
         [m_cellInfos addObject:expertAdvices];
         
     }
+}
+
+-(void)setFooterView
+{
+    m_submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [m_submitButton setBackgroundImage:MFImageStretchCenter(@"registerButton") forState:UIControlStateNormal];
+    [m_submitButton addTarget:self action:@selector(onClickSubmitButton) forControlEvents:UIControlEventTouchUpInside];
+    m_submitButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.view addSubview:m_submitButton];
+    [m_submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.height.mas_equalTo(40);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-20);
+    }];
+    
+    if (self.diagnoseModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
+    {
+        [m_submitButton setTitle:@"确认技师诊断结果" forState:UIControlStateNormal];
+    }
+    else if (self.diagnoseModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
+    {
+        [m_submitButton setTitle:@"确认专家复诊结果" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [m_submitButton setHidden:YES];
+        
+        [m_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top);
+            make.width.equalTo(self.view.mas_width);
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+    }
+}
+
+-(void)onClickSubmitButton
+{
+    if (self.diagnoseModel.status == WDDiagnoseStatus_MECHANIC_DIAGNOSED)
+    {
+        [self confirmDiagnoseByCarOwner];
+    }
+    else if (self.diagnoseModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
+    {
+        [self reconfirmAfterExpertDiagnosed];
+    }
+}
+
+-(void)confirmDiagnoseByCarOwner
+{
+    __weak typeof(self) weakSelf = self;
+    WDConfirmDiagnoseByCarOwnerApi *mfApi = [WDConfirmDiagnoseByCarOwnerApi new];
+    mfApi.carOwnerId = m_currentUserInfo.userId;
+    mfApi.diagnoseId = self.diagnoseModel.diagnoseId;
+    
+    mfApi.animatingText = @"确认技师诊断结果...";
+    mfApi.animatingView = MFAppWindow;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        
+        [self hiddenSubmitButton];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(void)reconfirmAfterExpertDiagnosed
+{
+    __weak typeof(self) weakSelf = self;
+    WDReconfirmAfterExpertDiagnosedApi *mfApi = [WDReconfirmAfterExpertDiagnosedApi new];
+    mfApi.carOwnerId = m_currentUserInfo.userId;
+    mfApi.diagnoseId = self.diagnoseModel.diagnoseId;
+    
+    mfApi.animatingText = @"确认专家复诊结果...";
+    mfApi.animatingView = MFAppWindow;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf hiddenSubmitButton];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(void)hiddenSubmitButton
+{
+    [m_submitButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
