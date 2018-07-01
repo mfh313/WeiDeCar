@@ -66,18 +66,52 @@
     [m_causeJudgementsContentView layoutIfNeeded];
     [m_causeJudgementsContentView removeAllSubViews];
 
-    WDDiagnoseDetailResultCauseJudgementsItemView *itemView = [[WDDiagnoseDetailResultCauseJudgementsItemView alloc] initWithFrame:m_causeJudgementsContentView.bounds];
-    [m_causeJudgementsContentView addSubview:itemView];
-
-    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(m_causeJudgementsContentView.mas_left);
-        make.height.mas_equalTo(@(50));
-        make.top.mas_equalTo(m_causeJudgementsContentView.mas_top);
-        make.width.mas_equalTo(m_causeJudgementsContentView.mas_width);
-    }];
-
-    WDDiagnoseCauseJudgementModel *causeJudgement = ((NSArray *)appearanceModel.causeJudgements).firstObject;
-    [itemView setAppearanceModel:appearanceModel causeJudgements:causeJudgement];
+    UIView *preView;
+    
+    NSArray *causeJudgements = appearanceModel.causeJudgements;
+    for (int i = 0; i < causeJudgements.count; i++) {
+        WDDiagnoseCauseJudgementModel *causeJudgement = causeJudgements[i];
+        
+        WDDiagnoseDetailResultCauseJudgementsItemView *itemView = [[WDDiagnoseDetailResultCauseJudgementsItemView alloc] initWithFrame:m_causeJudgementsContentView.bounds];
+        [m_causeJudgementsContentView addSubview:itemView];
+        
+        [itemView setAppearanceModel:appearanceModel causeJudgements:causeJudgement];
+        
+        if (i == 0)
+        {
+            [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(m_causeJudgementsContentView.mas_left);
+                make.height.mas_equalTo(@(50));
+                make.top.mas_equalTo(m_causeJudgementsContentView.mas_top);
+                make.width.mas_equalTo(m_causeJudgementsContentView.mas_width);
+            }];
+        }
+        else
+        {
+            [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(m_causeJudgementsContentView.mas_left);
+                make.height.mas_equalTo(@(50));
+                make.top.mas_equalTo(preView.mas_bottom);
+                make.width.mas_equalTo(m_causeJudgementsContentView.mas_width);
+            }];
+        }
+        
+        UIView *separator = [UIView new];
+        separator.backgroundColor = MFCustomLineColor;
+        [itemView addSubview:separator];
+        
+        if (i != causeJudgements.count - 1) {
+            [separator mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(m_causeJudgementsContentView.mas_left);
+                make.width.mas_equalTo(m_causeJudgementsContentView.mas_width);
+                make.bottom.mas_equalTo(itemView.mas_bottom);
+                make.height.mas_equalTo(MFOnePixHeight);
+            }];
+        }
+        
+        preView = itemView;
+    }
+    
 }
 
 -(UILabel *)titleLabelWithContentView:(UIView *)itemView

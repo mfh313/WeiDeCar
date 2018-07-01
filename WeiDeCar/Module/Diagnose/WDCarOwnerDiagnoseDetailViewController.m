@@ -136,7 +136,6 @@
     MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         
         WDDiagnoseDetailResultView *cellView = [[WDDiagnoseDetailResultView alloc] initWithFrame:cell.contentView.bounds];
         cell.m_subContentView = cellView;
