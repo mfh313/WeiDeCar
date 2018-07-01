@@ -19,6 +19,7 @@
 		A51504C9206AA34B00CFAD14 /* WDDiagnoseListBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51504BE206AA34A00CFAD14 /* WDDiagnoseListBaseViewController.m */; };
 		A51504CA206AA34B00CFAD14 /* WDExpertDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51504C0206AA34B00CFAD14 /* WDExpertDiagnoseListViewController.m */; };
 		A51AB20820E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51AB20720E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.m */; };
+		A51AB20B20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51AB20A20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m */; };
 		A51DBC212000851D00A870FD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51DBC202000851D00A870FD /* AMapLocationKit.framework */; };
 		A51DBC2D2000F91500A870FD /* WDRepairFactoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */; };
 		A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */; };
@@ -315,6 +316,8 @@
 		A51504C0206AA34B00CFAD14 /* WDExpertDiagnoseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDExpertDiagnoseListViewController.m; sourceTree = "<group>"; };
 		A51AB20620E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailResultView.h; sourceTree = "<group>"; };
 		A51AB20720E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailResultView.m; sourceTree = "<group>"; };
+		A51AB20920E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailResultCauseJudgementsItemView.h; sourceTree = "<group>"; };
+		A51AB20A20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailResultCauseJudgementsItemView.m; sourceTree = "<group>"; };
 		A51DBC202000851D00A870FD /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = "Pods/AMapLocation-NO-IDFA/AMapLocationKit.framework"; sourceTree = "<group>"; };
 		A51DBC2B2000F91500A870FD /* WDRepairFactoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairFactoriesViewController.h; sourceTree = "<group>"; };
 		A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairFactoriesViewController.m; sourceTree = "<group>"; };
@@ -2055,6 +2058,8 @@
 				AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */,
 				A51AB20620E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.h */,
 				A51AB20720E8B3DB00E2AD99 /* WDDiagnoseDetailResultView.m */,
+				A51AB20920E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.h */,
+				A51AB20A20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m */,
 				A51504BB206AA34A00CFAD14 /* WDDiagnoseItemCellView.h */,
 				A51504B0206AA34800CFAD14 /* WDDiagnoseItemCellView.m */,
 				A51504B7206AA34900CFAD14 /* WDDiagnoseItemCellView.xib */,
@@ -2445,6 +2450,7 @@
 				A5BF247E2067AFA700271397 /* SPCoverController.m in Sources */,
 				A5BF24692067AFA700271397 /* Field.m in Sources */,
 				A5BF22372067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
+				A51AB20B20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m in Sources */,
 				A5BF24452067AFA600271397 /* WXMediaMessage+messageConstruct.m in Sources */,
 				A5BF22A92067ADC700271397 /* WDMechanicDiagnoseApi.m in Sources */,
 				A5BF24122067AFA600271397 /* MFTableViewCell.m in Sources */,

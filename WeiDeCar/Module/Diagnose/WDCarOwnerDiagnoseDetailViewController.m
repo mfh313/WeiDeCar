@@ -74,10 +74,10 @@
     {
         return [self tableView:tableView detailHeaderForIndexPath:indexPath];
     }
-//    else if ([identifier isEqualToString:@"causeJudgement"])
-//    {
-//        return [self tableView:tableView causeJudgementItemCellForIndexPath:indexPath];
-//    }
+    else if ([identifier isEqualToString:@"detailResult"])
+    {
+        return [self tableView:tableView diagnoseDetailResultViewCellForIndexPath:indexPath];
+    }
 //    else if ([identifier isEqualToString:@"faultAppearance"])
 //    {
 //        return [self tableView:tableView faultAppearanceCellForIndexPath:indexPath];
@@ -124,6 +124,29 @@
         WDDiagnoseDetailHeaderView *cellView = [[WDDiagnoseDetailHeaderView alloc] initWithFrame:cell.contentView.bounds];
         cell.m_subContentView = cellView;
     }
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView diagnoseDetailResultViewCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        
+        WDDiagnoseDetailResultView *cellView = [[WDDiagnoseDetailResultView alloc] initWithFrame:cell.contentView.bounds];
+        cell.m_subContentView = cellView;
+    }
+    
+    NSInteger attachIndex = cellInfo.attachIndex;
+    WDDiagnoseItemFaultAppearanceModel *appearanceModel = m_faultAppearances[attachIndex];
+    
+    WDDiagnoseDetailResultView *cellView = (WDDiagnoseDetailResultView *)cell.m_subContentView;
+    [cellView setDiagnoseModel:self.diagnoseModel appearanceModel:appearanceModel];
     
     return cell;
 }
@@ -192,7 +215,11 @@
         detailResult.attachIndex = i;
         [m_cellInfos addObject:detailResult];
         
-        
+        MFTableViewCellObject *detailResultFooter = [MFTableViewCellObject new];
+        detailResultFooter.cellHeight = 70.0f;
+        detailResultFooter.cellReuseIdentifier = @"detailResultFooter";
+        detailResultFooter.attachIndex = i;
+        [m_cellInfos addObject:detailResultFooter];
         
     }
 }
