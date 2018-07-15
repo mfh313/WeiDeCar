@@ -282,6 +282,7 @@
 		A5BF24932067BDE100271397 /* WDRepairFactoryMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF248F2067BDE100271397 /* WDRepairFactoryMapViewController.m */; };
 		A5CBED1D20FB2A4C00041B22 /* WDRepairStepAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED1C20FB2A4C00041B22 /* WDRepairStepAddRequest.m */; };
 		A5CBED2020FB2AB000041B22 /* WDAddRepairStepsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED1F20FB2AB000041B22 /* WDAddRepairStepsApi.m */; };
+		A5CBED2320FB303500041B22 /* WDDeleteRepairStepsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */; };
 		A5E2FFA82082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */; };
 		A5E2FFAB20830FF0006D3299 /* WDRepairService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAA20830FF0006D3299 /* WDRepairService.m */; };
 		A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */; };
@@ -925,6 +926,8 @@
 		A5CBED1C20FB2A4C00041B22 /* WDRepairStepAddRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepAddRequest.m; sourceTree = "<group>"; };
 		A5CBED1E20FB2AB000041B22 /* WDAddRepairStepsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAddRepairStepsApi.h; sourceTree = "<group>"; };
 		A5CBED1F20FB2AB000041B22 /* WDAddRepairStepsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAddRepairStepsApi.m; sourceTree = "<group>"; };
+		A5CBED2120FB303500041B22 /* WDDeleteRepairStepsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDeleteRepairStepsApi.h; sourceTree = "<group>"; };
+		A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDeleteRepairStepsApi.m; sourceTree = "<group>"; };
 		A5E2FFA62082EA7F006D3299 /* WDAssistantDiagnoseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAssistantDiagnoseListViewController.h; sourceTree = "<group>"; };
 		A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAssistantDiagnoseListViewController.m; sourceTree = "<group>"; };
 		A5E2FFA920830FF0006D3299 /* WDRepairService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairService.h; sourceTree = "<group>"; };
@@ -1362,6 +1365,8 @@
 		A5BF22492067ADC700271397 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A5CBED2120FB303500041B22 /* WDDeleteRepairStepsApi.h */,
+				A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */,
 				A5CBED1E20FB2AB000041B22 /* WDAddRepairStepsApi.h */,
 				A5CBED1F20FB2AB000041B22 /* WDAddRepairStepsApi.m */,
 				A5BF224A2067ADC700271397 /* WDCarOwnerRegisterApi.h */,
@@ -2421,6 +2426,7 @@
 				A55ECE9120307DE7003CE4B2 /* WDRepairStepListHeaderView.m in Sources */,
 				A5BF22A72067ADC700271397 /* WDListRepairStepApi.m in Sources */,
 				A5BF22A32067ADC700271397 /* WDListPhotoByRepairStepIdApi.m in Sources */,
+				A5CBED2320FB303500041B22 /* WDDeleteRepairStepsApi.m in Sources */,
 				A5BF24292067AFA600271397 /* MMTabBarController.m in Sources */,
 				A5BF24832067AFA700271397 /* SPTagBarScrollView.m in Sources */,
 				A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */,
