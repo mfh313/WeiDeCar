@@ -22,7 +22,6 @@
 		A51AB20B20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51AB20A20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m */; };
 		A51DBC212000851D00A870FD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51DBC202000851D00A870FD /* AMapLocationKit.framework */; };
 		A51DBC2D2000F91500A870FD /* WDRepairFactoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */; };
-		A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */; };
 		A5241CAA1FBF09B900B6B844 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CA91FBF098F00B6B844 /* UIKit.framework */; };
 		A5241CAF1FBF09DE00B6B844 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CAD1FBF09D400B6B844 /* CoreText.framework */; };
 		A5241CB01FBF0A2E00B6B844 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CAE1FBF09D400B6B844 /* JavaScriptCore.framework */; };
@@ -326,8 +325,6 @@
 		A51DBC202000851D00A870FD /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = "Pods/AMapLocation-NO-IDFA/AMapLocationKit.framework"; sourceTree = "<group>"; };
 		A51DBC2B2000F91500A870FD /* WDRepairFactoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairFactoriesViewController.h; sourceTree = "<group>"; };
 		A51DBC2C2000F91500A870FD /* WDRepairFactoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairFactoriesViewController.m; sourceTree = "<group>"; };
-		A51EC97F20272859008F4CFA /* WDAccountRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAccountRegisterViewController.h; sourceTree = "<group>"; };
-		A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAccountRegisterViewController.m; sourceTree = "<group>"; };
 		A5241CA91FBF098F00B6B844 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5241CAB1FBF09D400B6B844 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		A5241CAC1FBF09D400B6B844 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -1093,8 +1090,6 @@
 				A52D91A31FDC30FB009DD077 /* WDLoginViewController.m */,
 				A52D91A41FDC30FB009DD077 /* WDUserRegisterViewController.h */,
 				A52D91A51FDC30FB009DD077 /* WDUserRegisterViewController.m */,
-				A51EC97F20272859008F4CFA /* WDAccountRegisterViewController.h */,
-				A51EC98020272859008F4CFA /* WDAccountRegisterViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2342,7 +2337,6 @@
 				A5BF24232067AFA600271397 /* MMUIView.m in Sources */,
 				A5BF24932067BDE100271397 /* WDRepairFactoryMapViewController.m in Sources */,
 				A5BF22992067ADC700271397 /* WDChooseRepairItemOffersApi.m in Sources */,
-				A51EC98120272859008F4CFA /* WDAccountRegisterViewController.m in Sources */,
 				A5BF241D2067AFA600271397 /* MMObject.m in Sources */,
 				A5BF24222067AFA600271397 /* MMUITextField.m in Sources */,
 				A5BF22BD2067ADC700271397 /* WDQiniuFileService.m in Sources */,
