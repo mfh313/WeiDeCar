@@ -22,8 +22,9 @@
 #import "WDRepairService.h"
 #import "WDAddRepairStepsApi.h"
 #import "WDDeleteRepairStepsApi.h"
+#import "WDAddRepairStepDescViewController.h"
 
-@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate>
+@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate,WDAddRepairStepDescViewControllerDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -651,9 +652,19 @@
 
 -(void)onClickAddRepairStep
 {
+    WDAddRepairStepDescViewController *addRepairStepDescVC = [WDAddRepairStepDescViewController new];
+    addRepairStepDescVC.m_delegate = self;
+    [self.navigationController pushViewController:addRepairStepDescVC animated:YES];
+}
+
+#pragma mark - WDAddRepairStepDescViewControllerDelegate
+-(void)didAddRepairStepDesc:(NSString *)repairStepDesc controller:(WDAddRepairStepDescViewController *)controller
+{
+    WDRepairStepModel *repairItem = m_repairSteps.lastObject;
+    
     WDRepairStepAddRequest *repairStep = [WDRepairStepAddRequest new];
-    repairStep.stepOrder = [self mayAddStepOrder];
-    repairStep.repairStepDesc = [NSString stringWithFormat:@"测试维修步骤添加%@",@(repairStep.stepOrder)];
+    repairStep.stepOrder = repairItem.repairOrder + 1;
+    repairStep.repairStepDesc = repairStepDesc;
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     
@@ -678,12 +689,6 @@
     } failure:^(YTKBaseRequest * request) {
         
     }];
-}
-
--(NSInteger)mayAddStepOrder
-{
-    WDRepairStepModel *repairItem = m_repairSteps.lastObject;
-    return repairItem.repairOrder + 1;
 }
 
 - (void)didReceiveMemoryWarning {

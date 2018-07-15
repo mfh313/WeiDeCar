@@ -284,6 +284,7 @@
 		A5CBED2020FB2AB000041B22 /* WDAddRepairStepsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED1F20FB2AB000041B22 /* WDAddRepairStepsApi.m */; };
 		A5CBED2320FB303500041B22 /* WDDeleteRepairStepsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */; };
 		A5CBED2620FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2520FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m */; };
+		A5CBED2920FB454900041B22 /* WDAddRepairStepDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2820FB454900041B22 /* WDAddRepairStepDescViewController.m */; };
 		A5E2FFA82082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */; };
 		A5E2FFAB20830FF0006D3299 /* WDRepairService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAA20830FF0006D3299 /* WDRepairService.m */; };
 		A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */; };
@@ -931,6 +932,8 @@
 		A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDeleteRepairStepsApi.m; sourceTree = "<group>"; };
 		A5CBED2420FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDListDiagnoseMechanicCertificationsApi.h; sourceTree = "<group>"; };
 		A5CBED2520FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListDiagnoseMechanicCertificationsApi.m; sourceTree = "<group>"; };
+		A5CBED2720FB454900041B22 /* WDAddRepairStepDescViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAddRepairStepDescViewController.h; sourceTree = "<group>"; };
+		A5CBED2820FB454900041B22 /* WDAddRepairStepDescViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAddRepairStepDescViewController.m; sourceTree = "<group>"; };
 		A5E2FFA62082EA7F006D3299 /* WDAssistantDiagnoseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAssistantDiagnoseListViewController.h; sourceTree = "<group>"; };
 		A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAssistantDiagnoseListViewController.m; sourceTree = "<group>"; };
 		A5E2FFA920830FF0006D3299 /* WDRepairService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairService.h; sourceTree = "<group>"; };
@@ -2148,6 +2151,8 @@
 				A55ECE8720306E66003CE4B2 /* WDRepairItemActionCellView.m */,
 				A55ECE8C20307597003CE4B2 /* WDRepairStepListViewController.h */,
 				A55ECE8D20307597003CE4B2 /* WDRepairStepListViewController.m */,
+				A5CBED2720FB454900041B22 /* WDAddRepairStepDescViewController.h */,
+				A5CBED2820FB454900041B22 /* WDAddRepairStepDescViewController.m */,
 				A57E1F2E2056B6BB00D9559C /* WDRepairStepItemImageViewController.h */,
 				A57E1F2F2056B6BB00D9559C /* WDRepairStepItemImageViewController.m */,
 				A55ECE8F20307DE7003CE4B2 /* WDRepairStepListHeaderView.h */,
@@ -2519,6 +2524,7 @@
 				A5BF24332067AFA600271397 /* XXNibConvention.m in Sources */,
 				A5BF247D2067AFA700271397 /* UIImage+ImageEffects.m in Sources */,
 				A5BF24052067AFA600271397 /* NSMutableDictionary+SafeInsert.m in Sources */,
+				A5CBED2920FB454900041B22 /* WDAddRepairStepDescViewController.m in Sources */,
 				A5BF244F2067AFA600271397 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				A5BF24852067AFA700271397 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A5BF245C2067AFA700271397 /* Main.pb.m in Sources */,
