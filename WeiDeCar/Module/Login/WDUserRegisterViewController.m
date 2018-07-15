@@ -277,14 +277,12 @@
 -(BOOL)borderTextField:(WDBorderTextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     UITextField *contentTextField = [textField contentTextField];
-    NSString *oldText = contentTextField.text;
-    
+
     if ([string isEqualToString:@"\n"]) {
         [contentTextField resignFirstResponder];
         return NO;
     }
     
-    NSString *toBeString = [contentTextField.text stringByReplacingCharactersInRange:range withString:string]; //得到输入框的内容
     return YES;
 }
 
