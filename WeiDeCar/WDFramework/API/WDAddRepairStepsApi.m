@@ -22,9 +22,11 @@
     requestArgument[@"repairItemId"] = self.repairItemId;
     requestArgument[@"userId"] = self.userId;
     
-    NSDictionary *modelJSON = [self.repairSteps yy_modelToJSONObject];
+    NSMutableArray *repairStepsArray = [NSMutableArray array];
+    [repairStepsArray addObject:self.repairSteps];
+    
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:modelJSON
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:repairStepsArray
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];

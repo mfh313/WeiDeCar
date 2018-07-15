@@ -20,6 +20,8 @@
 #import "WDRepairStepQualifiedSelectCellView.h"
 #import "WDRepairStepStatusCellView.h"
 #import "WDRepairService.h"
+#import "WDAddRepairStepsApi.h"
+#import "WDDeleteRepairStepsApi.h"
 
 @interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate>
 {
