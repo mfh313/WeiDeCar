@@ -284,6 +284,7 @@
 		A5CBED2320FB303500041B22 /* WDDeleteRepairStepsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2220FB303500041B22 /* WDDeleteRepairStepsApi.m */; };
 		A5CBED2620FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2520FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m */; };
 		A5CBED2920FB454900041B22 /* WDAddRepairStepDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2820FB454900041B22 /* WDAddRepairStepDescViewController.m */; };
+		A5CBED2C20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBED2B20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m */; };
 		A5E2FFA82082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */; };
 		A5E2FFAB20830FF0006D3299 /* WDRepairService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAA20830FF0006D3299 /* WDRepairService.m */; };
 		A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */; };
@@ -931,6 +932,8 @@
 		A5CBED2520FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDListDiagnoseMechanicCertificationsApi.m; sourceTree = "<group>"; };
 		A5CBED2720FB454900041B22 /* WDAddRepairStepDescViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAddRepairStepDescViewController.h; sourceTree = "<group>"; };
 		A5CBED2820FB454900041B22 /* WDAddRepairStepDescViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAddRepairStepDescViewController.m; sourceTree = "<group>"; };
+		A5CBED2A20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseMechanicCertificationsDetailViewController.h; sourceTree = "<group>"; };
+		A5CBED2B20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseMechanicCertificationsDetailViewController.m; sourceTree = "<group>"; };
 		A5E2FFA62082EA7F006D3299 /* WDAssistantDiagnoseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAssistantDiagnoseListViewController.h; sourceTree = "<group>"; };
 		A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAssistantDiagnoseListViewController.m; sourceTree = "<group>"; };
 		A5E2FFA920830FF0006D3299 /* WDRepairService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairService.h; sourceTree = "<group>"; };
@@ -2068,6 +2071,8 @@
 				A51504BD206AA34A00CFAD14 /* WDCarOwnerDiagnoseListViewController.m */,
 				A5E2FFA62082EA7F006D3299 /* WDAssistantDiagnoseListViewController.h */,
 				A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */,
+				A5CBED2A20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.h */,
+				A5CBED2B20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m */,
 				A51504B1206AA34800CFAD14 /* WDDiagnoseDetailViewController.h */,
 				A51504B8206AA34900CFAD14 /* WDDiagnoseDetailViewController.m */,
 				AC47BDA220E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.h */,
@@ -2436,6 +2441,7 @@
 				A5BF24832067AFA700271397 /* SPTagBarScrollView.m in Sources */,
 				A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */,
 				A5BF24112067AFA600271397 /* MFMultiMenuTableViewCell.m in Sources */,
+				A5CBED2C20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m in Sources */,
 				A5BF22382067ACAA00271397 /* WDExpertDiagnoseAdviceCellView.m in Sources */,
 				A5BF24412067AFA600271397 /* WXApiRequestHandler.m in Sources */,
 				A5BF22442067ACAA00271397 /* WDDiagnosisAddHeaderView.m in Sources */,
