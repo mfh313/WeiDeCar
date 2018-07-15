@@ -162,6 +162,24 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
     return MFURLWithPara(@"api/diagnose/reconfirmAfterExpertDiagnosed");
 }
 
+//增加维修步骤
++(NSString *)addRepairSteps
+{
+    return MFURLWithPara(@"api/diagnose/addRepairSteps");
+}
+
+//删除步骤接口
++(NSString *)deleteRepairSteps
+{
+    return MFURLWithPara(@"api/diagnose/deleteRepairSteps");
+}
+
+//获取诊断记录对应的技师认证
++(NSString *)listDiagnoseMechanicCertifications
+{
+    return MFURLWithPara(@"api/diagnose/listDiagnoseMechanicCertifications");
+}
+
 + (NSString *)hostUrl
 {
     if ([self packageIsAppStoreChannel]) {

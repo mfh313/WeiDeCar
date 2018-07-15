@@ -82,6 +82,15 @@
 //专家复诊后，用户重新确认
 +(NSString *)reconfirmAfterExpertDiagnosed;
 
+//增加维修步骤
++(NSString *)addRepairSteps;
+
+//删除步骤接口
++(NSString *)deleteRepairSteps;
+
+//获取诊断记录对应的技师认证
++(NSString *)listDiagnoseMechanicCertifications;
+
 +(BOOL)packageIsAppStoreChannel;
 
 @end
