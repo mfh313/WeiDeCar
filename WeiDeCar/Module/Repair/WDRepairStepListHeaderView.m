@@ -23,7 +23,7 @@
         [self addSubview:m_titleLabel];
         
         [m_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(100);
+            make.left.mas_equalTo(self.mas_left);
             make.centerX.equalTo(self.mas_centerX);
             make.top.mas_equalTo(self.mas_top);
             make.height.mas_equalTo(self.mas_height);

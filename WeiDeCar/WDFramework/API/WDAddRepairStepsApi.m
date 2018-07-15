@@ -23,7 +23,7 @@
     requestArgument[@"userId"] = self.userId;
     
     NSMutableArray *repairStepsArray = [NSMutableArray array];
-    [repairStepsArray addObject:self.repairSteps];
+    [repairStepsArray addObject:[self.repairStep yy_modelToJSONObject]];
     
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:repairStepsArray

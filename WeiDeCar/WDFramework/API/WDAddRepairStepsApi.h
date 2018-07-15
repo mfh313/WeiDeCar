@@ -12,7 +12,7 @@
 @interface WDAddRepairStepsApi : MMNetworkRequest
 
 @property (nonatomic,strong) NSString *repairItemId;
-@property (nonatomic,strong) WDRepairStepAddRequest *repairSteps;
+@property (nonatomic,strong) WDRepairStepAddRequest *repairStep;
 @property (nonatomic,strong) NSString *userId;
 
 @end

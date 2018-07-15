@@ -651,7 +651,39 @@
 
 -(void)onClickAddRepairStep
 {
+    WDRepairStepAddRequest *repairStep = [WDRepairStepAddRequest new];
+    repairStep.stepOrder = [self mayAddStepOrder];
+    repairStep.repairStepDesc = [NSString stringWithFormat:@"测试维修步骤添加%@",@(repairStep.stepOrder)];
     
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDAddRepairStepsApi *mfApi = [WDAddRepairStepsApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.repairItemId = self.repairItemId;
+    mfApi.repairStep = repairStep;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf getRepairStepList];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(NSInteger)mayAddStepOrder
+{
+    WDRepairStepModel *repairItem = m_repairSteps.lastObject;
+    return repairItem.repairOrder + 1;
 }
 
 - (void)didReceiveMemoryWarning {
