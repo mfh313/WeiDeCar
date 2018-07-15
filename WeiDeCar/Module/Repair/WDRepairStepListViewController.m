@@ -43,6 +43,7 @@
     
     self.title = @"维修任务详情";
     [self setBackBarButton];
+    [self setRightNaviButtonWithTitle:@"新增" action:@selector(onClickAddRepairStep)];
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
@@ -646,6 +647,11 @@
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(void)onClickAddRepairStep
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
