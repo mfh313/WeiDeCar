@@ -685,6 +685,7 @@
         
         [strongSelf showTips:mfApi.errorMessage];
         [strongSelf getRepairStepList];
+        [controller handleAddRepairStepSuccess];
         
     } failure:^(YTKBaseRequest * request) {
         
