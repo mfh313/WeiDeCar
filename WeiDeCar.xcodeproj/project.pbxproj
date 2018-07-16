@@ -1086,13 +1086,13 @@
 		A52D919E1FDC30FB009DD077 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A52D919F1FDC30FB009DD077 /* WDLoginContentView.h */,
-				A52D91A01FDC30FB009DD077 /* WDLoginContentView.m */,
-				A52D91A11FDC30FB009DD077 /* WDLoginContentView.xib */,
 				A52D91A21FDC30FB009DD077 /* WDLoginViewController.h */,
 				A52D91A31FDC30FB009DD077 /* WDLoginViewController.m */,
 				A52D91A41FDC30FB009DD077 /* WDUserRegisterViewController.h */,
 				A52D91A51FDC30FB009DD077 /* WDUserRegisterViewController.m */,
+				A52D919F1FDC30FB009DD077 /* WDLoginContentView.h */,
+				A52D91A01FDC30FB009DD077 /* WDLoginContentView.m */,
+				A52D91A11FDC30FB009DD077 /* WDLoginContentView.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
