@@ -9,6 +9,8 @@
 #import "WDDiagnoseMechanicCertificationsDetailViewController.h"
 #import "WDListDiagnoseMechanicCertificationsApi.h"
 #import "WDRepairItemAssignmentModel.h"
+#import "WDMechanicCertificationsDetailCellHeaderView.h"
+#import "WDMechanicCertificationsDetailCellView.h"
 
 @interface WDDiagnoseMechanicCertificationsDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -51,9 +53,17 @@
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
     NSString *identifier = cellInfo.cellReuseIdentifier;
     
-    if ([identifier isEqualToString:@"repairItemAssignment"])
+    if ([identifier isEqualToString:@"assignmentHeader"])
+    {
+        return [self tableView:tableView repairItemAssignmentHeaderCellForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"repairItemAssignment"])
     {
         return [self tableView:tableView repairItemAssignmentCellForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"division"])
+    {
+        return [self tableView:tableView divisionForIndexPath:indexPath];
     }
     else if ([identifier isEqualToString:@"separator"])
     {
@@ -77,6 +87,22 @@
     return cellInfo.cellHeight;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView repairItemAssignmentHeaderCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDMechanicCertificationsDetailCellHeaderView *cellView = [[WDMechanicCertificationsDetailCellHeaderView alloc] initWithFrame:cell.contentView.bounds];
+        cell.m_subContentView = cellView;
+    }
+        
+    return cell;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView repairItemAssignmentCellForIndexPath:(NSIndexPath *)indexPath
 {
     MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
@@ -87,16 +113,29 @@
     if (cell == nil) {
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         
-//        WDRepairStepUploadImageCellView *cellView = [[WDRepairStepUploadImageCellView alloc] initWithFrame:cell.contentView.bounds];
-//        cellView.m_delegate = self;
-//        cell.m_subContentView = cellView;
+        WDMechanicCertificationsDetailCellView *cellView = [[WDMechanicCertificationsDetailCellView alloc] initWithFrame:cell.contentView.bounds];
+        cell.m_subContentView = cellView;
     }
     
-//    WDRepairStepModel *repairItem = m_repairSteps[attachIndex];
-//
-//    WDRepairStepUploadImageCellView *cellView = (WDRepairStepUploadImageCellView *)cell.m_subContentView;
-//    [cellView setRepairStepModel:repairItem];
+    WDRepairItemAssignmentModel *repairItemAssignment = m_repairItemAssignmentArray[attachIndex];
     
+    WDMechanicCertificationsDetailCellView *cellView = (WDMechanicCertificationsDetailCellView *)cell.m_subContentView;
+    [cellView setRepairItemAssignmentModel:repairItemAssignment];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView divisionForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    cell.contentView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
     return cell;
 }
 
@@ -159,6 +198,16 @@
 {
     [m_cellInfos removeAllObjects];
     
+    MFTableViewCellObject *division = [MFTableViewCellObject new];
+    division.cellHeight = 15.0f;
+    division.cellReuseIdentifier = @"division";
+    [m_cellInfos addObject:division];
+    
+    MFTableViewCellObject *assignmentHeader = [MFTableViewCellObject new];
+    assignmentHeader.cellHeight = 70.0f;
+    assignmentHeader.cellReuseIdentifier = @"assignmentHeader";
+    [m_cellInfos addObject:assignmentHeader];
+    
     for (int i = 0; i < m_repairItemAssignmentArray.count; i++) {
         
         MFTableViewCellObject *repairItemAssignment = [MFTableViewCellObject new];
@@ -166,12 +215,6 @@
         repairItemAssignment.cellReuseIdentifier = @"repairItemAssignment";
         repairItemAssignment.attachIndex = i;
         [m_cellInfos addObject:repairItemAssignment];
-        
-        MFTableViewCellObject *separator = [MFTableViewCellObject new];
-        separator.cellHeight = MFOnePixHeight;
-        separator.cellReuseIdentifier = @"separator";
-        separator.attachIndex = i;
-        [m_cellInfos addObject:separator];
     }
 }
 
