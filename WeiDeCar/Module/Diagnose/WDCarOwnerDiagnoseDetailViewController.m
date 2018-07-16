@@ -318,9 +318,9 @@
     {
         [m_submitButton setTitle:@"确认专家复诊结果" forState:UIControlStateNormal];
     }
-    else if (self.diagnoseModel.status == WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED)
+    else if (self.diagnoseModel.status >= WDDiagnoseStatus_MECHANIC_CERTIFICATED)
     {
-        [m_submitButton setTitle:@"请审核技师能力" forState:UIControlStateNormal];
+        [m_submitButton setTitle:@"技师认证结果" forState:UIControlStateNormal];
     }
     else
     {
@@ -344,7 +344,7 @@
     {
         [self reconfirmAfterExpertDiagnosed];
     }
-    else if (self.diagnoseModel.status == WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED)
+    else if (self.diagnoseModel.status >= WDDiagnoseStatus_MECHANIC_CERTIFICATED)
     {
         [self showDiagnoseMechanicCertificationsDetail];
     }
