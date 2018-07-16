@@ -13,6 +13,7 @@
 #import "WDMechanicJudgementInputView.h"
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
+#import "WDDiagnoseMechanicCertificationsDetailViewController.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -317,6 +318,10 @@
     {
         [m_submitButton setTitle:@"确认专家复诊结果" forState:UIControlStateNormal];
     }
+    else if (self.diagnoseModel.status == WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED)
+    {
+        [m_submitButton setTitle:@"请审核技师能力" forState:UIControlStateNormal];
+    }
     else
     {
         [m_submitButton setHidden:YES];
@@ -338,6 +343,10 @@
     else if (self.diagnoseModel.status == WDDiagnoseStatus_EXPERT_DIAGNOSED)
     {
         [self reconfirmAfterExpertDiagnosed];
+    }
+    else if (self.diagnoseModel.status == WDDiagnoseStatus_CAR_OWNER_RECONFIRMED_AFTER_EXPERT_DIAGNOSED)
+    {
+        [self showDiagnoseMechanicCertificationsDetail];
     }
 }
 
@@ -390,6 +399,13 @@
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(void)showDiagnoseMechanicCertificationsDetail
+{
+    WDDiagnoseMechanicCertificationsDetailViewController *certificationsDetailVC = [WDDiagnoseMechanicCertificationsDetailViewController new];
+    certificationsDetailVC.diagnoseId = self.diagnoseModel.diagnoseId;
+    [self.navigationController pushViewController:certificationsDetailVC animated:YES];
 }
 
 -(void)hiddenSubmitButton
