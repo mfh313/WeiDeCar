@@ -32,8 +32,18 @@
         m_needExpertGuideView = [UIView new];
         [self addSubview:m_needExpertGuideView];
         
-        [m_needExpertGuideView mas_makeConstraints:^(MASConstraintMaker *make) {
+        m_qualifiedView = [UIView new];
+        [self addSubview:m_qualifiedView];
+        
+        [m_qualifiedView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.mas_right);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(self.mas_height);
+            make.centerY.mas_equalTo(self.mas_centerY);
+        }];
+        
+        [m_needExpertGuideView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(m_qualifiedView.mas_left);
             make.width.mas_equalTo(50);
             make.height.mas_equalTo(self.mas_height);
             make.centerY.mas_equalTo(self.mas_centerY);
@@ -55,7 +65,7 @@
         
         [m_assignedMechanicView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(m_hasRepairExperienceView.mas_left);
-            make.width.mas_equalTo(70);
+            make.width.mas_equalTo(50);
             make.height.mas_equalTo(self.mas_height);
             make.centerY.mas_equalTo(self.mas_centerY);
         }];
@@ -72,6 +82,7 @@
         [self initContentView:m_hasRepairExperienceView title:@"有\n维修经验"];
         [self initContentView:m_knowProcessView title:@"掌握\n维修流程"];
         [self initContentView:m_needExpertGuideView title:@"需要\n专家指导"];
+        [self initContentView:m_qualifiedView title:@"是否\n合格"];
         
         UIView *upSeparator = [UIView new];
         upSeparator.backgroundColor = MFCustomLineColor;
@@ -99,6 +110,7 @@
         [self addVerticalLine:m_assignedMechanicView];
         [self addVerticalLine:m_hasRepairExperienceView];
         [self addVerticalLine:m_knowProcessView];
+        [self addVerticalLine:m_needExpertGuideView];
     }
     
     return self;

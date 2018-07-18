@@ -15,6 +15,7 @@
     UIView *m_hasRepairExperienceView;  //有维修经验
     UIView *m_knowProcessView;  //掌握维修流程
     UIView *m_needExpertGuideView;  //需要专家指导
+    UIView *m_qualifiedView;  //是否合格
 }
 
 @end

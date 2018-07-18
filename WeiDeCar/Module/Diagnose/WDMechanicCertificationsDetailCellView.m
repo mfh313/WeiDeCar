@@ -32,8 +32,18 @@
         m_needExpertGuideView = [UIView new];
         [self addSubview:m_needExpertGuideView];
         
-        [m_needExpertGuideView mas_makeConstraints:^(MASConstraintMaker *make) {
+        m_qualifiedView = [UIView new];
+        [self addSubview:m_qualifiedView];
+        
+        [m_qualifiedView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.mas_right);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(self.mas_height);
+            make.centerY.mas_equalTo(self.mas_centerY);
+        }];
+        
+        [m_needExpertGuideView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(m_qualifiedView.mas_left);
             make.width.mas_equalTo(50);
             make.height.mas_equalTo(self.mas_height);
             make.centerY.mas_equalTo(self.mas_centerY);
@@ -55,7 +65,7 @@
         
         [m_assignedMechanicView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(m_hasRepairExperienceView.mas_left);
-            make.width.mas_equalTo(70);
+            make.width.mas_equalTo(50);
             make.height.mas_equalTo(self.mas_height);
             make.centerY.mas_equalTo(self.mas_centerY);
         }];
@@ -72,7 +82,7 @@
         m_hasRepairExperienceLabel = [self titleLabelWithContentView:m_hasRepairExperienceView];
         m_knowProcessLabel = [self titleLabelWithContentView:m_knowProcessView];
         m_needExpertGuideLabel = [self titleLabelWithContentView:m_needExpertGuideView];
-        
+        m_qualifiedLabel = [self titleLabelWithContentView:m_qualifiedView];
         
         UIView *downSeparator = [UIView new];
         downSeparator.backgroundColor = MFCustomLineColor;
@@ -89,6 +99,7 @@
         [self addVerticalLine:m_assignedMechanicView];
         [self addVerticalLine:m_hasRepairExperienceView];
         [self addVerticalLine:m_knowProcessView];
+        [self addVerticalLine:m_needExpertGuideView];
     }
     
     return self;
@@ -114,6 +125,14 @@
     else
     {
         m_needExpertGuideLabel.text = @"否";
+    }
+    
+    if ([repairItemAssignment.qualified isEqualToString:@"Y"]) {
+        m_qualifiedLabel.text = @"合格";
+    }
+    else
+    {
+        m_qualifiedLabel.text = @"不合格";
     }
 }
 
