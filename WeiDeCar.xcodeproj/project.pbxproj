@@ -292,6 +292,7 @@
 		A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */; };
 		AC47BDA420E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC47BDA320E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m */; };
 		AC47BDA720E7698200096217 /* WDDiagnoseDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */; };
+		AC7705CA21073EE400C2851F /* WDRepairFactoriesDistributionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7705C921073EE400C2851F /* WDRepairFactoriesDistributionViewController.m */; };
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
 		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
@@ -950,6 +951,8 @@
 		AC47BDA320E7579F00096217 /* WDCarOwnerDiagnoseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCarOwnerDiagnoseDetailViewController.m; sourceTree = "<group>"; };
 		AC47BDA520E7698200096217 /* WDDiagnoseDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseDetailHeaderView.h; sourceTree = "<group>"; };
 		AC47BDA620E7698200096217 /* WDDiagnoseDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseDetailHeaderView.m; sourceTree = "<group>"; };
+		AC7705C821073EE400C2851F /* WDRepairFactoriesDistributionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairFactoriesDistributionViewController.h; sourceTree = "<group>"; };
+		AC7705C921073EE400C2851F /* WDRepairFactoriesDistributionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairFactoriesDistributionViewController.m; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemListViewController.h; sourceTree = "<group>"; };
@@ -1061,6 +1064,8 @@
 				A5BF248A2067BDE100271397 /* WDStoreAnnotationCalloutView.xib */,
 				A5BF248B2067BDE100271397 /* WDStoreAnnotationView.h */,
 				A5BF248D2067BDE100271397 /* WDStoreAnnotationView.m */,
+				AC7705C821073EE400C2851F /* WDRepairFactoriesDistributionViewController.h */,
+				AC7705C921073EE400C2851F /* WDRepairFactoriesDistributionViewController.m */,
 			);
 			path = RepairFactories;
 			sourceTree = "<group>";
@@ -2488,6 +2493,7 @@
 				A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */,
 				A5BF247E2067AFA700271397 /* SPCoverController.m in Sources */,
 				A5BF24692067AFA700271397 /* Field.m in Sources */,
+				AC7705CA21073EE400C2851F /* WDRepairFactoriesDistributionViewController.m in Sources */,
 				A5BF22372067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
 				A51AB20B20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m in Sources */,
 				A5BF24452067AFA600271397 /* WXMediaMessage+messageConstruct.m in Sources */,
