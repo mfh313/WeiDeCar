@@ -10,14 +10,18 @@
 
 @protocol WDStoreAnnotationCalloutViewDelegate <NSObject>
 @optional
--(void)onClickStoreNavigation;
+-(void)onClickStoreNavigation:(MAPointAnnotation *)pointAnnotation;
 
 @end
 
 @interface WDStoreAnnotationCalloutView : MMUIBridgeView
+{
+    MAPointAnnotation *m_pointAnnotation;
+}
 
 @property (nonatomic,weak) id<WDStoreAnnotationCalloutViewDelegate> m_delegate;
 
+-(void)setPointAnnotation:(MAPointAnnotation *)pointAnnotation;
 -(void)setTitle:(NSString *)title subTitle:(NSString *)subTitle;
 
 @end

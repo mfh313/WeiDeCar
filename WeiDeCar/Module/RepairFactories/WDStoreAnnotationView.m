@@ -20,10 +20,7 @@
 
 @implementation WDStoreAnnotationView
 
--(void)setTitle:(NSString *)title subTitle:(NSString *)subTitle
-{
-    [m_calloutView setTitle:title subTitle:subTitle];
-}
+
 
 -(id)initWithAnnotation:(id<MAAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -45,6 +42,17 @@
     }
     
     return self;
+}
+
+-(void)setPointAnnotation:(MAPointAnnotation *)pointAnnotation
+{
+    m_pointAnnotation = pointAnnotation;
+    [m_calloutView setPointAnnotation:m_pointAnnotation];
+}
+
+-(void)setTitle:(NSString *)title subTitle:(NSString *)subTitle
+{
+    [m_calloutView setTitle:title subTitle:subTitle];
 }
 
 -(void)layoutSubviews
@@ -73,8 +81,8 @@
 #pragma mark - WDStoreAnnotationCalloutViewDelegate
 -(void)onClickStoreNavigation
 {
-    if ([self.m_delegate respondsToSelector:@selector(onClickStoreNavigation)]) {
-        [self.m_delegate onClickStoreNavigation];
+    if ([self.m_delegate respondsToSelector:@selector(onClickStoreNavigation:)]) {
+        [self.m_delegate onClickStoreNavigation:m_pointAnnotation];
     }
 }
 

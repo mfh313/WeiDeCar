@@ -27,6 +27,11 @@
     self.backgroundColor = [UIColor whiteColor];
 }
 
+-(void)setPointAnnotation:(MAPointAnnotation *)pointAnnotation
+{
+    m_pointAnnotation = pointAnnotation;
+}
+
 -(void)setTitle:(NSString *)title subTitle:(NSString *)subTitle
 {
     m_titleLabel.text = title;
@@ -34,8 +39,8 @@
 }
 
 - (IBAction)onClickContentButton:(id)sender {
-    if ([self.m_delegate respondsToSelector:@selector(onClickStoreNavigation)]) {
-        [self.m_delegate onClickStoreNavigation];
+    if ([self.m_delegate respondsToSelector:@selector(onClickStoreNavigation:)]) {
+        [self.m_delegate onClickStoreNavigation:m_pointAnnotation];
     }
 }
 

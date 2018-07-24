@@ -81,6 +81,7 @@
         annotationView.calloutOffset = CGPointMake(0, -1);
 
         MAPointAnnotation *pointAnnotation = (MAPointAnnotation *)annotation;
+        [annotationView setPointAnnotation:pointAnnotation];
         [annotationView setTitle:pointAnnotation.title subTitle:pointAnnotation.subtitle];
 
         return annotationView;
