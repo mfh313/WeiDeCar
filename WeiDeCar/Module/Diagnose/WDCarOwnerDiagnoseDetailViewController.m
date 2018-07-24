@@ -14,6 +14,7 @@
 #import "WDConfirmDiagnoseByCarOwnerApi.h"
 #import "WDReconfirmAfterExpertDiagnosedApi.h"
 #import "WDDiagnoseMechanicCertificationsDetailViewController.h"
+#import "WDRepairFactoriesDistributionViewController.h"
 
 @interface WDCarOwnerDiagnoseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -32,6 +33,7 @@
     
     self.title = @"诊断详情";
     [self setBackBarButton];
+    [self setRightNaviButtonWithTitle:@"维修厂" action:@selector(storeRepairFactoriesVC)];
     
     self.view.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
     
@@ -411,6 +413,12 @@
 -(void)hiddenSubmitButton
 {
     [m_submitButton setHidden:YES];
+}
+
+-(void)storeRepairFactoriesVC
+{
+    WDRepairFactoriesDistributionViewController *factoriesVC = [WDRepairFactoriesDistributionViewController new];
+    [self.navigationController pushViewController:factoriesVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
