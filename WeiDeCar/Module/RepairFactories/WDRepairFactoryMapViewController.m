@@ -113,8 +113,16 @@
 
 -(void)baiduNavigation
 {
-    NSString *urlsting =[[NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latlng:%f,%f|name=目的地&mode=driving&coord_type=gcj02",m_coordinate.latitude,m_coordinate.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlsting]];
+    NSURL *baidumap = [NSURL URLWithString:@"baidumap://"];
+    if ([[UIApplication sharedApplication] canOpenURL:baidumap])
+    {
+        NSString *urlsting =[[NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latlng:%f,%f|name=目的地&mode=driving&coord_type=gcj02",m_coordinate.latitude,m_coordinate.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlsting]];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE-%E5%87%BA%E8%A1%8C%E5%AF%BC%E8%88%AA%E5%BF%85%E5%A4%87%E7%9A%84%E6%99%BA%E8%83%BD%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92%E8%BD%AF%E4%BB%B6/id452186370?mt=8"]];
+    }
 }
 
 -(void)gaoDeNavigation
@@ -134,8 +142,6 @@
     }
     else
     {
-        //高德文档
-        //http://lbs.amap.com/api/amap-mobile/guide/ios/navi
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE-%E7%B2%BE%E5%87%86%E5%9C%B0%E5%9B%BE-%E5%AF%BC%E8%88%AA%E5%87%BA%E8%A1%8C%E5%BF%85%E5%A4%87/id461703208?mt=8"]];
     }
 }
