@@ -79,7 +79,7 @@
 }
 
 #pragma mark - WDStoreAnnotationCalloutViewDelegate
--(void)onClickStoreNavigation
+-(void)onClickStoreNavigation:(MAPointAnnotation *)pointAnnotation
 {
     if ([self.m_delegate respondsToSelector:@selector(onClickStoreNavigation:)]) {
         [self.m_delegate onClickStoreNavigation:m_pointAnnotation];
