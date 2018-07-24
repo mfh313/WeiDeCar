@@ -91,7 +91,7 @@
 }
 
 #pragma mark - WDStoreAnnotationCalloutViewDelegate
--(void)onClickStoreNavigation
+-(void)onClickStoreNavigation:(MAPointAnnotation *)pointAnnotation
 {
     LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"导航到该地点" message:nil style:LGAlertViewStyleActionSheet buttonTitles:@[@"高德地图导航",@"百度地图导航"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
         
@@ -117,12 +117,10 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlsting]];
 }
 
-//高德文档
-//http://lbs.amap.com/api/amap-mobile/guide/ios/navi
 -(void)gaoDeNavigation
 {
     NSURL *gaode_App = [NSURL URLWithString:@"iosamap://"];
-//    if ([[UIApplication sharedApplication] canOpenURL:gaode_App])
+    if ([[UIApplication sharedApplication] canOpenURL:gaode_App])
     {
         NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&poiname=fangheng&poiid=BGVIS&lat=%f&lon=%f&dev=1&style=2",@"维德专修",m_coordinate.latitude,m_coordinate.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *myLocationScheme = [NSURL URLWithString:urlString];
@@ -133,6 +131,12 @@
         } else {
             [[UIApplication sharedApplication] openURL:myLocationScheme];
         }
+    }
+    else
+    {
+        //高德文档
+        //http://lbs.amap.com/api/amap-mobile/guide/ios/navi
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE-%E7%B2%BE%E5%87%86%E5%9C%B0%E5%9B%BE-%E5%AF%BC%E8%88%AA%E5%87%BA%E8%A1%8C%E5%BF%85%E5%A4%87/id461703208?mt=8"]];
     }
 }
 
