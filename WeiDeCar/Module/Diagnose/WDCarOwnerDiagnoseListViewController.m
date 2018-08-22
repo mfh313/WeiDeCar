@@ -7,7 +7,6 @@
 //
 
 #import "WDCarOwnerDiagnoseListViewController.h"
-#import "WDDiagnoseDetailViewController.h"
 #import "WDCarOwnerDiagnoseDetailViewController.h"
 
 @interface WDCarOwnerDiagnoseListViewController ()
@@ -128,10 +127,6 @@
 #pragma mark - WDDiagnoseItemCellViewDelegate
 -(void)onClickDiagnoseItemCellView:(WDDiagnoseModel *)itemModel
 {
-//    WDDiagnoseDetailViewController *diagnoseDetailVC = [WDDiagnoseDetailViewController new];
-//    diagnoseDetailVC.diagnoseModel = itemModel;
-//    [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
-    
     WDCarOwnerDiagnoseDetailViewController *diagnoseDetailVC = [WDCarOwnerDiagnoseDetailViewController new];
     diagnoseDetailVC.diagnoseModel = itemModel;
     [self.navigationController pushViewController:diagnoseDetailVC animated:YES];
