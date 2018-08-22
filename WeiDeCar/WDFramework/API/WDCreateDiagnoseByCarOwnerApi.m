@@ -18,7 +18,10 @@
 -(id)requestArgumentWithToken
 {
     NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
-    requestArgument[@"carOwnerId"] = self.carOwnerId;
+    
+    [requestArgument safeSetObject:self.carOwnerId forKey:@"carOwnerId"];
+    [requestArgument safeSetObject:self.repairFactoryId forKey:@"repairFactoryId"];
+    
     return requestArgument;
 }
 

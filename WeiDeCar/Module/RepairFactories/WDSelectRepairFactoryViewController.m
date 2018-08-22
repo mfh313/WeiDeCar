@@ -178,6 +178,8 @@
 
 -(void)didSelectRepairFactory:(WDRepairFactoryModel *)repairFactory
 {
+    [self.navigationController popViewControllerAnimated:YES];
+    
     if ([self.m_delegate respondsToSelector:@selector(didSelectRepairFactory:viewController:)]) {
         [self.m_delegate didSelectRepairFactory:repairFactory viewController:self];
     }

@@ -8,8 +8,9 @@
 
 #import "WDCarOwnerDiagnoseListViewController.h"
 #import "WDCarOwnerDiagnoseDetailViewController.h"
+#import "WDSelectRepairFactoryViewController.h"
 
-@interface WDCarOwnerDiagnoseListViewController ()
+@interface WDCarOwnerDiagnoseListViewController () <WDSelectRepairFactoryViewControllerDelegate>
 
 @end
 
@@ -104,9 +105,19 @@
 #pragma mark - WDDiagnoseMainAddViewDelegate
 -(void)onClickAddNewRecord:(WDDiagnoseMainAddView *)view
 {
+    WDSelectRepairFactoryViewController *repairFactoryVC = [WDSelectRepairFactoryViewController new];
+    repairFactoryVC.m_delegate = self;
+    [self.navigationController pushViewController:repairFactoryVC animated:YES];
+}
+
+#pragma mark - WDSelectRepairFactoryViewControllerDelegate
+-(void)didSelectRepairFactory:(WDRepairFactoryModel *)repairFactory viewController:(WDSelectRepairFactoryViewController *)viewController
+{
     __weak typeof(self) weakSelf = self;
     WDCreateDiagnoseByCarOwnerApi *mfApi = [WDCreateDiagnoseByCarOwnerApi new];
     mfApi.carOwnerId = m_currentUserInfo.userId;
+    mfApi.repairFactoryId = repairFactory.factoryId;
+    
     mfApi.animatingText = @"正在创建维修任务...";
     mfApi.animatingView = MFAppWindow;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
@@ -135,6 +146,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end
