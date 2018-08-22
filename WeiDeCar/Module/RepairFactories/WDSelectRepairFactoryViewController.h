@@ -7,7 +7,17 @@
 //
 
 #import "MMUIViewController.h"
+#import "WDRepairFactoryModel.h"
+
+@class WDSelectRepairFactoryViewController;
+@protocol WDSelectRepairFactoryViewControllerDelegate <NSObject>
+@optional
+-(void)didSelectRepairFactory:(WDRepairFactoryModel *)repairFactory viewController:(WDSelectRepairFactoryViewController *)viewController;
+
+@end
 
 @interface WDSelectRepairFactoryViewController : MMUIViewController
+
+@property (nonatomic,weak) id<WDSelectRepairFactoryViewControllerDelegate> m_delegate;
 
 @end
