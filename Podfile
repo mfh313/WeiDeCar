@@ -17,6 +17,7 @@ pod 'YTKNetwork', '~> 2.0'
 pod 'SMPageControl', '~> 1.2'
 pod 'iCarousel', '~> 1.8.1'
 pod 'SDWebImage'
+pod 'WechatOpenSDK'
 
 end
 
