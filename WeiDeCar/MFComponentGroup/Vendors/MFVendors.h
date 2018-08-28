@@ -15,5 +15,7 @@
 #import <LGAlertView/LGAlertView.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
+#import "WXApiRequestHandler.h"
+#import "WXApiManager.h"
 
 
