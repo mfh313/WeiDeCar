@@ -2713,7 +2713,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = WeiDeCar/WeiDeCar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TAZH4T84CX;
+				DEVELOPMENT_TEAM = G782L57G45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2738,7 +2738,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/Openssl/lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.weidecar.wd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.mafanghua.WeiDeCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2752,7 +2752,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = WeiDeCar/WeiDeCar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TAZH4T84CX;
+				DEVELOPMENT_TEAM = G782L57G45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2777,7 +2777,7 @@
 					"$(PROJECT_DIR)/WeiDeCar/Module/IPCamera/Openssl/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.weidecar.wd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.mafanghua.WeiDeCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
