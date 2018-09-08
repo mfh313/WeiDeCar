@@ -28,3 +28,5 @@ Master Secret  a23cada58ce67cd8613e002f
 
 weidecar@163.com
 1qaz@WSX#EDC
+
+发布修改info.plist  AppStoreChannel标志
