@@ -8,6 +8,8 @@
 
 #import "WXApiManager.h"
 
+NSString *const WXPay_Notification_Success = @"WXPay_Notification_Success";
+
 @implementation WXApiManager
 
 #pragma mark - LifeCycle
@@ -65,7 +67,6 @@
         }
         
 
-        __weak typeof(self) weakSelf = self;
         LGAlertView *alertView = [LGAlertView alertViewWithTitle:strTitle message:strMsg style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:nil destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
             
             if (resp.errCode == WXSuccess)
@@ -78,14 +79,9 @@
         } destructiveHandler:nil];
         
         [alertView showAnimated:YES completionHandler:nil];
-        
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert show];
     }
 
 }
-
-
 
 - (void)onReq:(BaseReq *)req {
     if ([req isKindOfClass:[GetMessageFromWXReq class]]) {
@@ -108,5 +104,21 @@
         }
     }
 }
+
+-(void)bizPayOrder:(NSDictionary *)payInfo
+{
+    NSMutableString *stamp  = [payInfo objectForKey:@"timeStamp"];
+    
+    //调起微信支付
+    PayReq* req             = [[PayReq alloc] init];
+    req.partnerId           = [payInfo objectForKey:@"partnerid"];
+    req.prepayId            = [payInfo objectForKey:@"prepayId"];
+    req.nonceStr            = [payInfo objectForKey:@"nonceStr"];
+    req.timeStamp           = stamp.intValue;
+    req.package             = [payInfo objectForKey:@"packAge"];
+    req.sign                = [payInfo objectForKey:@"paySign"];
+    [WXApi sendReq:req];
+}
+
 
 @end

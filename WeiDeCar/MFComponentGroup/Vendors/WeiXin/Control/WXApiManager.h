@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "WXApi.h"
 
+#define WXKey @"wxfddaeb6d71257dc9"
+
+extern NSString *const WXPay_Notification_Success;
+
 @protocol WXApiManagerDelegate <NSObject>
 
 @optional
@@ -32,5 +36,7 @@
 @property (nonatomic, assign) id<WXApiManagerDelegate> delegate;
 
 + (instancetype)sharedManager;
+
+- (void)bizPayOrder:(NSDictionary *)payInfo;
 
 @end

@@ -207,12 +207,6 @@
 		A5BF243D2067AFA600271397 /* YTKBatchRequest+AnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF234E2067AFA600271397 /* YTKBatchRequest+AnimatingAccessory.m */; };
 		A5BF243E2067AFA600271397 /* YTKChainRequest+AnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23502067AFA600271397 /* YTKChainRequest+AnimatingAccessory.m */; };
 		A5BF243F2067AFA600271397 /* MMNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23522067AFA600271397 /* MMNetworkRequest.m */; };
-		A5BF24402067AFA600271397 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23562067AFA600271397 /* WXApiManager.m */; };
-		A5BF24412067AFA600271397 /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23582067AFA600271397 /* WXApiRequestHandler.m */; };
-		A5BF24422067AFA600271397 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF235A2067AFA600271397 /* WXApiResponseHandler.m */; };
-		A5BF24432067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF235E2067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */; };
-		A5BF24442067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23602067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */; };
-		A5BF24452067AFA600271397 /* WXMediaMessage+messageConstruct.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23622067AFA600271397 /* WXMediaMessage+messageConstruct.m */; };
 		A5BF24462067AFA600271397 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23662067AFA600271397 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		A5BF24472067AFA600271397 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF23692067AFA600271397 /* HexColors.m */; };
 		A5BF24482067AFA600271397 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF236D2067AFA600271397 /* IQNSArray+Sort.m */; };
@@ -775,19 +769,6 @@
 		A5BF23502067AFA600271397 /* YTKChainRequest+AnimatingAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTKChainRequest+AnimatingAccessory.m"; sourceTree = "<group>"; };
 		A5BF23512067AFA600271397 /* MMNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetworkRequest.h; sourceTree = "<group>"; };
 		A5BF23522067AFA600271397 /* MMNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNetworkRequest.m; sourceTree = "<group>"; };
-		A5BF23552067AFA600271397 /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
-		A5BF23562067AFA600271397 /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
-		A5BF23572067AFA600271397 /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
-		A5BF23582067AFA600271397 /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
-		A5BF23592067AFA600271397 /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
-		A5BF235A2067AFA600271397 /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
-		A5BF235C2067AFA600271397 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
-		A5BF235D2067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
-		A5BF235E2067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
-		A5BF235F2067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
-		A5BF23602067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
-		A5BF23612067AFA600271397 /* WXMediaMessage+messageConstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+messageConstruct.h"; sourceTree = "<group>"; };
-		A5BF23622067AFA600271397 /* WXMediaMessage+messageConstruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WXMediaMessage+messageConstruct.m"; sourceTree = "<group>"; };
 		A5BF23652067AFA600271397 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		A5BF23662067AFA600271397 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		A5BF23682067AFA600271397 /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
@@ -1721,7 +1702,6 @@
 				A5BF23462067AFA600271397 /* MFFramework.h */,
 				A5BF233D2067AFA600271397 /* Alipay */,
 				A5BF23472067AFA600271397 /* Networking */,
-				A5BF23532067AFA600271397 /* WeiXin */,
 			);
 			path = MFFramework;
 			sourceTree = "<group>";
@@ -1764,42 +1744,6 @@
 				A5BF23502067AFA600271397 /* YTKChainRequest+AnimatingAccessory.m */,
 			);
 			path = Accessory;
-			sourceTree = "<group>";
-		};
-		A5BF23532067AFA600271397 /* WeiXin */ = {
-			isa = PBXGroup;
-			children = (
-				A5BF23542067AFA600271397 /* Control */,
-				A5BF235B2067AFA600271397 /* Helper */,
-			);
-			path = WeiXin;
-			sourceTree = "<group>";
-		};
-		A5BF23542067AFA600271397 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				A5BF23552067AFA600271397 /* WXApiManager.h */,
-				A5BF23562067AFA600271397 /* WXApiManager.m */,
-				A5BF23572067AFA600271397 /* WXApiRequestHandler.h */,
-				A5BF23582067AFA600271397 /* WXApiRequestHandler.m */,
-				A5BF23592067AFA600271397 /* WXApiResponseHandler.h */,
-				A5BF235A2067AFA600271397 /* WXApiResponseHandler.m */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		A5BF235B2067AFA600271397 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				A5BF235C2067AFA600271397 /* Constant.h */,
-				A5BF235D2067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */,
-				A5BF235E2067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */,
-				A5BF235F2067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */,
-				A5BF23602067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */,
-				A5BF23612067AFA600271397 /* WXMediaMessage+messageConstruct.h */,
-				A5BF23622067AFA600271397 /* WXMediaMessage+messageConstruct.m */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		A5BF23632067AFA600271397 /* Vendors */ = {
@@ -2510,7 +2454,6 @@
 				A5BF24912067BDE100271397 /* WDStoreAnnotationView.m in Sources */,
 				A5BF244B2067AFA600271397 /* IQUIView+Hierarchy.m in Sources */,
 				A5BF246F2067AFA700271397 /* PBArray.m in Sources */,
-				A5BF24432067AFA600271397 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				A51504C8206AA34B00CFAD14 /* WDCarOwnerDiagnoseListViewController.m in Sources */,
 				A55ECE9120307DE7003CE4B2 /* WDRepairStepListHeaderView.m in Sources */,
 				A5BF22A72067ADC700271397 /* WDListRepairStepApi.m in Sources */,
@@ -2523,7 +2466,6 @@
 				A5BF24112067AFA600271397 /* MFMultiMenuTableViewCell.m in Sources */,
 				A5CBED2C20FB825300041B22 /* WDDiagnoseMechanicCertificationsDetailViewController.m in Sources */,
 				A5BF22382067ACAA00271397 /* WDExpertDiagnoseAdviceCellView.m in Sources */,
-				A5BF24412067AFA600271397 /* WXApiRequestHandler.m in Sources */,
 				A5BF22442067ACAA00271397 /* WDDiagnosisAddHeaderView.m in Sources */,
 				A5BF24572067AFA600271397 /* LYSideslipCell.m in Sources */,
 				A5BF240F2067AFA600271397 /* UIViewController+pregress.m in Sources */,
@@ -2545,8 +2487,6 @@
 				A5BF243C2067AFA600271397 /* YTKBaseRequest+AnimatingAccessory.m in Sources */,
 				A52F969820C83D90002BDCF6 /* WDMainFrameBubbleView.m in Sources */,
 				A5BF241C2067AFA600271397 /* MMNavigationController.m in Sources */,
-				A5BF24402067AFA600271397 /* WXApiManager.m in Sources */,
-				A5BF24422067AFA600271397 /* WXApiResponseHandler.m in Sources */,
 				A5BF240B2067AFA600271397 /* UIView+threadHook.m in Sources */,
 				A5CBED1D20FB2A4C00041B22 /* WDRepairStepAddRequest.m in Sources */,
 				A5BF24392067AFA600271397 /* APAuthInfo.m in Sources */,
@@ -2562,7 +2502,6 @@
 				AC7705CA21073EE400C2851F /* WDRepairFactoriesDistributionViewController.m in Sources */,
 				A5BF22372067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
 				A51AB20B20E8BEAF00E2AD99 /* WDDiagnoseDetailResultCauseJudgementsItemView.m in Sources */,
-				A5BF24452067AFA600271397 /* WXMediaMessage+messageConstruct.m in Sources */,
 				A5BF22A92067ADC700271397 /* WDMechanicDiagnoseApi.m in Sources */,
 				A5BF24122067AFA600271397 /* MFTableViewCell.m in Sources */,
 				A5631C8B1FF5131500DBA959 /* WDMainFrameViewController.m in Sources */,
@@ -2632,7 +2571,6 @@
 				A51504C2206AA34B00CFAD14 /* WDDiagnoseItemCellView.m in Sources */,
 				A5BF22B22067ADC700271397 /* WDGuideSourceModel.m in Sources */,
 				A5BF247F2067AFA700271397 /* SPPageController.m in Sources */,
-				A5BF24442067AFA600271397 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				A5BF242B2067AFA600271397 /* MMTableViewInfo.m in Sources */,
 				A5BF246D2067AFA700271397 /* MutableField.m in Sources */,
 				A5FFBECD2135745B0051B8D2 /* WXApiRequestHandler.m in Sources */,
