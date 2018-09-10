@@ -10,6 +10,15 @@
 
 @interface WeiDeApiManger : MMService
 
+//获取评价KPI列表
++(NSString *)listCommentKpi;
+
+//获取评价奖金选择列表
++(NSString *)listCommentBonus;
+
+//添加诊断评价
++(NSString *)addDiagnoseComment;
+
 //根据维修步骤ID查询图片接口
 +(NSString *)listPhotoByRepairStepId;
 
