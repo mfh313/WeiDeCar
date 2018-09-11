@@ -48,6 +48,8 @@
 		A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CB51FBF0A4A00B6B844 /* CFNetwork.framework */; };
 		A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6165205E0BAA00CD588F /* CoreMotion.framework */; };
 		A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6167205E0BD500CD588F /* AlipaySDK.framework */; };
+		A550AD702147EC8A006E88ED /* WDCarOwnerCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */; };
+		A550AD732147ECC9006E88ED /* WDExpertCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A550AD722147ECC9006E88ED /* WDExpertCommentViewController.m */; };
 		A556130420C97F070089C428 /* WDMainFrameBubbleBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */; };
 		A556130620C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A556130520C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib */; };
 		A55AD7D520FCD29F0015F60F /* WDMechanicCertificationsDetailCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55AD7D420FCD29F0015F60F /* WDMechanicCertificationsDetailCellView.m */; };
@@ -374,6 +376,10 @@
 		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A54A6165205E0BAA00CD588F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A54A6167205E0BD500CD588F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = WeiDeCar/MFFramework/Alipay/AlipaySDK.framework; sourceTree = "<group>"; };
+		A550AD6E2147EC8A006E88ED /* WDCarOwnerCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCarOwnerCommentViewController.h; sourceTree = "<group>"; };
+		A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCarOwnerCommentViewController.m; sourceTree = "<group>"; };
+		A550AD712147ECC9006E88ED /* WDExpertCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDExpertCommentViewController.h; sourceTree = "<group>"; };
+		A550AD722147ECC9006E88ED /* WDExpertCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDExpertCommentViewController.m; sourceTree = "<group>"; };
 		A556130220C97F070089C428 /* WDMainFrameBubbleBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMainFrameBubbleBoardView.h; sourceTree = "<group>"; };
 		A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMainFrameBubbleBoardView.m; sourceTree = "<group>"; };
 		A556130520C97FBF0089C428 /* WDMainFrameBubbleBoardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WDMainFrameBubbleBoardView.xib; sourceTree = "<group>"; };
@@ -1095,6 +1101,7 @@
 				ACB8C334202EA04800BEB48E /* Repair */,
 				A51DBC2A2000F8EA00A870FD /* RepairFactories */,
 				A5631BD01FF512CE00DBA959 /* IPCamera */,
+				A550AD6D2147EC39006E88ED /* Comment */,
 				A52D919E1FDC30FB009DD077 /* Login */,
 				A535ACD91FDCD20E001CF470 /* Guide */,
 			);
@@ -1137,6 +1144,17 @@
 				A535ACE01FDCD20E001CF470 /* WDGuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		A550AD6D2147EC39006E88ED /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				A550AD6E2147EC8A006E88ED /* WDCarOwnerCommentViewController.h */,
+				A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */,
+				A550AD712147ECC9006E88ED /* WDExpertCommentViewController.h */,
+				A550AD722147ECC9006E88ED /* WDExpertCommentViewController.m */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		A5631BD01FF512CE00DBA959 /* IPCamera */ = {
@@ -2520,6 +2538,7 @@
 				A5FFBECC2135745B0051B8D2 /* WXApiManager.m in Sources */,
 				A55ECE8220306054003CE4B2 /* WDRepairListViewController.m in Sources */,
 				A5BF247E2067AFA700271397 /* SPCoverController.m in Sources */,
+				A550AD732147ECC9006E88ED /* WDExpertCommentViewController.m in Sources */,
 				A5BF24692067AFA700271397 /* Field.m in Sources */,
 				AC7705CA21073EE400C2851F /* WDRepairFactoriesDistributionViewController.m in Sources */,
 				A5BF22372067ACAA00271397 /* WDDiagnoseCauseJudgementCellView.m in Sources */,
@@ -2541,6 +2560,7 @@
 				A535ACE31FDCD20E001CF470 /* WDGuidePageView.m in Sources */,
 				A5BF24042067AFA600271397 /* NSMutableArray+SafeInsert.m in Sources */,
 				A5BF241B2067AFA600271397 /* MMBaseTextFieldItem.m in Sources */,
+				A550AD702147EC8A006E88ED /* WDCarOwnerCommentViewController.m in Sources */,
 				A56FB4CB2146A4FC00B33FF8 /* WDListCommentKpiApi.m in Sources */,
 				A5BF22BC2067ADC700271397 /* WDLoginService.m in Sources */,
 				A5BF245E2067AFA700271397 /* Messagepush.pb.m in Sources */,
