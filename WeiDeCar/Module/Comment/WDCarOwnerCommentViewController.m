@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"车主评价";
+    [self setBackBarButton];
+    
     [self getCommentKpiList];
 }
 

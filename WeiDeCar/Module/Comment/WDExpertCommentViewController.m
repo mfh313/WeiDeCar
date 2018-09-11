@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"专家评价";
+    [self setBackBarButton];
 }
 
 - (void)didReceiveMemoryWarning {
