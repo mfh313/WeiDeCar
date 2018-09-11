@@ -10,4 +10,6 @@
 
 @interface WDCarOwnerCommentViewController : MMUIViewController
 
+@property (nonatomic,strong) NSString *diagnoseId;
+
 @end

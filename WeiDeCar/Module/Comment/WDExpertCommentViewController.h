@@ -10,4 +10,6 @@
 
 @interface WDExpertCommentViewController : MMUIViewController
 
+@property (nonatomic,strong) NSString *diagnoseId;
+
 @end
