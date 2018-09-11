@@ -211,8 +211,7 @@
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
     itemModel.status = WDDiagnoseStatus_FINISHED;
-    
-    
+    ///
     
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
