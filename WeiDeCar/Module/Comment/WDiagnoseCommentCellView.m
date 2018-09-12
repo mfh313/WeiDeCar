@@ -22,7 +22,7 @@
         [self addSubview:m_commentValueLabel];
         
         [m_commentValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(@(10));
+            make.left.mas_equalTo(@(25));
             make.centerY.equalTo(self.mas_centerY);
             make.top.mas_equalTo(self.mas_top);
             make.height.mas_equalTo(self.mas_height);
@@ -36,7 +36,7 @@
         [self addSubview:m_starsView];
         
         [m_starsView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(m_commentValueLabel.mas_right).offset(10);
+            make.left.mas_equalTo(m_commentValueLabel.mas_right).offset(15);
             make.centerY.equalTo(self.mas_centerY);
             make.width.mas_equalTo(@(m_starsView.frame.size.width));
             make.height.mas_equalTo(@(m_starsView.frame.size.height));

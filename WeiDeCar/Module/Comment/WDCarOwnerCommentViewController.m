@@ -17,6 +17,7 @@
     MFUITableView *m_tableView;
     NSMutableArray<NSDictionary *> *m_commentKpiArray;
     
+    NSMutableDictionary *m_commentKpiInfo;
 }
 
 @end
@@ -28,6 +29,8 @@
     
     self.title = @"车主评价";
     [self setBackBarButton];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     m_tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     m_tableView.backgroundColor = [UIColor hx_colorWithHexString:@"f5f5f5"];
@@ -42,6 +45,7 @@
     }];
     
     m_cellInfos = [NSMutableArray array];
+    m_commentKpiInfo = [NSMutableDictionary dictionary];
     
     [self getCommentKpiList];
 }
@@ -100,8 +104,11 @@
     
     WDiagnoseCommentCellView *cellView = (WDiagnoseCommentCellView *)cell.m_subContentView;
     cellView.attachDataIndex = attachIndex;
+    
     NSString *dicValue = kpiInfo[@"dicValue"];
-    [cellView setCommentValue:dicValue score:1];
+    NSString *scoreKey = [NSString stringWithFormat:@"%@",@(attachIndex)];
+    NSNumber *scoreValue = m_commentKpiInfo[scoreKey];
+    [cellView setCommentValue:dicValue score:scoreValue.floatValue];
     
     return cell;
 }
@@ -148,7 +155,7 @@
         }
         
         m_commentKpiArray = kpiArray;
-        
+        [strongSelf initDefaultCommentKpi];
         [strongSelf reloadTableView];
         
     } failure:^(YTKBaseRequest * request) {
@@ -183,6 +190,21 @@
     division.cellHeight = cellHeight;
     division.cellReuseIdentifier = @"division";
     return division;
+}
+
+-(void)initDefaultCommentKpi
+{
+    for (int i = 0; i < m_commentKpiArray.count; i++) {
+        NSString *key = [NSString stringWithFormat:@"%@",@(i)];
+        [m_commentKpiInfo safeSetObject:@(1) forKey:key];
+    }
+}
+
+#pragma mark - WDiagnoseCommentCellViewDelegate
+-(void)onClickChangeScore:(CGFloat)score attachDataIndex:(NSInteger)index cellView:(WDiagnoseCommentCellView *)cellView
+{
+    NSString *key = [NSString stringWithFormat:@"%@",@(index)];
+    [m_commentKpiInfo safeSetObject:@(score) forKey:key];
 }
 
 - (void)didReceiveMemoryWarning {
