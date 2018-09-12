@@ -11,13 +11,16 @@
 #import "WDCommentKpiResultVO.h"
 #import "WDAddDiagnoseCommentApi.h"
 #import "WDiagnoseCommentCellView.h"
+#import "WDCarOwnerCommentContentCellView.h"
 
-@interface WDCarOwnerCommentViewController () <UITableViewDataSource,UITableViewDelegate,WDiagnoseCommentCellViewDelegate>
+@interface WDCarOwnerCommentViewController () <UITableViewDataSource,UITableViewDelegate,WDiagnoseCommentCellViewDelegate,WDCarOwnerCommentContentCellViewDelegate>
 {
     MFUITableView *m_tableView;
     NSMutableArray<NSDictionary *> *m_commentKpiArray;
     
     NSMutableDictionary *m_commentKpiInfo;
+    
+    NSString *m_commentContent;
 }
 
 @end
@@ -69,6 +72,10 @@
     {
         return [self tableView:tableView diagnoseCommentCellForIndex:indexPath];
     }
+    else if ([identifier isEqualToString:@"carOwnerComment"])
+    {
+        return [self tableView:tableView carOwnerCommentCellForIndex:indexPath];
+    }
     else if ([identifier isEqualToString:@"division"])
     {
         return [self tableView:tableView divisionForIndex:indexPath];
@@ -82,6 +89,26 @@
     }
     
     cell.textLabel.text = identifier;
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView carOwnerCommentCellForIndex:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDCarOwnerCommentContentCellView *cellView = [[WDCarOwnerCommentContentCellView alloc] initWithFrame:cell.contentView.bounds];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    WDCarOwnerCommentContentCellView *cellView = (WDCarOwnerCommentContentCellView *)cell.m_subContentView;
+    [cellView setCommentContent:m_commentContent];
+    
     return cell;
 }
 
@@ -182,6 +209,11 @@
         diagnoseComment.attachIndex = i;
         [m_cellInfos addObject:diagnoseComment];
     }
+    
+    MFTableViewCellObject *carOwnerComment = [MFTableViewCellObject new];
+    carOwnerComment.cellHeight = 90.0f;
+    carOwnerComment.cellReuseIdentifier = @"carOwnerComment";
+    [m_cellInfos addObject:carOwnerComment];
 }
 
 -(MFTableViewCellObject *)divisionCellObject:(CGFloat)cellHeight
@@ -205,6 +237,12 @@
 {
     NSString *key = [NSString stringWithFormat:@"%@",@(index)];
     [m_commentKpiInfo safeSetObject:@(score) forKey:key];
+}
+
+#pragma mark - WDCarOwnerCommentContentCellViewDelegate
+-(void)onInputComment:(NSString *)commentContent inputView:(WDCarOwnerCommentContentCellView *)inputView
+{
+    m_commentContent = commentContent;
 }
 
 - (void)didReceiveMemoryWarning {
