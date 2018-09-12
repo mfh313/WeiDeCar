@@ -2350,6 +2350,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar-resources.sh",
 				"${PODS_ROOT}/AMap2DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/GRStarsView/GRStarsView.bundle",
 				"${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js",
 				"${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png",
 			);

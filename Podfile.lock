@@ -22,6 +22,7 @@ PODS:
   - EZOpenSDK (1.0.1)
   - EZUIKit (1.1.4):
     - EZOpenSDK (= 1.0.1)
+  - GRStarsView (0.1.0)
   - HappyDNS (0.3.12)
   - iCarousel (1.8.3)
   - JCore (1.1.6)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - AMapLocation-NO-IDFA
   - EZOpenSDK
   - EZUIKit
+  - GRStarsView
   - iCarousel (~> 1.8.1)
   - JPush
   - LGAlertView
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
   EZOpenSDK: 4219a5d3a49008f5d2dd0567c35b5d7e125ba912
   EZUIKit: ddd6a51b976152adaa4332688b8de884f3355040
+  GRStarsView: a9cf0b315dd4ab5f547a2004943eef86e935a792
   HappyDNS: 691a3041128055d09866f86e6e9ca90f24da1f18
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
@@ -76,6 +79,6 @@ SPEC CHECKSUMS:
   WeexSDK: ad8443f4290ef7cb241bbd4c03b02d9dfc9fdca2
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 1ed46b7f50c8dca43fd14859839080d085eadeba
+PODFILE CHECKSUM: 9593878e4222c1e5db5d8f077c2dfff6986589ec
 
 COCOAPODS: 1.3.1
