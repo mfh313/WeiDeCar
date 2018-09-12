@@ -32,6 +32,7 @@
     
     self.title = @"车主评价";
     [self setBackBarButton];
+    [self setRightNaviButtonWithTitle:@"维修厂" action:@selector(submitCarOwnerComment)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -166,6 +167,7 @@
     WDListCommentKpiApi *mfApi = [WDListCommentKpiApi new];
     mfApi.commentType = WDDiagnose_commentType_10;
     
+    mfApi.animatingView = self.view;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -211,7 +213,7 @@
     }
     
     MFTableViewCellObject *carOwnerComment = [MFTableViewCellObject new];
-    carOwnerComment.cellHeight = 90.0f;
+    carOwnerComment.cellHeight = 120.0f;
     carOwnerComment.cellReuseIdentifier = @"carOwnerComment";
     [m_cellInfos addObject:carOwnerComment];
 }
@@ -243,6 +245,33 @@
 -(void)onInputComment:(NSString *)commentContent inputView:(WDCarOwnerCommentContentCellView *)inputView
 {
     m_commentContent = commentContent;
+}
+
+-(void)submitCarOwnerComment
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
+    __weak typeof(self) weakSelf = self;
+    WDAddDiagnoseCommentApi *mfApi = [WDAddDiagnoseCommentApi new];
+    mfApi.diagnoseId = self.diagnoseId;
+    mfApi.userId = loginService.currentUserInfo.userId;
+    mfApi.commentType = WDDiagnose_commentType_10;
+    mfApi.commentContent = m_commentContent;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
