@@ -32,7 +32,7 @@
     
     self.title = @"车主评价";
     [self setBackBarButton];
-    [self setRightNaviButtonWithTitle:@"维修厂" action:@selector(submitCarOwnerComment)];
+    [self setRightNaviButtonWithTitle:@"确定" action:@selector(submitCarOwnerComment)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     

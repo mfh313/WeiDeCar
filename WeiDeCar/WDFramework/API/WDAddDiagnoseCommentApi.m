@@ -25,9 +25,14 @@
     [requestArgument safeSetObject:self.bonus forKey:@"bonus"];
     [requestArgument safeSetObject:self.commentContent forKey:@"commentContent"];
     
-    NSDictionary *modelJSON = [self.comments yy_modelToJSONObject];
+    NSMutableArray *commentsArray = [NSMutableArray array];
+    for (int i = 0; i < self.comments.count; i++) {
+        WDCommentKpiResultVO *resultVO = self.comments[i];
+        [commentsArray addObject:[resultVO yy_modelToJSONObject]];
+    }
+    
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:modelJSON
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:commentsArray
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
