@@ -1,14 +1,14 @@
 //
-//  WDCarOwnerCommentContentCellView.m
+//  WDExpertCommentContentCellView.m
 //  WeiDeCar
 //
-//  Created by mafanghua on 2018/9/12.
+//  Created by EEKA on 2018/9/13.
 //  Copyright © 2018年 mafanghua. All rights reserved.
 //
 
-#import "WDCarOwnerCommentContentCellView.h"
+#import "WDExpertCommentContentCellView.h"
 
-@implementation WDCarOwnerCommentContentCellView
+@implementation WDExpertCommentContentCellView
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -19,14 +19,14 @@
         m_titleLabel.font = [UIFont systemFontOfSize:15.0f];
         m_titleLabel.textColor = [UIColor hx_colorWithHexString:@"242834"];
         m_titleLabel.backgroundColor = [UIColor whiteColor];
-        m_titleLabel.text = @"车主评价";
+        m_titleLabel.text = @"专家评价";
         [self addSubview:m_titleLabel];
         
         [m_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(@(25));
             make.top.mas_equalTo(self.mas_top).offset(20);
         }];
-    
+        
         m_textField = [WDBorderTextField nibView];
         m_textField.m_delegate = self;
         [self addSubview:m_textField];
