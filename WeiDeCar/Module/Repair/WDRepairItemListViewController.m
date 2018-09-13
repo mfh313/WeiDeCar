@@ -210,7 +210,7 @@
 #pragma mark - WDRepairTaskListCellViewDelegate
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
-//    itemModel.status = WDDiagnoseStatus_FINISHED;
+//    itemModel.status = WDDiagnoseStatus_QA_SUCCESS;
 
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
@@ -232,7 +232,7 @@
             
             [alertView showAnimated:YES completionHandler:nil];
         }
-        else if (itemModel.status == WDDiagnoseStatus_FINISHED && currentUserInfo.userType == WDUserInfoType_CarOwner)
+        else if (itemModel.status == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_CarOwner)
         {
             [self showCarOwnerCommentVC:itemModel];
         }
@@ -243,7 +243,7 @@
     }
     else
     {
-        if (itemModel.status == WDDiagnoseStatus_FINISHED && currentUserInfo.userType == WDUserInfoType_Expert)
+        if (itemModel.status == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_Expert)
         {
             [self showExpertCommentVC:itemModel];
         }
