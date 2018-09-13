@@ -210,7 +210,7 @@
 #pragma mark - WDRepairTaskListCellViewDelegate
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
-    itemModel.status = WDDiagnoseStatus_FINISHED;
+//    itemModel.status = WDDiagnoseStatus_FINISHED;
 
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
