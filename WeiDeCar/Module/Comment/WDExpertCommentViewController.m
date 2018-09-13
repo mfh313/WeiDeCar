@@ -12,15 +12,18 @@
 #import "WDAddDiagnoseCommentApi.h"
 #import "WDiagnoseCommentCellView.h"
 #import "WDExpertCommentContentCellView.h"
+#import "WDListCommentBonusApi.h"
 
 @interface WDExpertCommentViewController () <UITableViewDataSource,UITableViewDelegate,WDiagnoseCommentCellViewDelegate,WDExpertCommentContentCellViewDelegate>
 {
     MFUITableView *m_tableView;
     NSMutableArray<NSDictionary *> *m_commentKpiArray;
+    NSMutableArray<NSDictionary *> *m_commentBonusArray;
     
     NSMutableDictionary *m_commentKpiInfo;
     
     NSString *m_commentContent;
+    NSString *m_bonus;
 }
 
 @end
@@ -52,6 +55,7 @@
     m_commentKpiInfo = [NSMutableDictionary dictionary];
     
     [self getCommentKpiList];
+    [self getCommentBonusList];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -165,7 +169,7 @@
 {
     __weak typeof(self) weakSelf = self;
     WDListCommentKpiApi *mfApi = [WDListCommentKpiApi new];
-    mfApi.commentType = WDDiagnose_commentType_10;
+    mfApi.commentType = WDDiagnose_commentType_20;
     
     mfApi.animatingView = self.view;
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
@@ -259,6 +263,7 @@
     mfApi.userId = loginService.currentUserInfo.userId;
     mfApi.commentType = WDDiagnose_commentType_20;
     mfApi.comments = comments;
+    mfApi.bonus = m_bonus;
     mfApi.commentContent = m_commentContent;
     
     mfApi.animatingView = self.view;
@@ -297,6 +302,58 @@
     }
     
     return submitComments;
+}
+
+-(void)getCommentBonusList
+{
+    __weak typeof(self) weakSelf = self;
+    WDListCommentBonusApi *mfApi = [WDListCommentBonusApi new];
+    mfApi.commentType = WDDiagnose_commentType_20;
+    
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+
+        NSMutableArray *bonusArray = [NSMutableArray array];
+        NSArray *bonusLists = mfApi.responseNetworkData;
+        for (int i = 0; i < bonusLists.count; i++) {
+            NSDictionary *bonus = bonusLists[i];
+            [bonusArray addObject:bonus];
+        }
+        
+        m_commentBonusArray = bonusArray;
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(void)onClickSelectBonusList
+{
+    NSMutableArray *bonusTitleArray = [NSMutableArray array];
+    for (int i = 0; i < m_commentBonusArray.count; i++) {
+        NSDictionary *bonusInfo = m_commentBonusArray[i];
+        NSString *dicValue = bonusInfo[@"dicValue"];
+        [bonusTitleArray addObject:dicValue];
+    }
+    
+    NSArray *titleArray = [NSArray arrayWithArray:bonusTitleArray];
+    
+    LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"选择技师奖金" style:LGAlertViewStyleAlert buttonTitles:titleArray cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title)
+                              {
+                                  NSDictionary *bonusInfo = m_commentBonusArray[index];
+                                  NSString *dicKey = bonusInfo[@"dicKey"];
+                                  m_bonus = dicKey;
+                                  [self submitExpertComment];
+                              }
+                                               cancelHandler:nil destructiveHandler:nil];
+    
+    [alertView showAnimated:YES completionHandler:nil];
 }
 
 - (void)didReceiveMemoryWarning {
