@@ -251,11 +251,14 @@
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     
+    NSMutableArray<WDCommentKpiResultVO *> *comments = [self submitComments];
+    
     __weak typeof(self) weakSelf = self;
     WDAddDiagnoseCommentApi *mfApi = [WDAddDiagnoseCommentApi new];
     mfApi.diagnoseId = self.diagnoseId;
     mfApi.userId = loginService.currentUserInfo.userId;
     mfApi.commentType = WDDiagnose_commentType_10;
+    mfApi.comments = comments;
     mfApi.commentContent = m_commentContent;
     
     mfApi.animatingView = self.view;
@@ -267,11 +270,33 @@
             return;
         }
         
-        
+        [strongSelf showTips:mfApi.errorMessage];
+        [strongSelf.navigationController popViewControllerAnimated:YES];
         
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(NSMutableArray<WDCommentKpiResultVO *> *)submitComments
+{
+    NSMutableArray *submitComments = [NSMutableArray array];
+    
+    for (int i = 0; i < m_commentKpiArray.count; i++) {
+        NSDictionary *kpiInfo = m_commentKpiArray[i];
+        NSString *commentKpi = kpiInfo[@"dicKey"];
+        
+        NSString *key = [NSString stringWithFormat:@"%@",@(i)];
+        NSNumber *score = m_commentKpiInfo[key];
+        
+        WDCommentKpiResultVO *resultVO = [WDCommentKpiResultVO new];
+        resultVO.commentKpi = commentKpi;
+        resultVO.commentKpiResult = score.integerValue;
+        
+        [submitComments addObject:resultVO];
+    }
+    
+    return submitComments;
 }
 
 - (void)didReceiveMemoryWarning {
