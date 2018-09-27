@@ -292,6 +292,7 @@
 		A5E2FFA82082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFA72082EA7F006D3299 /* WDAssistantDiagnoseListViewController.m */; };
 		A5E2FFAB20830FF0006D3299 /* WDRepairService.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAA20830FF0006D3299 /* WDRepairService.m */; };
 		A5E2FFAE20831C8B006D3299 /* WDRepairStepStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */; };
+		A5F30F77215D023A0039D126 /* WDRepairStepImageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F30F76215D023A0039D126 /* WDRepairStepImageCellView.m */; };
 		A5FFBECC2135745B0051B8D2 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FFBEBF2135745B0051B8D2 /* WXApiManager.m */; };
 		A5FFBECD2135745B0051B8D2 /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FFBEC12135745B0051B8D2 /* WXApiRequestHandler.m */; };
 		A5FFBECE2135745B0051B8D2 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FFBEC32135745B0051B8D2 /* WXApiResponseHandler.m */; };
@@ -960,6 +961,8 @@
 		A5E2FFAA20830FF0006D3299 /* WDRepairService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairService.m; sourceTree = "<group>"; };
 		A5E2FFAC20831C8B006D3299 /* WDRepairStepStatusCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepStatusCellView.h; sourceTree = "<group>"; };
 		A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepStatusCellView.m; sourceTree = "<group>"; };
+		A5F30F75215D023A0039D126 /* WDRepairStepImageCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepImageCellView.h; sourceTree = "<group>"; };
+		A5F30F76215D023A0039D126 /* WDRepairStepImageCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepImageCellView.m; sourceTree = "<group>"; };
 		A5FFBEBE2135745B0051B8D2 /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
 		A5FFBEBF2135745B0051B8D2 /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
 		A5FFBEC02135745B0051B8D2 /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
@@ -2236,6 +2239,8 @@
 				A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */,
 				A55ECE922030827C003CE4B2 /* WDRepairStepUploadImageCellView.h */,
 				A55ECE932030827C003CE4B2 /* WDRepairStepUploadImageCellView.m */,
+				A5F30F75215D023A0039D126 /* WDRepairStepImageCellView.h */,
+				A5F30F76215D023A0039D126 /* WDRepairStepImageCellView.m */,
 				A5E2FFAC20831C8B006D3299 /* WDRepairStepStatusCellView.h */,
 				A5E2FFAD20831C8B006D3299 /* WDRepairStepStatusCellView.m */,
 			);
@@ -2638,6 +2643,7 @@
 				A5BF246D2067AFA700271397 /* MutableField.m in Sources */,
 				A5FFBECD2135745B0051B8D2 /* WXApiRequestHandler.m in Sources */,
 				A5BF24622067AFA700271397 /* CodedInputStream.m in Sources */,
+				A5F30F77215D023A0039D126 /* WDRepairStepImageCellView.m in Sources */,
 				A5BF24352067AFA600271397 /* YYClassInfo.m in Sources */,
 				A5BF24542067AFA600271397 /* IQToolbar.m in Sources */,
 				A52D91C41FDC30FB009DD077 /* WDLoginContentView.m in Sources */,

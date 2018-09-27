@@ -430,6 +430,16 @@
             
             [m_cellInfos addObject:[self separatorCellObject]];
         }
+        else
+        {
+            MFTableViewCellObject *repairImageCellView = [MFTableViewCellObject new];
+            repairImageCellView.cellHeight = 80.0f;
+            repairImageCellView.cellReuseIdentifier = @"repairImageCellView";
+            repairImageCellView.attachIndex = i;
+            [m_cellInfos addObject:repairImageCellView];
+            
+            [m_cellInfos addObject:[self separatorCellObject]];
+        }
         
         MFTableViewCellObject *repairStepStatus = [MFTableViewCellObject new];
         repairStepStatus.cellHeight = 50.0f;
