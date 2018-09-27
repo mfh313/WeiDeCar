@@ -210,9 +210,6 @@
 #pragma mark - WDRepairTaskListCellViewDelegate
 -(void)onClickRepairTaskCellView:(WDDiagnoseModel *)itemModel
 {
-    [self showRepairListVC:itemModel];
-    return;
-    
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
     if (currentUserInfo.userType == WDUserInfoType_CarOwner || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
