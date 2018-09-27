@@ -28,7 +28,7 @@
     
     m_imageView = [[UIImageView alloc] init];
     m_imageView.contentMode = UIViewContentModeScaleAspectFit;
-    m_imageView.image = MFImage(@"image_see");
+    m_imageView.image = MFImage(@"image_blank");
     [self.view addSubview:m_imageView];
     
     [m_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,7 +57,7 @@
         
         NSArray *responseNetworkData = mfApi.responseNetworkData;
         NSString *photoUrl = ((NSDictionary *)responseNetworkData.firstObject)[@"photoUrl"];
-        [m_imageView sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:MFImage(@"image_see")];
+        [m_imageView sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:MFImage(@"image_blank")];
         
     } failure:^(YTKBaseRequest * request) {
         

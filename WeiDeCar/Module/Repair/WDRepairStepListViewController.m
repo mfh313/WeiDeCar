@@ -23,8 +23,9 @@
 #import "WDAddRepairStepsApi.h"
 #import "WDDeleteRepairStepsApi.h"
 #import "WDAddRepairStepDescViewController.h"
+#import "WDRepairStepImageCellView.h"
 
-@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate,WDAddRepairStepDescViewControllerDelegate>
+@interface WDRepairStepListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairStepUploadImageCellViewDelegate,WDRepairStepQualifiedCellViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,WDRepairStepQualifiedSelectCellViewDelegate,WDRepairStepStatusCellViewDelegate,WDAddRepairStepDescViewControllerDelegate,WDRepairStepImageCellViewDelegate>
 {
     MFUITableView *m_tableView;
     
@@ -128,6 +129,10 @@
     else if ([identifier isEqualToString:@"uploadImageCellView"])
     {
         return [self tableView:tableView uploadImageCellForIndexPath:indexPath];
+    }
+    else if ([identifier isEqualToString:@"repairImageCellView"])
+    {
+        return [self tableView:tableView repairImageCellForIndexPath:indexPath];
     }
     else if ([identifier isEqualToString:@"repairStepStatus"])
     {
@@ -284,6 +289,29 @@
     WDRepairStepModel *repairItem = m_repairSteps[attachIndex];
     
     WDRepairStepUploadImageCellView *cellView = (WDRepairStepUploadImageCellView *)cell.m_subContentView;
+    [cellView setRepairStepModel:repairItem];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView repairImageCellForIndexPath:(NSIndexPath *)indexPath
+{
+    MFTableViewCellObject *cellInfo = m_cellInfos[indexPath.row];
+    NSString *identifier = cellInfo.cellReuseIdentifier;
+    NSInteger attachIndex = cellInfo.attachIndex;
+    
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        WDRepairStepImageCellView *cellView = [[WDRepairStepImageCellView alloc] initWithFrame:cell.contentView.bounds];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    WDRepairStepModel *repairItem = m_repairSteps[attachIndex];
+    
+    WDRepairStepImageCellView *cellView = (WDRepairStepImageCellView *)cell.m_subContentView;
     [cellView setRepairStepModel:repairItem];
     
     return cell;
@@ -702,10 +730,17 @@
     }];
 }
 
+#pragma mark - WDRepairStepImageCellViewDelegate
+-(void)onClickSeeImageRepairStep:(WDRepairStepModel *)repairStep stepImageCellView:(WDRepairStepImageCellView *)cellView
+{
+    WDRepairStepItemImageViewController *imageVC = [WDRepairStepItemImageViewController new];
+    imageVC.repairStep = repairStep;
+    [self.navigationController pushViewController:imageVC animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
-
 
 @end
