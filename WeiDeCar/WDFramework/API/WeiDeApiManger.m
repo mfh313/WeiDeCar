@@ -60,6 +60,18 @@ NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
     return MFURLWithPara(@"api/diagnose/paySuccess");
 }
 
+//微信支付接口
++(NSString *)repairWxPrePay
+{
+    return @"http://wdpay.link.newsupplytech.com/WdPay/appWxPay/wxPrePay";
+}
+
+//支付宝支付接口
++(NSString *)repairAliPay
+{
+    return @"http://wdpay.link.newsupplytech.com/WdPay/appAliPay/zfbpay";
+}
+
 //更新维修步骤状态，技师/专家可用
 +(NSString *)updateRepairStep
 {
