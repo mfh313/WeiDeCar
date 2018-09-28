@@ -13,6 +13,7 @@
 #import "WDRepairOfferHeaderTitleView.h"
 #import "WDChooseRepairItemOffersApi.h"
 #import "WDRepairPayTestApi.h"
+#import "WDRepairWxPrePayApi.h"
 
 @interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
@@ -482,6 +483,8 @@
     } failure:^(YTKBaseRequest * request) {
         
     }];
+    
+    [self payWXOrder];
 }
 
 -(void)onChooseRepairItemOffersSuccess
@@ -509,55 +512,57 @@
         }
         
         [strongSelf showTips:mfApi.errorMessage];
-        [strongSelf.navigationController popViewControllerAnimated:YES];
         
     } failure:^(YTKBaseRequest * request) {
         
     }];
 }
 
-//-(void)payOrder
-//{
-//    HCLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[HCLoginService class]];
-//
-//    __weak typeof(self) weakSelf = self;
-//    HCPayOrderApi *mfApi = [HCPayOrderApi new];
-//    mfApi.userTel = loginService.userPhone;
-//    mfApi.authCode = loginService.token;
-//    mfApi.oid = m_oid;
-//
-//    mfApi.animatingText = @"正在支付";
-//    mfApi.animatingView = MFAppWindow;
-//    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
-//
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        if (!mfApi.messageSuccess) {
-//            [strongSelf showTips:mfApi.errorMessage];
-//            return;
-//        }
-//
-//        NSDictionary *payInfo = mfApi.responseNetworkData;
-//        [strongSelf bizPayOrder:payInfo];
-//
-//    } failure:^(YTKBaseRequest * request) {
-//
-//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
-//        [self showTips:errorDesc];
-//    }];
-//}
+-(void)payWXOrder
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    __weak typeof(self) weakSelf = self;
+    WDRepairWxPrePayApi *mfApi = [WDRepairWxPrePayApi new];
+    mfApi.orderId = self.diagnoseId;
+    mfApi.price = @"0.01";
+    mfApi.userId = currentUserInfo.userId;
+    mfApi.body = [NSString stringWithFormat:@"付款ID:%@",self.diagnoseId];
+    mfApi.clientIp = currentUserInfo.userId;
+
+    mfApi.animatingText = @"正在支付";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+
+        NSDictionary *payInfo = mfApi.responseNetworkData;
+        [strongSelf bizPayOrder:payInfo];
+
+    } failure:^(YTKBaseRequest * request) {
+
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+}
 
 -(void)bizPayOrder:(NSDictionary *)dict
 {
-    NSMutableString *stamp  = [dict objectForKey:@"timeStamp"];
+    NSMutableString *stamp  = [dict objectForKey:@"timestamp"];
     
     //调起微信支付
     PayReq* req             = [[PayReq alloc] init];
     req.partnerId           = [dict objectForKey:@"partnerid"];
-    req.prepayId            = [dict objectForKey:@"prepayId"];
-    req.nonceStr            = [dict objectForKey:@"nonceStr"];
+    req.prepayId            = [dict objectForKey:@"prepayid"];
+    req.nonceStr            = [dict objectForKey:@"noncestr"];
     req.timeStamp           = stamp.intValue;
-    req.package             = [dict objectForKey:@"packAge"];
-    req.sign                = [dict objectForKey:@"paySign"];
+    req.package             = [dict objectForKey:@"package"];
+    req.sign                = [dict objectForKey:@"sign"];
     [WXApi sendReq:req];
 }
 
