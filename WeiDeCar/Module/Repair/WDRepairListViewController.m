@@ -14,6 +14,8 @@
 #import "WDRepairItemActionCellView.h"
 #import "WDRepairStepListViewController.h"
 #import "WDRepairService.h"
+#import "WDCarOwnerCommentViewController.h"
+#import "WDExpertCommentViewController.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
 {
@@ -43,6 +45,19 @@
         make.width.equalTo(self.view.mas_width);
         make.bottom.equalTo(self.view.mas_bottom);
     }];
+    
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    NSInteger diagnoseStatus = self.diagnoseItemModel.status;
+    if (diagnoseStatus == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_CarOwner)
+    {
+        [self setRightNaviButtonWithTitle:@"评价" action:@selector(showCarOwnerCommentVC)];
+    }
+    else if (diagnoseStatus == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_Expert)
+    {
+        [self setRightNaviButtonWithTitle:@"评价" action:@selector(showExpertCommentVC)];
+    }
     
     [self getRepairItemList];
 }
@@ -204,7 +219,7 @@
     __weak typeof(self) weakSelf = self;
     WDListRepairItemApi *mfApi = [WDListRepairItemApi new];
     mfApi.userId = loginService.currentUserInfo.userId;
-    mfApi.diagnoseId = self.diagnoseId;
+    mfApi.diagnoseId = self.diagnoseItemModel.diagnoseId;
     
     [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
@@ -345,6 +360,20 @@
     } failure:^(YTKBaseRequest * request) {
         
     }];
+}
+
+-(void)showCarOwnerCommentVC
+{
+    WDCarOwnerCommentViewController *carOwnerCommentVC = [WDCarOwnerCommentViewController new];
+    carOwnerCommentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
+    [self.navigationController pushViewController:carOwnerCommentVC animated:YES];
+}
+
+-(void)showExpertCommentVC
+{
+    WDExpertCommentViewController *expertCommentVC = [WDExpertCommentViewController new];
+    expertCommentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
+    [self.navigationController pushViewController:expertCommentVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,8 +13,6 @@
 #import "WDChooseRepairItemViewController.h"
 #import "WDRepairListViewController.h"
 #import "WDRepairPayTestApi.h"
-#import "WDCarOwnerCommentViewController.h"
-#import "WDExpertCommentViewController.h"
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -212,6 +210,7 @@
 {
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
     if (currentUserInfo.userType == WDUserInfoType_CarOwner || currentUserInfo.userType == WDUserInfoType_ASSISTANT)
     {
         if (itemModel.status == WDDiagnoseStatus_OFFER_TO_BE_ACCEPTED)
@@ -230,10 +229,6 @@
             
             [alertView showAnimated:YES completionHandler:nil];
         }
-        else if (itemModel.status == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_CarOwner)
-        {
-            [self showCarOwnerCommentVC:itemModel];
-        }
         else
         {
             [self showRepairListVC:itemModel];
@@ -241,29 +236,8 @@
     }
     else
     {
-        if (itemModel.status == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_Expert)
-        {
-            [self showExpertCommentVC:itemModel];
-        }
-        else
-        {
-            [self showRepairListVC:itemModel];
-        }
+        [self showRepairListVC:itemModel];
     }
-}
-
--(void)showCarOwnerCommentVC:(WDDiagnoseModel *)itemModel
-{
-    WDCarOwnerCommentViewController *carOwnerCommentVC = [WDCarOwnerCommentViewController new];
-    carOwnerCommentVC.diagnoseId = itemModel.diagnoseId;
-    [self.navigationController pushViewController:carOwnerCommentVC animated:YES];
-}
-
--(void)showExpertCommentVC:(WDDiagnoseModel *)itemModel
-{
-    WDExpertCommentViewController *expertCommentVC = [WDExpertCommentViewController new];
-    expertCommentVC.diagnoseId = itemModel.diagnoseId;
-    [self.navigationController pushViewController:expertCommentVC animated:YES];
 }
 
 -(void)showChooseRepairItemVC:(WDDiagnoseModel *)itemModel
@@ -276,7 +250,7 @@
 -(void)showRepairListVC:(WDDiagnoseModel *)itemModel
 {
     WDRepairListViewController *repairVC = [WDRepairListViewController new];
-    repairVC.diagnoseId = itemModel.diagnoseId;
+    repairVC.diagnoseItemModel = itemModel;
     [self.navigationController pushViewController:repairVC animated:YES];
 }
 
@@ -309,6 +283,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

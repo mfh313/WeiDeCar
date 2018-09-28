@@ -7,9 +7,11 @@
 //
 
 #import "MMUIViewController.h"
+#import "WDDiagnoseModel.h"
 
 @interface WDRepairListViewController : MMUIViewController
 
-@property (nonatomic,strong) NSString *diagnoseId;
+@property (nonatomic,strong) WDDiagnoseModel *diagnoseItemModel;
 
 @end
+
