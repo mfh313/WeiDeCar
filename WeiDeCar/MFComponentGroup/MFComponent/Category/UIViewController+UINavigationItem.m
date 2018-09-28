@@ -48,7 +48,7 @@
     rightBarButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     rightBarButton.frame = CGRectMake(0, 0, 60, 33);
     [rightBarButton setTitle:title forState:UIControlStateNormal];
-    [rightBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightBarButton setTitleColor:[UIColor hx_colorWithHexString:@"2B2B2B"] forState:UIControlStateNormal];
     [rightBarButton setBackgroundColor:[UIColor clearColor]];
     if ([self respondsToSelector:anAction]) {
         [rightBarButton addTarget:self action:anAction forControlEvents:UIControlEventTouchUpInside];
