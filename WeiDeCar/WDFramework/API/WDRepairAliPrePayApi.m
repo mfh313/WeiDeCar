@@ -12,7 +12,7 @@
 
 -(NSString *)requestUrl
 {
-    return [WeiDeApiManger repairWxPrePay];
+    return [WeiDeApiManger repairAliPay];
 }
 
 -(id)requestArgument

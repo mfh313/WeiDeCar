@@ -14,6 +14,7 @@
 #import "WDRepairListViewController.h"
 #import "WDRepairPayTestApi.h"
 #import "WDRepairWxPrePayApi.h"
+#import "WDRepairAliPrePayApi.h"
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -224,7 +225,8 @@
             LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"报价已接受，车主支付后才能开始维修，是否支付?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
                 
                 __strong typeof(weakSelf) strongSelf = weakSelf;
-                [strongSelf payWXOrder:itemModel.diagnoseId];
+//                [strongSelf payWXOrder:itemModel.diagnoseId];
+                [strongSelf doAliPayOrder:itemModel.diagnoseId];
 //                [strongSelf continueRepairPay:itemModel.diagnoseId];
                 
             } cancelHandler:nil destructiveHandler:nil];
@@ -279,6 +281,39 @@
         
     } failure:^(YTKBaseRequest * request) {
         
+    }];
+}
+
+-(void)doAliPayOrder:(NSString *)diagnoseId
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    __weak typeof(self) weakSelf = self;
+    WDRepairAliPrePayApi *mfApi = [WDRepairAliPrePayApi new];
+    mfApi.orderId = diagnoseId;
+    mfApi.price = @"0.01";
+    mfApi.userId = currentUserInfo.userId;
+    mfApi.body = [NSString stringWithFormat:@"付款ID:%@",diagnoseId];
+    mfApi.detail = [NSString stringWithFormat:@"付款ID:%@",diagnoseId];
+    
+    mfApi.animatingText = @"正在支付";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        NSDictionary *aliPayInfo = mfApi.responseNetworkData;
+        NSLog(@"aliPayInfo=%@",aliPayInfo);
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
     }];
 }
 

@@ -17,5 +17,6 @@
 #import <MAMapKit/MAMapKit.h>
 #import "WXApiRequestHandler.h"
 #import "WXApiManager.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 
