@@ -48,6 +48,8 @@
 		A54A6164205E0B9A00CD588F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5241CB51FBF0A4A00B6B844 /* CFNetwork.framework */; };
 		A54A6166205E0BAA00CD588F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6165205E0BAA00CD588F /* CoreMotion.framework */; };
 		A54A6168205E0BD500CD588F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6167205E0BD500CD588F /* AlipaySDK.framework */; };
+		A54F2494216E1DB200ED9215 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A54F2492216E1DB200ED9215 /* AlipaySDK.bundle */; };
+		A54F2495216E1DB200ED9215 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54F2493216E1DB200ED9215 /* AlipaySDK.framework */; };
 		A550AD702147EC8A006E88ED /* WDCarOwnerCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */; };
 		A550AD732147ECC9006E88ED /* WDExpertCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A550AD722147ECC9006E88ED /* WDExpertCommentViewController.m */; };
 		A556130420C97F070089C428 /* WDMainFrameBubbleBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A556130320C97F070089C428 /* WDMainFrameBubbleBoardView.m */; };
@@ -382,6 +384,8 @@
 		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A54A6165205E0BAA00CD588F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A54A6167205E0BD500CD588F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = WeiDeCar/MFFramework/Alipay/AlipaySDK.framework; sourceTree = "<group>"; };
+		A54F2492216E1DB200ED9215 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		A54F2493216E1DB200ED9215 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		A550AD6E2147EC8A006E88ED /* WDCarOwnerCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCarOwnerCommentViewController.h; sourceTree = "<group>"; };
 		A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCarOwnerCommentViewController.m; sourceTree = "<group>"; };
 		A550AD712147ECC9006E88ED /* WDExpertCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDExpertCommentViewController.h; sourceTree = "<group>"; };
@@ -1023,6 +1027,7 @@
 				A5241CB91FBF0A9D00B6B844 /* CoreGraphics.framework in Frameworks */,
 				A5631CA71FF516DD00DBA959 /* libstdc++.tbd in Frameworks */,
 				A5631C931FF515E800DBA959 /* libbz2.tbd in Frameworks */,
+				A54F2495216E1DB200ED9215 /* AlipaySDK.framework in Frameworks */,
 				A5BF24382067AFA600271397 /* AlipaySDK.framework in Frameworks */,
 				A5241CB71FBF0A5A00B6B844 /* CoreFoundation.framework in Frameworks */,
 				A5631CA61FF516DD00DBA959 /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -1162,6 +1167,15 @@
 				A535ACE01FDCD20E001CF470 /* WDGuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		A54F2491216E1DB200ED9215 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				A54F2492216E1DB200ED9215 /* AlipaySDK.bundle */,
+				A54F2493216E1DB200ED9215 /* AlipaySDK.framework */,
+			);
+			path = AliPay;
 			sourceTree = "<group>";
 		};
 		A550AD6D2147EC39006E88ED /* Comment */ = {
@@ -1816,6 +1830,7 @@
 			isa = PBXGroup;
 			children = (
 				A5BF23952067AFA600271397 /* MFVendors.h */,
+				A54F2491216E1DB200ED9215 /* AliPay */,
 				A5FFBEBC2135745B0051B8D2 /* WeiXin */,
 				A5BF23642067AFA600271397 /* FDFullscreenPopGesture */,
 				A5BF23672067AFA600271397 /* HexColors */,
@@ -2331,6 +2346,7 @@
 				ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */,
 				A5BF223C2067ACAA00271397 /* WDFaultAppearanceHeaderView.xib in Resources */,
 				A52D91511FDC2E63009DD077 /* WDBorderTextField.xib in Resources */,
+				A54F2494216E1DB200ED9215 /* AlipaySDK.bundle in Resources */,
 				A52D91C51FDC30FB009DD077 /* WDLoginContentView.xib in Resources */,
 				A5BF24372067AFA600271397 /* AlipaySDK.bundle in Resources */,
 				A5BF22352067ACAA00271397 /* WDExpertDiagnoseResultSelectView.xib in Resources */,
@@ -2803,6 +2819,7 @@
 					"$(PROJECT_DIR)/Pods/AMapLocation-NO-IDFA",
 					"$(PROJECT_DIR)/WeiDeCar/MFFramework/Alipay",
 					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/MFFramework/Alipay",
+					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/Vendors/AliPay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/WeiDeApp_pch.pch";
@@ -2842,6 +2859,7 @@
 					"$(PROJECT_DIR)/Pods/AMapLocation-NO-IDFA",
 					"$(PROJECT_DIR)/WeiDeCar/MFFramework/Alipay",
 					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/MFFramework/Alipay",
+					"$(PROJECT_DIR)/WeiDeCar/MFComponentGroup/Vendors/AliPay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiDeCar/WeiDeApp_pch.pch";
