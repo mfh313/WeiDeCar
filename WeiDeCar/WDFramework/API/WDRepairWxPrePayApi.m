@@ -29,4 +29,9 @@
     return requestArgument;
 }
 
+-(YTKRequestSerializerType)requestSerializerType
+{
+    return YTKRequestSerializerTypeJSON;
+}
+
 @end
