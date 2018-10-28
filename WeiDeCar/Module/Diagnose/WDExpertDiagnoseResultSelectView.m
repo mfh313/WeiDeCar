@@ -40,11 +40,11 @@
 {
     NSString *resultText = @"待评价";
     if ([result isEqualToString:@"Y"]) {
-        resultText = @"你选择了：对";
+        resultText = @"专家判断：对";
     }
     else if ([result isEqualToString:@"N"])
     {
-        resultText = @"你选择了：错";
+        resultText = @"专家判断：错";
     }
     
     m_Label.text = resultText;
