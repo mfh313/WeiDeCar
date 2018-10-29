@@ -226,8 +226,8 @@
                 
                 __strong typeof(weakSelf) strongSelf = weakSelf;
 //                [strongSelf payWXOrder:itemModel.diagnoseId];
-                [strongSelf doAliPayOrder:itemModel.diagnoseId];
-//                [strongSelf continueRepairPay:itemModel.diagnoseId];
+//                [strongSelf doAliPayOrder:itemModel.diagnoseId];
+                [strongSelf continueRepairPay:itemModel.diagnoseId];
                 
             } cancelHandler:nil destructiveHandler:nil];
             

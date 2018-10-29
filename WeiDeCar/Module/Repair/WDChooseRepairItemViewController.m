@@ -484,7 +484,7 @@
         
     }];
     
-    [self payWXOrder];
+//    [self payWXOrder];
 }
 
 -(void)onChooseRepairItemOffersSuccess
