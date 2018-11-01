@@ -16,6 +16,7 @@
 #import "WDRepairService.h"
 #import "WDCarOwnerCommentViewController.h"
 #import "WDExpertCommentViewController.h"
+#import "WDDiagnoseCommentViewController.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
 {
@@ -50,13 +51,12 @@
     WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
     
     NSInteger diagnoseStatus = self.diagnoseItemModel.status;
-    if (diagnoseStatus == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_CarOwner)
+    if (diagnoseStatus == WDDiagnoseStatus_QA_SUCCESS)
     {
-        [self setRightNaviButtonWithTitle:@"评价" action:@selector(showCarOwnerCommentVC)];
-    }
-    else if (diagnoseStatus == WDDiagnoseStatus_QA_SUCCESS && currentUserInfo.userType == WDUserInfoType_Expert)
-    {
-        [self setRightNaviButtonWithTitle:@"评价" action:@selector(showExpertCommentVC)];
+        if (currentUserInfo.userType == WDUserInfoType_CarOwner || currentUserInfo.userType == WDUserInfoType_Expert)
+        {
+            [self setRightNaviButtonWithTitle:@"评价" action:@selector(onClickRightCommentButton)];
+        }
     }
     
     [self getRepairItemList];
@@ -374,6 +374,30 @@
     WDExpertCommentViewController *expertCommentVC = [WDExpertCommentViewController new];
     expertCommentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
     [self.navigationController pushViewController:expertCommentVC animated:YES];
+}
+
+-(void)onClickRightCommentButton
+{
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
+    
+    if (currentUserInfo.userType == WDUserInfoType_CarOwner)
+    {
+        [self showDiagnoseCommentVC];
+        
+//        [self showCarOwnerCommentVC];
+    }
+    else if (currentUserInfo.userType == WDUserInfoType_Expert)
+    {
+        [self showExpertCommentVC];
+    }
+}
+
+-(void)showDiagnoseCommentVC
+{
+    WDDiagnoseCommentViewController *commentVC = [WDDiagnoseCommentViewController new];
+    commentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
+    [self.navigationController pushViewController:commentVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

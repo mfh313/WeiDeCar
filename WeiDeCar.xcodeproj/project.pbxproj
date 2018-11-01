@@ -43,6 +43,7 @@
 		A535ACE31FDCD20E001CF470 /* WDGuidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACDE1FDCD20E001CF470 /* WDGuidePageView.m */; };
 		A535ACE41FDCD20E001CF470 /* WDGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A535ACE01FDCD20E001CF470 /* WDGuideViewController.m */; };
 		A5362F9D218B171200848874 /* WDGetDiagnoseCommentApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A5362F9C218B171200848874 /* WDGetDiagnoseCommentApi.m */; };
+		A5362FA0218B1AD900848874 /* WDDiagnoseCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5362F9F218B1AD900848874 /* WDDiagnoseCommentViewController.m */; };
 		A54A615F205E0B4400CD588F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A615E205E0B4400CD588F /* libc++.tbd */; };
 		A54A6161205E0B6900CD588F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6160205E0B6900CD588F /* CoreTelephony.framework */; };
 		A54A6163205E0B7700CD588F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A6162205E0B7700CD588F /* QuartzCore.framework */; };
@@ -380,6 +381,8 @@
 		A535ACE01FDCD20E001CF470 /* WDGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGuideViewController.m; sourceTree = "<group>"; };
 		A5362F9B218B171200848874 /* WDGetDiagnoseCommentApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGetDiagnoseCommentApi.h; sourceTree = "<group>"; };
 		A5362F9C218B171200848874 /* WDGetDiagnoseCommentApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGetDiagnoseCommentApi.m; sourceTree = "<group>"; };
+		A5362F9E218B1AD900848874 /* WDDiagnoseCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDDiagnoseCommentViewController.h; sourceTree = "<group>"; };
+		A5362F9F218B1AD900848874 /* WDDiagnoseCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDDiagnoseCommentViewController.m; sourceTree = "<group>"; };
 		A54A615E205E0B4400CD588F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A54A6160205E0B6900CD588F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A54A6162205E0B7700CD588F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1170,6 +1173,8 @@
 		A550AD6D2147EC39006E88ED /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				A5362F9E218B1AD900848874 /* WDDiagnoseCommentViewController.h */,
+				A5362F9F218B1AD900848874 /* WDDiagnoseCommentViewController.m */,
 				A550AD6E2147EC8A006E88ED /* WDCarOwnerCommentViewController.h */,
 				A550AD6F2147EC8A006E88ED /* WDCarOwnerCommentViewController.m */,
 				A550AD712147ECC9006E88ED /* WDExpertCommentViewController.h */,
@@ -2450,6 +2455,7 @@
 				A5BF24082067AFA600271397 /* NSString+MMWidth.m in Sources */,
 				A56FB4C82146A2FC00B33FF8 /* WDListCommentBonusApi.m in Sources */,
 				A5BF243A2067AFA600271397 /* APOrderInfo.m in Sources */,
+				A5362FA0218B1AD900848874 /* WDDiagnoseCommentViewController.m in Sources */,
 				A5BF24282067AFA600271397 /* MFThemeHelper.m in Sources */,
 				A51504C6206AA34B00CFAD14 /* WDDiagnoseDetailViewController.m in Sources */,
 				A5BF24272067AFA600271397 /* MFModelHelper.m in Sources */,
