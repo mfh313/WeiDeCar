@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//获取评价信息
++(NSString *)getDiagnoseComment;
+
 //获取评价KPI列表
 +(NSString *)listCommentKpi;
 
