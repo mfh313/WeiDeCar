@@ -11,6 +11,5 @@
 @interface WDGetDiagnoseCommentApi : MMNetworkRequest
 
 @property (nonatomic,strong) NSString *diagnoseId;
-@property (nonatomic,strong) NSString *commentType;  //评价类型，10：车主；20：专家
 
 @end

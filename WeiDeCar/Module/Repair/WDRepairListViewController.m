@@ -389,7 +389,8 @@
     }
     else if (currentUserInfo.userType == WDUserInfoType_Expert)
     {
-        [self showExpertCommentVC];
+        [self showDiagnoseCommentVC];
+//        [self showExpertCommentVC];
     }
 }
 

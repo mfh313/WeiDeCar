@@ -20,7 +20,6 @@
     NSMutableDictionary *requestArgument = [NSMutableDictionary dictionary];
     
     [requestArgument safeSetObject:self.diagnoseId forKey:@"diagnoseId"];
-    [requestArgument safeSetObject:self.commentType forKey:@"commentType"];
     
     return requestArgument;
 }
