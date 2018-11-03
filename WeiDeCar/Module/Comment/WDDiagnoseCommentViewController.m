@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"查看评价";
+    self.title = @"评价";
     [self setBackBarButton];
     
     WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
@@ -29,11 +29,11 @@
     
     if (currentUserInfo.userType == WDUserInfoType_CarOwner)
     {
-        [self setRightNaviButtonWithTitle:@"新增评价" action:@selector(showCarOwnerCommentVC)];
+        [self setRightNaviButtonWithTitle:@"新增" action:@selector(showCarOwnerCommentVC)];
     }
     else if (currentUserInfo.userType == WDUserInfoType_Expert)
     {
-        [self setRightNaviButtonWithTitle:@"新增评价" action:@selector(showExpertCommentVC)];
+        [self setRightNaviButtonWithTitle:@"新增" action:@selector(showExpertCommentVC)];
     }
 
     [self getCarOwnerAndExpertComment];
