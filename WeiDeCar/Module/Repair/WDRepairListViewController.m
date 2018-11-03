@@ -14,8 +14,6 @@
 #import "WDRepairItemActionCellView.h"
 #import "WDRepairStepListViewController.h"
 #import "WDRepairService.h"
-#import "WDCarOwnerCommentViewController.h"
-#import "WDExpertCommentViewController.h"
 #import "WDDiagnoseCommentViewController.h"
 
 @interface WDRepairListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemActionCellViewDelegate>
@@ -362,39 +360,7 @@
     }];
 }
 
--(void)showCarOwnerCommentVC
-{
-    WDCarOwnerCommentViewController *carOwnerCommentVC = [WDCarOwnerCommentViewController new];
-    carOwnerCommentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
-    [self.navigationController pushViewController:carOwnerCommentVC animated:YES];
-}
-
--(void)showExpertCommentVC
-{
-    WDExpertCommentViewController *expertCommentVC = [WDExpertCommentViewController new];
-    expertCommentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
-    [self.navigationController pushViewController:expertCommentVC animated:YES];
-}
-
 -(void)onClickRightCommentButton
-{
-    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
-    WDUserInfoModel *currentUserInfo = loginService.currentUserInfo;
-    
-    if (currentUserInfo.userType == WDUserInfoType_CarOwner)
-    {
-        [self showDiagnoseCommentVC];
-        
-//        [self showCarOwnerCommentVC];
-    }
-    else if (currentUserInfo.userType == WDUserInfoType_Expert)
-    {
-        [self showDiagnoseCommentVC];
-//        [self showExpertCommentVC];
-    }
-}
-
--(void)showDiagnoseCommentVC
 {
     WDDiagnoseCommentViewController *commentVC = [WDDiagnoseCommentViewController new];
     commentVC.diagnoseId = self.diagnoseItemModel.diagnoseId;
@@ -404,6 +370,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end
