@@ -214,7 +214,7 @@
             return;
         }
         
-        NSDictionary *responseNetworkData = mfApi.responseNetworkData[@"data"];
+        NSDictionary *responseNetworkData = mfApi.responseNetworkData;
         m_carOwnerComment = [WDUserDiagnoseCommentVO yy_modelWithDictionary:responseNetworkData[@"carOwner"]];
         
         m_expertComment = [WDUserDiagnoseCommentVO yy_modelWithDictionary:responseNetworkData[@"expert"]];
