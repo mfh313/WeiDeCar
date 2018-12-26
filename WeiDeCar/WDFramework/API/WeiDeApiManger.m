@@ -12,7 +12,6 @@
 
 #define MFURLWithPara(para) [MFURL stringByAppendingPathComponent:para]
 
-//NSString *const HttpWeiDeUrl = @"http://www.5weide.com:8080/better-api/";
 NSString *const WeiDeUrl = @"http://111.230.199.162:80/better-api/";
 NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
 NSString *const My_local_WeiDeUrl = @"http://10.8.143.96:8080/better-api/";
