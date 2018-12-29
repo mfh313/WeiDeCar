@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AppStoreChannel</key>
-	<true/>
+	<false/>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
