@@ -314,6 +314,7 @@
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
 		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
+		ACD6126821D71AAA000043DE /* WDGenerateWechatPayOrderApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */; };
 		C761B046AABEEFA431BDDFCC /* libPods-WeiDeCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A71257470BABE4D20417DB9 /* libPods-WeiDeCar.a */; };
 /* End PBXBuildFile section */
 
@@ -1013,6 +1014,8 @@
 		ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemListViewController.m; sourceTree = "<group>"; };
 		ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDChooseRepairItemViewController.h; sourceTree = "<group>"; };
 		ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDChooseRepairItemViewController.m; sourceTree = "<group>"; };
+		ACD6126621D71AAA000043DE /* WDGenerateWechatPayOrderApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGenerateWechatPayOrderApi.h; sourceTree = "<group>"; };
+		ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGenerateWechatPayOrderApi.m; sourceTree = "<group>"; };
 		FB6739B099309AF3263BBFAE /* Pods-WeiDeCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiDeCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiDeCar/Pods-WeiDeCar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1458,6 +1461,8 @@
 		A5BF22492067ADC700271397 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ACD6126621D71AAA000043DE /* WDGenerateWechatPayOrderApi.h */,
+				ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */,
 				A5362F9B218B171200848874 /* WDGetDiagnoseCommentApi.h */,
 				A5362F9C218B171200848874 /* WDGetDiagnoseCommentApi.m */,
 				A57AFC1E215E61750070D53F /* WDRepairWxPrePayApi.h */,
@@ -2578,6 +2583,7 @@
 				A5BF24192067AFA600271397 /* MMBarButtonItem.m in Sources */,
 				A5BF242D2067AFA600271397 /* MMTableViewUserInfo.m in Sources */,
 				A5BF22322067ACAA00271397 /* WDExpertDiagnoseMainCreateViewController.m in Sources */,
+				ACD6126821D71AAA000043DE /* WDGenerateWechatPayOrderApi.m in Sources */,
 				A5BF24462067AFA600271397 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5BF24472067AFA600271397 /* HexColors.m in Sources */,
 				A5BF244A2067AFA600271397 /* IQUITextFieldView+Additions.m in Sources */,

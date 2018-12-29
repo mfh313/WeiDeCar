@@ -15,6 +15,7 @@
 #import "WDRepairPayTestApi.h"
 #import "WDRepairWxPrePayApi.h"
 #import "WDRepairAliPrePayApi.h"
+#import "WDGenerateWechatPayOrderApi.h"
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -253,9 +254,34 @@
 
 -(void)showRepairListVC:(WDDiagnoseModel *)itemModel
 {
-    WDRepairListViewController *repairVC = [WDRepairListViewController new];
-    repairVC.diagnoseItemModel = itemModel;
-    [self.navigationController pushViewController:repairVC animated:YES];
+    [self generateWechatPayOrder:itemModel];
+
+//    WDRepairListViewController *repairVC = [WDRepairListViewController new];
+//    repairVC.diagnoseItemModel = itemModel;
+//    [self.navigationController pushViewController:repairVC animated:YES];
+}
+
+-(void)generateWechatPayOrder:(WDDiagnoseModel *)itemModel
+{
+    __weak typeof(self) weakSelf = self;
+    WDGenerateWechatPayOrderApi *mfApi = [WDGenerateWechatPayOrderApi new];
+    mfApi.diagnoseId = itemModel.diagnoseId;
+    
+    mfApi.animatingText = @"正在生成微信支付订单";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:mfApi.errorMessage];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
 }
 
 -(void)continueRepairPay:(NSString *)diagnoseId
