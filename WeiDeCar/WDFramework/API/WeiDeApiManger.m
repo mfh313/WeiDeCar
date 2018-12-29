@@ -19,6 +19,12 @@ NSString *const My_local_WeiDeUrl = @"http://10.8.143.96:8080/better-api/";
 
 @implementation WeiDeApiManger
 
+//微信支付生成订单
++(NSString *)wechatPayGenerateOrder
+{
+    return MFURLWithPara(@"integration/wechatpay/generateOrder");
+}
+
 //获取评价信息
 +(NSString *)getDiagnoseComment
 {

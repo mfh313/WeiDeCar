@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//微信支付生成订单
++(NSString *)wechatPayGenerateOrder;
+
 //获取评价信息
 +(NSString *)getDiagnoseComment;
 
