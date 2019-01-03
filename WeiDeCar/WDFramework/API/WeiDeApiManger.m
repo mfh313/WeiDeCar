@@ -229,8 +229,8 @@ NSString *const My_local_WeiDeUrl = @"http://10.8.143.96:8080/better-api/";
         return WeiDeUrl;
     }
     
-    return My_local_WeiDeUrl;
-//    return test_WeiDeUrl;
+//    return My_local_WeiDeUrl;
+    return test_WeiDeUrl;
 }
 
 +(BOOL)packageIsAppStoreChannel
