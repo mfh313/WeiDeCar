@@ -254,11 +254,11 @@
 
 -(void)showRepairListVC:(WDDiagnoseModel *)itemModel
 {
-    [self generateWechatPayOrder:itemModel];
+//    [self generateWechatPayOrder:itemModel];
 
-//    WDRepairListViewController *repairVC = [WDRepairListViewController new];
-//    repairVC.diagnoseItemModel = itemModel;
-//    [self.navigationController pushViewController:repairVC animated:YES];
+    WDRepairListViewController *repairVC = [WDRepairListViewController new];
+    repairVC.diagnoseItemModel = itemModel;
+    [self.navigationController pushViewController:repairVC animated:YES];
 }
 
 -(void)generateWechatPayOrder:(WDDiagnoseModel *)itemModel
