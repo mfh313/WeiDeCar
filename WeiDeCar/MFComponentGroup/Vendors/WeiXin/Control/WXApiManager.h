@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "WXApi.h"
 
-#define WXKey @"wxfddaeb6d71257dc9"
+#define WXKey @"wx48b86bc9b565c7fd"
 
 extern NSString *const WXPay_Notification_Success;
 
