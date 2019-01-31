@@ -19,6 +19,7 @@ pod 'iCarousel', '~> 1.8.1'
 pod 'SDWebImage'
 pod 'WechatOpenSDK'
 pod 'GRStarsView'
+pod 'AlipaySDK-iOS'
 
 end
 
