@@ -34,6 +34,16 @@
 				<string>wx48b86bc9b565c7fd</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>alipay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>2019011763036478</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.4.0</string>

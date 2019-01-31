@@ -15,6 +15,7 @@
 #import "WDRepairPayTestApi.h"
 #import "WDGenerateWechatPayOrderApi.h"
 #import "WDGenerateAliPayOrderApi.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface WDRepairItemListViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairTaskListCellViewDelegate>
 {
@@ -275,11 +276,20 @@
             return;
         }
         
-        NSDictionary *alipayInfo = mfApi.responseNetworkData;
-//        [strongSelf bizPayOrder:payInfo];
+        NSString *orderString = mfApi.responseNetworkData;
+        [strongSelf handleJumpAliPay:orderString];
         
     } failure:^(YTKBaseRequest * request) {
         
+    }];
+}
+
+-(void)handleJumpAliPay:(NSString *)orderString
+{
+    NSString *appScheme = @"2019011763036478";
+    
+    [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+        NSLog(@"reslut = %@",resultDic);
     }];
 }
 
