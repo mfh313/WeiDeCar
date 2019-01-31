@@ -312,6 +312,7 @@
 		AC7705CA21073EE400C2851F /* WDRepairFactoriesDistributionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7705C921073EE400C2851F /* WDRepairFactoriesDistributionViewController.m */; };
 		AC7AD828212D7FB4002E8D16 /* WDSelectRepairFactoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7AD827212D7FB4002E8D16 /* WDSelectRepairFactoryViewController.m */; };
 		ACA46DF92026A42E0021B3B8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACA46DF82026A42E0021B3B8 /* readme.txt */; };
+		ACA9A3AA220289A20043E53F /* WDGenerateAliPayOrderApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA9A3A9220289A20043E53F /* WDGenerateAliPayOrderApi.m */; };
 		ACB8C337202EA08600BEB48E /* WDRepairItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */; };
 		ACB8C33A202ECA2A00BEB48E /* WDChooseRepairItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB8C339202ECA2A00BEB48E /* WDChooseRepairItemViewController.m */; };
 		ACD6126821D71AAA000043DE /* WDGenerateWechatPayOrderApi.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */; };
@@ -1010,6 +1011,8 @@
 		AC7AD827212D7FB4002E8D16 /* WDSelectRepairFactoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDSelectRepairFactoryViewController.m; sourceTree = "<group>"; };
 		ACA46DF82026A42E0021B3B8 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ACA46DFB2026AF910021B3B8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		ACA9A3A8220289A20043E53F /* WDGenerateAliPayOrderApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDGenerateAliPayOrderApi.h; sourceTree = "<group>"; };
+		ACA9A3A9220289A20043E53F /* WDGenerateAliPayOrderApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDGenerateAliPayOrderApi.m; sourceTree = "<group>"; };
 		ACB8C335202EA08600BEB48E /* WDRepairItemListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairItemListViewController.h; sourceTree = "<group>"; };
 		ACB8C336202EA08600BEB48E /* WDRepairItemListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairItemListViewController.m; sourceTree = "<group>"; };
 		ACB8C338202ECA2A00BEB48E /* WDChooseRepairItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDChooseRepairItemViewController.h; sourceTree = "<group>"; };
@@ -1461,6 +1464,8 @@
 		A5BF22492067ADC700271397 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ACA9A3A8220289A20043E53F /* WDGenerateAliPayOrderApi.h */,
+				ACA9A3A9220289A20043E53F /* WDGenerateAliPayOrderApi.m */,
 				ACD6126621D71AAA000043DE /* WDGenerateWechatPayOrderApi.h */,
 				ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */,
 				A5362F9B218B171200848874 /* WDGetDiagnoseCommentApi.h */,
@@ -2669,6 +2674,7 @@
 				A5BF245C2067AFA700271397 /* Main.pb.m in Sources */,
 				A51504CA206AA34B00CFAD14 /* WDExpertDiagnoseListViewController.m in Sources */,
 				A5BF24752067AFA700271397 /* WireFormat.m in Sources */,
+				ACA9A3AA220289A20043E53F /* WDGenerateAliPayOrderApi.m in Sources */,
 				A5BF24012067AFA600271397 /* NSArray+SafeInsert.m in Sources */,
 				A5BF240D2067AFA600271397 /* UIViewController+FixBackIndicatorImage.m in Sources */,
 				A5BF22B82067ADC700271397 /* WDRepairStepModel.m in Sources */,

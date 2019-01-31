@@ -10,6 +10,9 @@
 
 @interface WeiDeApiManger : MMService
 
+//支付宝支付生成订单
++(NSString *)aliPayGenerateOrder;
+
 //微信支付生成订单
 +(NSString *)wechatPayGenerateOrder;
 

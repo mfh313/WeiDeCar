@@ -20,6 +20,12 @@ NSString *const My_local_MAC_WeiDeUrl = @"http://10.8.97.104:8080/better-api/";
 
 @implementation WeiDeApiManger
 
+//支付宝支付生成订单
++(NSString *)aliPayGenerateOrder
+{
+    return MFURLWithPara(@"integration/alipay/generateOrder");
+}
+
 //微信支付生成订单
 +(NSString *)wechatPayGenerateOrder
 {
