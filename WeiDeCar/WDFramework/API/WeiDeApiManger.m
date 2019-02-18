@@ -13,7 +13,7 @@
 #define MFURLWithPara(para) [MFURL stringByAppendingPathComponent:para]
 
 NSString *const WeiDeUrl = @"http://111.230.199.162:80/better-api/";
-NSString *const test_WeiDeUrl = @"http://112.74.184.45:8080/better-api/";
+NSString *const test_WeiDeUrl = @"http://210.75.21.243:8080/better-api/";
 NSString *const My_local_WeiDeUrl = @"http://10.8.143.96:8080/better-api/";
 NSString *const My_local_MAC_WeiDeUrl = @"http://10.8.97.104:8080/better-api/";
 
@@ -236,8 +236,8 @@ NSString *const My_local_MAC_WeiDeUrl = @"http://10.8.97.104:8080/better-api/";
         return WeiDeUrl;
     }
     
-    return My_local_WeiDeUrl;
-//    return test_WeiDeUrl;
+//    return My_local_WeiDeUrl;
+    return test_WeiDeUrl;
 }
 
 +(BOOL)packageIsAppStoreChannel
