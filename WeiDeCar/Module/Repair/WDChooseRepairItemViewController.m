@@ -13,6 +13,9 @@
 #import "WDRepairOfferHeaderTitleView.h"
 #import "WDChooseRepairItemOffersApi.h"
 #import "WDRepairPayTestApi.h"
+#import "WDGenerateWechatPayOrderApi.h"
+#import "WDGenerateAliPayOrderApi.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface WDChooseRepairItemViewController () <UITableViewDataSource,UITableViewDelegate,WDRepairItemOfferHeaderViewDelegate>
 {
@@ -486,7 +489,96 @@
 
 -(void)onChooseRepairItemOffersSuccess
 {
+    LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"继续支付" message:@"请选择支付方式继续维修" style:LGAlertViewStyleActionSheet buttonTitles:@[@"支付宝支付",@"微信支付"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+        
+        if (index == 0)
+        {
+            [self generateAliPayOrder:self.diagnoseId];
+        }
+        else if (index == 1)
+        {
+            [self generateWechatPayOrder:self.diagnoseId];
+        }
+        
+    } cancelHandler:^(LGAlertView * _Nonnull alertView) {
+        
+    } destructiveHandler:nil];
+    
+    [alertView showAnimated:YES completionHandler:nil];
+    
     [self continueRepairPay];
+}
+
+-(void)generateAliPayOrder:(NSString *)diagnoseId
+{
+    __weak typeof(self) weakSelf = self;
+    WDGenerateAliPayOrderApi *mfApi = [WDGenerateAliPayOrderApi new];
+    mfApi.diagnoseId = diagnoseId;
+    
+    mfApi.animatingText = @"正在生成支付订单";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        NSString *orderString = mfApi.responseNetworkData;
+        [strongSelf handleJumpAliPay:orderString];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(void)handleJumpAliPay:(NSString *)orderString
+{
+    NSString *appScheme = @"2019011763036478";
+    
+    [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+        NSLog(@"reslut = %@",resultDic);
+    }];
+}
+
+-(void)generateWechatPayOrder:(NSString *)diagnoseId
+{
+    __weak typeof(self) weakSelf = self;
+    WDGenerateWechatPayOrderApi *mfApi = [WDGenerateWechatPayOrderApi new];
+    mfApi.diagnoseId = diagnoseId;
+    
+    mfApi.animatingText = @"正在生成微信支付订单";
+    mfApi.animatingView = self.view;
+    [mfApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!mfApi.messageSuccess) {
+            [strongSelf showTips:mfApi.errorMessage];
+            return;
+        }
+        
+        NSDictionary *payInfo = mfApi.responseNetworkData;
+        [strongSelf bizPayOrder:payInfo];
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+    }];
+}
+
+-(void)bizPayOrder:(NSDictionary *)dict
+{
+    NSMutableString *stamp  = [dict objectForKey:@"timestamp"];
+    
+    //调起微信支付
+    PayReq* req             = [[PayReq alloc] init];
+    req.partnerId           = [dict objectForKey:@"partnerid"];
+    req.prepayId            = [dict objectForKey:@"prepayid"];
+    req.nonceStr            = [dict objectForKey:@"noncestr"];
+    req.timeStamp           = stamp.intValue;
+    req.package             = [dict objectForKey:@"package"];
+    req.sign                = [dict objectForKey:@"sign"];
+    [WXApi sendReq:req];
 }
 
 -(void)continueRepairPay
