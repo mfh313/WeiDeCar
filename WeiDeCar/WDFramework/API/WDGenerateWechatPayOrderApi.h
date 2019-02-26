@@ -10,6 +10,7 @@
 
 @interface WDGenerateWechatPayOrderApi : MMNetworkRequest
 
+@property (nonatomic,strong) NSString *userId;
 @property (nonatomic,strong) NSString *diagnoseId;
 
 @end

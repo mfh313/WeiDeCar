@@ -10,6 +10,7 @@
 
 @interface WDGenerateAliPayOrderApi : MMNetworkRequest
 
+@property (nonatomic,strong) NSString *userId;
 @property (nonatomic,strong) NSString *diagnoseId;
 
 @end

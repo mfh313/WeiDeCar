@@ -506,13 +506,15 @@
     
     [alertView showAnimated:YES completionHandler:nil];
     
-    [self continueRepairPay];
 }
 
 -(void)generateAliPayOrder:(NSString *)diagnoseId
 {
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
     __weak typeof(self) weakSelf = self;
     WDGenerateAliPayOrderApi *mfApi = [WDGenerateAliPayOrderApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
     mfApi.diagnoseId = diagnoseId;
     
     mfApi.animatingText = @"正在生成支付订单";
@@ -544,8 +546,11 @@
 
 -(void)generateWechatPayOrder:(NSString *)diagnoseId
 {
+    WDLoginService *loginService = [[MMServiceCenter defaultCenter] getService:[WDLoginService class]];
+    
     __weak typeof(self) weakSelf = self;
     WDGenerateWechatPayOrderApi *mfApi = [WDGenerateWechatPayOrderApi new];
+    mfApi.userId = loginService.currentUserInfo.userId;
     mfApi.diagnoseId = diagnoseId;
     
     mfApi.animatingText = @"正在生成微信支付订单";
