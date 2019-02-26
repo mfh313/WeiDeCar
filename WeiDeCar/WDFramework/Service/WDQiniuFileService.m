@@ -15,7 +15,7 @@
 
 -(NSString *)bucketUrl
 {
-    return @"http://p1pt7y7fx.bkt.clouddn.com";
+    return @"http://better.www.5weide.com";
 }
 
 -(void)uploadImageToQNiu:(UIImage *)image complete:(WDQiniuFileServiceHandler)completion
