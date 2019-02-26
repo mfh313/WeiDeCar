@@ -95,8 +95,6 @@
 		A5770156202F31DB0037D5DB /* WDRepairItemOfferHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5770155202F31DB0037D5DB /* WDRepairItemOfferHeaderView.m */; };
 		A5770158202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5770157202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib */; };
 		A577015B202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A577015A202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m */; };
-		A57AFC20215E61750070D53F /* WDRepairWxPrePayApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57AFC1F215E61750070D53F /* WDRepairWxPrePayApi.m */; };
-		A57AFC23215E629D0070D53F /* WDRepairAliPrePayApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A57AFC22215E629D0070D53F /* WDRepairAliPrePayApi.m */; };
 		A57E1F302056B6BB00D9559C /* WDRepairStepItemImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F2F2056B6BB00D9559C /* WDRepairStepItemImageViewController.m */; };
 		A57E1F332056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E1F322056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.m */; };
 		A5A391451FCC312000ED0D4F /* WDAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A391441FCC312000ED0D4F /* WDAppViewControllerManager.m */; };
@@ -567,10 +565,6 @@
 		A5770157202F3D330037D5DB /* WDRepairItemOfferHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WDRepairItemOfferHeaderView.xib; sourceTree = "<group>"; };
 		A5770159202F464E0037D5DB /* WDRepairOfferHeaderTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairOfferHeaderTitleView.h; sourceTree = "<group>"; };
 		A577015A202F464E0037D5DB /* WDRepairOfferHeaderTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairOfferHeaderTitleView.m; sourceTree = "<group>"; };
-		A57AFC1E215E61750070D53F /* WDRepairWxPrePayApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairWxPrePayApi.h; sourceTree = "<group>"; };
-		A57AFC1F215E61750070D53F /* WDRepairWxPrePayApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairWxPrePayApi.m; sourceTree = "<group>"; };
-		A57AFC21215E629D0070D53F /* WDRepairAliPrePayApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairAliPrePayApi.h; sourceTree = "<group>"; };
-		A57AFC22215E629D0070D53F /* WDRepairAliPrePayApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairAliPrePayApi.m; sourceTree = "<group>"; };
 		A57E1F2E2056B6BB00D9559C /* WDRepairStepItemImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepItemImageViewController.h; sourceTree = "<group>"; };
 		A57E1F2F2056B6BB00D9559C /* WDRepairStepItemImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDRepairStepItemImageViewController.m; sourceTree = "<group>"; };
 		A57E1F312056CC0500D9559C /* WDRepairStepQualifiedSelectCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDRepairStepQualifiedSelectCellView.h; sourceTree = "<group>"; };
@@ -1470,10 +1464,6 @@
 				ACD6126721D71AAA000043DE /* WDGenerateWechatPayOrderApi.m */,
 				A5362F9B218B171200848874 /* WDGetDiagnoseCommentApi.h */,
 				A5362F9C218B171200848874 /* WDGetDiagnoseCommentApi.m */,
-				A57AFC1E215E61750070D53F /* WDRepairWxPrePayApi.h */,
-				A57AFC1F215E61750070D53F /* WDRepairWxPrePayApi.m */,
-				A57AFC21215E629D0070D53F /* WDRepairAliPrePayApi.h */,
-				A57AFC22215E629D0070D53F /* WDRepairAliPrePayApi.m */,
 				A56FB4C92146A4FC00B33FF8 /* WDListCommentKpiApi.h */,
 				A56FB4CA2146A4FC00B33FF8 /* WDListCommentKpiApi.m */,
 				A56FB4C62146A2FC00B33FF8 /* WDListCommentBonusApi.h */,
@@ -2500,7 +2490,6 @@
 				A5BF24202067AFA600271397 /* MMUIBridgeView.m in Sources */,
 				A52D91C71FDC30FB009DD077 /* WDUserRegisterViewController.m in Sources */,
 				A5BF22A52067ADC700271397 /* WDListRepairItemApi.m in Sources */,
-				A57AFC23215E629D0070D53F /* WDRepairAliPrePayApi.m in Sources */,
 				A5BF24322067AFA600271397 /* XXNibBridge.m in Sources */,
 				A51504C9206AA34B00CFAD14 /* WDDiagnoseListBaseViewController.m in Sources */,
 				A51DBC2D2000F91500A870FD /* WDRepairFactoriesViewController.m in Sources */,
@@ -2509,7 +2498,6 @@
 				A5BF24712067AFA700271397 /* TextFormat.m in Sources */,
 				A5BF24592067AFA700271397 /* MGJRouter.m in Sources */,
 				A5CBED2620FB31B600041B22 /* WDListDiagnoseMechanicCertificationsApi.m in Sources */,
-				A57AFC20215E61750070D53F /* WDRepairWxPrePayApi.m in Sources */,
 				A5BF24532067AFA600271397 /* IQTitleBarButtonItem.m in Sources */,
 				A5BF24032067AFA600271397 /* NSDictionary+Unicode.m in Sources */,
 				A55ECE8820306E66003CE4B2 /* WDRepairItemActionCellView.m in Sources */,
