@@ -223,10 +223,17 @@
         else if (itemModel.status == WDDiagnoseStatus_OFFER_ACCEPTED)
         {
             __weak typeof(self) weakSelf = self;
-            LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"报价已接受，车主支付后才能开始维修，是否支付?" style:LGAlertViewStyleAlert buttonTitles:@[@"确定"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
+            LGAlertView *alertView = [LGAlertView alertViewWithTitle:@"提示" message:@"报价已接受，车主支付后才能开始维修，是否支付?" style:LGAlertViewStyleActionSheet buttonTitles:@[@"支付宝支付",@"微信支付"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil actionHandler:^(LGAlertView * _Nonnull alertView, NSUInteger index, NSString * _Nullable title) {
                 
                 __strong typeof(weakSelf) strongSelf = weakSelf;
-                [strongSelf continueRepairPay:itemModel.diagnoseId];
+                if (index == 0)
+                {
+                    [strongSelf generateAliPayOrder:itemModel.diagnoseId];
+                }
+                else if (index == 1)
+                {
+                    [strongSelf generateWechatPayOrder:itemModel.diagnoseId];
+                }
                 
             } cancelHandler:nil destructiveHandler:nil];
             
@@ -252,19 +259,16 @@
 
 -(void)showRepairListVC:(WDDiagnoseModel *)itemModel
 {
-//    [self generateAliPayOrder:itemModel];
-//    [self generateWechatPayOrder:itemModel];
-
     WDRepairListViewController *repairVC = [WDRepairListViewController new];
     repairVC.diagnoseItemModel = itemModel;
     [self.navigationController pushViewController:repairVC animated:YES];
 }
 
--(void)generateAliPayOrder:(WDDiagnoseModel *)itemModel
+-(void)generateAliPayOrder:(NSString *)diagnoseId
 {
     __weak typeof(self) weakSelf = self;
     WDGenerateAliPayOrderApi *mfApi = [WDGenerateAliPayOrderApi new];
-    mfApi.diagnoseId = itemModel.diagnoseId;
+    mfApi.diagnoseId = diagnoseId;
     
     mfApi.animatingText = @"正在生成支付订单";
     mfApi.animatingView = self.view;
@@ -293,11 +297,11 @@
     }];
 }
 
--(void)generateWechatPayOrder:(WDDiagnoseModel *)itemModel
+-(void)generateWechatPayOrder:(NSString *)diagnoseId
 {
     __weak typeof(self) weakSelf = self;
     WDGenerateWechatPayOrderApi *mfApi = [WDGenerateWechatPayOrderApi new];
-    mfApi.diagnoseId = itemModel.diagnoseId;
+    mfApi.diagnoseId = diagnoseId;
     
     mfApi.animatingText = @"正在生成微信支付订单";
     mfApi.animatingView = self.view;
